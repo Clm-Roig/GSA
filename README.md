@@ -7,7 +7,7 @@ Balance connectée à l'aide d'un Raspberry Pi (C/Web)
 
 # Arborescence
 
-- data    : Dossier où son stockées les données
+- data    : Dossier où sont stockées les données
 - src     : Dossier des fichier C et des entetes
 - obj			: Dossier des fichier compilés .o
 - bin     : Dossier comportant l'executable du projet
