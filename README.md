@@ -1,5 +1,5 @@
-# Projet Polytech - Informatique & gestion 3 - COBAL
-Balance connectée à l'aide d'un Raspberry Pi (C/Web)
+# Projet Polytech - Informatique & gestion 3 - COAL
+Gestionnaire de stock d'aliment connecté à l'aide d'un Raspberry Pi (C)
 
 - Matthieu DYE
 - Tristan RIVIERE
