@@ -1,77 +1,44 @@
-/* En-têtes BDD.h 
- 
-	Les tuples de la BDD sont de la forme : 
-		ID;ATTRIBUT1;ATTRIBUT2...
-		3;passionnant;cool
-*/
+// EN-TETE BDD.h
 
-#include <stdlib.h>
 #include <stdio.h>
-#include <assert.h>
+#include <stdlib.h>
 #include <string.h>
+#include <assert.h>
 
-/* ----- CHEMINS D'ACCES DES DONNEES  */
-#define CHEMIN_PESEES "/data/pesees/"
-#define CHEMIN_ALIMENTS "/data/aliments/"
-#define CHEMIN_IMAGES_ALIMENTS "/data/images_aliment/"
+/* ---- CONSTANTES ---- */
+const char* CHEMIN_PESEES = "data/pesees.txt";
+const char* CHEMIN_ALIMENTS = "data/aliments.txt";
+#define TAILLE_MAX_LIGNE 300
 
+/* ---- FONCTIONS ---- */
+
+// Lecture
+/**
+    @brief renvoie le nombre de lignes que contient un fichier
+    @param FILE* fichier le fichier à analyser
+    @return int le nombre de lignes du fichier
+*/
+int nbLignesFichier(FILE* fichier);
 
 /**
-	@brief: ouvre le fichier demandé. Retourne True si ok, sinon False
-	@param char * cheminFichier chemin du fichier de données
-	@return File * le fichier ouvert
- */
-FILE* ouvrirFichier(char * cheminFichier);
+    @brief renvoie la ligne du fichier pointé
+    @param FILE* fichier le fichier que l'on souhaite lire
+    @param int n le numéro de la ligne que l'on souhaite lire
+    @return char* la ligne issue du fichier
+*/
+char* lireLigne(FILE* fichier, int n);
 
 /**
-	@brief: ouvre le fichier demandé dans le répertoire des aliments
-	@param char * nomFichier nom du fichier de données
-	@return File * le fichier ouvert
- */
-FILE* ouvrirFichierAliment(char * nomFichier);
+    @brief renvoie l'id maximum contenu dans le fichier aliments.txt ou pesees.txt
+    @param char* type le nom du fichier dont on souhaite connaître l'idMax (aliments ou pesees)
+    @return int l'id maximum utilisé dans le fichier analysé
+*/
+int getIdMax(char* type);
 
-/**
-	@brief: ouvre le fichier demandé dans le répertoire des pesées
-	@param char * nomFichier nom du fichier de données
-	@return File * le fichier ouvert
- */
-FILE* ouvrirFichierPesee(char * nomFichier);
-
-/**
-	@brief: ouvre le fichier demandé dans le répertoire des images d'aliments
-	@param char * nomFichier nom du fichier de données
-	@return File * le fichier ouvert
- */
-FILE* ouvrirFichierImagesAliment(char * nomFichier);
-
-/**
-	@brief: ferme le fichier demandé.
-	@param char * nomFichier nom du fichier de données à fermer
-	@return int 1 si tout c'est bien passé, sinon 0
- */
-int fermerFichier(char * nomFichier); 
-
-/**
-	@brief: écrit la donnée dans le fichier spécifié. Retourne True si ok, sinon False
-	@param char * donnee la donnée à écrire en BDD
-	@param char * nomFichier nom du fichier de données dans lequel on veut écrire 
-	@return int 1 si tout c'est bien passé, sinon 0
- */
-int ecrireDonnee(char * nomFichier, char * donnee);
+char* lireLigneParId(FILE* fichier, int id);
 
 
-/**
-	@brief: lit la donnée associée à l'id assé en paramètre dans le fichier spécifié 
-	@param int * id l'id de la donnée à lire
-	@param char * nomFichier nom du fichier de données dans lequel on veut écrire 
-	@return char la donnée associée à l'id 
- */
-char lireDonnee(char * nomFichier, char * donnee);
+// Ecriture
 
-
-/**
-	@brief: renvoie un jeu de données issu de la BDD 
-	@param char * donnee une chaine de caractère issue de la BDD
-	@return char ** le tableau contenant la donnée découpée (retrait des ;)
- */
-char ** parserDonnee(char * donnee);
+int ecrireDonneeAliment(char* nom, char* couleur);
+int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment);
