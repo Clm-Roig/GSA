@@ -36,6 +36,10 @@ char* lireLigne(FILE* fichier, int n);
 int getIdMax(char* type);
 
 char* lireLigneParId(FILE* fichier, int id);
+char* getNomAlimentParId(int id);
+
+//TODO : à finir
+char* getCouleurAlimentParId(int id);
 
 
 // Ecriture

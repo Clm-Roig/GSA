@@ -1,7 +1,6 @@
 #include "BDD.h"
 
 // ---- LECTURE ---- //
-
 int nbLignesFichier(FILE* fichier) {
     int nbLignes = 0;
     char* a = NULL;
@@ -24,6 +23,7 @@ char* lireLigne(FILE* fichier, int n) {
             n--;
         }
     }
+    fseek(fichier,0,0);
     return res;
 }
 
@@ -44,14 +44,14 @@ int getIdMax(char* type) {
     int nbLignes = nbLignesFichier(fichier);
     char* ligne = lireLigne(fichier,nbLignes);
     int idMax = atoi(strtok(ligne,";"));
+    fseek(fichier,0,0);
     return idMax;
 }
 
-// TODO : à refaire. Gros souci avec fseek(fichier,0,0), se renseigner
 char* lireLigneParId(FILE* fichier, int id) {
     char* ligneLu = NULL;
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
-    int idLu = malloc(10*sizeof(int));
+    int idLu;
     int max = nbLignesFichier(fichier);
     fseek(fichier,0,0);
     // On cherche la ligne correspondante
@@ -60,17 +60,50 @@ char* lireLigneParId(FILE* fichier, int id) {
         fseek(fichier,0,0);
         while(n <= max && idLu != id) {
             ligneLu = lireLigne(fichier,n);
-            printf("\n \n ------");
             idLu = atoi(strtok(lireLigne(fichier,n),";"));
-            printf("\nidlu : %d",idLu);
-            printf("\nn : %d",n);
             n++;
         }
     }
     if (idLu != id) {
         ligneLu = "ID introuvable";
     }
+    fseek(fichier,0,0);
     return ligneLu;
+}
+
+char* getNomAlimentParId(int id) {
+    FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
+    char* ligneLu = NULL;
+    char* nomLu;
+    char* nomCoulLu;
+
+    ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+    nomLu = malloc(30*sizeof(char));
+
+    ligneLu = lireLigneParId(fichier,id);
+
+    strtok(ligneLu,";");
+    nomCoulLu = strtok(NULL,ligneLu);
+    nomLu = strtok(nomCoulLu,";");
+    return nomLu;
+}
+
+// TODO : non-terminée
+char* getCouleurAlimentParId(int id) {
+    FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
+    char* ligneLu = NULL;
+    char* CouleurLu;
+    char* nomCoulLu;
+
+    ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+    CouleurLu = malloc(30*sizeof(char));
+
+    ligneLu = lireLigneParId(fichier,id);
+
+    strtok(ligneLu,";");
+    nomCoulLu = strtok(NULL,ligneLu);
+    CouleurLu = strtok(NULL,ligneLu);
+    return CouleurLu;
 }
 
 // ---- ECRITURE ---- //
@@ -96,7 +129,7 @@ int ecrireDonneeAliment(char* nom, char* couleur) {
     strcat(buffer,";");
 
     fprintf(fichier,buffer);
-    fclose(fichier);
+    fseek(fichier,0,0);
     return 1;
 }
 
@@ -133,6 +166,6 @@ int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) 
     strcat(buffer,id_aliment_char);
 
     fprintf(fichier,buffer);
-    fclose(fichier);
+    fseek(fichier,0,0);
     return 1;
 }
