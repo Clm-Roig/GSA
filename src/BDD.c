@@ -71,40 +71,37 @@ char* lireLigneParId(FILE* fichier, int id) {
     return ligneLu;
 }
 
+// Lecture Aliments
 char* getNomAlimentParId(int id) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
     char* ligneLu = NULL;
     char* nomLu;
-    char* nomCoulLu;
 
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     nomLu = malloc(30*sizeof(char));
 
     ligneLu = lireLigneParId(fichier,id);
 
-    strtok(ligneLu,";");
-    nomCoulLu = strtok(NULL,ligneLu);
-    nomLu = strtok(nomCoulLu,";");
+    strtok(ligneLu,";");        // id
+    nomLu = strtok(NULL,";");   // nom
     return nomLu;
 }
 
-// TODO : non-terminée
 char* getCouleurAlimentParId(int id) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
     char* ligneLu = NULL;
     char* CouleurLu;
-    char* nomCoulLu;
 
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
-    CouleurLu = malloc(30*sizeof(char));
-
     ligneLu = lireLigneParId(fichier,id);
 
-    strtok(ligneLu,";");
-    nomCoulLu = strtok(NULL,ligneLu);
-    CouleurLu = strtok(NULL,ligneLu);
+    strtok(ligneLu,";");    // id
+    strtok(NULL,";");       // nom
+    CouleurLu = strtok(NULL,";");
     return CouleurLu;
 }
+
+// Lecture Pesees
 
 // ---- ECRITURE ---- //
 int ecrireDonneeAliment(char* nom, char* couleur) {

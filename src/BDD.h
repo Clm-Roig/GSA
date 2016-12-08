@@ -5,14 +5,14 @@
 #include <string.h>
 #include <assert.h>
 
-/* ---- CONSTANTES ---- */
+// ---- CONSTANTES ---- //
 const char* CHEMIN_PESEES = "data/pesees.txt";
 const char* CHEMIN_ALIMENTS = "data/aliments.txt";
 #define TAILLE_MAX_LIGNE 300
 
-/* ---- FONCTIONS ---- */
+// ---- FONCTIONS ---- //
 
-// Lecture
+// ---- Lecture ---- //
 /**
     @brief renvoie le nombre de lignes que contient un fichier
     @param FILE* fichier le fichier à analyser
@@ -35,14 +35,34 @@ char* lireLigne(FILE* fichier, int n);
 */
 int getIdMax(char* type);
 
+/**
+    @brief renvoie le tuple sans l'id du fichier spécifié
+    @param FILE* fichier : le fichier dont on veut extraire une ligne
+    @param int id : l'id du tuple que l'on souhaite obtenir
+    @return char* le tuple complet sans l'id spécifié extrait du fichier
+*/
 char* lireLigneParId(FILE* fichier, int id);
+
+// ALIMENTS
+/**
+    @brief renvoie le tuple sans l'id du fichier spécifié
+    @param FILE* fichier : le fichier dont on veut extraire une ligne
+    @param int id : l'id du tuple que l'on souhaite obtenir
+    @return char* le tuple complet sans l'id spécifié extrait du fichier
+*/
 char* getNomAlimentParId(int id);
 
-//TODO : à finir
+/**
+    @brief renvoie la couleur de l'aliment ciblé par l'id
+    @param int id : l'id de l'aliment dont on souhaite la couleur
+    @return char* la couleur de l'aliment (format r-g-b)
+*/
 char* getCouleurAlimentParId(int id);
 
+// PESEES
 
-// Ecriture
+
+// ----- Ecriture ---- //
 
 int ecrireDonneeAliment(char* nom, char* couleur);
 int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment);
