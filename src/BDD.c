@@ -72,7 +72,7 @@ char* lireLigneParId(FILE* fichier, int id) {
 }
 
 // Lecture Aliments
-char* getNomAlimentParId(int id) {
+char* getNomAliment(int id) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
     char* ligneLu = NULL;
     char* nomLu;
@@ -87,7 +87,7 @@ char* getNomAlimentParId(int id) {
     return nomLu;
 }
 
-char* getCouleurAlimentParId(int id) {
+char* getCouleurAliment(int id) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
     char* ligneLu = NULL;
     char* CouleurLu;
@@ -102,6 +102,41 @@ char* getCouleurAlimentParId(int id) {
 }
 
 // Lecture Pesees
+char* getQuantitePesee(int id) {
+    FILE* fichier = fopen(CHEMIN_PESEES,"r");
+    char* ligneLu = NULL;
+    char* QuantiteLu;
+
+    ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+    ligneLu = lireLigneParId(fichier,id);
+
+    strtok(ligneLu,";");            // id
+    QuantiteLu = strtok(NULL,";");  // quantite
+    return QuantiteLu;
+}
+
+char* getDescriptionPesee(int id) {
+    FILE* fichier = fopen(CHEMIN_PESEES,"r");
+    char* ligneLu = NULL;
+    char* DescriptionLu;
+
+    ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+    ligneLu = lireLigneParId(fichier,id);
+
+    strtok(ligneLu,";");    // id
+    strtok(NULL,";");       // quantite
+    DescriptionLu = strtok(NULL,";");   // description
+    printf(DescriptionLu);
+    return DescriptionLu;
+}
+
+char* getDatePesee(int id) {
+
+}
+
+char* getIdAlimentPesee(int id) {
+
+}
 
 // ---- ECRITURE ---- //
 int ecrireDonneeAliment(char* nom, char* couleur) {
@@ -113,7 +148,7 @@ int ecrireDonneeAliment(char* nom, char* couleur) {
     char buffer[TAILLE_MAX_LIGNE]="\n";
 
     // Obtention de l'id du nouvel aliment
-    int id = getIdMax("aliment") + 1;
+    int id = getIdMax("aliments") + 1;
     char *idchar = NULL;
     idchar = malloc(10*sizeof(char));
     sprintf(idchar,"%d",id);
@@ -132,14 +167,18 @@ int ecrireDonneeAliment(char* nom, char* couleur) {
 
 int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) {
     FILE* fichier = fopen(CHEMIN_PESEES,"r+");
+
+    // Contrôles
     assert(fichier != NULL);
-    fseek(fichier,0,SEEK_END);
+    assert(id_aliment != NULL && id_aliment != "");
+    assert(date != NULL && date != "");
 
     // Saut de ligne avant insertion et formatage des données
     char buffer[TAILLE_MAX_LIGNE]="\n";
 
     // Obtention de l'id de la nouvelle pesée
-    int id = getIdMax("pesee") + 1;
+    int id = getIdMax("pesees") + 1;
+    fseek(fichier,0,SEEK_END);
     char *idchar = NULL;
     idchar = malloc(10*sizeof(char));
     sprintf(idchar,"%d",id);
@@ -152,11 +191,25 @@ int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) 
     sprintf(quantite_char,"%d",quantite);
     sprintf(id_aliment_char,"%d",id_aliment);
 
+    // Ecriture dans le fichier (+ conversion des NULL en " ")
     strcat(buffer,idchar);
     strcat(buffer,";");
-    strcat(buffer,quantite_char);
+
+    if (quantite_char == "") {
+         strcat(buffer," ");
+    }
+    else {
+         strcat(buffer,quantite_char);
+    }
     strcat(buffer,";");
-    strcat(buffer,description);
+
+    if (description == "") {
+         strcat(buffer," ");
+    }
+    else {
+         strcat(buffer,description);
+    }
+
     strcat(buffer,";");
     strcat(buffer,date);
     strcat(buffer,";");
