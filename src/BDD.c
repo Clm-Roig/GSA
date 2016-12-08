@@ -64,9 +64,8 @@ char* lireLigneParId(FILE* fichier, int id) {
             n++;
         }
     }
-    if (idLu != id) {
-        ligneLu = "ID introuvable";
-    }
+    assert(idLu == id);
+
     fseek(fichier,0,0);
     return ligneLu;
 }
@@ -84,58 +83,86 @@ char* getNomAliment(int id) {
 
     strtok(ligneLu,";");        // id
     nomLu = strtok(NULL,";");   // nom
+    fclose(fichier);
     return nomLu;
 }
 
 char* getCouleurAliment(int id) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
     char* ligneLu = NULL;
-    char* CouleurLu;
+    char* couleurLu;
 
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     ligneLu = lireLigneParId(fichier,id);
 
     strtok(ligneLu,";");    // id
     strtok(NULL,";");       // nom
-    CouleurLu = strtok(NULL,";");
-    return CouleurLu;
+    couleurLu = strtok(NULL,";");
+    fclose(fichier);
+    return couleurLu;
 }
 
 // Lecture Pesees
 char* getQuantitePesee(int id) {
     FILE* fichier = fopen(CHEMIN_PESEES,"r");
     char* ligneLu = NULL;
-    char* QuantiteLu;
+    char* quantiteLu;
 
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     ligneLu = lireLigneParId(fichier,id);
 
     strtok(ligneLu,";");            // id
-    QuantiteLu = strtok(NULL,";");  // quantite
-    return QuantiteLu;
+    quantiteLu = strtok(NULL,";");  // quantite
+    fclose(fichier);
+    return quantiteLu;
 }
 
 char* getDescriptionPesee(int id) {
     FILE* fichier = fopen(CHEMIN_PESEES,"r");
     char* ligneLu = NULL;
-    char* DescriptionLu;
+    char* descriptionLu;
 
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     ligneLu = lireLigneParId(fichier,id);
 
     strtok(ligneLu,";");    // id
     strtok(NULL,";");       // quantite
-    DescriptionLu = strtok(NULL,";");   // description
-    printf(DescriptionLu);
-    return DescriptionLu;
+    descriptionLu = strtok(NULL,";");   // description
+    fclose(fichier);
+    return descriptionLu;
 }
 
 char* getDatePesee(int id) {
+    FILE* fichier = fopen(CHEMIN_PESEES,"r");
+    char* ligneLu = NULL;
+    char* dateLu;
 
+    ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+    ligneLu = lireLigneParId(fichier,id);
+
+    strtok(ligneLu,";");    // id
+    strtok(NULL,";");       // quantite
+    strtok(NULL,";");       // description
+    dateLu = strtok(NULL,";");   // date
+    fclose(fichier);
+    return dateLu;
 }
 
 char* getIdAlimentPesee(int id) {
+    FILE* fichier = fopen(CHEMIN_PESEES,"r");
+    char* ligneLu = NULL;
+    char* idAlimentLu;
 
+    ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+    ligneLu = lireLigneParId(fichier,id);
+
+    strtok(ligneLu,";");    // id
+    strtok(NULL,";");       // quantite
+    strtok(NULL,";");       // description
+    strtok(NULL,";");       // date
+    idAlimentLu = strtok(NULL,";");   // id_aliment
+    fclose(fichier);
+    return idAlimentLu;
 }
 
 // ---- ECRITURE ---- //
@@ -161,7 +188,7 @@ int ecrireDonneeAliment(char* nom, char* couleur) {
     strcat(buffer,";");
 
     fprintf(fichier,buffer);
-    fseek(fichier,0,0);
+    fclose(fichier);
     return 1;
 }
 
@@ -216,6 +243,36 @@ int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) 
     strcat(buffer,id_aliment_char);
 
     fprintf(fichier,buffer);
-    fseek(fichier,0,0);
+    fclose(fichier);
+    return 1;
+}
+
+// ---- SUPPRESSION ---- //
+int supprimerDonneeAliment(int id){
+    FILE* fichier = fopen(CHEMIN_ALIMENTS,"r+");
+
+    // Obtention ligne à Supprimer
+    char* ligneASupprimer = NULL;
+    ligneASupprimer = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+    ligneASupprimer = lireLigneParId(fichier,id);
+
+    FILE* fichierTemp = fopen(CHEMIN_ALIMENTS_TEMP,"a");
+
+    // Recopie du fichier dans le fichier .tmp sauf la ligne à supprimer
+    char* ligneLu = NULL;
+    ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+    while(fgets(ligneLu, TAILLE_MAX_LIGNE, fichier) != NULL) {
+        if(strcmp(ligneLu,ligneASupprimer)) {
+            fprintf(fichierTemp,ligneLu);
+        }
+    }
+
+    fclose(fichier);
+    fclose(fichierTemp);
+    remove(CHEMIN_ALIMENTS);
+    rename(CHEMIN_ALIMENTS_TEMP,CHEMIN_ALIMENTS);
+    return 1;
+}
+int supprimerDonneePesee(int id){
     return 1;
 }

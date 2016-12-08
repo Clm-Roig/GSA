@@ -3,4 +3,3 @@ ID_ALIMENT;NOM_ALIMENT;COULEUR_ALIMENT
 2;concombre;0-255-0
 3;myrtille;255-0-255
 4;citron;255-255-0
-5;courgette;0-255-0
