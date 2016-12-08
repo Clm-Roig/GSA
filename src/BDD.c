@@ -269,10 +269,40 @@ int supprimerDonneeAliment(int id){
 
     fclose(fichier);
     fclose(fichierTemp);
-    remove(CHEMIN_ALIMENTS);
-    rename(CHEMIN_ALIMENTS_TEMP,CHEMIN_ALIMENTS);
-    return 1;
+
+    int res = 1;
+    if(remove(CHEMIN_ALIMENTS) != 0 || rename(CHEMIN_ALIMENTS_TEMP,CHEMIN_ALIMENTS) != 0) {
+        res = 0;
+    }
+    return res;
 }
+
 int supprimerDonneePesee(int id){
-    return 1;
+    FILE* fichier = fopen(CHEMIN_PESEES,"r+");
+
+    // Obtention ligne à Supprimer
+    char* ligneASupprimer = NULL;
+    ligneASupprimer = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+    ligneASupprimer = lireLigneParId(fichier,id);
+
+    FILE* fichierTemp = fopen(CHEMIN_PESEES_TEMP,"a");
+
+
+    // Recopie du fichier dans le fichier .tmp sauf la ligne à supprimer
+    char* ligneLu = NULL;
+    ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+    while(fgets(ligneLu, TAILLE_MAX_LIGNE, fichier) != NULL) {
+        if(strcmp(ligneLu,ligneASupprimer)) {
+            fprintf(fichierTemp,ligneLu);
+        }
+    }
+
+    fclose(fichier);
+    fclose(fichierTemp);
+
+    int res = 1;
+    if(remove(CHEMIN_PESEES) != 0 || rename(CHEMIN_PESEES_TEMP,CHEMIN_PESEES) != 0) {
+        res = 0;
+    }
+    return res;
 }

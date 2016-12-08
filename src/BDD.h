@@ -113,5 +113,16 @@ int ecrireDonneeAliment(char* nom, char* couleur);
 int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment);
 
 // ----- Suppression ---- //
+/**
+    @brief supprime le tuple Aliment spécifié par l'id
+    @param int id: l'id du tuple aliment à supprimer
+    @return int 1 si suppression ok, sinon 0
+*/
 int supprimerDonneeAliment(int id);
+
+/**
+    @brief supprime le tuple Pesée spécifié par l'id
+    @param int id: l'id du tuple pesée à supprimer
+    @return int 1 si suppression ok, sinon 0
+*/
 int supprimerDonneePesee(int id);
