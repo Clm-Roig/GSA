@@ -102,6 +102,29 @@ char* getCouleurAliment(int id) {
     return couleurLu;
 }
 
+char* getIdAlimentParCouleur(char* couleur, int precision) {
+    FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
+    char* listeIds = NULL;
+    listeIds = malloc(nbLignesFichier(fichier)*TAILLE_MAX_LIGNE*sizeof(char));
+    char* ligneLu = NULL;
+    ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+
+    int nbLignes = nbLignesFichier(fichier);
+    int idLu;
+    char* couleurLu = malloc(12*sizeof(char));
+
+    int i=2;
+
+    while (i<=nbLignes) {
+        ligneLu = lireLigne(fichier,i);
+        idLu = strtok(ligneLu,";");
+        couleurLu = getCouleurAliment(idLu);
+//TODO : à finir, nécessite Couleur.c
+
+    }
+
+}
+
 // Lecture Pesees
 char* getQuantitePesee(int id) {
     FILE* fichier = fopen(CHEMIN_PESEES,"r");
