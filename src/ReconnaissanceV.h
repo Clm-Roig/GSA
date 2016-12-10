@@ -4,7 +4,6 @@
 #include <string.h>
 #include <assert.h>
 
-#include "jpeg-6b/jpeglib.h"
 #include "Couleur.c"
 #include "BDD.c"
 
