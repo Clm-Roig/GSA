@@ -19,7 +19,7 @@
  */
 typedef struct Couleur {
     int rCoul;
-    int gCoul
+    int gCoul;
     int bCoul;
 } Couleur;
 

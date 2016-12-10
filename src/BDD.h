@@ -4,7 +4,6 @@
 #include <string.h>
 #include <assert.h>
 
-#include "Couleur.c"
 
 // ---- CONSTANTES ---- //
 const char* CHEMIN_ALIMENTS = "data/aliments.txt";
