@@ -1,9 +1,10 @@
 #include "ReconnaissanceV.h"
 
 Couleur* chargerImage(FILE* image) {
-
+    Couleur* couleurs = image;
+    return couleurs;
 }
 
-bool unifierFond(FILE* image) {
-    return false;
+int unifierFond(FILE* image) {
+    return 0;
 }

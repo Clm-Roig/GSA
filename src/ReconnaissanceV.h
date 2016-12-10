@@ -6,25 +6,28 @@
 
 #include "Couleur.c"
 #include "BDD.c"
+
+
 // ---- CONSTANTES ---- //
+const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
 // ---- FONCTIONS ---- //
 
 Couleur* chargerImage(FILE* image);
-# Renvoie un tableau de Couleur représentant l'image chargée
+//Renvoie un tableau de Couleur représentant l'image chargée
 
-bool unifierFond(FILE* image);
-#Renvoie True si la caméra a clairement pu identifier le fond, False #sinon
-#image E images_aliments
+int unifierFond(FILE* image);
+//Renvoie True (1) si la caméra a clairement pu identifier le fond, sinon False (0)
+//image E images_aliments
 
 Couleur couleurDominante(FILE* image);
-#Renvoie True si la couleur dominante de la photo a clairement pu être #identifiée, False sinon.
-#couleurDominante(FILE * image1) => unifierFond(FILE * imageFond)
+//Renvoie True si la couleur dominante de la photo a clairement pu être #identifiée, False sinon.
+//couleurDominante(FILE * image1) => unifierFond(FILE * imageFond)
 
-bool rechercheAliment(Couleur);
-#Renvoie True si il y a au moins un aliment dans la base de donnée qui est proche de la couleur dominante, False sinon
-#rechercheAliment(Couleur) => Couleur==couleurDominante(FILE *)
+int rechercheAliment(Couleur);
+//Renvoie True(1) si il y a au moins un aliment dans la base de donnée qui est proche de la couleur dominante, sinon False (0)
+//rechercheAliment(Couleur) => Couleur==couleurDominante(FILE *)
 
 int* IdAlimentsDeCouleur(Couleur);
-# renvoie les ids des aliments qui ont une Couleur proche de celle rentrée en paramètre
+//renvoie les ids des aliments qui ont une Couleur proche de celle rentrée en paramètre
 
