@@ -1,7 +1,7 @@
 #include "ReconnaissanceV.h"
 
 Couleur* chargerImage(FILE* image) {
-    Couleur* couleurs = image;
+    Couleur* couleurs;
     return couleurs;
 }
 
