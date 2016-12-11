@@ -7,8 +7,8 @@
 #include "Couleur.h"
 #include "BDD.h"
 
-#ifndef DEF_ReconnaissanceV.h
-#define DEF_ReconnaissanceV.h
+#ifndef DEF_ReconnaissanceV
+#define DEF_ReconnaissanceV
 
 
 // ---- CONSTANTES ---- //
