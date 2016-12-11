@@ -4,6 +4,9 @@
 #include <string.h>
 #include <assert.h>
 
+#ifndef DEF_BDD.h
+#define DEF_BDD.h
+
 
 // ---- CONSTANTES ---- //
 const char* CHEMIN_ALIMENTS = "data/aliments.txt";
@@ -134,3 +137,6 @@ int supprimerDonneeAliment(int id);
     @return int 1 si suppression ok, sinon 0
 */
 int supprimerDonneePesee(int id);
+
+
+#endif

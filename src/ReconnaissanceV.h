@@ -7,6 +7,9 @@
 #include "Couleur.c"
 #include "BDD.c"
 
+#ifndef DEF_ReconnaissanceV.h
+#define DEF_ReconnaissanceV.h
+
 
 // ---- CONSTANTES ---- //
 const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
@@ -31,3 +34,5 @@ int rechercheAliment(Couleur);
 int* IdAlimentsDeCouleur(Couleur);
 //renvoie les ids des aliments qui ont une Couleur proche de celle rentrée en paramètre
 
+
+#endif

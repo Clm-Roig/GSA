@@ -4,6 +4,9 @@
 #include <string.h>
 #include <assert.h>
 
+#ifndef DEF_Couleur.h
+#define DEF_Couleur.h
+
 // ---- CONSTANTES ---- //
 
 
@@ -68,3 +71,5 @@ void setGCoul(int g,Couleur* couleur);
 	@param Couleur* couleur la couleur à modifier
 */
 void setBCoul(int b,Couleur* couleur);
+
+#endif
