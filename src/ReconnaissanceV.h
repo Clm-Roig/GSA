@@ -16,8 +16,28 @@ const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
 // ---- FONCTIONS ---- //
 
-Couleur* chargerImage(FILE* image);
-//Renvoie un tableau de Couleur représentant l'image chargée
+// STRUCTURE D'UN FICHIER BITMAP : http://sitelec.org/cours/abati/bmp.htm
+/**
+	@brief Charge les données d'une image BITMAP (.bmp) dans un tableau de Couleurs
+	@param FILE* image, l'image à charger
+	@return Couleur*, tableau de Couleurs représentant l'image chargée
+*/
+Couleur* getDonnees(FILE* image);
+
+/**
+	@brief Récupère l'en-tête d'un fichier .bmp
+	@param FILE* image, l'image à charger
+	@return un tableau de char contenant l'en-tête du fichier
+*/
+char* getEnTete(FILE* image);
+
+/**
+	@brief Renseigne sur la largeur de l'image
+	@param FILE* image, l'image à charger
+	@return bool, 1 si l'image a une largeur (en pxl) multiple de 4, sinon 0
+*/
+int formatLargeurBMP(FILE* image);
+
 
 int unifierFond(FILE* image);
 //Renvoie True (1) si la caméra a clairement pu identifier le fond, sinon False (0)
