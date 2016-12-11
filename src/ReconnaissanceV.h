@@ -4,8 +4,8 @@
 #include <string.h>
 #include <assert.h>
 
-#include "Couleur.c"
-#include "BDD.c"
+#include "Couleur.h"
+#include "BDD.h"
 
 #ifndef DEF_ReconnaissanceV.h
 #define DEF_ReconnaissanceV.h

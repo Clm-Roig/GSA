@@ -4,8 +4,8 @@
 #include <string.h>
 #include <assert.h>
 
-#ifndef DEF_Couleur.h
-#define DEF_Couleur.h
+#ifndef DEF_Couleur
+#define DEF_Couleur
 
 // ---- CONSTANTES ---- //
 
@@ -55,21 +55,24 @@ int getBCoul(Couleur* couleur);
 	@brief Edition de rCoul dans la structure
 	@param int r, la valeur de rouge à setter (compris entre 0 et 255)
 	@param Couleur* couleur, la couleur à modifier
+	@return int, 1 si 0 <= r <= 255 sinon
 */
-void setRCoul(int r,Couleur* couleur);
+int setRCoul(int r,Couleur* couleur);
 
 /**
 	@brief Edition de gCoul dans la structure
 	@param int g, la valeur de vert à setter (compris entre 0 et 255)
 	@param Couleur* couleur, la couleur à modifier
+	@return int, 1 si 0 <= g <= 255 sinon
 */
-void setGCoul(int g,Couleur* couleur);
+int setGCoul(int g,Couleur* couleur);
 
 /**
 	@brief Edition de bCoul dans la structure
 	@param int b, la valeur de bleu à setter (compris entre 0 et 255)
 	@param Couleur* couleur la couleur à modifier
+	@return int, 1 si 0 <= b <= 255 sinon
 */
-void setBCoul(int b,Couleur* couleur);
+int setBCoul(int b,Couleur* couleur);
 
 #endif

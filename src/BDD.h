@@ -4,8 +4,8 @@
 #include <string.h>
 #include <assert.h>
 
-#ifndef DEF_BDD.h
-#define DEF_BDD.h
+#ifndef DEF_BDD
+#define DEF_BDD
 
 
 // ---- CONSTANTES ---- //
