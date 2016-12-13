@@ -5,7 +5,7 @@
 #include "src/ReconnaissanceV.c"
 
 int main() {
-    FILE* fichier = fopen("data/images_aliments/bird.bmp","r");
-    getTailleFichier(fichier);
+    FILE* fichier = fopen("data/images_aliments/sample2.bmp","r");
+    Couleur * coul = getDonnees(fichier);
     return 0;
 }

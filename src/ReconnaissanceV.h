@@ -4,12 +4,13 @@
 #include <string.h>
 #include <assert.h>
 
-#include "Couleur.h"
-#include "BDD.h"
+#include "Couleur.c"
+#include "BDD.c"
 
 #ifndef DEF_ReconnaissanceV
 #define DEF_ReconnaissanceV
 
+//TODO : ajouter une structure stockant les diverses informations de l'image
 
 // ---- CONSTANTES ---- //
 const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
@@ -26,10 +27,17 @@ unsigned char* getEnTete(FILE* image);
 
 /**
 	@brief Renseigne sur la largeur de l'image
-	@param FILE* image, l'image à charger
+	@param FILE* image, l'image à analyser
 	@return bool, 1 si l'image a une largeur (en pxl) multiple de 4, sinon 0
 */
-int formatLargeurBMP(FILE* image);
+int getLargeurBMP(FILE* image);
+
+/**
+	@brief Retourne la taille de l'image
+	@param FILE* image, l'image à analyser
+	@return long, la taille de l'image
+*/
+long getTailleFichier(FILE* image);
 
 /**
 	@brief Charge les données d'une image BITMAP (.bmp) dans un tableau de Couleurs

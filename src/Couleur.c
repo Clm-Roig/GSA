@@ -1,5 +1,11 @@
 #include "Couleur.h"
 
+
+Couleur* initCouleur(){
+    Couleur * coul = malloc(sizeof(Couleur));
+    return coul;
+}
+
 // GETTERS
 int getRCoul(Couleur* couleur){
     return couleur->rCoul;
@@ -36,7 +42,7 @@ int setGCoul(int g,Couleur* couleur) {
 int setBCoul(int b,Couleur* couleur) {
     int res = 0;
     if(b>=0 && b<=255) {
-        couleur->rCoul = b;
+        couleur->bCoul = b;
         res = 1;
     }
     return res;

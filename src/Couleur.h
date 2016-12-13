@@ -28,6 +28,12 @@ typedef struct Couleur {
 
 // ---- FONCTIONS ---- //
 
+/**
+	@brief Constructeur de Couleur (sans paramètres)
+	@return Couleur *
+*/
+Couleur* initCouleur();
+
 //Getters
 /**
 	@brief Recupère rCoul d'une Couleur
