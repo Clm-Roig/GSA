@@ -36,3 +36,5 @@ char* enregistrerPhoto();
 	@param pas de paramètres
 	@return bool, 1 si la photo a bien été enregistrée , 0 sinon
 */
+
+#endif
