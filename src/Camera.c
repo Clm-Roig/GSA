@@ -10,7 +10,7 @@ char* prendrePhoto()
   return ;
 }
 
-enregistrerPhoto()
+char* enregistrerPhoto()
 {
   return ;
 }
