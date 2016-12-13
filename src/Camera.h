@@ -32,7 +32,7 @@ char* prendrePhoto();
 char* enregistrerPhoto();
 
 /**
-	@brief Enregistrer la photo
-	@param FILE* image, 
-	@return bool, 1 si la photo , 0 sinon
+	@brief Enregistrer la photo dans CHEMIN_IMAGES_ALIMENTS
+	@param pas de paramètres
+	@return bool, 1 si la photo a bien été enregistrée , 0 sinon
 */
