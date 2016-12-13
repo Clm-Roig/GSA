@@ -36,13 +36,8 @@ Couleur* getDonnees(FILE* image) {
     Couleur *donnees[getTailleFichier(image)];
     unsigned char octet;
 
-    // g et b nous permettront de savoir quel composante de couleur (G ou B) on a déjà stocké pour la couleur en cours.
-    // Attention : pour chaque pixel, les composantes sont stockées à l'envers en Bitmap (BGR)
-    int g=0;
-    int b=0;
-
     // Offset contiendra le nombre octet ajouté à chaque ligne pour compléter
-    // celle-ci de manire à ce que ce soit un multiple de 4
+    // celle-ci de manière à ce que ce soit un multiple de 4
     int offset = getLargeurBMP(image)%4;
 
     // On se positionne au début des couleurs (octet 54)
@@ -50,29 +45,23 @@ Couleur* getDonnees(FILE* image) {
 
     if(offset == 0) {
         // On récupère tout, aucun octet ajouté pour compléter
+        // Attention : pour chaque pixel, les composantes sont stockées à l'envers en Bitmap (BGR)
         // TODO : arrêter le while quand on a tout lu
         // TODO : tableau/pointeur de couleur ?
         int i=1;
         while(i < 25) {
-            // TODO : coul doit être déclaré 1 fois sur 3
-            fread(&octet,sizeof(octet),1,image);
             Couleur* coul = initCouleur();
-            if(b==0) {
-                setBCoul((int)octet,coul);
-                b=1;
-            }
-            else if(g==0) {
-                setGCoul((int)octet,coul);
-                g=1;
-            }
-            else {
-                setRCoul((int)octet,coul);
-                g=0;
-                b=0;
-                printf("octet : %d\n",octet);
-                printf("[%d %d %d] ",getRCoul(coul),getGCoul(coul),getBCoul(coul));
-                donnees[i] = coul;
-            }
+
+            fread(&octet,sizeof(octet),1,image);
+            setBCoul((int)octet,coul);
+            fread(&octet,sizeof(octet),1,image);
+            setGCoul((int)octet,coul);
+            fread(&octet,sizeof(octet),1,image);
+            setRCoul((int)octet,coul);
+
+            printf("octet : %d\n",octet);
+            printf("[%d %d %d] ",getRCoul(coul),getGCoul(coul),getBCoul(coul));
+            donnees[i] = coul;
             i++;
         }
     }
