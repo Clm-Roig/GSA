@@ -17,18 +17,20 @@ unsigned char* getEnTete(FILE* image) {
 //TODO : vérifier les 16*16 (pas bon)
 int formatLargeurBMP(FILE* image) {
     unsigned char* enTete = getEnTete(image);
-    int largeur = enTete[18] + 16*16*enTete[19] + 16*16*16*enTete[20] + 16*16*16*16*enTete[21];
+    // pas la peine d'aller chercher plus loin que l'octet 19, la largeur ne dépassera jamais 4096 pixels (16^3)
+    int largeur = enTete[18] + 16*16*enTete[19];
     printf("%d",largeur);
     return (largeur%4==0);
 }
 
-//TODO : vérifier les 16*16
 long getTailleFichier(FILE* image) {
     unsigned char* enTete = getEnTete(image);
     unsigned char* inverseEnTete = malloc(4*sizeof(unsigned char));
-
-    long taille_fichier;
-    printf("\ntaille : %ld",taille_fichier);
+    long a = enTete[2];
+    long b = 16*16*enTete[3];
+    long c = 16*16*16*16*enTete[4];
+    long d = 16*16*16*16*16*16*enTete[5];
+    long taille_fichier = a + b + c + d;
     return taille_fichier;
 }
 
