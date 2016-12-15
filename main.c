@@ -2,10 +2,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "src/ReconnaissanceV.c"
+#include "src/LecteurBMP.c"
 
 int main() {
     FILE* fichier = fopen("data/images_aliments/sample2.bmp","r");
+
     Couleur * coul = getDonnees(fichier);
     return 0;
 }

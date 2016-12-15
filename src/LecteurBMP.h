@@ -37,6 +37,13 @@ int getLargeurBMP(FILE* image);
 	@param FILE* image, l'image à analyser
 	@return long, la taille de l'image
 */
+long getTailleImage(FILE* image);
+
+/**
+	@brief Retourne la taille du fichier BMP
+	@param FILE* image, l'image à analyser
+	@return long, la taille du fichier BMP
+*/
 long getTailleFichier(FILE* image);
 
 /**

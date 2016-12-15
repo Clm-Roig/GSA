@@ -117,7 +117,7 @@ char* getIdAlimentParCouleur(char* couleur, int precision) {
 
     while (i<=nbLignes) {
         ligneLu = lireLigne(fichier,i);
-        idLu = strtok(ligneLu,";");
+       // idLu = strtok(ligneLu,";");
         couleurLu = getCouleurAliment(idLu);
 //TODO : à finir, nécessite Couleur.c
 

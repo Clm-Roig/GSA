@@ -21,9 +21,14 @@ int getLargeurBMP(FILE* image) {
     return largeur;
 }
 
+long getTailleImage(FILE* image) {
+    // Cette information n'est pas toujours présente dans les fichiers BMP
+    // On la calcule "manuellement" en sachant que l'en-tête fait toujours 54 octetc.
+    return getTailleFichier(image) - 54;
+}
+
 long getTailleFichier(FILE* image) {
     unsigned char* enTete = getEnTete(image);
-    unsigned char* inverseEnTete = malloc(4*sizeof(unsigned char));
     long a = enTete[2];
     long b = 16*16*enTete[3];
     long c = 16*16*16*16*enTete[4];
@@ -49,18 +54,23 @@ Couleur* getDonnees(FILE* image) {
         // TODO : arrêter le while quand on a tout lu
         // TODO : tableau/pointeur de couleur ?
         int i=1;
-        while(i < 25) {
+        printf("%d",getTailleImage(image));
+        while(i < getTailleImage(image)) {
             Couleur* coul = initCouleur();
 
             fread(&octet,sizeof(octet),1,image);
+            printf("octet B : %d\n",octet);
             setBCoul((int)octet,coul);
+
             fread(&octet,sizeof(octet),1,image);
+            printf("octet G : %d\n",octet);
             setGCoul((int)octet,coul);
+
             fread(&octet,sizeof(octet),1,image);
+            printf("octet R : %d\n",octet);
             setRCoul((int)octet,coul);
 
-            printf("octet : %d\n",octet);
-            printf("[%d %d %d] ",getRCoul(coul),getGCoul(coul),getBCoul(coul));
+            //printf("[%d %d %d] ",getRCoul(coul),getGCoul(coul),getBCoul(coul));
             donnees[i] = coul;
             i++;
         }
