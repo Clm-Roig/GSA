@@ -16,27 +16,24 @@ const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
 /**
 	@brief Démarre la caméra
-	@param pas de paramètres
 	@return bool, 1 si la caméra s'est correctement allumée, 0 sinon
 */
 
-char* demarrerCamera();
+int demarrerCamera();
 
 
 /**
 	@brief Prend une photo
-	@param pas de paramètres
 	@return bool, 1 si la prise de photo s'est bien passée, 0 sinon
 */
 
-char* prendrePhoto();
+int prendrePhoto();
 
 /**
 	@brief Enregistrer la photo dans CHEMIN_IMAGES_ALIMENTS
-	@param pas de paramètres
 	@return bool, 1 si la photo a bien été enregistrée , 0 sinon
 */
 
-char* enregistrerPhoto();
+int enregistrerPhoto();
 
 #endif
