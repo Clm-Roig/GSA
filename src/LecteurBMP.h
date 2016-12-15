@@ -15,6 +15,16 @@
 // ---- CONSTANTES ---- //
 const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
+// ---- STRUCTURE ---- //
+/** @struct ImageBMP
+ *  @brief Structure définissant une image au format Bitmap
+ *  @var Couleur[] :: couleurs
+ *  Cette variable contient l'ensemble des pixels de l'image.
+ */
+typedef struct ImageBMP {
+    Couleur** couleurs;
+} ImageBMP;
+
 // ---- FONCTIONS ---- //
 
 // STRUCTURE D'UN FICHIER BITMAP : http://sitelec.org/cours/abati/bmp.htm
@@ -51,7 +61,7 @@ long getTailleFichier(FILE* image);
 	@param FILE* image, l'image à charger
 	@return Couleur*, tableau de Couleurs représentant l'image chargée
 */
-Couleur* getDonnees(FILE* image);
+Couleur** getDonnees(FILE* image);
 
 
 #endif

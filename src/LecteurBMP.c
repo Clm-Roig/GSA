@@ -37,53 +37,71 @@ long getTailleFichier(FILE* image) {
     return taille_fichier;
 }
 
-Couleur* getDonnees(FILE* image) {
+Couleur** getDonnees(FILE* image) {
     long taille_image = getTailleImage(image);
-    Couleur *donnees[taille_image];
+    int largeur_image = getLargeurBMP(image);
+
+    ImageBMP* imageBMP;
+    imageBMP->couleurs = malloc(taille_image*sizeof(Couleur *));
+
     unsigned char octet;
 
     // Offset contiendra le nombre octet ajouté à chaque ligne pour compléter
     // celle-ci de manière à ce que ce soit un multiple de 4
-    int offset = getLargeurBMP(image)%4;
+    int offset = largeur_image%4;
 
     // On se positionne au début des couleurs (octet 54)
     fseek(image,54,SEEK_SET);
 
-    if(offset == 0) {
-        // On récupère tout, aucun octet ajouté pour compléter
-        // Attention : pour chaque pixel, les composantes sont stockées à l'envers en Bitmap (BGR)
-        // TODO : erreur sur grosse image (bird.bmp)
-        // TODO : tableau/pointeur de couleur ?
-        long i=0;
+    // p compte le nombre de pixels lus
+    long p=0;
+    // i compte le nombre composante de couleurs lues
+    long i=0;
 
-        while(i < taille_image) {
-            Couleur* coul = initCouleur();
+    // On récupère tout, aucun octet ajouté pour compléter
+    // Attention : pour chaque pixel, les composantes sont stockées à l'envers en Bitmap (BGR)
+    // TODO : tableau/pointeur de couleur ? erreur...
 
-            fread(&octet,sizeof(octet),1,image);
-            printf(" B: %d",octet);
-            setBCoul((int)octet,coul);
+    while(i < taille_image) {
+        Couleur* coul = initCouleur();
 
-            fread(&octet,sizeof(octet),1,image);
-            printf(" G: %d",octet);
-            setGCoul((int)octet,coul);
+        fread(&octet,sizeof(octet),1,image);
+        setBCoul((int)octet,coul);
 
-            fread(&octet,sizeof(octet),1,image);
-            printf(" R: %d\n",octet);
-            setRCoul((int)octet,coul);
+        fread(&octet,sizeof(octet),1,image);
+        setGCoul((int)octet,coul);
 
-            donnees[i] = coul;
-            i += 3;
+        fread(&octet,sizeof(octet),1,image);
+        setRCoul((int)octet,coul);
+
+        imageBMP->couleurs[p] = coul;
+
+        printf("R: %d",getRCoul(imageBMP->couleurs[p]));
+        printf(" G: %d",getGCoul(imageBMP->couleurs[p]));
+        printf(" B: %d\n",getBCoul(imageBMP->couleurs[p]));
+
+        // On a lu 1 pixel et 3 couleurs.
+        p++;
+        i += 3;
+
+        // On "saute" le(s) dernier(s) pixel(s) de la ligne s'il y a un offset.
+        if(p%largeur_image == 0) {
+            if(offset==1) {
+                fseek(image,1,SEEK_CUR);
+                i++;
+            }
+            if(offset==2) {
+                fseek(image,2,SEEK_CUR);
+                i += 2;
+            }
+            if(offset==3) {
+                fseek(image,3,SEEK_CUR);
+                i += 3;
+            }
+
         }
     }
-    else {
-   /*     while (octet != EOF) {
-            if (){
-                i++
-            }
-            else {
-            }
-        }
-    */
-    }
-    return &donnees;
+    // image parcourue entièrement
+
+    return imageBMP->couleurs;
 }
