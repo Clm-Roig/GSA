@@ -220,7 +220,6 @@ int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) 
 
     // Contrôles
     assert(fichier != NULL);
-    assert(id_aliment != NULL && id_aliment != "");
     assert(date != NULL && date != "");
 
     // Saut de ligne avant insertion et formatage des données
