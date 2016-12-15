@@ -5,8 +5,7 @@
 #include "src/LecteurBMP.c"
 
 int main() {
-    FILE* fichier = fopen("data/images_aliments/sample2.bmp","r");
-
+    FILE* fichier = fopen("data/images_aliments/bird.bmp","r");
     Couleur * coul = getDonnees(fichier);
     return 0;
 }

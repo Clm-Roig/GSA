@@ -38,7 +38,8 @@ long getTailleFichier(FILE* image) {
 }
 
 Couleur* getDonnees(FILE* image) {
-    Couleur *donnees[getTailleFichier(image)];
+    long taille_image = getTailleImage(image);
+    Couleur *donnees[taille_image];
     unsigned char octet;
 
     // Offset contiendra le nombre octet ajouté à chaque ligne pour compléter
@@ -51,28 +52,27 @@ Couleur* getDonnees(FILE* image) {
     if(offset == 0) {
         // On récupère tout, aucun octet ajouté pour compléter
         // Attention : pour chaque pixel, les composantes sont stockées à l'envers en Bitmap (BGR)
-        // TODO : arrêter le while quand on a tout lu
+        // TODO : erreur sur grosse image (bird.bmp)
         // TODO : tableau/pointeur de couleur ?
-        int i=1;
-        printf("%d",getTailleImage(image));
-        while(i < getTailleImage(image)) {
+        long i=0;
+
+        while(i < taille_image) {
             Couleur* coul = initCouleur();
 
             fread(&octet,sizeof(octet),1,image);
-            printf("octet B : %d\n",octet);
+            printf(" B: %d",octet);
             setBCoul((int)octet,coul);
 
             fread(&octet,sizeof(octet),1,image);
-            printf("octet G : %d\n",octet);
+            printf(" G: %d",octet);
             setGCoul((int)octet,coul);
 
             fread(&octet,sizeof(octet),1,image);
-            printf("octet R : %d\n",octet);
+            printf(" R: %d\n",octet);
             setRCoul((int)octet,coul);
 
-            //printf("[%d %d %d] ",getRCoul(coul),getGCoul(coul),getBCoul(coul));
             donnees[i] = coul;
-            i++;
+            i += 3;
         }
     }
     else {
@@ -83,6 +83,7 @@ Couleur* getDonnees(FILE* image) {
             else {
             }
         }
-   */ }
+    */
+    }
     return &donnees;
 }
