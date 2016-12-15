@@ -10,57 +10,37 @@
 #ifndef DEF_ReconnaissanceV
 #define DEF_ReconnaissanceV
 
-//TODO : ajouter une structure stockant les diverses informations de l'image
-
 // ---- CONSTANTES ---- //
 const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
 // ---- FONCTIONS ---- //
 
-// STRUCTURE D'UN FICHIER BITMAP : http://sitelec.org/cours/abati/bmp.htm
 /**
-	@brief RÈcupËre l'en-tÍte d'un fichier .bmp
-	@param FILE* image, l'image ‡ charger
-	@return un tableau de char contenant l'en-tÍte du fichier
+	@brief Renvoie True (1) si la cam√©ra a clairement pu identifier le fond, sinon False (0)
+	@param FILE* image, l'image prise comme fond
+	@return int, (1) si l'op√©ration a √©t√© clairement r√©alis√©e, (0) sinon 
 */
-unsigned char* getEnTete(FILE* image);
-
-/**
-	@brief Renseigne sur la largeur de l'image
-	@param FILE* image, l'image ‡ analyser
-	@return bool, 1 si l'image a une largeur (en pxl) multiple de 4, sinon 0
-*/
-int getLargeurBMP(FILE* image);
-
-/**
-	@brief Retourne la taille de l'image
-	@param FILE* image, l'image ‡ analyser
-	@return long, la taille de l'image
-*/
-long getTailleFichier(FILE* image);
-
-/**
-	@brief Charge les donnÈes d'une image BITMAP (.bmp) dans un tableau de Couleurs
-	@param FILE* image, l'image ‡ charger
-	@return Couleur*, tableau de Couleurs reprÈsentant l'image chargÈe
-*/
-Couleur* getDonnees(FILE* image);
-
-
 int unifierFond(FILE* image);
-//Renvoie True (1) si la camÈra a clairement pu identifier le fond, sinon False (0)
-//image E images_aliments
 
+/**
+	@brief Renvoie la couleur dominante de la photosi elle a pu √™tre identifi√©e, sinon renvoie une erreur
+	@param FILE* image, l'image prise en photo
+	@return Couleur, la couleur dominante de la photo
+*/
 Couleur couleurDominante(FILE* image);
-//Renvoie True si la couleur dominante de la photo a clairement pu Ítre #identifiÈe, False sinon.
-//couleurDominante(FILE * image1) => unifierFond(FILE * imageFond)
 
+/**
+	@brief Renvoie True(1) si il y a au moins un aliment dans la base de donn√©e qui est proche de la couleur dominante, sinon False (0)
+	@param Couleur, la couleur pass&√©e en param√®tre correspond souvent √† la couleur dominante d'une photo
+	@return int, un bool√©en (1) si l existe au moins un aliment de la coumleur, (0) sinon
+*/
 int rechercheAliment(Couleur);
-//Renvoie True(1) si il y a au moins un aliment dans la base de donnÈe qui est proche de la couleur dominante, sinon False (0)
-//rechercheAliment(Couleur) => Couleur==couleurDominante(FILE *)
 
+/**
+	@brief Renvoie un tableau d'ids, les ids correspondant √† celles des aliments qui ont une couleur proche de celle rentr√©e en param√®tre.
+	@param Couleur, la couleur pass&√©e en param√®tre correspond souvent √† la couleur dominante d'une photo
+	@return int*, un tableau de int, 
+*/
 int* IdAlimentsDeCouleur(Couleur);
-//renvoie les ids des aliments qui ont une Couleur proche de celle rentrÈe en paramËtre
-
 
 #endif
