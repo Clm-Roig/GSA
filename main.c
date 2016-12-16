@@ -5,6 +5,6 @@
 #include "src/BDD.c"
 
 int main() {
-    setQuantitePesee(5,200);
+    setDatePesee(5,"09/07/1995");
     return 0;
 }

@@ -118,7 +118,7 @@ int setQuantitePesee(int id, int nouvQte);
     @param int id : le numero id de l'aliment dont on veut changer la date d'enregistrement
     @return int 1 si modification ok, sinon 0
 */
-int setDatePesee(int id);
+int setDatePesee(int id, char* nouvDate);
 
 // ----- Ecriture ---- //
 /**

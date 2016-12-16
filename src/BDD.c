@@ -218,20 +218,86 @@ int setQuantitePesee(int id, int nouvQte) {
     strcat(ligneModifiee,";");
 
     strcat(ligneModifiee,getIdAlimentPesee(id));
-    printf(ligneModifiee);
-    // recopier le fichier dans le temp
-    // while (parcours du doc pas fini)
-        // if (id != idDeLaLigneLue) alors recopie, sinon insere la modif deja faite
-    // fclose(fichier)
 
-    return 1;
+    // recopier le fichier dans le temp
+    FILE* fichierTemp = fopen(CHEMIN_PESEES_TEMP,"a");
+
+    char* ligneLue = NULL;
+    ligneLue = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+
+    char* ligneRef = lireLigneParId(fichier,id);
+
+    while(fgets(ligneLue,TAILLE_MAX_LIGNE, fichier) != NULL) {
+        if(strcmp(ligneLue,ligneRef) != 0) {
+            fprintf(fichierTemp,ligneLue);
+        }
+        else {
+            fprintf(fichierTemp,ligneModifiee);
+        }
+    }
+
+    fclose(fichier);
+    fclose(fichierTemp);
+
+    int res = 1;
+    if(remove(CHEMIN_PESEES) != 0 || rename(CHEMIN_PESEES_TEMP,CHEMIN_PESEES) != 0) {
+        res = 0;
+    }
+    return res;
+
 }
 
-int setDatePesee(int id) {
-    // ouvrir fichier des pesees.
-    // trouver la ligne de l'id
-    // modifie l'attribut date
-    return 1;
+int setDatePesee(int id, char* nouvDate) {
+    FILE* fichier = fopen(CHEMIN_PESEES,"r");
+
+    // modifie l'attribut quantite
+    char* ligneModifiee = NULL;
+    ligneModifiee = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+
+    char* idChar;
+    idChar = malloc(sizeof(id));
+    sprintf(idChar, "%d",id);
+
+    ligneModifiee = idChar;
+    strcat(ligneModifiee,";");
+
+    strcat(ligneModifiee,getQuantitePesee(id));
+    strcat(ligneModifiee,";");
+
+    strcat(ligneModifiee,getDescriptionPesee(id));
+    strcat(ligneModifiee,";");
+
+    strcat(ligneModifiee,nouvDate);
+    strcat(ligneModifiee,";");
+
+    strcat(ligneModifiee,getIdAlimentPesee(id));
+
+    // recopier le fichier dans le temp
+    FILE* fichierTemp = fopen(CHEMIN_PESEES_TEMP,"a");
+
+    char* ligneLue = NULL;
+    ligneLue = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+
+    char* ligneRef = lireLigneParId(fichier,id);
+
+    while(fgets(ligneLue,TAILLE_MAX_LIGNE, fichier) != NULL) {
+        if(strcmp(ligneLue,ligneRef) != 0) {
+            fprintf(fichierTemp,ligneLue);
+        }
+        else {
+            fprintf(fichierTemp,ligneModifiee);
+        }
+    }
+
+    fclose(fichier);
+    fclose(fichierTemp);
+
+    int res = 1;
+    if(remove(CHEMIN_PESEES) != 0 || rename(CHEMIN_PESEES_TEMP,CHEMIN_PESEES) != 0) {
+        res = 0;
+    }
+    return res;
+
 }
 
 // ---- ECRITURE ---- //
@@ -330,7 +396,7 @@ int supprimerDonneeAliment(int id){
     char* ligneLu = NULL;
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     while(fgets(ligneLu, TAILLE_MAX_LIGNE, fichier) != NULL) {
-        if(strcmp(ligneLu,ligneASupprimer)) {
+        if(strcmp(ligneLu,ligneASupprimer) != 0) {
             fprintf(fichierTemp,ligneLu);
         }
     }
