@@ -5,6 +5,6 @@
 #include "src/BDD.c"
 
 int main() {
-    setQuantitePesee(4,200);
+    setQuantitePesee(5,200);
     return 0;
 }

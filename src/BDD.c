@@ -194,11 +194,21 @@ int setQuantitePesee(int id, int nouvQte) {
     FILE* fichier = fopen(CHEMIN_PESEES,"r");
 
     // modifie l'attribut quantite
-    char* ligneModifiee = malloc(TAILLE_MAX_LIGNE*sizeof(char));
-    strcat(ligneModifiee,(char*) id);
+    char* ligneModifiee = NULL;
+    ligneModifiee = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+
+    char* idChar;
+    idChar = malloc(sizeof(id));
+    sprintf(idChar, "%d",id);
+
+    ligneModifiee = idChar;
     strcat(ligneModifiee,";");
 
-    strcat(ligneModifiee,(char*) nouvQte);
+    char* nouvQteChar;
+    nouvQteChar = malloc(sizeof(nouvQte));
+    sprintf(nouvQteChar,"%d",nouvQte);
+
+    strcat(ligneModifiee, nouvQteChar);
     strcat(ligneModifiee,";");
 
     strcat(ligneModifiee,getDescriptionPesee(id));
@@ -208,12 +218,12 @@ int setQuantitePesee(int id, int nouvQte) {
     strcat(ligneModifiee,";");
 
     strcat(ligneModifiee,getIdAlimentPesee(id));
-    strcat(ligneModifiee,";");
-
+    printf(ligneModifiee);
     // recopier le fichier dans le temp
     // while (parcours du doc pas fini)
         // if (id != idDeLaLigneLue) alors recopie, sinon insere la modif deja faite
     // fclose(fichier)
+
     return 1;
 }
 
