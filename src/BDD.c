@@ -188,6 +188,42 @@ char* getIdAlimentPesee(int id) {
     return idAlimentLu;
 }
 
+// ---- MODIFICATION ---- //
+int setQuantitePesee(int id, int nouvQte) {
+    // ouvrir fichier des pesees.
+    FILE* fichier = fopen(CHEMIN_PESEES,"r");
+
+    // modifie l'attribut quantite
+    char* ligneModifiee = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+    strcat(ligneModifiee,(char*) id);
+    strcat(ligneModifiee,";");
+
+    strcat(ligneModifiee,(char*) nouvQte);
+    strcat(ligneModifiee,";");
+
+    strcat(ligneModifiee,getDescriptionPesee(id));
+    strcat(ligneModifiee,";");
+
+    strcat(ligneModifiee,getDatePesee(id));
+    strcat(ligneModifiee,";");
+
+    strcat(ligneModifiee,getIdAlimentPesee(id));
+    strcat(ligneModifiee,";");
+
+    // recopier le fichier dans le temp
+    // while (parcours du doc pas fini)
+        // if (id != idDeLaLigneLue) alors recopie, sinon insere la modif deja faite
+    // fclose(fichier)
+    return 1;
+}
+
+int setDatePesee(int id) {
+    // ouvrir fichier des pesees.
+    // trouver la ligne de l'id
+    // modifie l'attribut date
+    return 1;
+}
+
 // ---- ECRITURE ---- //
 int ecrireDonneeAliment(char* nom, char* couleur) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r+");

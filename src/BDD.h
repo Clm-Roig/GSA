@@ -104,6 +104,22 @@ char* getDatePesee(int id);
 */
 char* getIdAlimentPesee(int id);
 
+// ----- Modification ---- //
+/**
+    @brief Permet de modifier la quantité d'un aliment pesé
+    @param int id : le numero id de l'aliment dont on veut changer la quantité
+    @param int nouvQte : la nouvelle quantité de l'aliment
+    @return int 1 si modification ok, sinon 0
+*/
+int setQuantitePesee(int id, int nouvQte);
+
+/**
+    @brief Permet de modifier la date d'enregistrement d'un aliment pesé
+    @param int id : le numero id de l'aliment dont on veut changer la date d'enregistrement
+    @return int 1 si modification ok, sinon 0
+*/
+int setDatePesee(int id);
+
 // ----- Ecriture ---- //
 /**
     @brief écrit un tuple aliment (ID / NOM / COULEUR)

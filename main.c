@@ -2,10 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "src/LecteurBMP.c"
+#include "src/BDD.c"
 
 int main() {
-    FILE* fichier = fopen("data/images_aliments/sample2.bmp","rb");
-    Couleur** coul = getDonnees(fichier);
+    setQuantitePesee(4,200);
     return 0;
 }
