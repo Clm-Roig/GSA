@@ -27,6 +27,18 @@ typedef struct ImageBMP {
 
 // ---- FONCTIONS ---- //
 
+/**
+	@brief Constructeur de ImageBMP (sans paramètres)
+	@return ImageBMP *
+*/
+ImageBMP* initImageBMP();
+
+/**
+	@brief Destructeur de ImageBMP (libère mémoire)
+	@param ImageBMP* image, l'image à détruire
+*/
+void destroyImageBMP(ImageBMP image);
+
 // STRUCTURE D'UN FICHIER BITMAP : http://sitelec.org/cours/abati/bmp.htm
 /**
 	@brief Récupère l'en-tête d'un fichier .bmp

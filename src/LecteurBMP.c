@@ -1,5 +1,17 @@
 #include "LecteurBMP.h"
 
+// Init + destroy
+ImageBMP* initImageBMP() {
+    ImageBMP* image = malloc(sizeof(ImageBMP));
+    return image;
+}
+
+void destroyImageBMP(ImageBMP image) {
+    free(image);
+    image = NULL;
+}
+
+// Fonctions
 unsigned char* getEnTete(FILE* image) {
     unsigned char* enTete = malloc(54*sizeof(unsigned char));
     unsigned char octet;
