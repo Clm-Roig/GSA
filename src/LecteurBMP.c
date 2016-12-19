@@ -1,8 +1,11 @@
 #include "LecteurBMP.h"
 
 // Init + destroy
-ImageBMP* initImageBMP() {
+ImageBMP* initImageBMP(FILE* fichier) {
     ImageBMP* image = malloc(sizeof(ImageBMP));
+    image->couleurs = getDonnees(fichier);
+    image->taille_image = getTailleImage(fichier);
+    image->taille_fichier = getTailleFichier(fichier);
     return image;
 }
 

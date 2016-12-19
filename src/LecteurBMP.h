@@ -23,15 +23,18 @@ const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
  */
 typedef struct ImageBMP {
     Couleur** couleurs;
+    int taille_image;
+    int taille_fichier;
 } ImageBMP;
 
 // ---- FONCTIONS ---- //
 
 /**
-	@brief Constructeur de ImageBMP (sans paramètres)
-	@return ImageBMP *
+	@brief Constructeur de ImageBMP
+	@param FILE* fichier, le fichier .bmp que l'on veut transformer en ImageBMP
+	@return ImageBMP*
 */
-ImageBMP* initImageBMP();
+ImageBMP* initImageBMP(FILE* fichier);
 
 /**
 	@brief Destructeur de ImageBMP (libère mémoire)
