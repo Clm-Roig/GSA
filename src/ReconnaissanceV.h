@@ -9,6 +9,7 @@
 
 #include "Couleur.c"
 #include "BDD.c"
+#include "LecteurBMP.c"
 
 // ---- CONSTANTES ---- //
 const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
@@ -16,31 +17,31 @@ const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 // ---- FONCTIONS ---- //
 
 /**
-	@brief Renvoie True (1) si la caméra a clairement pu identifier le fond, sinon False (0)
-	@param FILE* image, l'image prise comme fond
-	@return int, (1) si l'opération a été clairement réalisée, (0) sinon
+	@brief Teste si la couleur de fond est clairement discernable ou pas
+	@param FILE* image, l'image que l'on souhaite analyser
+	@return int, 1 (True) si une couleur de fond a été repérée, sinon 0 (False)
 */
 int unifierFond(FILE* image);
 
 /**
-	@brief Renvoie la couleur dominante de la photosi elle a pu être identifiée, sinon renvoie une erreur
-	@param FILE* image, l'image prise en photo
-	@return Couleur, la couleur dominante de la photo
+	@brief Renvoie la couleur dominante de l'image si elle a pu être identifié
+	@param FILE* image, l'image que l'on souhaite analyser
+	@return Couleur, la couleur dominante de l'image
 */
 Couleur couleurDominante(FILE* image);
 
 /**
-	@brief Renvoie True(1) si il y a au moins un aliment dans la base de donnée qui est proche de la couleur dominante, sinon False (0)
-	@param Couleur, la couleur pass&ée en paramètre correspond souvent à la couleur dominante d'une photo
-	@return int, un booléen (1) si l existe au moins un aliment de la coumleur, (0) sinon
+    @brief Renseigne sur la présence (ou non) d'au moins un aliment ayant une couleur proche du paramètre
+	@param Couleur* coul, la couleur que l'on souhaite utiliser pour chercher des aliments
+	@return int, 1 (True) s'il existe au moins un aliment proche de la couleur, 0 (False)
 */
-int rechercheAliment(Couleur);
+int rechercheAliment(Couleur* coul);
 
 /**
-	@brief Renvoie un tableau d'ids, les ids correspondant à celles des aliments qui ont une couleur proche de celle rentrée en paramètre.
-	@param Couleur, la couleur pass&ée en paramètre correspond souvent à la couleur dominante d'une photo
-	@return int*, un tableau de int,
+	@brief Renvoie un tableau des ids des aliments qui ont une couleur proche de celle passée en paramètre
+	@param Couleur* coul, la couleur que l'on souhaite utiliser pour chercher des aliments
+	@return int*, la tableau des aliments proches de la couleur passée en paramètre
 */
-int* IdAlimentsDeCouleur(Couleur);
+int* IdAlimentsDeCouleur(Couleur* coul);
 
 #endif
