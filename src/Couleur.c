@@ -2,7 +2,7 @@
 
 
 Couleur* initCouleur(){
-    Couleur * coul = malloc(sizeof(Couleur));
+    Couleur* coul = malloc(sizeof(Couleur));
     return coul;
 }
 
