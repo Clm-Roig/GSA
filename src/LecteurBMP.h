@@ -37,7 +37,7 @@ ImageBMP* initImageBMP();
 	@brief Destructeur de ImageBMP (libère mémoire)
 	@param ImageBMP* image, l'image à détruire
 */
-void destroyImageBMP(ImageBMP image);
+void destroyImageBMP(ImageBMP* image);
 
 // STRUCTURE D'UN FICHIER BITMAP : http://sitelec.org/cours/abati/bmp.htm
 /**
@@ -71,9 +71,10 @@ long getTailleFichier(FILE* image);
 /**
 	@brief Charge les données d'une image BITMAP (.bmp) dans un tableau de Couleurs
 	@param FILE* image, l'image à charger
-	@return Couleur*, tableau de Couleurs représentant l'image chargée
+	@param imageBMP* imageBMP, la structure imageBMP dans laquelle on va stocker le tableau de Couleurs
+	@return ImageBMP* imageBMP, la structure imageBMP modifiée (contient le tableau de Couleurs)
 */
-Couleur** getDonnees(FILE* image);
+ImageBMP* getDonnees(FILE* image, ImageBMP* imageBMP);
 
 
 #endif

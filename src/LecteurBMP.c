@@ -6,7 +6,7 @@ ImageBMP* initImageBMP() {
     return image;
 }
 
-void destroyImageBMP(ImageBMP image) {
+void destroyImageBMP(ImageBMP* image) {
     free(image);
     image = NULL;
 }
@@ -49,11 +49,10 @@ long getTailleFichier(FILE* image) {
     return taille_fichier;
 }
 
-Couleur** getDonnees(FILE* image) {
+ImageBMP* getDonnees(FILE* image, ImageBMP* imageBMP) {
     long taille_image = getTailleImage(image);
     int largeur_image = getLargeurBMP(image);
 
-    ImageBMP* imageBMP;
     imageBMP->couleurs = malloc(taille_image*sizeof(Couleur *));
 
     unsigned char octet;
@@ -70,10 +69,7 @@ Couleur** getDonnees(FILE* image) {
     // i compte le nombre composante de couleurs lues
     long i=0;
 
-    // On récupère tout, aucun octet ajouté pour compléter
     // Attention : pour chaque pixel, les composantes sont stockées à l'envers en Bitmap (BGR)
-    // TODO : tableau/pointeur de couleur ? erreur...
-
     while(i < taille_image) {
         Couleur* coul = initCouleur();
 
@@ -110,10 +106,9 @@ Couleur** getDonnees(FILE* image) {
                 fseek(image,3,SEEK_CUR);
                 i += 3;
             }
-
         }
     }
     // image parcourue entièrement
 
-    return imageBMP->couleurs;
+    return imageBMP;
 }
