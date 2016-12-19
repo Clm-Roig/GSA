@@ -6,6 +6,11 @@ Couleur* initCouleur(){
     return coul;
 }
 
+void destroyCouleur(Couleur* coul) {
+    free(coul);
+    coul = NULL;
+}
+
 // GETTERS
 int getRCoul(Couleur* couleur){
     return couleur->rCoul;

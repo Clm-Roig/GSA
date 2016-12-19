@@ -34,6 +34,12 @@ typedef struct Couleur {
 */
 Couleur* initCouleur();
 
+/**
+	@brief Destructeur de Couleur (libère la mémoire)
+	@param Couleur* coul, la couleur à détruire
+*/
+void destroyCouleur(Couleur* coul);
+
 //Getters
 /**
 	@brief Recupère rCoul d'une Couleur
