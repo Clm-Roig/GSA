@@ -21,17 +21,17 @@ const int PRECISION_COULEUR = 10;
 
 /**
 	@brief Teste si la couleur de fond est clairement discernable ou pas
-	@param FILE* image, l'image que l'on souhaite analyser
+	@param ImageBMP* image, l'image que l'on souhaite analyser
 	@return int, 1 (True) si une couleur de fond a été repérée, sinon 0 (False)
 */
-int unifierFond(FILE* image);
+int unifierFond(ImageBMP* image);
 
 /**
 	@brief Renvoie la couleur dominante de l'image si elle a pu être identifié
-	@param FILE* image, l'image que l'on souhaite analyser
+	@param ImageBMP* image, l'image que l'on souhaite analyser
 	@return Couleur, la couleur dominante de l'image
 */
-Couleur* couleurDominante(FILE* image);
+Couleur* couleurDominante(ImageBMP* image);
 
 /**
     @brief Renseigne sur la présence (ou non) d'au moins un aliment ayant une couleur proche du paramètre

@@ -1,13 +1,14 @@
 #include "ReconnaissanceV.h"
 // ---- FONCTIONS ---- //
 
-int unifierFond(FILE* image) {
-    res = 1;
+int unifierFond(ImageBMP* image) {
+    res = 0;
+
     return res;
 }
 
 
-Couleur* couleurDominante(FILE* image) {
+Couleur* couleurDominante(ImageBMP* image) {
 
 }
 
