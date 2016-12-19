@@ -25,6 +25,7 @@ typedef struct ImageBMP {
     Couleur** couleurs;
     int taille_image;
     int taille_fichier;
+    unsigned char* entete;
 } ImageBMP;
 
 // ---- FONCTIONS ---- //
@@ -74,10 +75,9 @@ long getTailleFichier(FILE* image);
 /**
 	@brief Charge les données d'une image BITMAP (.bmp) dans un tableau de Couleurs
 	@param FILE* image, l'image à charger
-	@param imageBMP* imageBMP, la structure imageBMP dans laquelle on va stocker le tableau de Couleurs
-	@return ImageBMP* imageBMP, la structure imageBMP modifiée (contient le tableau de Couleurs)
+	@return Couleur**, un tableau de Couleur* représentant l'image pixel par pixel
 */
-ImageBMP* getDonnees(FILE* image, ImageBMP* imageBMP);
+Couleur** getDonnees(FILE* image);
 
 
 #endif

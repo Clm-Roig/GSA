@@ -3,9 +3,11 @@
 // Init + destroy
 ImageBMP* initImageBMP(FILE* fichier) {
     ImageBMP* image = malloc(sizeof(ImageBMP));
-    image->couleurs = getDonnees(fichier);
-    image->taille_image = getTailleImage(fichier);
+    image->entete = getEnTete(fichier);
     image->taille_fichier = getTailleFichier(fichier);
+    image->taille_image = getTailleImage(fichier);
+    image->couleurs = getDonnees(fichier);
+
     return image;
 }
 
@@ -52,11 +54,12 @@ long getTailleFichier(FILE* image) {
     return taille_fichier;
 }
 
-ImageBMP* getDonnees(FILE* image, ImageBMP* imageBMP) {
+Couleur** getDonnees(FILE* image) {
     long taille_image = getTailleImage(image);
     int largeur_image = getLargeurBMP(image);
 
-    imageBMP->couleurs = malloc(taille_image*sizeof(Couleur *));
+    Couleur** donnees = NULL;
+    donnees = malloc(taille_image*sizeof(Couleur*));
 
     unsigned char octet;
 
@@ -85,11 +88,7 @@ ImageBMP* getDonnees(FILE* image, ImageBMP* imageBMP) {
         fread(&octet,sizeof(octet),1,image);
         setRCoul((int)octet,coul);
 
-        imageBMP->couleurs[p] = coul;
-
-        printf("R: %d",getRCoul(imageBMP->couleurs[p]));
-        printf(" G: %d",getGCoul(imageBMP->couleurs[p]));
-        printf(" B: %d\n",getBCoul(imageBMP->couleurs[p]));
+        donnees[p] = coul;
 
         // On a lu 1 pixel et 3 couleurs.
         p++;
@@ -112,6 +111,5 @@ ImageBMP* getDonnees(FILE* image, ImageBMP* imageBMP) {
         }
     }
     // image parcourue entièrement
-
-    return imageBMP;
+    return donnees;
 }
