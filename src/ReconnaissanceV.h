@@ -1,3 +1,6 @@
+#ifndef DEF_ReconnaissanceV
+#define DEF_ReconnaissanceV
+
 // EN-TETE ReconnaissanceV.h
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,9 +10,6 @@
 #include "Couleur.c"
 #include "BDD.c"
 
-#ifndef DEF_ReconnaissanceV
-#define DEF_ReconnaissanceV
-
 // ---- CONSTANTES ---- //
 const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
@@ -18,7 +18,7 @@ const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 /**
 	@brief Renvoie True (1) si la caméra a clairement pu identifier le fond, sinon False (0)
 	@param FILE* image, l'image prise comme fond
-	@return int, (1) si l'opération a été clairement réalisée, (0) sinon 
+	@return int, (1) si l'opération a été clairement réalisée, (0) sinon
 */
 int unifierFond(FILE* image);
 
@@ -39,7 +39,7 @@ int rechercheAliment(Couleur);
 /**
 	@brief Renvoie un tableau d'ids, les ids correspondant à celles des aliments qui ont une couleur proche de celle rentrée en paramètre.
 	@param Couleur, la couleur pass&ée en paramètre correspond souvent à la couleur dominante d'une photo
-	@return int*, un tableau de int, 
+	@return int*, un tableau de int,
 */
 int* IdAlimentsDeCouleur(Couleur);
 

@@ -1,12 +1,11 @@
+#ifndef DEF_BDD
+#define DEF_BDD
+
 // EN-TETE BDD.h
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-
-#ifndef DEF_BDD
-#define DEF_BDD
-
 
 // ---- CONSTANTES ---- //
 const char* CHEMIN_ALIMENTS = "data/aliments.txt";

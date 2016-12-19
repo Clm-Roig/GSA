@@ -1,3 +1,6 @@
+#ifndef DEF_LecteurBMP
+#define DEF_LecteurBMP
+
 // EN-TETE ReconnaissanceV.h
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,9 +9,6 @@
 
 #include "Couleur.c"
 #include "BDD.c"
-
-#ifndef DEF_LecteurBMP
-#define DEF_LecteurBMP
 
 //TODO : ajouter une structure stockant les diverses informations de l'image
 

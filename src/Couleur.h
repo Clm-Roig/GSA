@@ -1,11 +1,11 @@
+#ifndef DEF_Couleur
+#define DEF_Couleur
+
 // EN-TETE Couleur.h
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-
-#ifndef DEF_Couleur
-#define DEF_Couleur
 
 // ---- CONSTANTES ---- //
 

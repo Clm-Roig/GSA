@@ -1,12 +1,11 @@
+#ifndef DEF_Camera
+#define DEF_Camera
+
 // EN-TETE Camera.h
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-
-#ifndef DEF_Camera
-#define DEF_Camera
-
 
 // ---- CONSTANTES ---- //
 const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
