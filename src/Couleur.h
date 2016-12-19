@@ -28,6 +28,7 @@ typedef struct Couleur {
 
 // ---- FONCTIONS ---- //
 
+// Init + destroy
 /**
 	@brief Constructeur de Couleur (sans paramètres)
 	@return Couleur *
@@ -39,6 +40,14 @@ Couleur* initCouleur();
 	@param Couleur* coul, la couleur à détruire
 */
 void destroyCouleur(Couleur* coul);
+
+// Print
+/**
+	@brief Transforme la couleur en chaine de caractères
+	@param Couleur* coul
+	@return char*, la couleur en chaine de caractères ("R:42 G:53 B:66")
+*/
+char* toCharCouleur(Couleur* coul);
 
 //Getters
 /**

@@ -1,6 +1,5 @@
 #include "Couleur.h"
 
-
 Couleur* initCouleur(){
     Couleur* coul = malloc(sizeof(Couleur));
     return coul;
@@ -9,6 +8,19 @@ Couleur* initCouleur(){
 void destroyCouleur(Couleur* coul) {
     free(coul);
     coul = NULL;
+}
+
+char* toCharCouleur(Couleur* coul) {
+    char* chaine;
+    chaine = malloc(20*sizeof(char));
+
+    char* rcoul = (char*)getRCoul(coul);
+    char* gcoul = (char*)getGCoul(coul);
+    char* bcoul = (char*)getBCoul(coul);
+
+    sprintf(chaine,"R:%d G:%d B:%d",rcoul,bcoul,gcoul);
+
+    return chaine;
 }
 
 // GETTERS
