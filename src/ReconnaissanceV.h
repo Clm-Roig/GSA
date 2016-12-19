@@ -28,7 +28,7 @@ int unifierFond(FILE* image);
 	@param FILE* image, l'image que l'on souhaite analyser
 	@return Couleur, la couleur dominante de l'image
 */
-Couleur couleurDominante(FILE* image);
+Couleur* couleurDominante(FILE* image);
 
 /**
     @brief Renseigne sur la présence (ou non) d'au moins un aliment ayant une couleur proche du paramètre
