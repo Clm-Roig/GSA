@@ -3,18 +3,16 @@
 #include <stdio.h>
 
 // #include "src/BDD.c"
-#include "src/LecteurBMP.c"
+#include "src/ReconnaissanceV.c"
 
 
 int main() {
     /* ---- TESTS BDD (Matthieu) ---- */
-   /* setDatePesee(5,"09/07/1995");
+    /* setDatePesee(5,"09/07/1995");
 
-    /* ---- TESTS LecteurBMP(Clément) ---- */
+    /* ---- TESTS ReconnaissanceV(Clément) ---- */
     FILE* fichier = fopen("data/images_aliments/bird.bmp","rb");
-    ImageBMP* imb = initImageBMP();
-    getDonnees(fichier, imb);
-    printf("\n\n%d",getRCoul(imb->couleurs[1]));
+
 
     return 0;
 }
