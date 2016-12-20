@@ -3,7 +3,6 @@
 
 int unifierFond(ImageBMP* image) {
     int res = 0;
-    int i = 0;
 
     // Moyennes
     float moyenneR = 0;
@@ -11,10 +10,13 @@ int unifierFond(ImageBMP* image) {
     float moyenneB = 0;
 
     // Parcours de tous les pixels
-    for(i; i < (image->taille_image) ; i++) {
-        moyenneR += getRcoul(image->couleurs[i]);
-        moyenneG += getGcoul(image->couleurs[i]);
-        moyenneB += getBcoul(image->couleurs[i]);
+    int i = 0;
+    for(i; i < (image->taille_image) +20 ; i++) {
+            /*
+        moyenneR += getRCoul(image->couleurs[i]);
+        moyenneG += getGCoul(image->couleurs[i]);
+        moyenneB += getBCoul(image->couleurs[i]);
+        */
     }
 
     moyenneR = moyenneR / (image->taille_image);

@@ -7,9 +7,6 @@
 #include <string.h>
 #include <assert.h>
 
-
-//TODO : ajouter une structure stockant les diverses informations de l'image
-
 // ---- CONSTANTES ---- //
 const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
@@ -22,6 +19,7 @@ const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 typedef struct ImageBMP {
     Couleur** couleurs;
     int taille_image;
+    int nb_pixels;
     int taille_fichier;
     unsigned char* entete;
 } ImageBMP;
