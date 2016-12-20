@@ -12,7 +12,7 @@
 #include "LecteurBMP.c"
 
 // ---- CONSTANTES ---- //
-const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
+//const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
 // Cette constance est utilisée par plusieurs fonctions comme "seuil" de détection des couleurs
 const int PRECISION_COULEUR = 10;

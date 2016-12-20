@@ -11,8 +11,9 @@ int main() {
     /* setDatePesee(5,"09/07/1995");
 
     /* ---- TESTS ReconnaissanceV(Clément) ---- */
-    FILE* fichier = fopen("data/images_aliments/bird.bmp","rb");
-    unifierFond(fichier);
+    FILE* fichier = fopen("data/images_aliments/sample2.bmp","rb");
+    ImageBMP* imBMP = initImageBMP(fichier);
+    unifierFond(imBMP);
 
     return 0;
 }
