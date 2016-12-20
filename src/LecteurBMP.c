@@ -6,7 +6,8 @@ ImageBMP* initImageBMP(FILE* fichier) {
     image->entete = getEnTete(fichier);
     image->taille_fichier = getTailleFichier(fichier);
     image->taille_image = getTailleImage(fichier);
-    image->nb_pixels = getTailleImage(fichier)/3;
+    image->largeur = getLargeurBMP(fichier);
+    image->hauteur = getHauteurBMP(fichier);
     image->couleurs = getDonnees(fichier);
     return image;
 }
@@ -36,6 +37,13 @@ int getLargeurBMP(FILE* image) {
     // Pas la peine d'aller chercher plus loin que l'octet 19, la largeur ne dépassera jamais 4096 pixels (16^3)
     int largeur = enTete[18] + 16*16*enTete[19];
     return largeur;
+}
+
+int getHauteurBMP(FILE* image) {
+    unsigned char* enTete = getEnTete(image);
+    // Pas la peine d'aller chercher plus loin que l'octet 23, la hauteur ne dépassera jamais 4096 pixels (16^3)
+    int hauteur = enTete[22] + 16*16*enTete[23];
+    return hauteur;
 }
 
 long getTailleImage(FILE* image) {

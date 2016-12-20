@@ -15,15 +15,15 @@ const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
  *  @brief Structure définissant une image au format Bitmap
  *  @var Couleur** couleurs, l'image représentée par un tableau de pixels R-G-B (objet Couleur)
  *  @var int taille_image, la taille de l'image (sans l'en-tête)
- *  @var int nb_pixels, le nb de pixels de l'image (= taille_image/3)
  *  @var int taille_fichier, la taille totale du fichier
  *  @var unsigned char* entete, l'en-tête du fichier bitmap
  */
 typedef struct ImageBMP {
     Couleur** couleurs;
     int taille_image;
-    int nb_pixels;
     int taille_fichier;
+    int largeur;
+    int hauteur;
     unsigned char* entete;
 } ImageBMP;
 
