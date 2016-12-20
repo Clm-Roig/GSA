@@ -7,6 +7,8 @@
 #include <string.h>
 #include <assert.h>
 
+#include "Couleur.c"
+
 // ---- CONSTANTES ---- //
 const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
@@ -41,6 +43,14 @@ ImageBMP* initImageBMP(FILE* fichier);
 	@param ImageBMP* image, l'image à détruire
 */
 void destroyImageBMP(ImageBMP* image);
+
+// Affichage de l'imageBMP
+/**
+	@brief Transforme la structure imageBMP en une chaine de caractères
+	@param ImageBMP* image
+	@return char*, les caractéristiques de l'image
+*/
+char* toCharImageBMP(ImageBMP* image);
 
 // STRUCTURE D'UN FICHIER BITMAP : http://sitelec.org/cours/abati/bmp.htm
 /**

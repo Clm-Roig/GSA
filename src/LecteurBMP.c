@@ -17,6 +17,16 @@ void destroyImageBMP(ImageBMP* image) {
     image = NULL;
 }
 
+// Affichage
+char* toCharImageBMP(ImageBMP* image) {
+    char* str = NULL;
+    str = malloc(2000*sizeof(char));
+
+    sprintf(str,"Taille du fichier : %d octets\nTaille de l'image : %d octets\nLargeur : %d pixels\nHauteur : %d pixels",
+            image->taille_fichier,image->taille_image,image->largeur,image->hauteur);
+    return str;
+}
+
 // Fonctions
 unsigned char* getEnTete(FILE* image) {
     unsigned char* enTete = malloc(54*sizeof(unsigned char));
