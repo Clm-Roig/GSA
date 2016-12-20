@@ -6,8 +6,8 @@ ImageBMP* initImageBMP(FILE* fichier) {
     image->entete = getEnTete(fichier);
     image->taille_fichier = getTailleFichier(fichier);
     image->taille_image = getTailleImage(fichier);
+    image->nb_pixels = getTailleImage(fichier)/3;
     image->couleurs = getDonnees(fichier);
-
     return image;
 }
 
