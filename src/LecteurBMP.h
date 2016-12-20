@@ -7,8 +7,6 @@
 #include <string.h>
 #include <assert.h>
 
-#include "Couleur.c"
-#include "BDD.c"
 
 //TODO : ajouter une structure stockant les diverses informations de l'image
 

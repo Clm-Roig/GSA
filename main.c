@@ -12,6 +12,7 @@ int main() {
 
     /* ---- TESTS ReconnaissanceV(Clément) ---- */
     FILE* fichier = fopen("data/images_aliments/bird.bmp","rb");
+    ImageBMP* imBMP = initImageBMP(fichier);
     unifierFond(fichier);
 
     return 0;
