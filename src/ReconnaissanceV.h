@@ -24,7 +24,7 @@ const int PRECISION_COULEUR = 50;
 	@param ImageBMP* image, l'image que l'on souhaite analyser
 	@return int, 1 (True) si une couleur de fond a été repérée, sinon 0 (False)
 */
-int unifierFond(ImageBMP* image);
+int estUni(ImageBMP* image);
 
 /**
 	@brief Renvoie la couleur dominante de l'image si elle a pu être identifié

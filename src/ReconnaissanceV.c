@@ -1,7 +1,7 @@
 #include "ReconnaissanceV.h"
 // ---- FONCTIONS ---- //
 
-int unifierFond(ImageBMP* image) {
+int estUni(ImageBMP* image) {
     int res = 0;
 
     // Calcul des moyennes
