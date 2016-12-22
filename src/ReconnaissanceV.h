@@ -27,9 +27,9 @@ const int PRECISION_COULEUR = 50;
 int estUni(ImageBMP* image);
 
 /**
-	@brief Renvoie la couleur dominante de l'image si elle a pu être identifié
+	@brief Renvoie la couleur dominante de l'image (moyenne des 3 composantes RGB)
 	@param ImageBMP* image, l'image que l'on souhaite analyser
-	@return Couleur, la couleur dominante de l'image
+	@return Couleur* , la couleur dominante de l'image
 */
 Couleur* couleurDominante(ImageBMP* image);
 

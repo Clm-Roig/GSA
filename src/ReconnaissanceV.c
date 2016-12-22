@@ -4,28 +4,18 @@
 int estUni(ImageBMP* image) {
     int res = 0;
 
-    // Calcul des moyennes
-    float moyenneR = 0;
-    float moyenneG = 0;
-    float moyenneB = 0;
-
-    int i = 0;
-    for(i; i < (image->hauteur * image->largeur) ; i++) {
-        moyenneR += getRCoul(image->couleurs[i]);
-        moyenneG += getGCoul(image->couleurs[i]);
-        moyenneB += getBCoul(image->couleurs[i]);
-    }
-
-    moyenneR = moyenneR / (image->hauteur * image->largeur);
-    moyenneG = moyenneG / (image->hauteur * image->largeur);
-    moyenneB = moyenneB / (image->hauteur * image->largeur);
+    // On récupère la couleur moyenne de l'image
+    Couleur* coulDominante = couleurDominante(image);
+    int moyenneR = getRCoul(coulDominante);
+    int moyenneG = getGCoul(coulDominante);
+    int moyenneB = getBCoul(coulDominante);
 
     // Calcul des variances / écarts-type
     float varR = 0;
     float varG = 0;
     float varB = 0;
 
-    i = 0;
+    int i = 0;
     for(i; i < (image->hauteur * image->largeur) ; i++) {
         varR = varR + (getRCoul(image->couleurs[i]) - moyenneR) * (getRCoul(image->couleurs[i]) - moyenneR);
         varG = varG + (getGCoul(image->couleurs[i]) - moyenneG) * (getGCoul(image->couleurs[i]) - moyenneG);
@@ -50,7 +40,28 @@ int estUni(ImageBMP* image) {
 
 
 Couleur* couleurDominante(ImageBMP* image) {
+    // Calcul des moyennes pour chaque composante
+    float moyenneR = 0;
+    float moyenneG = 0;
+    float moyenneB = 0;
 
+    int i = 0;
+    for(i; i < (image->hauteur * image->largeur) ; i++) {
+        moyenneR += getRCoul(image->couleurs[i]);
+        moyenneG += getGCoul(image->couleurs[i]);
+        moyenneB += getBCoul(image->couleurs[i]);
+    }
+
+    moyenneR = moyenneR / (image->hauteur * image->largeur);
+    moyenneG = moyenneG / (image->hauteur * image->largeur);
+    moyenneB = moyenneB / (image->hauteur * image->largeur);
+
+    Couleur* coulDominante = initCouleur();
+    setRCoul((int)moyenneR,coulDominante);
+    setGCoul((int)moyenneG,coulDominante);
+    setBCoul((int)moyenneB,coulDominante);
+
+    return coulDominante;
 }
 
 
