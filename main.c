@@ -14,8 +14,9 @@ int main() {
     FILE* fichier = fopen("data/images_aliments/bird.bmp","rb");
     ImageBMP* imBMP = initImageBMP(fichier);
 
-    int res = unifierFond(imBMP);
-    printf("\nRes : %d",res);
+    Couleur* res = couleurDominante(imBMP);
+    printf(toCharCouleur(res));
 
+    printf("\n%d",estUni(imBMP));
     return 0;
 }
