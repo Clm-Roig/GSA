@@ -8,15 +8,18 @@
 #include <assert.h>
 
 // ---- CONSTANTES ---- //
-//const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
 // ---- FONCTIONS ---- //
 
 /**
-	@brief
-	@param
-	@return
+	@brief Affiche à l'écran n sauts de ligne
+	@param int n, le nb de lignes à sauter
 */
-int foo();
+void sautLignes(int n);
+
+/**
+	@brief Affiche le menu principal
+*/
+void afficherMenuPrincipal();
 
 #endif

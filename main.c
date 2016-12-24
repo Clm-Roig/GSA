@@ -11,12 +11,8 @@ int main() {
     /* setDatePesee(5,"09/07/1995");
 
     /* ---- TESTS Interface(Clément) ---- */
-    FILE* fichier = fopen("data/images_aliments/bird.bmp","rb");
-    ImageBMP* imBMP = initImageBMP(fichier);
-
-    Couleur* res = couleurDominante(imBMP);
-    printf(toCharCouleur(res));
-
-    printf("\n%d",estUni(imBMP));
+    afficherMenuPrincipal();
+    char chaine[10];
+    fgets(chaine, sizeof chaine, stdin);
     return 0;
 }
