@@ -11,7 +11,7 @@ EXECUTABLE=$(bin_dir)cobal.exe
 all: cobal
 
 sdl: 
-	$(CC) $(CFLAGS) $(src_dir)/sdl.c -o $(bin_dir)sdl $(LDFLAGS)
+	$(CC) $(CFLAGS) $(src_dir)/Sdl.c -o $(bin_dir)sdl $(LDFLAGS)
 
 cobal: $(OBJECTS) 
 	$(CC) -o $(EXECUTABLE) $(OBJECTS) $(LDFLAGS)

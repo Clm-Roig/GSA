@@ -1,7 +1,7 @@
 #include <SDL2/SDL.h>
 #include <stdio.h>
-const int SCREEN_WIDTH = 700;
-const int SCREEN_HEIGHT = 400;
+const int SCREEN_WIDTH = 800;
+const int SCREEN_HEIGHT = 480;
 
 int main(int argc,char* args[]) {
 	SDL_Window* window = NULL;
@@ -9,7 +9,7 @@ int main(int argc,char* args[]) {
 	if (SDL_Init(SDL_INIT_VIDEO)<0) {
 		printf("Could not initialize SDL. SDL_Error: %s\n",SDL_GetError());
 	} else {
-		window = SDL_CreateWindow("Coal - Connected ",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,SCREEN_WIDTH,SCREEN_HEIGHT,SDL_WINDOW_FULLSCREEN);
+		window = SDL_CreateWindow("Coal - Connected ",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,SCREEN_WIDTH,SCREEN_HEIGHT,SDL_WINDOW_OPENGL|SDL_WINDOW_BORDERLESS);
 		if (window==NULL) {
 			printf("Cannot create window. SDL_Error: %s\n",SDL_GetError());
 		} else {
