@@ -7,6 +7,8 @@
 #include <string.h>
 #include <assert.h>
 
+#include "Couleur.c"
+
 // ---- CONSTANTES ---- //
 const char* CHEMIN_ALIMENTS = "data/aliments.txt";
 const char* CHEMIN_PESEES = "data/pesees.txt";
@@ -64,7 +66,7 @@ char* getNomAliment(int id);
     @param int id : l'id de l'aliment
     @return char* la couleur de l'aliment (format r-g-b)
 */
-char* getCouleurAliment(int id);
+Couleur* getCouleurAliment(int id);
 
 /**
     @brief renvoie la liste des id des aliments (id1;id2;id3...) qui ont une couleur proche de la couleur spécifiée
@@ -72,7 +74,7 @@ char* getCouleurAliment(int id);
     @param int : precision sur la couleur (pour la couleur 50-50-50, une precision de 10 cherche toutes les couleurs entre 40-40-40 et 60-60-60)
     @return char* la liste des ids des aliments une couleur proche de celle spécifiée
 */
-char* getIdAlimentParCouleur(char* couleur,int precision);
+char* getIdAlimentParCouleur(Couleur* coul,int precision);
 
 // PESEES
 /**

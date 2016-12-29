@@ -87,41 +87,83 @@ char* getNomAliment(int id) {
     return nomLu;
 }
 
-char* getCouleurAliment(int id) {
+Couleur* getCouleurAliment(int id) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
     char* ligneLu = NULL;
     char* couleurLu;
 
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     ligneLu = lireLigneParId(fichier,id);
+    fclose(fichier);
 
     strtok(ligneLu,";");    // id
     strtok(NULL,";");       // nom
     couleurLu = strtok(NULL,";");
-    fclose(fichier);
-    return couleurLu;
+
+    // Splitage de la couleur
+    char* r = NULL;
+    r = malloc(3*sizeof(char));
+    char* g = NULL;
+    g = malloc(3*sizeof(char));
+    char* b = NULL;
+    b = malloc(3*sizeof(char));
+
+    r = strtok(couleurLu,"-");
+    g = strtok(NULL,"-");
+    b = strtok(NULL,"-");
+
+    // Conversion char* en Couleur*
+    Couleur* coul = initCouleur();
+    setRCoul(atoi(r),coul);
+    setGCoul(atoi(g),coul);
+    setBCoul(atoi(b),coul);
+
+    return coul;
 }
 
-char* getIdAlimentParCouleur(char* couleur, int precision) {
+// TODO : buguée
+char* getIdAlimentParCouleur(Couleur* coul, int precision) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
+
     char* listeIds = NULL;
-    listeIds = malloc(nbLignesFichier(fichier)*TAILLE_MAX_LIGNE*sizeof(char));
+    // Au maximum, tous les aliments conviennent. On prend 4 car on n'aura pas plus de 999 aliments + le symbole ";" entre chaque aliment
+    listeIds = malloc(nbLignesFichier(fichier)*4*sizeof(char));
     char* ligneLu = NULL;
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
 
-    int nbLignes = nbLignesFichier(fichier);
     int idLu;
-    char* couleurLu = malloc(12*sizeof(char));
+    Couleur* couleurLu = initCouleur();
 
     int i=2;
 
-    while (i<=nbLignes) {
+    while (i <= nbLignesFichier(fichier)) {
         ligneLu = lireLigne(fichier,i);
-       // idLu = strtok(ligneLu,";");
-        couleurLu = getCouleurAliment(idLu);
-//TODO : à finir, nécessite Couleur.c
+        idLu = atoi(strtok(ligneLu,";"));
+
+        // TODO : ça plante ici
+/*     setRCoul(getRCoul(getCouleurAliment(idLu)),couleurLu);
+        setGCoul(getGCoul(getCouleurAliment(idLu)),couleurLu);
+        setBCoul(getBCoul(getCouleurAliment(idLu)),couleurLu);
+ */
+
+        // On regarde si la couleur est proche de celle demandée
+        if (getRCoul(couleurLu) - getRCoul(coul) <= precision) {
+            if (getGCoul(couleurLu) - getGCoul(coul) <= precision) {
+                if (getBCoul(couleurLu) - getBCoul(coul) <= precision) {
+                    sprintf(listeIds,"%s",idLu);
+                    strcat(listeIds,";");
+                }
+            }
+        }
+
+        i++;
 
     }
+    // Fin de boucle : tout le fichier parcouru
+
+    fclose(fichier);
+    printf(listeIds);
+    return "42";
 
 }
 
