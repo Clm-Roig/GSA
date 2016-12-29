@@ -4,16 +4,20 @@ src_dir=src/
 CC=gcc
 CFLAGS=-Wall
 SOURCES=$(src_dir)*.c
-OBJECTS=$(SOURCES:.c=.o)
+OBJECTS=$(obj_dir)*.o
 LDFLAGS=`sdl2-config --cflags --libs`
 EXECUTABLE=$(bin_dir)cobal.exe
 
-all: $(SOURCES) $(EXECUTABLE)
+all: cobal
 
-sdl:
+sdl: 
 	$(CC) $(CFLAGS) $(src_dir)/sdl.c -o $(bin_dir)sdl $(LDFLAGS)
+
 cobal: $(OBJECTS) 
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+	$(CC) -o $(EXECUTABLE) $(OBJECTS) $(LDFLAGS)
+
+$(OBJECTS): $(SOURCES)
+	$(CC) $(SOURCES) -o $(OBJECTS) $(LDFLAGS)
 
 clean:
-	rm -f $(OBJECTS) $(EXECUTABLE)
+	rm -f $(OBJECTS) $(EXECUTABLE) $(bin_dir)/*
