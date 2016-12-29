@@ -22,4 +22,25 @@ void sautLignes(int n);
 */
 void afficherMenuPrincipal();
 
+/**
+    @brief Permet de saisir un entier, de le contrôler puis d'éventuellemnt l'enregistrer dans une variable
+    @param int x, la variable dans laquelle on veut enregistrer l'entier saisi
+    @return bool, 1 si la saisie s'est bien passée, sinon 0
+*/
+int saisirInt(int x);
+
+/**
+    @brief Permet de saisir un caractère, de le contrôler puis d'éventuellemnt l'enregistrer dans une variable
+    @param char x, la variable dans laquelle on veut enregistrer le caractère saisi
+    @return bool, 1 si la saisie s'est bien passée, sinon 0
+*/
+int saisirChar(char x);
+
+/**
+    @brief Permet de saisir une String, de la contrôler puis d'éventuellemnt l'enregistrer dans une variable
+    @param char* x, la variable dans laquelle on veut enregistrer la String saisie
+    @return bool, 1 si la saisie s'est bien passée, sinon 0
+*/
+int saisirSring(char* x);
+
 #endif

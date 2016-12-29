@@ -21,3 +21,16 @@ void afficherMenuPrincipal() {
     printf("\n3. Menu 3");
     printf("\n");
 }
+
+// TODO : int* x ?
+int saisirInt(int x) {
+    int res = 0;
+    // Récupérer le type de x
+
+    // Demander la saisie
+
+    // Contrôler la saisie
+
+    // Renvoyer 1 ou 0
+    return res;
+}
