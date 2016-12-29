@@ -2,17 +2,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-// #include "src/BDD.c"
-#include "src/Interface.c"
+#include "src/BDD.c"
 
 
 int main() {
-    /* ---- TESTS BDD (Matthieu) ---- */
-    /* setDatePesee(5,"09/07/1995");
-
     /* ---- TESTS Interface(Clément) ---- */
-    afficherMenuPrincipal();
-    char chaine[10];
-    fgets(chaine, sizeof chaine, stdin);
+    Couleur* coul = initCouleur();
+    setRCoul(3,coul);
+    setGCoul(255,coul);
+    setBCoul(147,coul);
+    getIdAlimentParCouleur(coul,1);
     return 0;
 }
