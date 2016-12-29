@@ -18,7 +18,7 @@ char* toCharCouleur(Couleur* coul) {
     char* gcoul = (char*)getGCoul(coul);
     char* bcoul = (char*)getBCoul(coul);
 
-    sprintf(chaine,"R:%d G:%d B:%d",rcoul,bcoul,gcoul);
+    sprintf(chaine,"R:%d G:%d B:%d",rcoul,gcoul,bcoul);
 
     return chaine;
 }
@@ -37,7 +37,6 @@ int getBCoul(Couleur* couleur){
 }
 
 // SETTERS
-
 int setRCoul(int r,Couleur* couleur){
     int res = 0;
     if(r>=0 && r<=255) {
