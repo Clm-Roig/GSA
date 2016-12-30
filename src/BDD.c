@@ -123,6 +123,7 @@ Couleur* getCouleurAliment(int id) {
 
 char* getIdAlimentParCouleur(Couleur* coul, int precision) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
+    int res = 0;
 
     char* listeIds = NULL;
     // Au maximum, tous les aliments conviennent. On prend 4 car on n'aura pas plus de 999 aliments + le symbole ";" entre chaque aliment
@@ -145,19 +146,24 @@ char* getIdAlimentParCouleur(Couleur* coul, int precision) {
         setBCoul(getBCoul(getCouleurAliment(idLu)),couleurLu);
 
         // On regarde si la couleur est proche de celle demandée
-        if ((getRCoul(couleurLu) - getRCoul(coul)) <= precision) {
-            if ((getGCoul(couleurLu) - getGCoul(coul)) <= precision) {
-                if ((getBCoul(couleurLu) - getBCoul(coul)) <= precision) {
+        if (abs(getRCoul(couleurLu) - getRCoul(coul)) <= precision) {
+            if (abs(getGCoul(couleurLu) - getGCoul(coul)) <= precision) {
+                if (abs(getBCoul(couleurLu) - getBCoul(coul)) <= precision) {
                     sprintf(listeIds,"%d",idLu);
                     strcat(listeIds,";");
+                    res = 1;
                 }
             }
         }
         i++;
     }
-    // Fin de boucle : tout le fichier es parcouru
-
+    // Fin de boucle : tout le fichier est parcouru
     fclose(fichier);
+
+    // S'il n'y a pas d'aliments correspondants, on renvoie NULL
+    if(!res) {
+        listeIds = NULL;
+    }
     return listeIds;
 }
 
