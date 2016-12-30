@@ -73,7 +73,7 @@ Couleur* getCouleurAliment(int id);
     @brief renvoie la liste des id des aliments (id1;id2;id3...) qui ont une couleur proche de la couleur spécifiée
     @param char* : couleur la couleur dont on cherche des aliments
     @param int : precision sur la couleur (pour la couleur 50-50-50, une precision de 10 cherche toutes les couleurs entre 40-40-40 et 60-60-60)
-    @return char* la liste des ids des aliments une couleur proche de celle spécifiée
+    @return char* la liste des ids des aliments une couleur proche de celle spécifiée. Si aucun aliment, renvoie NULL
 */
 char* getIdAlimentParCouleur(Couleur* coul,int precision);
 
