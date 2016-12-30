@@ -121,17 +121,17 @@ Couleur* getCouleurAliment(int id) {
     return coul;
 }
 
-// TODO : buguée
 char* getIdAlimentParCouleur(Couleur* coul, int precision) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
 
     char* listeIds = NULL;
     // Au maximum, tous les aliments conviennent. On prend 4 car on n'aura pas plus de 999 aliments + le symbole ";" entre chaque aliment
     listeIds = malloc(nbLignesFichier(fichier)*4*sizeof(char));
+
     char* ligneLu = NULL;
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
-
     int idLu;
+
     Couleur* couleurLu = initCouleur();
 
     int i=2;
@@ -139,32 +139,27 @@ char* getIdAlimentParCouleur(Couleur* coul, int precision) {
     while (i <= nbLignesFichier(fichier)) {
         ligneLu = lireLigne(fichier,i);
         idLu = atoi(strtok(ligneLu,";"));
+        printf("\nId lu : %d",idLu);
 
-        // TODO : ça plante ici
-/*     setRCoul(getRCoul(getCouleurAliment(idLu)),couleurLu);
+        setRCoul(getRCoul(getCouleurAliment(idLu)),couleurLu);
         setGCoul(getGCoul(getCouleurAliment(idLu)),couleurLu);
         setBCoul(getBCoul(getCouleurAliment(idLu)),couleurLu);
- */
 
         // On regarde si la couleur est proche de celle demandée
-        if (getRCoul(couleurLu) - getRCoul(coul) <= precision) {
-            if (getGCoul(couleurLu) - getGCoul(coul) <= precision) {
-                if (getBCoul(couleurLu) - getBCoul(coul) <= precision) {
-                    sprintf(listeIds,"%s",idLu);
+        if ((getRCoul(couleurLu) - getRCoul(coul)) <= precision) {
+            if ((getGCoul(couleurLu) - getGCoul(coul)) <= precision) {
+                if ((getBCoul(couleurLu) - getBCoul(coul)) <= precision) {
+                    sprintf(listeIds,"%d",idLu);
                     strcat(listeIds,";");
                 }
             }
         }
-
         i++;
-
     }
-    // Fin de boucle : tout le fichier parcouru
+    // Fin de boucle : tout le fichier es parcouru
 
     fclose(fichier);
-    printf(listeIds);
-    return "42";
-
+    return listeIds;
 }
 
 // Lecture Pesees
@@ -241,7 +236,7 @@ int setQuantitePesee(int id, int nouvQte) {
 
     char* idChar;
     idChar = malloc(sizeof(id));
-    sprintf(idChar, "%d",id);
+    sprintf(idChar,"%d",id);
 
     ligneModifiee = idChar;
     strcat(ligneModifiee,";");
