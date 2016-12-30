@@ -38,7 +38,6 @@ int estUni(ImageBMP* image) {
     return res;
 }
 
-
 Couleur* couleurDominante(ImageBMP* image) {
     // Calcul des moyennes pour chaque composante
     float moyenneR = 0;
@@ -66,11 +65,9 @@ Couleur* couleurDominante(ImageBMP* image) {
 
 int rechercheAliment(Couleur* coul) {
     int res = 0;
+    char* listeAlim = getIdAlimentParCouleur(coul,PRECISION_COULEUR);
+    if(listeAlim != NULL){
+        res = 1;
+    }
     return res;
 }
-
-int* IdAlimentsDeCouleur(Couleur* coul) {
-
-}
-
-

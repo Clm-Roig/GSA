@@ -40,11 +40,4 @@ Couleur* couleurDominante(ImageBMP* image);
 */
 int rechercheAliment(Couleur* coul);
 
-/**
-	@brief Renvoie un tableau des ids des aliments qui ont une couleur proche de celle passée en paramètre
-	@param Couleur* coul, la couleur que l'on souhaite utiliser pour chercher des aliments
-	@return int*, la tableau des aliments proches de la couleur passée en paramètre
-*/
-int* IdAlimentsDeCouleur(Couleur* coul);
-
 #endif
