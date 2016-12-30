@@ -30,7 +30,7 @@ int estUni(ImageBMP* image) {
     float ecarG = sqrt(varG);
     float ecarB = sqrt(varB);
 
-    // Condition sur la variance (à ajuster)
+    // Condition sur l'écart-type (à ajuster)
     if (ecarR + ecarG + ecarB < PRECISION_COULEUR) {
         res = 1;
     }
@@ -64,12 +64,10 @@ Couleur* couleurDominante(ImageBMP* image) {
     return coulDominante;
 }
 
-
 int rechercheAliment(Couleur* coul) {
     int res = 0;
     return res;
 }
-
 
 int* IdAlimentsDeCouleur(Couleur* coul) {
 
