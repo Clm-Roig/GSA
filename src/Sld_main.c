@@ -12,7 +12,7 @@ int main2(int argc,char* args[]) {
 			stock();
 			SDL_Delay(3000);
 
-	SDL_DestroyWindow(getwindow());
-	SDL_Quit();
+	
+	cleanup();
 	return 0;
 }
