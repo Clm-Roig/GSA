@@ -23,7 +23,9 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">COAL - Camera connecte
+   &#160;<span id="projectnumber">1</span>
    </div>
+   <div id="projectbrief">Une camera pour gerer son stock de fruits et legumes</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,34 +104,101 @@ Graphe de collaboration de ImageBMP:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
-<tr class="memitem:acf40171cf25b03b1f3ba3db036662ca4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf40171cf25b03b1f3ba3db036662ca4"></a>
-<a class="el" href="structCouleur.html">Couleur</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>couleurs</b></td></tr>
+<tr class="memitem:acf40171cf25b03b1f3ba3db036662ca4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCouleur.html">Couleur</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImageBMP.html#acf40171cf25b03b1f3ba3db036662ca4">couleurs</a></td></tr>
 <tr class="separator:acf40171cf25b03b1f3ba3db036662ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a417271e980823184519d066a695beccb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a417271e980823184519d066a695beccb"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>taille_image</b></td></tr>
+<tr class="memitem:a417271e980823184519d066a695beccb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImageBMP.html#a417271e980823184519d066a695beccb">taille_image</a></td></tr>
 <tr class="separator:a417271e980823184519d066a695beccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af92031a28d3d2719a4e7301e3df5ac2a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af92031a28d3d2719a4e7301e3df5ac2a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>taille_fichier</b></td></tr>
+<tr class="memitem:af92031a28d3d2719a4e7301e3df5ac2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImageBMP.html#af92031a28d3d2719a4e7301e3df5ac2a">taille_fichier</a></td></tr>
 <tr class="separator:af92031a28d3d2719a4e7301e3df5ac2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1527b1e05420f489dd9e784870156bb5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1527b1e05420f489dd9e784870156bb5"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>largeur</b></td></tr>
+<tr class="memitem:a1527b1e05420f489dd9e784870156bb5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImageBMP.html#a1527b1e05420f489dd9e784870156bb5">largeur</a></td></tr>
 <tr class="separator:a1527b1e05420f489dd9e784870156bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af21e0f06ff94b882a64cb631f4c11ed5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af21e0f06ff94b882a64cb631f4c11ed5"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>hauteur</b></td></tr>
+<tr class="memitem:af21e0f06ff94b882a64cb631f4c11ed5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImageBMP.html#af21e0f06ff94b882a64cb631f4c11ed5">hauteur</a></td></tr>
 <tr class="separator:af21e0f06ff94b882a64cb631f4c11ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f88c1859cc6f625e1d90f2781b92bf3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f88c1859cc6f625e1d90f2781b92bf3"></a>
-unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><b>entete</b></td></tr>
+<tr class="memitem:a0f88c1859cc6f625e1d90f2781b92bf3"><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImageBMP.html#a0f88c1859cc6f625e1d90f2781b92bf3">entete</a></td></tr>
 <tr class="separator:a0f88c1859cc6f625e1d90f2781b92bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Structure définissant une image au format Bitmap. </p>
-</div><hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
+</div><h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="acf40171cf25b03b1f3ba3db036662ca4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCouleur.html">Couleur</a>** ImageBMP::couleurs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0f88c1859cc6f625e1d90f2781b92bf3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* ImageBMP::entete</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af21e0f06ff94b882a64cb631f4c11ed5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ImageBMP::hauteur</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1527b1e05420f489dd9e784870156bb5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ImageBMP::largeur</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af92031a28d3d2719a4e7301e3df5ac2a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ImageBMP::taille_fichier</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a417271e980823184519d066a695beccb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ImageBMP::taille_image</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
 <li>src/<a class="el" href="LecteurBMP_8h_source.html">LecteurBMP.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Samedi 31 Décembre 2016 14:24:54 pour COAL - Camera connecte par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Samedi 31 Décembre 2016 15:51:28 pour COAL - Camera connecte par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
