@@ -11,3 +11,5 @@ Gestionnaire de stock d'aliment connecté à l'aide d'un Raspberry Pi (C)
 - src     : Dossier des fichier C et des entetes
 - obj	  : Dossier des fichier compilés .o
 - bin     : Dossier comportant l'executable du projet
+- doc     : Dossier comportant la documentation
+   |_html : Documentation doxygen (voir index.php)
