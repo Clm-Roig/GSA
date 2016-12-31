@@ -87,42 +87,84 @@ char* getNomAliment(int id) {
     return nomLu;
 }
 
-char* getCouleurAliment(int id) {
+Couleur* getCouleurAliment(int id) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
     char* ligneLu = NULL;
     char* couleurLu;
 
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     ligneLu = lireLigneParId(fichier,id);
+    fclose(fichier);
 
     strtok(ligneLu,";");    // id
     strtok(NULL,";");       // nom
     couleurLu = strtok(NULL,";");
-    fclose(fichier);
-    return couleurLu;
+
+    // Splitage de la couleur
+    char* r = NULL;
+    r = malloc(3*sizeof(char));
+    char* g = NULL;
+    g = malloc(3*sizeof(char));
+    char* b = NULL;
+    b = malloc(3*sizeof(char));
+
+    r = strtok(couleurLu,"-");
+    g = strtok(NULL,"-");
+    b = strtok(NULL,"-");
+
+    // Conversion char* en Couleur*
+    Couleur* coul = initCouleur();
+    setRCoul(atoi(r),coul);
+    setGCoul(atoi(g),coul);
+    setBCoul(atoi(b),coul);
+
+    return coul;
 }
 
-char* getIdAlimentParCouleur(char* couleur, int precision) {
+char* getIdAlimentParCouleur(Couleur* coul, int precision) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
+    int res = 0;
+
     char* listeIds = NULL;
-    listeIds = malloc(nbLignesFichier(fichier)*TAILLE_MAX_LIGNE*sizeof(char));
+    // Au maximum, tous les aliments conviennent. On prend 4 car on n'aura pas plus de 999 aliments + le symbole ";" entre chaque aliment
+    listeIds = malloc(nbLignesFichier(fichier)*4*sizeof(char));
+
     char* ligneLu = NULL;
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
-
-    int nbLignes = nbLignesFichier(fichier);
     int idLu;
-    char* couleurLu = malloc(12*sizeof(char));
+
+    Couleur* couleurLu = initCouleur();
 
     int i=2;
 
-    while (i<=nbLignes) {
+    while (i <= nbLignesFichier(fichier)) {
         ligneLu = lireLigne(fichier,i);
-       // idLu = strtok(ligneLu,";");
-        couleurLu = getCouleurAliment(idLu);
-//TODO : à finir, nécessite Couleur.c
+        idLu = atoi(strtok(ligneLu,";"));
 
+        setRCoul(getRCoul(getCouleurAliment(idLu)),couleurLu);
+        setGCoul(getGCoul(getCouleurAliment(idLu)),couleurLu);
+        setBCoul(getBCoul(getCouleurAliment(idLu)),couleurLu);
+
+        // On regarde si la couleur est proche de celle demandÃ©e
+        if (abs(getRCoul(couleurLu) - getRCoul(coul)) <= precision) {
+            if (abs(getGCoul(couleurLu) - getGCoul(coul)) <= precision) {
+                if (abs(getBCoul(couleurLu) - getBCoul(coul)) <= precision) {
+                    sprintf(listeIds,"%d",idLu);
+                    strcat(listeIds,";");
+                    res = 1;
+                }
+            }
+        }
+        i++;
     }
+    // Fin de boucle : tout le fichier est parcouru
+    fclose(fichier);
 
+    // S'il n'y a pas d'aliments correspondants, on renvoie NULL
+    if(!res) {
+        listeIds = NULL;
+    }
+    return listeIds;
 }
 
 // Lecture Pesees
@@ -199,7 +241,7 @@ int setQuantitePesee(int id, int nouvQte) {
 
     char* idChar;
     idChar = malloc(sizeof(id));
-    sprintf(idChar, "%d",id);
+    sprintf(idChar,"%d",id);
 
     ligneModifiee = idChar;
     strcat(ligneModifiee,";");
@@ -306,7 +348,7 @@ int ecrireDonneeAliment(char* nom, char* couleur) {
     assert(fichier != NULL);
     fseek(fichier,0,SEEK_END);
 
-    // Saut de ligne avant insertion et formatage des données
+    // Saut de ligne avant insertion et formatage des donnÃ©es
     char buffer[TAILLE_MAX_LIGNE]="\n";
 
     // Obtention de l'id du nouvel aliment
@@ -330,21 +372,21 @@ int ecrireDonneeAliment(char* nom, char* couleur) {
 int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) {
     FILE* fichier = fopen(CHEMIN_PESEES,"r+");
 
-    // Contrôles
+    // ContrÃ´les
     assert(fichier != NULL);
     assert(date != NULL && date != "");
 
-    // Saut de ligne avant insertion et formatage des données
+    // Saut de ligne avant insertion et formatage des donnÃ©es
     char buffer[TAILLE_MAX_LIGNE]="\n";
 
-    // Obtention de l'id de la nouvelle pesée
+    // Obtention de l'id de la nouvelle pesÃ©e
     int id = getIdMax("pesees") + 1;
     fseek(fichier,0,SEEK_END);
     char *idchar = NULL;
     idchar = malloc(10*sizeof(char));
     sprintf(idchar,"%d",id);
 
-    // Conversion des données int en char
+    // Conversion des donnÃ©es int en char
     char *quantite_char = NULL;
     quantite_char = malloc(100*sizeof(char));
     char *id_aliment_char = NULL;
@@ -385,14 +427,14 @@ int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) 
 int supprimerDonneeAliment(int id){
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r+");
 
-    // Obtention ligne à Supprimer
+    // Obtention ligne Ã  Supprimer
     char* ligneASupprimer = NULL;
     ligneASupprimer = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     ligneASupprimer = lireLigneParId(fichier,id);
 
     FILE* fichierTemp = fopen(CHEMIN_ALIMENTS_TEMP,"a");
 
-    // Recopie du fichier dans le fichier .tmp sauf la ligne à supprimer
+    // Recopie du fichier dans le fichier .tmp sauf la ligne Ã  supprimer
     char* ligneLu = NULL;
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     while(fgets(ligneLu, TAILLE_MAX_LIGNE, fichier) != NULL) {
@@ -414,7 +456,7 @@ int supprimerDonneeAliment(int id){
 int supprimerDonneePesee(int id){
     FILE* fichier = fopen(CHEMIN_PESEES,"r+");
 
-    // Obtention ligne à Supprimer
+    // Obtention ligne Ã  Supprimer
     char* ligneASupprimer = NULL;
     ligneASupprimer = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     ligneASupprimer = lireLigneParId(fichier,id);
@@ -422,7 +464,7 @@ int supprimerDonneePesee(int id){
     FILE* fichierTemp = fopen(CHEMIN_PESEES_TEMP,"a");
 
 
-    // Recopie du fichier dans le fichier .tmp sauf la ligne à supprimer
+    // Recopie du fichier dans le fichier .tmp sauf la ligne Ã  supprimer
     char* ligneLu = NULL;
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     while(fgets(ligneLu, TAILLE_MAX_LIGNE, fichier) != NULL) {
