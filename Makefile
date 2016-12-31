@@ -19,5 +19,8 @@ cobal: $(OBJECTS)
 $(OBJECTS): $(SOURCES)
 	$(CC) $(SOURCES) -o $(OBJECTS) $(LDFLAGS)
 
+doxygen:
+	doxygen Doxyfile
+
 clean:
 	rm -f $(OBJECTS) $(EXECUTABLE) $(bin_dir)/*
