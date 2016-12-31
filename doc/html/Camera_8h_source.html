@@ -23,7 +23,9 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">COAL - Camera connecte
+   &#160;<span id="projectnumber">1</span>
    </div>
+   <div id="projectbrief">Une camera pour gerer son stock de fruits et legumes</div>
   </td>
  </tr>
  </tbody>
@@ -60,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -67,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Camera.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DEF_Camera</span></div>
+<a href="Camera_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DEF_Camera</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DEF_Camera</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// EN-TETE Camera.h</span></div>
@@ -96,23 +99,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// ---- CONSTANTES ---- //</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* CHEMIN_IMAGES_ALIMENTS = <span class="stringliteral">&quot;data/images_aliments/&quot;</span>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="Camera_8h.html#a0f98a3cbc9fbc8914ab18b6874af380c">   11</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="Camera_8h.html#a0f98a3cbc9fbc8914ab18b6874af380c">CHEMIN_IMAGES_ALIMENTS</a> = <span class="stringliteral">&quot;data/images_aliments/&quot;</span>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// ---- FONCTIONS ---- //</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">int</span> demarrerCamera();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">int</span> <a class="code" href="Camera_8h.html#a16556ca0a458367aedd43bdb8a93d2ca">demarrerCamera</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">int</span> prendrePhoto();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">int</span> <a class="code" href="Camera_8h.html#a8721c451a1141425fc4e0cdab782af6a">prendrePhoto</a>();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">int</span> enregistrerPhoto();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">int</span> <a class="code" href="Camera_8h.html#a1fa667be3f04b8a3ee11c0b7aa45f1f1">enregistrerPhoto</a>();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="Camera_8h_html_a0f98a3cbc9fbc8914ab18b6874af380c"><div class="ttname"><a href="Camera_8h.html#a0f98a3cbc9fbc8914ab18b6874af380c">CHEMIN_IMAGES_ALIMENTS</a></div><div class="ttdeci">const char * CHEMIN_IMAGES_ALIMENTS</div><div class="ttdef"><b>Definition:</b> Camera.h:11</div></div>
+<div class="ttc" id="Camera_8h_html_a1fa667be3f04b8a3ee11c0b7aa45f1f1"><div class="ttname"><a href="Camera_8h.html#a1fa667be3f04b8a3ee11c0b7aa45f1f1">enregistrerPhoto</a></div><div class="ttdeci">int enregistrerPhoto()</div><div class="ttdoc">Enregistrer la photo dans CHEMIN_IMAGES_ALIMENTS. </div><div class="ttdef"><b>Definition:</b> Camera.c:13</div></div>
+<div class="ttc" id="Camera_8h_html_a16556ca0a458367aedd43bdb8a93d2ca"><div class="ttname"><a href="Camera_8h.html#a16556ca0a458367aedd43bdb8a93d2ca">demarrerCamera</a></div><div class="ttdeci">int demarrerCamera()</div><div class="ttdoc">Démarre la caméra. </div></div>
+<div class="ttc" id="Camera_8h_html_a8721c451a1141425fc4e0cdab782af6a"><div class="ttname"><a href="Camera_8h.html#a8721c451a1141425fc4e0cdab782af6a">prendrePhoto</a></div><div class="ttdeci">int prendrePhoto()</div><div class="ttdoc">Prend une photo. </div><div class="ttdef"><b>Definition:</b> Camera.c:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Samedi 31 Décembre 2016 14:24:54 pour COAL - Camera connecte par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Samedi 31 Décembre 2016 15:51:27 pour COAL - Camera connecte par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
