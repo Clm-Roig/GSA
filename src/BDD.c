@@ -145,7 +145,7 @@ char* getIdAlimentParCouleur(Couleur* coul, int precision) {
         setGCoul(getGCoul(getCouleurAliment(idLu)),couleurLu);
         setBCoul(getBCoul(getCouleurAliment(idLu)),couleurLu);
 
-        // On regarde si la couleur est proche de celle demandée
+        // On regarde si la couleur est proche de celle demandÃ©e
         if (abs(getRCoul(couleurLu) - getRCoul(coul)) <= precision) {
             if (abs(getGCoul(couleurLu) - getGCoul(coul)) <= precision) {
                 if (abs(getBCoul(couleurLu) - getBCoul(coul)) <= precision) {
@@ -348,7 +348,7 @@ int ecrireDonneeAliment(char* nom, char* couleur) {
     assert(fichier != NULL);
     fseek(fichier,0,SEEK_END);
 
-    // Saut de ligne avant insertion et formatage des données
+    // Saut de ligne avant insertion et formatage des donnÃ©es
     char buffer[TAILLE_MAX_LIGNE]="\n";
 
     // Obtention de l'id du nouvel aliment
@@ -372,21 +372,21 @@ int ecrireDonneeAliment(char* nom, char* couleur) {
 int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) {
     FILE* fichier = fopen(CHEMIN_PESEES,"r+");
 
-    // Contrôles
+    // ContrÃ´les
     assert(fichier != NULL);
     assert(date != NULL && date != "");
 
-    // Saut de ligne avant insertion et formatage des données
+    // Saut de ligne avant insertion et formatage des donnÃ©es
     char buffer[TAILLE_MAX_LIGNE]="\n";
 
-    // Obtention de l'id de la nouvelle pesée
+    // Obtention de l'id de la nouvelle pesÃ©e
     int id = getIdMax("pesees") + 1;
     fseek(fichier,0,SEEK_END);
     char *idchar = NULL;
     idchar = malloc(10*sizeof(char));
     sprintf(idchar,"%d",id);
 
-    // Conversion des données int en char
+    // Conversion des donnÃ©es int en char
     char *quantite_char = NULL;
     quantite_char = malloc(100*sizeof(char));
     char *id_aliment_char = NULL;
@@ -427,14 +427,14 @@ int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) 
 int supprimerDonneeAliment(int id){
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r+");
 
-    // Obtention ligne à Supprimer
+    // Obtention ligne Ã  Supprimer
     char* ligneASupprimer = NULL;
     ligneASupprimer = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     ligneASupprimer = lireLigneParId(fichier,id);
 
     FILE* fichierTemp = fopen(CHEMIN_ALIMENTS_TEMP,"a");
 
-    // Recopie du fichier dans le fichier .tmp sauf la ligne à supprimer
+    // Recopie du fichier dans le fichier .tmp sauf la ligne Ã  supprimer
     char* ligneLu = NULL;
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     while(fgets(ligneLu, TAILLE_MAX_LIGNE, fichier) != NULL) {
@@ -456,7 +456,7 @@ int supprimerDonneeAliment(int id){
 int supprimerDonneePesee(int id){
     FILE* fichier = fopen(CHEMIN_PESEES,"r+");
 
-    // Obtention ligne à Supprimer
+    // Obtention ligne Ã  Supprimer
     char* ligneASupprimer = NULL;
     ligneASupprimer = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     ligneASupprimer = lireLigneParId(fichier,id);
@@ -464,7 +464,7 @@ int supprimerDonneePesee(int id){
     FILE* fichierTemp = fopen(CHEMIN_PESEES_TEMP,"a");
 
 
-    // Recopie du fichier dans le fichier .tmp sauf la ligne à supprimer
+    // Recopie du fichier dans le fichier .tmp sauf la ligne Ã  supprimer
     char* ligneLu = NULL;
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     while(fgets(ligneLu, TAILLE_MAX_LIGNE, fichier) != NULL) {

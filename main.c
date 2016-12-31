@@ -1,3 +1,4 @@
+
 // Programme principal du projet COAL
 #include <stdlib.h>
 #include <stdio.h>

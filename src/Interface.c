@@ -25,11 +25,11 @@ void afficherMenuPrincipal() {
 // TODO : int* x ?
 int saisirInt(int x) {
     int res = 0;
-    // Récupérer le type de x
+    // RÃ©cupÃ©rer le type de x
 
     // Demander la saisie
 
-    // Contrôler la saisie
+    // ContrÃ´ler la saisie
 
     // Renvoyer 1 ou 0
     return res;

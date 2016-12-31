@@ -63,4 +63,3 @@ int setBCoul(int b,Couleur* couleur) {
     }
     return res;
 }
-

@@ -4,13 +4,13 @@
 int estUni(ImageBMP* image) {
     int res = 0;
 
-    // On récupère la couleur moyenne de l'image
+    // On rÃ©cupÃ¨re la couleur moyenne de l'image
     Couleur* coulDominante = couleurDominante(image);
     int moyenneR = getRCoul(coulDominante);
     int moyenneG = getGCoul(coulDominante);
     int moyenneB = getBCoul(coulDominante);
 
-    // Calcul des variances / écarts-type
+    // Calcul des variances / Ã©carts-type
     float varR = 0;
     float varG = 0;
     float varB = 0;
@@ -30,7 +30,7 @@ int estUni(ImageBMP* image) {
     float ecarG = sqrt(varG);
     float ecarB = sqrt(varB);
 
-    // Condition sur l'écart-type (à ajuster)
+    // Condition sur l'Ã©cart-type (Ã  ajuster)
     if (ecarR + ecarG + ecarB < PRECISION_COULEUR) {
         res = 1;
     }
