@@ -7,8 +7,6 @@
 #include <string.h>
 #include <assert.h>
 
-#include "Couleur.c"
-
 // ---- CONSTANTES ---- //
 const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
