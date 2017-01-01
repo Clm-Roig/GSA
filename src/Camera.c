@@ -1,16 +1,16 @@
 #include "Camera.h"
 
-char* demarrerCam() 
+int demarrerCam()
 {
-  return ;
+  return 0;
 }
 
-char* prendrePhoto()
+int prendrePhoto()
 {
-  return ;
+  return 0;
 }
 
-char* enregistrerPhoto()
+int enregistrerPhoto()
 {
-  return ;
+  return 0;
 }
