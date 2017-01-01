@@ -2,8 +2,8 @@
 // ---- FONCTIONS ---- //
 
 void sautLignes(int n) {
-    int i=0;
-    for(i; i < n ;i++) {
+    int i;
+    for(i=0; i < n ;i++) {
         printf("\n");
     }
 }
