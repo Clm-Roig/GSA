@@ -6,14 +6,14 @@ CFLAGS=-Wall
 SOURCES=$(src_dir)*.c
 OBJECTS=$(obj_dir)*.o
 LDFLAGS=`sdl2-config --cflags --libs`
-EXECUTABLE=$(bin_dir)cobal.exe
+EXECUTABLE=$(bin_dir)coal.exe
 
-all: cobal
+all: coal
 
-sdl: 
+sdl:
 	$(CC) $(CFLAGS) $(src_dir)/Sdl.c -o $(bin_dir)sdl $(LDFLAGS)
 
-cobal: $(OBJECTS) 
+coal: $(OBJECTS)
 	$(CC) -o $(EXECUTABLE) $(OBJECTS) $(LDFLAGS)
 
 $(OBJECTS): $(SOURCES)
