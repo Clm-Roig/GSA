@@ -374,7 +374,7 @@ int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) 
 
     // Contrôles
     assert(fichier != NULL);
-    assert(date != NULL && date != "");
+    assert(date != NULL && strcmp(date,""));
 
     // Saut de ligne avant insertion et formatage des données
     char buffer[TAILLE_MAX_LIGNE]="\n";
@@ -398,7 +398,7 @@ int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) 
     strcat(buffer,idchar);
     strcat(buffer,";");
 
-    if (quantite_char == "") {
+    if (strcmp(quantite_char,"")) {
          strcat(buffer," ");
     }
     else {
@@ -406,7 +406,7 @@ int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) 
     }
     strcat(buffer,";");
 
-    if (description == "") {
+    if (strcmp(description,"")) {
          strcat(buffer," ");
     }
     else {
