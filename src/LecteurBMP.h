@@ -63,9 +63,16 @@ unsigned char* getEnTete(FILE* image);
 /**
 	@brief Renseigne sur la largeur de l'image
 	@param FILE* image, l'image à analyser
-	@return bool, 1 si l'image a une largeur (en pxl) multiple de 4, sinon 0
+	@return int, la largeur de l'image (en pxl)
 */
 int getLargeurBMP(FILE* image);
+
+/**
+	@brief Renseigne sur la hauteur de l'image
+	@param FILE* image, l'image à analyser
+	@return int, la hauteur de l'image (en pxl)
+*/
+int getHauteurBMP(FILE* image);
 
 /**
 	@brief Retourne la taille de l'image
