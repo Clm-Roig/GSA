@@ -8,9 +8,6 @@
 #include <assert.h>
 #include <math.h>
 
-#include "BDD.c"
-#include "LecteurBMP.c"
-
 // ---- CONSTANTES ---- //
 //const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 

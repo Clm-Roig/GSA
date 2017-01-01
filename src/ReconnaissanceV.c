@@ -15,8 +15,8 @@ int estUni(ImageBMP* image) {
     float varG = 0;
     float varB = 0;
 
-    int i = 0;
-    for(i; i < (image->hauteur * image->largeur) ; i++) {
+    int i;
+    for(i=0; i < (image->hauteur * image->largeur) ; i++) {
         varR = varR + (getRCoul(image->couleurs[i]) - moyenneR) * (getRCoul(image->couleurs[i]) - moyenneR);
         varG = varG + (getGCoul(image->couleurs[i]) - moyenneG) * (getGCoul(image->couleurs[i]) - moyenneG);
         varB = varB + (getBCoul(image->couleurs[i]) - moyenneB) * (getBCoul(image->couleurs[i]) - moyenneB);
@@ -44,8 +44,8 @@ Couleur* couleurDominante(ImageBMP* image) {
     float moyenneG = 0;
     float moyenneB = 0;
 
-    int i = 0;
-    for(i; i < (image->hauteur * image->largeur) ; i++) {
+    int i;
+    for(i=0; i < (image->hauteur * image->largeur) ; i++) {
         moyenneR += getRCoul(image->couleurs[i]);
         moyenneG += getGCoul(image->couleurs[i]);
         moyenneB += getBCoul(image->couleurs[i]);
