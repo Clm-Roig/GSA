@@ -14,9 +14,9 @@ char* toCharCouleur(Couleur* coul) {
     char* chaine;
     chaine = malloc(20*sizeof(char));
 
-    char* rcoul = (char*)getRCoul(coul);
-    char* gcoul = (char*)getGCoul(coul);
-    char* bcoul = (char*)getBCoul(coul);
+    int rcoul = getRCoul(coul);
+    int gcoul = getGCoul(coul);
+    int bcoul = getBCoul(coul);
 
     sprintf(chaine,"R:%d G:%d B:%d",rcoul,gcoul,bcoul);
 
