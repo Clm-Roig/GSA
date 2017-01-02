@@ -9,7 +9,6 @@
 
 // ---- CONSTANTES ---- //
 
-
 // ---- STRUCTURE ---- //
 /** @struct Couleur
  *  @brief Structure definissant une couleur au format R-G-B
@@ -30,43 +29,43 @@ typedef struct Couleur {
 
 // Init + destroy
 /**
-	@brief Constructeur de Couleur (sans paramètres)
+	@brief Constructeur de Couleur (sans paramï¿½tres)
 	@return Couleur *
 */
 Couleur* initCouleur();
 
 /**
-	@brief Destructeur de Couleur (libère la mémoire)
-	@param Couleur* coul, la couleur à détruire
+	@brief Destructeur de Couleur (libï¿½re la mï¿½moire)
+	@param Couleur* coul, la couleur ï¿½ dï¿½truire
 */
 void destroyCouleur(Couleur* coul);
 
 // Print
 /**
-	@brief Transforme la couleur en chaine de caractères
+	@brief Transforme la couleur en chaine de caractï¿½res
 	@param Couleur* coul
-	@return char*, la couleur en chaine de caractères ("R:42 G:53 B:66")
+	@return char*, la couleur en chaine de caractï¿½res ("R:42 G:53 B:66")
 */
 char* toCharCouleur(Couleur* coul);
 
 //Getters
 /**
-	@brief Recupère rCoul d'une Couleur
-	@param Couleur* couleur, la couleur à lire
+	@brief Recupï¿½re rCoul d'une Couleur
+	@param Couleur* couleur, la couleur ï¿½ lire
 	@return int rCoul, la valeur de rouge de la Couleur
 */
 int getRCoul(Couleur* couleur);
 
 /**
-	@brief Recupère gCoul d'une Couleur
-	@param Couleur* couleur, la couleur à lire
+	@brief Recupï¿½re gCoul d'une Couleur
+	@param Couleur* couleur, la couleur ï¿½ lire
 	@return int gCoul, la valeur de rouge de la Couleur
 */
 int getGCoul(Couleur* couleur);
 
 /**
-	@brief Recupère bCoul d'une Couleur
-	@param Couleur* couleur, la couleur à lire
+	@brief Recupï¿½re bCoul d'une Couleur
+	@param Couleur* couleur, la couleur ï¿½ lire
 	@return int bCoul, la valeur de rouge de la Couleur
 */
 int getBCoul(Couleur* couleur);
@@ -74,24 +73,24 @@ int getBCoul(Couleur* couleur);
 // Setters
 /**
 	@brief Edition de rCoul dans la structure
-	@param int r, la valeur de rouge à setter (compris entre 0 et 255)
-	@param Couleur* couleur, la couleur à modifier
+	@param int r, la valeur de rouge ï¿½ setter (compris entre 0 et 255)
+	@param Couleur* couleur, la couleur ï¿½ modifier
 	@return int, 1 si 0 <= r <= 255 sinon
 */
 int setRCoul(int r,Couleur* couleur);
 
 /**
 	@brief Edition de gCoul dans la structure
-	@param int g, la valeur de vert à setter (compris entre 0 et 255)
-	@param Couleur* couleur, la couleur à modifier
+	@param int g, la valeur de vert ï¿½ setter (compris entre 0 et 255)
+	@param Couleur* couleur, la couleur ï¿½ modifier
 	@return int, 1 si 0 <= g <= 255 sinon
 */
 int setGCoul(int g,Couleur* couleur);
 
 /**
 	@brief Edition de bCoul dans la structure
-	@param int b, la valeur de bleu à setter (compris entre 0 et 255)
-	@param Couleur* couleur la couleur à modifier
+	@param int b, la valeur de bleu ï¿½ setter (compris entre 0 et 255)
+	@param Couleur* couleur la couleur ï¿½ modifier
 	@return int, 1 si 0 <= b <= 255 sinon
 */
 int setBCoul(int b,Couleur* couleur);

@@ -10,7 +10,6 @@
 #include "Couleur.h"
 
 // ---- CONSTANTES ---- //
-const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
 // ---- STRUCTURE ---- //
 /** @struct ImageBMP

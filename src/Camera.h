@@ -8,7 +8,6 @@
 #include <assert.h>
 
 // ---- CONSTANTES ---- //
-const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
 // ---- FONCTIONS ---- //
 
