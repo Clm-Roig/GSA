@@ -271,10 +271,10 @@ int setQuantitePesee(int id, int nouvQte) {
 
     while(fgets(ligneLue,TAILLE_MAX_LIGNE, fichier) != NULL) {
         if(strcmp(ligneLue,ligneRef) != 0) {
-            fprintf(fichierTemp,ligneLue);
+            fprintf(fichierTemp,"%s",ligneLue);
         }
         else {
-            fprintf(fichierTemp,ligneModifiee);
+            fprintf(fichierTemp,"%s",ligneModifiee);
         }
     }
 
@@ -324,10 +324,10 @@ int setDatePesee(int id, char* nouvDate) {
 
     while(fgets(ligneLue,TAILLE_MAX_LIGNE, fichier) != NULL) {
         if(strcmp(ligneLue,ligneRef) != 0) {
-            fprintf(fichierTemp,ligneLue);
+            fprintf(fichierTemp,"%s",ligneLue);
         }
         else {
-            fprintf(fichierTemp,ligneModifiee);
+            fprintf(fichierTemp,"%s",ligneModifiee);
         }
     }
 
@@ -364,7 +364,7 @@ int ecrireDonneeAliment(char* nom, char* couleur) {
     strcat(buffer,couleur);
     strcat(buffer,";");
 
-    fprintf(fichier,buffer);
+    fprintf(fichier,"%s",buffer);
     fclose(fichier);
     return 1;
 }
@@ -418,7 +418,7 @@ int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) 
     strcat(buffer,";");
     strcat(buffer,id_aliment_char);
 
-    fprintf(fichier,buffer);
+    fprintf(fichier,"%s",buffer);
     fclose(fichier);
     return 1;
 }
@@ -439,7 +439,7 @@ int supprimerDonneeAliment(int id){
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     while(fgets(ligneLu, TAILLE_MAX_LIGNE, fichier) != NULL) {
         if(strcmp(ligneLu,ligneASupprimer) != 0) {
-            fprintf(fichierTemp,ligneLu);
+            fprintf(fichierTemp,"%s",ligneLu);
         }
     }
 
@@ -469,7 +469,7 @@ int supprimerDonneePesee(int id){
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     while(fgets(ligneLu, TAILLE_MAX_LIGNE, fichier) != NULL) {
         if(strcmp(ligneLu,ligneASupprimer)) {
-            fprintf(fichierTemp,ligneLu);
+            fprintf(fichierTemp,"%s",ligneLu);
         }
     }
 
