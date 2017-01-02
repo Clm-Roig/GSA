@@ -7,6 +7,8 @@
 #include <string.h>
 #include <assert.h>
 
+#include "Couleur.h"
+
 // ---- CONSTANTES ---- //
 const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
 
@@ -92,6 +94,5 @@ long getTailleFichier(FILE* image);
 	@return Couleur**, un tableau de Couleur* représentant l'image pixel par pixel
 */
 Couleur** getDonnees(FILE* image);
-
 
 #endif
