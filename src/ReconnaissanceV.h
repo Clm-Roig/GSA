@@ -10,7 +10,7 @@
 
 #include "Couleur.h"
 #include "BDD.h"
-#include "LecteurBMP.h"
+#include "ImageBMP.h"
 
 // ---- CONSTANTES ---- //
 

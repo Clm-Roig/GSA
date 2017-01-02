@@ -1,4 +1,4 @@
-#include "LecteurBMP.h"
+#include "ImageBMP.h"
 
 // Init + destroy
 ImageBMP* initImageBMP(FILE* fichier) {

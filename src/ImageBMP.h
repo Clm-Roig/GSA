@@ -1,7 +1,7 @@
-#ifndef DEF_LecteurBMP
-#define DEF_LecteurBMP
+#ifndef DEF_ImageBMP
+#define DEF_ImageBMP
 
-// EN-TETE ReconnaissanceV.h
+// EN-TETE ImageBMP.h
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
