@@ -8,7 +8,7 @@
 #include <assert.h>
 #include <math.h>
 
-#include "Couleur.c"
+#include "Couleur.h"
 
 // ---- CONSTANTES ---- //
 const char* CHEMIN_ALIMENTS = "data/aliments.txt";
