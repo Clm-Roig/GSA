@@ -15,7 +15,7 @@ coal: $(OBJECTS)
 
 $(OBJECTS): $(SOURCES)
 	$(CC) $(SOURCES)  $(CFLAGS) -o $(OBJECTS)
-	
+
 doxygen:
 	doxygen Doxyfile
 
