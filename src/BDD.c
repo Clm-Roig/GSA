@@ -1,5 +1,14 @@
 #include "BDD.h"
 
+// ---- CONSTANTES ---- //
+const char* CHEMIN_ALIMENTS = "data/aliments.txt";
+const char* CHEMIN_PESEES = "data/pesees.txt";
+const char* CHEMIN_ALIMENTS_TEMP = "data/aliments.txt.tmp";
+const char* CHEMIN_PESEES_TEMP = "data/pesees.txt.tmp";
+
+const char* ENTETE_ALIMENTS = "ID_ALIMENT;NOM_ALIMENT;COULEUR_ALIMENT";
+const char* ENTETE_PESEES = "ID_PESEE;QUANTITE_PESEE;DESCRIPTION_PESEE;DATE_PESEE;ID_ALIMENT_PESEE";
+
 // ---- LECTURE ---- //
 int nbLignesFichier(FILE* fichier) {
     int nbLignes = 0;
