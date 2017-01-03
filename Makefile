@@ -5,13 +5,10 @@ CC=gcc
 CFLAGS=-Wall
 SOURCES=$(src_dir)*.c
 OBJECTS=$(obj_dir)*.o
-LDFLAGS=`sdl2-config --cflags --libs`
+LDFLAGS=`sdl2-config --cflags --libs` -lm -lSDL2_image
 EXECUTABLE=$(bin_dir)coal.exe
 
 all: coal
-
-sdl:
-	$(CC) $(CFLAGS) $(src_dir)/Sdl.c -o $(bin_dir)sdl $(LDFLAGS)
 
 coal: $(OBJECTS)
 	$(CC) -o $(EXECUTABLE) $(OBJECTS) $(LDFLAGS)
