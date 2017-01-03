@@ -2,7 +2,7 @@ obj_dir=obj/
 bin_dir=bin/
 src_dir=src/
 CC=gcc
-CFLAGS=-Wall
+CFLAGS=-Wall 
 SOURCES=$(src_dir)*.c
 OBJECTS=$(obj_dir)*.o
 LDFLAGS=`sdl2-config --cflags --libs` -lm -lSDL2_image
@@ -14,8 +14,7 @@ coal: $(OBJECTS)
 	$(CC) -o $(EXECUTABLE) $(OBJECTS) $(LDFLAGS)
 
 $(OBJECTS): $(SOURCES)
-	$(CC) $(SOURCES) -o $(OBJECTS) $(LDFLAGS)
-
+	$(CC) $(SOURCES)  $(CFLAGS) -o $(OBJECTS)
 doxygen:
 	doxygen Doxyfile
 
