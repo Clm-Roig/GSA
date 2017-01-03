@@ -11,10 +11,10 @@ EXECUTABLE=$(bin_dir)coal.exe
 all: coal
 
 coal: $(OBJECTS)
-	$(CC) -o $(EXECUTABLE) $(OBJECTS) $(LDFLAGS)
+	$(CC) $(OBJECTS) $(LDFLAGS) -o $(EXECUTABLE)
 
 $(OBJECTS): $(SOURCES)
-	$(CC) $(SOURCES)  $(CFLAGS) -o $(OBJECTS)
+	$(CC) $(SOURCES) $(CFLAGS) -o $(OBJECTS)
 
 doxygen:
 	doxygen Doxyfile
