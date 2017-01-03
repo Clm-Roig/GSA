@@ -1,7 +1,7 @@
 #include "Sdl_main.h"
 
 
-int main2(int argc,char* args[]) {
+int main(int argc,char* args[]) {
 	init();
 
 	menu();
