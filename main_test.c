@@ -2,9 +2,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "src/BDD.c"
+#include "src/Camera.c"
 
 int main_test() {
-    ecrireDonneePesee("","une pesee de 2017","01/01/2017",3);
+    prendrePhoto();
+    printf("Photo prise !");
     return 0;
 }
