@@ -7,10 +7,6 @@ int demarrerCam()
 
 int prendrePhoto()
 {
-  return 0;
-}
-
-int enregistrerPhoto()
-{
-  return 0;
+  system("raspistill -o CHEMIN_IMAGES_ALIMENTS/test.bmp");
+  return 1;
 }
