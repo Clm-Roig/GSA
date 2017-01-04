@@ -5,7 +5,7 @@
 #include "src/Camera.c"
 
 int main_test() {
-    prendrePhoto();
+    prendrePhoto("coucou");
     printf("Photo prise !");
     return 0;
 }
