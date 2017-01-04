@@ -4,8 +4,8 @@
 
 #include "src/Camera.c"
 
-int main_test() {
+int main() {
     prendrePhoto("coucou");
-    printf("Photo prise !");
+    printf("\nPhoto prise !");
     return 0;
 }

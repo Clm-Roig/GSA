@@ -19,7 +19,7 @@ int demarrerCamera();
 
 /**
 	@brief Prend une photo
-  @param char* idPesee, l'id de la pesée qui donnera son nom à la photo
+    @param char* idPesee, l'id de la pesée qui donnera son nom à la photo
 	@return bool, 1 si la prise de photo s'est bien passée, 0 sinon
 */
 int prendrePhoto(char* idPesee);
