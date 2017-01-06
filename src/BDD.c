@@ -351,7 +351,7 @@ int setDatePesee(int id, char* nouvDate) {
 }
 
 // ---- ECRITURE ---- //
-int ecrireDonneeAliment(char* nom, char* couleur, int dureeP) {
+int ecrireDonneeAliment(char* nom, Couleur* couleur, int dureeP) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r+");
     assert(fichier != NULL);
     fseek(fichier,0,SEEK_END);
@@ -375,7 +375,7 @@ int ecrireDonneeAliment(char* nom, char* couleur, int dureeP) {
     strcat(buffer,";");
     strcat(buffer,nom);
     strcat(buffer,";");
-    strcat(buffer,couleur);
+    strcat(buffer,toCharCouleur(couleur));
     strcat(buffer,";");
     strcat(buffer,dureePchar);
 

@@ -130,7 +130,7 @@ int setDatePesee(int id, char* nouvDate);
     @param int dureeP, la durée de péremption moyenne de l'aliment
     @return int 1 si écriture ok, sinon 0
 */
-int ecrireDonneeAliment(char* nom, char* couleur, int dureeP);
+int ecrireDonneeAliment(char* nom, Couleur* couleur, int dureeP);
 
 /**
     @brief écrit un tuple pesee (ID / QUANTITE / DESCRIPTION / DATE / ID_ALIMENT)
@@ -140,7 +140,7 @@ int ecrireDonneeAliment(char* nom, char* couleur, int dureeP);
     @param int id_aliment : l'id de l'aliment pesé
     @return int 1 si écriture ok, sinon 0
 */
-int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment);
+int ecrireDonneePesee(int quantite, char* description, char* date, int id_aliment);
 
 // ----- Suppression ---- //
 /**
