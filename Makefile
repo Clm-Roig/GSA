@@ -4,11 +4,11 @@ src_dir=src/
 CC=gcc
 CFLAGS=-Wall -lSDL2_image -lSDL2
 LDFLAGS=`sdl2-config --cflags --libs`
-EXEC=$(bin_dir)coal
+EXEC=$(bin_dir)coal.exe
 
 all: $(EXEC)
 
-$(bin_dir)coal: $(obj_dir)BDD.o $(obj_dir)Camera.o $(obj_dir)Couleur.o $(obj_dir)ImageBMP.o $(obj_dir)Interface.o $(obj_dir)ReconnaissanceV.o $(obj_dir)Sdl_fenetres.o $(obj_dir)Sdl_init.o $(obj_dir)Sdl_main.o
+$(bin_dir)coal.exe: $(obj_dir)BDD.o $(obj_dir)Camera.o $(obj_dir)Couleur.o $(obj_dir)ImageBMP.o $(obj_dir)Interface.o $(obj_dir)ReconnaissanceV.o $(obj_dir)Sdl_fenetres.o $(obj_dir)Sdl_init.o $(obj_dir)Sdl_main.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(obj_dir)%.o: $(src_dir)%.c
