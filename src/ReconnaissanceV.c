@@ -87,46 +87,63 @@ Couleur* couleurDominanteHorsFond(ImageBMP* image, Couleur* couleurFond) {
     float moyenneGAliment = 0;
     float moyenneBAliment = 0;
 
+    // Récupère les composantes RGB du pixel analysé
     int valeurRPixel;
     int valeurGPixel;
     int valeurBPixel;
-    int valeurCouleurPixel;
 
-    // initialisation compteurPixelsValides
-    int cptPixelsHorsFond = 0;
+    // Compte le nb de pixels composants l'aliment
+    int cptPixelsAliment = 0;
 
-    // Pour chaque pixel de l'image
+    // Stocke la différence entre la valeurPixel et PRECISION_COULEUR_HORS_FOND
+    int diffR;
+    int diffG;
+    int diffB;
+
     int i;
     for(i=0; i < (image->hauteur * image->largeur) ; i++) {
-    //      SI NON(couleur Pixel ~ couleurFond +/- precision)
-        valeurRPixel += getRCoul(image->couleurs[i]);
-        valeurGPixel += getGCoul(image->couleurs[i]);
-        valeurBPixel += getBCoul(image->couleurs[i]);
-        valeurCouleurPixel = valeurRPixel + valeurGPixel + valeurBPixel;
+        valeurRPixel = getRCoul(image->couleurs[i]);
+        valeurGPixel = getGCoul(image->couleurs[i]);
+        valeurBPixel = getBCoul(image->couleurs[i]);
 
-        // TODO comparer par composantes
-        if !((valeurCouleurPixel > couleurFond - PRECISION_COULEUR_HORS_FOND) && (valeurCouleurPixel < couleurFond + PRECISION_COULEUR_HORS_FOND)) {
-    //      ALORS moyenneRGB += couleurPixel
-    //      compteurPixelsValides ++
-            moyenneRGBAliment += valeurCouleurPixel;
+        // Différence entre pixel et fond
+        diffR = valeurRPixel - getRCoul(couleurFond);
+        diffG = valeurGPixel - getGCoul(couleurFond);
+        diffB = valeurBPixel - getBCoul(couleurFond);
+
+        // Valeur absolue
+        if(diffR < 0) {
+            diffR = -diffR;
+        }
+        if(diffG < 0) {
+            diffG = -diffG;
+        }
+        if(diffB < 0) {
+            diffB = -diffB;
+        }
+
+        // Si la somme des différences est supérieur au seuil, alors ce sont des pixels de l'aliment.
+        if (diffR + diffG + diffB > PRECISION_COULEUR_HORS_FOND) {
             moyenneRAliment += valeurRPixel;
             moyenneGAliment += valeurGPixel;
             moyenneBAliment += valeurBPixel;
-            cptPixelsHorsFond ++;
+            cptPixelsAliment ++;
         }
     }
 
-    // Calcul des moyennes pour chaque composante
-    moyenneRAliment = moyenneRAliment / cptPixelsHorsFond;
-    moyenneGAliment = moyenneGAliment / cptPixelsHorsFond;
-    moyenneBAliment = moyenneBAliment / cptPixelsHorsFond;
+    // Calcul des moyennes pour chaque composante des pixels de l'aliment
+    if(cptPixelsAliment != 0) {
+        moyenneRAliment = moyenneRAliment / cptPixelsAliment;
+        moyenneGAliment = moyenneGAliment / cptPixelsAliment;
+        moyenneBAliment = moyenneBAliment / cptPixelsAliment;
+    }
 
-    Couleur* coulDominanteHorsFond = initCouleur();
-    setRCoul((int)moyenneRAliment,coulDominanteHorsFond);
-    setGCoul((int)moyenneGAliment,coulDominanteHorsFond);
-    setBCoul((int)moyenneBAliment,coulDominanteHorsFond);
+    Couleur* coulDominanteAliment = initCouleur();
+    setRCoul((int)moyenneRAliment,coulDominanteAliment);
+    setGCoul((int)moyenneGAliment,coulDominanteAliment);
+    setBCoul((int)moyenneBAliment,coulDominanteAliment);
 
-    return coulDominanteHorsFond;
+    return coulDominanteAliment;
 }
 
 int rechercheAliment(Couleur* coul) {
