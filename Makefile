@@ -4,11 +4,11 @@ src_dir=src/
 CC=gcc
 CFLAGS=-Wall -lm -lSDL2_image -lSDL2
 LDFLAGS=`sdl2-config --cflags --libs`
-EXEC=$(bin_dir)coal.exe
+EXEC=coal
 
 all: $(EXEC)
 
-hello: $(obj_dir)*.o
+coal: $(obj_dir)*.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(obj_dir)%.o: $(src_dir)%.c
