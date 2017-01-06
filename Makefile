@@ -9,7 +9,7 @@ EXEC=coal
 all: $(EXEC)
 
 coal: $(obj_dir)BDD.o $(obj_dir)Camera.o $(obj_dir)Couleur.o $(obj_dir)ImageBMP.o $(obj_dir)Interface.o $(obj_dir)ReconnaissanceV.o $(obj_dir)Sdl_fenetres.o $(obj_dir)Sdl_init.o $(obj_dir)Sdl_main.o
-	$(CC) -o $@ $^ $(LDFLAGS) -lm
+	$(CC) -o $@ $^ -lm $(LDFLAGS)
 
 $(obj_dir)%.o: $(src_dir)%.c
 	$(CC) $(CFLAGS) -o $@ -c $<
