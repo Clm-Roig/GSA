@@ -10,17 +10,19 @@ int demarrerCam() {
 }
 
 int prendrePhoto(char* idPesee) {
-    char* fonction = "raspistill -o ";
+    // raspistill permet de prendre une photo
+    // -e spécifie l'encodage de la photo
+    char* fonction = "raspistill -e bmp -o ";
     char* chemin = malloc(50*sizeof(char));
     strcat(chemin,CHEMIN_IMAGES_ALIMENTS);
     strcat(chemin,idPesee);
-    char* format = ".bmp";
+    char* extension = ".bmp";
 
     char* exec = malloc(100*sizeof(char));
     strcat(exec,fonction);
     strcat(exec,"\"");
     strcat(exec,chemin);
-    strcat(exec,format);
+    strcat(exec,extension);
     strcat(exec,"\"");
 
     system(exec);
