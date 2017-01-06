@@ -1,10 +1,12 @@
 #include "Sdl_fenetres.h"
+#include <SDL2/SDL.h>
+#include <stdio.h>
 
 void menu(){
 	SDL_Surface* screenSurface;
 	screenSurface=SDL_GetWindowSurface(getwindow());
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
-			
+
 
 			SDL_Rect buttEnreg;SDL_Rect buttInv;
 			buttEnreg.x=40; buttEnreg.y=40; buttEnreg.w=350; buttEnreg.h=400;
