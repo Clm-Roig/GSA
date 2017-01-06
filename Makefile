@@ -4,7 +4,7 @@ src_dir=src/
 CC=gcc
 CFLAGS=-Wall -lm -lSDL2_image -lSDL2
 SOURCES=$(src_dir)*.c
-OBJECTS=$(obj_dir)*.o
+OBJECTS=$(obj_dir).o
 LDFLAGS=`sdl2-config --cflags --libs`
 EXECUTABLE=$(bin_dir)coal.exe
 
