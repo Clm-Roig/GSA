@@ -127,9 +127,10 @@ int setDatePesee(int id, char* nouvDate);
     @brief écrit un tuple aliment (ID / NOM / COULEUR)
     @param char* nom : le nom de l'aliment
     @param char* couleur : la couleur de l'aliment (format : R-G-B)
+    @param int dureeP, la durée de péremption moyenne de l'aliment
     @return int 1 si écriture ok, sinon 0
 */
-int ecrireDonneeAliment(char* nom, char* couleur);
+int ecrireDonneeAliment(char* nom, char* couleur, int dureeP);
 
 /**
     @brief écrit un tuple pesee (ID / QUANTITE / DESCRIPTION / DATE / ID_ALIMENT)
