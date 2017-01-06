@@ -73,7 +73,6 @@ char* lireLigneParId(FILE* fichier, int id) {
             n++;
         }
     }
-    assert(idLu == id);
 
     fseek(fichier,0,0);
     return ligneLu;
@@ -131,23 +130,23 @@ Couleur* getCouleurAliment(int id) {
 }
 
 int getDureePeremptionAliment(int id) {
-  FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
-  char* ligneLu = NULL;
-  char* dureePchar;
+    FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
+    char* ligneLu = NULL;
+    char* dureePchar;
 
-  ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
-  ligneLu = lireLigneParId(fichier,id);
-  fclose(fichier);
+    ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+    ligneLu = lireLigneParId(fichier,id);
+    fclose(fichier);
 
-  strtok(ligneLu,";");    // id
-  strtok(NULL,";");       // nom
-  strtok(NULL,";");       // couleur
-  dureePchar = strtok(NULL,";");
+    strtok(ligneLu,";");    // id
+    strtok(NULL,";");       // nom
+    strtok(NULL,";");       // couleur
+    dureePchar = strtok(NULL,";");
 
-  // Conversion char* en int
-  int dureeP = atoi(dureePchar);
+    // Conversion char* en int
+    int dureeP = atoi(dureePchar);
 
-  return dureeP;
+    return dureeP;
 }
 
 
