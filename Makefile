@@ -18,4 +18,4 @@ doxygen:
 	doxygen Doxyfile
 
 clean:
-	rm -f $(OBJECTS) $(EXECUTABLE) $(bin_dir)/*
+	rm -f $(obj_dir)* $(bin_dir)*
