@@ -11,12 +11,12 @@ int demarrerCam() {
 
 int prendrePhoto(char* idPesee) {
     // raspistill permet de prendre une photo
+    // -n annule la preview de la photo
     // -t delai avant prise de la photo
     // -w et -h hauteur et largeur de 1000pxls
     // -e spécifie l'encodage de la photo
-    // -n annule la preview de la photo
 
-    char* fonction = "raspistill -n -t 500 -e bmp -o ";
+    char* fonction = "raspistill -n -t 100 -w 1000 -h 1000 -e bmp -o ";
 
     char* chemin = malloc(50*sizeof(char));
     strcat(chemin,CHEMIN_IMAGES_ALIMENTS);
