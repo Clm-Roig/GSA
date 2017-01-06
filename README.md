@@ -1,4 +1,4 @@
-# Projet Polytech - Informatique & gestion 3 - COAL
+# Projet Polytech - Informatique & gestion 3 - FOR (Food Organisation & Recognition)
 Gestionnaire de stock d'aliment connecté à l'aide d'un Raspberry Pi (C)
 
 - Matthieu DYE
