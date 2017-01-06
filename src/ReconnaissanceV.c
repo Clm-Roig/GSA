@@ -1,6 +1,23 @@
 #include "ReconnaissanceV.h"
 // ---- FONCTIONS ---- //
 
+// Fonction racine carré rapide
+float fast_sqrtf(float number) {
+	long i;
+	float x2, y;
+	const float threehalfs = 1.5F;
+
+	x2 = number * 0.5F;
+	y = number;
+	i = * ( long * ) &y;         // evil floating point bit level hacking
+	i = 0x5f3759df - ( i >> 1 ); // what the fuck?
+	y = * ( float * ) &i;
+	y = y * ( threehalfs - ( x2 * y * y ) ); // 1st iteration
+  y = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration
+
+	return y;
+}
+
 int estUni(ImageBMP* image) {
     int res = 0;
 
@@ -26,9 +43,9 @@ int estUni(ImageBMP* image) {
     varG = varG / (image->hauteur * image->largeur);
     varB = varB / (image->hauteur * image->largeur);
 
-    float ecarR = sqrtf(varR);
-    float ecarG = sqrtf(varG);
-    float ecarB = sqrtf(varB);
+    float ecarR = fast_sqrtf(varR);
+    float ecarG = fast_sqrtf(varG);
+    float ecarB = fast_sqrtf(varB);
 
     // Condition sur l'écart-type (à ajuster)
     if (ecarR + ecarG + ecarB < PRECISION_COULEUR) {
