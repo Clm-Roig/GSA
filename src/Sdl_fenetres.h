@@ -1,5 +1,7 @@
-#include "Sdl_init.h"
+#include <SDL2/SDL.h>
+#include <stdio.h>
 #include "BDD.h"
+#include "Sdl_init.h"
 
 /**
 	@brief Modifie le rendu pour le menu de choix d'action

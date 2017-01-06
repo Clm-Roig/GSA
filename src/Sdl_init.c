@@ -1,12 +1,7 @@
 #include "Sdl_init.h"
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-#include <stdio.h>
 
 SDL_Window *screen;
 SDL_Renderer *renderer;
-
-
 
 SDL_Renderer *getrenderer(){
     return renderer;

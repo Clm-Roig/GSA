@@ -1,6 +1,4 @@
 #include "Sdl_fenetres.h"
-#include <SDL2/SDL.h>
-#include <stdio.h>
 
 void menu(){
 	SDL_Surface* screenSurface;
