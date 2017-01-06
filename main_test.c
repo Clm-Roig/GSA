@@ -3,9 +3,15 @@
 #include <stdio.h>
 
 #include "src/Camera.c"
+#include "src/Couleur.c"
+#include "src/ReconnaissanceV.c"
+#include "src/ImageBMP.c"
 
 int main() {
-    prendrePhoto("coucou");
+    prendrePhoto("test");
     printf("\nPhoto prise !");
+    FILE* fichier = fopen("data/images_aliments/test.bmp","rb");
+    ImageBMP* img = initImageBMP(fichier);
+    printf("\nCouleur Dominante : %s",toCharCouleur(couleurDominante(img)));
     return 0;
 }
