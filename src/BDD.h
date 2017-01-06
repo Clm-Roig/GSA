@@ -70,6 +70,13 @@ char* getNomAliment(int id);
 Couleur* getCouleurAliment(int id);
 
 /**
+    @brief renvoie la durée de péremption de l'aliment ciblé par l'id
+    @param int id, l'id de l'aliment
+    @return int, la durée de péremption de l'aliment
+*/
+int getDureePeremptionAliment(int id);
+
+/**
     @brief renvoie la liste des id des aliments (id1;id2;id3...) qui ont une couleur proche de la couleur spécifiée
     @param char* : couleur la couleur dont on cherche des aliments
     @param int : precision sur la couleur (pour la couleur 50-50-50, une precision de 10 cherche toutes les couleurs entre 40-40-40 et 60-60-60)
@@ -127,9 +134,10 @@ int setDatePesee(int id, char* nouvDate);
     @brief écrit un tuple aliment (ID / NOM / COULEUR)
     @param char* nom : le nom de l'aliment
     @param char* couleur : la couleur de l'aliment (format : R-G-B)
+    @param int dureeP, la durée de péremption moyenne de l'aliment
     @return int 1 si écriture ok, sinon 0
 */
-int ecrireDonneeAliment(char* nom, char* couleur);
+int ecrireDonneeAliment(char* nom, Couleur* couleur, int dureeP);
 
 /**
     @brief écrit un tuple pesee (ID / QUANTITE / DESCRIPTION / DATE / ID_ALIMENT)
@@ -139,7 +147,7 @@ int ecrireDonneeAliment(char* nom, char* couleur);
     @param int id_aliment : l'id de l'aliment pesé
     @return int 1 si écriture ok, sinon 0
 */
-int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment);
+int ecrireDonneePesee(int quantite, char* description, char* date, int id_aliment);
 
 // ----- Suppression ---- //
 /**

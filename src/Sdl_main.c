@@ -10,7 +10,6 @@ int main(int argc,char* args[]) {
 	stock();
 	SDL_Delay(3000);
 
-
 	cleanup();
 	return 0;
 }

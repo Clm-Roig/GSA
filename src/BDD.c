@@ -6,7 +6,7 @@ const char* CHEMIN_PESEES = "data/pesees.txt";
 const char* CHEMIN_ALIMENTS_TEMP = "data/aliments.txt.tmp";
 const char* CHEMIN_PESEES_TEMP = "data/pesees.txt.tmp";
 
-const char* ENTETE_ALIMENTS = "ID_ALIMENT;NOM_ALIMENT;COULEUR_ALIMENT";
+const char* ENTETE_ALIMENTS = "ID_ALIMENT;NOM_ALIMENT;COULEUR_ALIMENT;DUREE_PEREMPTION";
 const char* ENTETE_PESEES = "ID_PESEE;QUANTITE_PESEE;DESCRIPTION_PESEE;DATE_PESEE;ID_ALIMENT_PESEE";
 
 // ---- LECTURE ---- //
@@ -129,6 +129,27 @@ Couleur* getCouleurAliment(int id) {
 
     return coul;
 }
+
+int getDureePeremptionAliment(int id) {
+  FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
+  char* ligneLu = NULL;
+  char* dureePchar;
+
+  ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+  ligneLu = lireLigneParId(fichier,id);
+  fclose(fichier);
+
+  strtok(ligneLu,";");    // id
+  strtok(NULL,";");       // nom
+  strtok(NULL,";");       // couleur
+  dureePchar = strtok(NULL,";");
+
+  // Conversion char* en int
+  int dureeP = atoi(dureePchar);
+
+  return dureeP;
+}
+
 
 char* getIdAlimentParCouleur(Couleur* coul, int precision) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
@@ -301,7 +322,6 @@ int setQuantitePesee(int id, int nouvQte) {
 int setDatePesee(int id, char* nouvDate) {
     FILE* fichier = fopen(CHEMIN_PESEES,"r");
 
-    // modifie l'attribut quantite
     char* ligneModifiee = NULL;
     ligneModifiee = malloc(TAILLE_MAX_LIGNE*sizeof(char));
 
@@ -352,7 +372,7 @@ int setDatePesee(int id, char* nouvDate) {
 }
 
 // ---- ECRITURE ---- //
-int ecrireDonneeAliment(char* nom, char* couleur) {
+int ecrireDonneeAliment(char* nom, Couleur* couleur, int dureeP) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r+");
     assert(fichier != NULL);
     fseek(fichier,0,SEEK_END);
@@ -366,12 +386,19 @@ int ecrireDonneeAliment(char* nom, char* couleur) {
     idchar = malloc(10*sizeof(char));
     sprintf(idchar,"%d",id);
 
+    // Cast dureeP en char*
+    char *dureePchar = NULL;
+    dureePchar = malloc(3*sizeof(dureeP));
+    sprintf(dureePchar,"%d",dureeP);
+
+    // Construction du tuple
     strcat(buffer,idchar);
     strcat(buffer,";");
     strcat(buffer,nom);
     strcat(buffer,";");
-    strcat(buffer,couleur);
+    strcat(buffer,toCharCouleur(couleur));
     strcat(buffer,";");
+    strcat(buffer,dureePchar);
 
     fprintf(fichier,"%s",buffer);
     fclose(fichier);
