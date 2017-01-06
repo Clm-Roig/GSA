@@ -3,6 +3,7 @@
 // ---- CONSTANTES ---- //
 const int PRECISION_COULEUR_FOND_UNI = 50;
 const int PRECISION_COULEUR_HORS_FOND = 50;
+const int PRECISION_COULEUR_RECHERCHE_ALIMENT = 10;
 
 // ---- FONCTIONS ---- //
 
@@ -54,7 +55,7 @@ int estUni(ImageBMP* image) {
     float ecarB = fast_sqrtf(varB);
 
     // Condition sur l'écart-type (à ajuster)
-    if (ecarR + ecarG + ecarB < PRECISION_COULEUR) {
+    if (ecarR + ecarG + ecarB < PRECISION_COULEUR_FOND_UNI) {
         res = 1;
     }
 
@@ -153,7 +154,7 @@ Couleur* couleurDominanteHorsFond(ImageBMP* image, Couleur* couleurFond) {
 
 int rechercheAliment(Couleur* coul) {
     int res = 0;
-    char* listeAlim = getIdAlimentParCouleur(coul,PRECISION_COULEUR);
+    char* listeAlim = getIdAlimentParCouleur(coul,PRECISION_COULEUR_RECHERCHE_ALIMENT);
     if(listeAlim != NULL){
         res = 1;
     }
