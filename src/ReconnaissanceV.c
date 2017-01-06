@@ -15,8 +15,9 @@ float fast_sqrtf(float number) {
 	y = y * ( threehalfs - ( x2 * y * y ) ); // 1st iteration
   y = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration
 
-	return y;
+	return 1/y;
 }
+// -----------------------------------
 
 int estUni(ImageBMP* image) {
     int res = 0;
