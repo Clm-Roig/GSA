@@ -26,9 +26,9 @@ int estUni(ImageBMP* image) {
     varG = varG / (image->hauteur * image->largeur);
     varB = varB / (image->hauteur * image->largeur);
 
-    float ecarR = sqrt(varR);
-    float ecarG = sqrt(varG);
-    float ecarB = sqrt(varB);
+    float ecarR = sqrtf(varR);
+    float ecarG = sqrtf(varG);
+    float ecarB = sqrtf(varB);
 
     // Condition sur l'écart-type (à ajuster)
     if (ecarR + ecarG + ecarB < PRECISION_COULEUR) {
