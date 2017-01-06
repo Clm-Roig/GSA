@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "src.BDD.c"
+#include "src/BDD.c"
 #include "src/Camera.c"
 #include "src/Couleur.c"
 #include "src/ReconnaissanceV.c"
