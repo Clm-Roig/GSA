@@ -133,7 +133,7 @@ Couleur* getCouleurAliment(int id) {
 int getDureePeremptionAliment(int id) {
   FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
   char* ligneLu = NULL;
-  char* dureeP;
+  char* dureePchar;
 
   ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
   ligneLu = lireLigneParId(fichier,id);
