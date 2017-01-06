@@ -2,7 +2,7 @@ obj_dir=obj/
 bin_dir=bin/
 src_dir=src/
 CC=gcc
-CFLAGS=-Wall -L/usr/local/lib -lm -lSDL2_image -lSDL2
+CFLAGS=-Wall -L/../../../usr/local/lib -lm -lSDL2_image -lSDL2
 LDFLAGS=`sdl2-config --cflags --libs`
 EXEC=coal
 
