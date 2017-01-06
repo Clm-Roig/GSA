@@ -70,6 +70,13 @@ char* getNomAliment(int id);
 Couleur* getCouleurAliment(int id);
 
 /**
+    @brief renvoie la durée de péremption de l'aliment ciblé par l'id
+    @param int id, l'id de l'aliment
+    @return int, la durée de péremption de l'aliment
+*/
+int getDureePeremptionAliment(int id);
+
+/**
     @brief renvoie la liste des id des aliments (id1;id2;id3...) qui ont une couleur proche de la couleur spécifiée
     @param char* : couleur la couleur dont on cherche des aliments
     @param int : precision sur la couleur (pour la couleur 50-50-50, une precision de 10 cherche toutes les couleurs entre 40-40-40 et 60-60-60)

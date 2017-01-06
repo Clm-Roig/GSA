@@ -130,6 +130,27 @@ Couleur* getCouleurAliment(int id) {
     return coul;
 }
 
+int getDureePeremptionAliment(int id) {
+  FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
+  char* ligneLu = NULL;
+  char* dureeP;
+
+  ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+  ligneLu = lireLigneParId(fichier,id);
+  fclose(fichier);
+
+  strtok(ligneLu,";");    // id
+  strtok(NULL,";");       // nom
+  strtok(NULL,";");       // couleur
+  dureePchar = strtok(NULL,";");
+
+  // Conversion char* en int
+  int dureeP = atoi(dureePchar);
+
+  return dureeP;
+}
+
+
 char* getIdAlimentParCouleur(Couleur* coul, int precision) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
     int res = 0;
