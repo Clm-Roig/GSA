@@ -35,10 +35,10 @@ Couleur* couleurDominante(ImageBMP* image);
 /**
 	@brief Renvoie la couleur dominante de l'image (moyenne des 3 composantes RGB), sans tenir compte de la couleur du fond
 	@param ImageBMP* image, l'image que l'on souhaite analyser
-	@return Couleur* , la couleur dominante de l'image, sans prendre en compte le fond
+	@return Couleur*, la couleur dominante de l'image, sans prendre en compte le fond
 */
+Couleur* couleurDominanteHorsFond(ImageBMP* image);
 
-Couleur* couleurominanteHorsFond (ImageBMP* image);
 /**
     @brief Renseigne sur la présence (ou non) d'au moins un aliment ayant une couleur proche du paramètre
 	@param Couleur* coul, la couleur que l'on souhaite utiliser pour chercher des aliments
