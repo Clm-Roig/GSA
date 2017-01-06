@@ -2,7 +2,7 @@
 
 
 int main(int argc,char* args[]) {
-//	init();
+	init();
 
 	menu();
 	SDL_Delay(3000);
