@@ -14,8 +14,8 @@
 // ---- CONSTANTES ---- //
 
 // Cette constance est utilisée par plusieurs fonctions comme "seuil" de détection des couleurs
-const int PRECISION_COULEUR_FOND_UNI = 50;
-const int PRECISION_COULEUR_HORS_FOND = 50;
+const int PRECISION_COULEUR_FOND_UNI;
+const int PRECISION_COULEUR_HORS_FOND;
 
 // ---- FONCTIONS ---- //
 

@@ -1,4 +1,9 @@
 #include "ReconnaissanceV.h"
+
+// ---- CONSTANTES ---- //
+const int PRECISION_COULEUR_FOND_UNI = 50;
+const int PRECISION_COULEUR_HORS_FOND = 50;
+
 // ---- FONCTIONS ---- //
 
 // Fonction racine carré rapide
