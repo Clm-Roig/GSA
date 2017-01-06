@@ -2,7 +2,7 @@ obj_dir=obj/
 bin_dir=bin/
 src_dir=src/
 CC=gcc
-CFLAGS=-Wall -lSDL2_image -lSDL2 -lm -lpthread
+CFLAGS=-Wall -lSDL2_image -lSDL2 -lm -l pthread
 LDFLAGS=`sdl2-config --cflags --libs`
 EXEC=coal
 
