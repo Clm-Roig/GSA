@@ -301,7 +301,6 @@ int setQuantitePesee(int id, int nouvQte) {
 int setDatePesee(int id, char* nouvDate) {
     FILE* fichier = fopen(CHEMIN_PESEES,"r");
 
-    // modifie l'attribut quantite
     char* ligneModifiee = NULL;
     ligneModifiee = malloc(TAILLE_MAX_LIGNE*sizeof(char));
 
