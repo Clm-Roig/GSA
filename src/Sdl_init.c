@@ -25,14 +25,6 @@ void init(){
         exit(1);
     }
 
-    //Initialisation du chargement des images png avec SDL_Image 2
-    int imgFlags = IMG_INIT_PNG;
-    if( !( IMG_Init( imgFlags ) & imgFlags ) )
-    {
-        printf( "SDL_image n'a pu être initialisée! SDL_image Error: %s\n", IMG_GetError() );
-        exit(1);
-    }
-
 }
 
 void cleanup(){
