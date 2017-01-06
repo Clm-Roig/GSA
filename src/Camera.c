@@ -10,6 +10,9 @@ int demarrerCam() {
 }
 
 int prendrePhoto(char* idPesee) {
+    // Pour plus d'infos :
+    // https://www.raspberrypi.org/wp-content/uploads/2013/07/RaspiCam-Documentation.pdf
+    
     // raspistill permet de prendre une photo
     // -n annule la preview de la photo
     // -t delai avant prise de la photo
