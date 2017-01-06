@@ -13,7 +13,7 @@ float fast_sqrtf(float number) {
 	i = 0x5f3759df - ( i >> 1 ); // what the fuck?
 	y = * ( float * ) &i;
 	y = y * ( threehalfs - ( x2 * y * y ) ); // 1st iteration
-  y = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration
+    y = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration
 
 	return 1/y;
 }
@@ -79,6 +79,54 @@ Couleur* couleurDominante(ImageBMP* image) {
     setBCoul((int)moyenneB,coulDominante);
 
     return coulDominante;
+}
+
+Couleur* couleurDominanteHorsFond(ImageBMP* image, Couleur* couleurFond) {
+    // Initialisation moyenneRGB de l'aliment
+    float moyenneRAliment = 0;
+    float moyenneGAliment = 0;
+    float moyenneBAliment = 0;
+
+    int valeurRPixel;
+    int valeurGPixel;
+    int valeurBPixel;
+    int valeurCouleurPixel;
+
+    // initialisation compteurPixelsValides
+    int cptPixelsHorsFond = 0;
+
+    // Pour chaque pixel de l'image
+    int i;
+    for(i=0; i < (image->hauteur * image->largeur) ; i++) {
+    //      SI NON(couleur Pixel ~ couleurFond +/- precision)
+        valeurRPixel += getRCoul(image->couleurs[i]);
+        valeurGPixel += getGCoul(image->couleurs[i]);
+        valeurBPixel += getBCoul(image->couleurs[i]);
+        valeurCouleurPixel = valeurRPixel + valeurGPixel + valeurBPixel;
+
+        // TODO comparer par composantes
+        if !((valeurCouleurPixel > couleurFond - PRECISION_COULEUR_HORS_FOND) && (valeurCouleurPixel < couleurFond + PRECISION_COULEUR_HORS_FOND)) {
+    //      ALORS moyenneRGB += couleurPixel
+    //      compteurPixelsValides ++
+            moyenneRGBAliment += valeurCouleurPixel;
+            moyenneRAliment += valeurRPixel;
+            moyenneGAliment += valeurGPixel;
+            moyenneBAliment += valeurBPixel;
+            cptPixelsHorsFond ++;
+        }
+    }
+
+    // Calcul des moyennes pour chaque composante
+    moyenneRAliment = moyenneRAliment / cptPixelsHorsFond;
+    moyenneGAliment = moyenneGAliment / cptPixelsHorsFond;
+    moyenneBAliment = moyenneBAliment / cptPixelsHorsFond;
+
+    Couleur* coulDominanteHorsFond = initCouleur();
+    setRCoul((int)moyenneRAliment,coulDominanteHorsFond);
+    setGCoul((int)moyenneGAliment,coulDominanteHorsFond);
+    setBCoul((int)moyenneBAliment,coulDominanteHorsFond);
+
+    return coulDominanteHorsFond;
 }
 
 int rechercheAliment(Couleur* coul) {

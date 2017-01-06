@@ -14,7 +14,8 @@
 // ---- CONSTANTES ---- //
 
 // Cette constance est utilisée par plusieurs fonctions comme "seuil" de détection des couleurs
-const int PRECISION_COULEUR = 50;
+const int PRECISION_COULEUR_FOND_UNI = 50;
+const int PRECISION_COULEUR_HORS_FOND = 50;
 
 // ---- FONCTIONS ---- //
 
@@ -35,9 +36,10 @@ Couleur* couleurDominante(ImageBMP* image);
 /**
 	@brief Renvoie la couleur dominante de l'image (moyenne des 3 composantes RGB), sans tenir compte de la couleur du fond
 	@param ImageBMP* image, l'image que l'on souhaite analyser
+	@param Couleur* couleurFond, la couleur du fond de l'image
 	@return Couleur*, la couleur dominante de l'image, sans prendre en compte le fond
 */
-Couleur* couleurDominanteHorsFond(ImageBMP* image);
+Couleur* couleurDominanteHorsFond(ImageBMP* image, Couleur* couleurFond);
 
 /**
     @brief Renseigne sur la présence (ou non) d'au moins un aliment ayant une couleur proche du paramètre
