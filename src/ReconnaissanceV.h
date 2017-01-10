@@ -11,10 +11,6 @@
 #include "BDD.h"
 #include "ImageBMP.h"
 
-#include "Couleur.c"
-#include "BDD.c"
-#include "ImageBMP.c"
-
 // ---- CONSTANTES ---- //
 
 // Cette constance est utilisée par plusieurs fonctions comme "seuil" de détection des couleurs
