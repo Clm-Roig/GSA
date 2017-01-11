@@ -24,6 +24,11 @@ void init(){
         printf("Impossible d'initialiser le mode écran à : %s\n", SDL_GetError());
         exit(1);
     }
+	if(TTF_Init() == -1)
+	{
+    	fprintf(stderr, "Erreur d'initialisation de TTF_Init : %s\n", TTF_GetError());
+    	exit(EXIT_FAILURE);
+	}
 
 }
 
