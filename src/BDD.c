@@ -188,7 +188,6 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
                 if (abs(getBCoul(couleurLu) - getBCoul(coul)) <= precision) {
                     nbAlimentsTrouves++;
                     listeIds[nbAlimentsTrouves-1] = idLu;
-                    res = 1;
                 }
             }
         }
