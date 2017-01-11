@@ -2,6 +2,7 @@
 
 SDL_Window *screen;
 SDL_Renderer *renderer;
+TTF_Font *police;
 
 SDL_Renderer *getrenderer(){
     return renderer;
@@ -28,6 +29,9 @@ void init(){
 	{
     	fprintf(stderr, "Erreur d'initialisation de TTF_Init : %s\n", TTF_GetError());
     	exit(EXIT_FAILURE);
+	}
+	else{
+		police=TTF_OpenFont("amarante.ttf", 22);
 	}
 
 }
