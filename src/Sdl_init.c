@@ -10,7 +10,9 @@ SDL_Renderer *getrenderer(){
 SDL_Window *getwindow(){
     return screen;
 }
-
+SDL_Window *getpolice(){
+    return police;
+}
 void init(){
 	int screenwidth; int screenheight;
 	screenwidth = SCREEN_WIDTH;
