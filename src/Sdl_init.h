@@ -16,6 +16,11 @@ SDL_Renderer *getrenderer();
 	@return Pointeur vers le SDL_Window utilisé
 */
 SDL_Window *getwindow();
+/**
+	@brief Recupère la police actuellement utilisé
+	@return Pointeur vers le TTF_Font utilisé
+*/
+TTF_Font *getpolice();
 
 /**
 	@brief Initilialise une fenetre pour le programme
