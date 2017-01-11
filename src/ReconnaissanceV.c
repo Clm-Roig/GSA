@@ -154,7 +154,7 @@ Couleur* couleurDominanteHorsFond(ImageBMP* image, Couleur* couleurFond) {
 
 int rechercheAliment(Couleur* coul) {
     int res = 0;
-    char* listeAlim = getIdAlimentParCouleur(coul,PRECISION_COULEUR_RECHERCHE_ALIMENT);
+    int* listeAlim = getIdAlimentParCouleur(coul,PRECISION_COULEUR_RECHERCHE_ALIMENT);
     if(listeAlim != NULL){
         res = 1;
     }
