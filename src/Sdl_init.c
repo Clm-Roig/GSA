@@ -33,7 +33,7 @@ void init(){
     	exit(EXIT_FAILURE);
 	}
 	else{
-		police=TTF_OpenFont("data/fonts/arial.ttf", 22);
+		police=TTF_OpenFont("./data/fonts/arial.ttf", 22);
 		if(!police){
     			printf("TTF_OpenFont: %s\n", TTF_GetError());
 		}
