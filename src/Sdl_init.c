@@ -31,7 +31,7 @@ void init(){
     	exit(EXIT_FAILURE);
 	}
 	else{
-		police=TTF_OpenFont("amarante.ttf", 22);
+		police=TTF_OpenFont("Amaranth-Regular.ttf", 22);
 	}
 
 }
