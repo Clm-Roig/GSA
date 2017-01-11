@@ -3,7 +3,7 @@ bin_dir=bin/
 src_dir=src/
 CC=gcc
 CFLAGS=-Wall -lSDL2_image -lSDL_ttf -lSDL2
-LDFLAGS=`sdl2-config --cflags --libs`
+LDFLAGS=`sdl2-config --cflags --libs` -lSDL_ttf
 EXEC=$(bin_dir)GSA.exe
 
 all: $(EXEC)

@@ -10,7 +10,7 @@ SDL_Renderer *getrenderer(){
 SDL_Window *getwindow(){
     return screen;
 }
-SDL_Window *getpolice(){
+TTF_Font *getpolice(){
     return police;
 }
 void init(){
