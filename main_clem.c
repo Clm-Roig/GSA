@@ -7,5 +7,6 @@
 #include "src/ImageBMP.c"
 
 int main() {
+    reinitBDD();
     return 0;
 }
