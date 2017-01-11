@@ -152,7 +152,6 @@ int getDureePeremptionAliment(int id) {
 
 int* getIdAlimentParCouleur(Couleur* coul, int precision) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
-    int res = 0;
 
     // On retourne 5 aliments maximum
     int nbAlimentsTotal = 5;
