@@ -520,3 +520,27 @@ int supprimerDonneePesee(int id){
     }
     return res;
 }
+
+void reinitBDD() {
+    FILE* fichierTempPesees = fopen(CHEMIN_PESEES_TEMP,"a");
+    fprintf(fichierTempPesees,"%s",ENTETE_PESEES);
+    fclose(fichierTempPesees);
+
+    if(remove(CHEMIN_PESEES) != 0 || rename(CHEMIN_PESEES_TEMP,CHEMIN_PESEES) != 0) {
+        printf("\nErreur reinit pesees.txt.");
+    }
+    fclose(fichierTempPesees);
+
+    FILE* fichierTempAliments = fopen(CHEMIN_ALIMENTS_TEMP,"a");
+    fprintf(fichierTempAliments,"%s",ENTETE_ALIMENTS);
+    fclose(fichierTempAliments);
+
+    if(remove(CHEMIN_ALIMENTS) != 0) {
+        printf("\nErreur suppression aliments.txt.");
+    }
+
+    if(rename(CHEMIN_ALIMENTS_TEMP,CHEMIN_ALIMENTS) != 0) {
+        printf("\nErreur rename aliments.txt.");
+    }
+    fclose(fichierTempAliments);
+}

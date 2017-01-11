@@ -164,4 +164,9 @@ int supprimerDonneeAliment(int id);
 */
 int supprimerDonneePesee(int id);
 
+/**
+    @brief supprime toutes les entrées de pesees.txt et aliments.txt
+*/
+void reinitBDD();
+
 #endif
