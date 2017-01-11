@@ -14,8 +14,8 @@ void menu(){
 	SDL_FillRect(screenSurface,&buttEnreg,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	SDL_FillRect(screenSurface,&buttInv,SDL_MapRGB(screenSurface->format,211, 84, 0));
 	SDL_Color couleurBlanc = {255, 255, 255};
-	texteAjout = TTF_RenderText_Blended(police, "Ajout", couleurBlanc);
-	texteInv = TTF_RenderText_Blended(police, "Mon stock", couleurBlanc);
+	texteAjout = TTF_RenderText_Blended(getpolice(), "Ajout", couleurBlanc);
+	texteInv = TTF_RenderText_Blended(getpolice(), "Mon stock", couleurBlanc);
 	
 	SDL_UpdateWindowSurface(getwindow());
 }
