@@ -2,6 +2,7 @@
 
 SDL_Window *screen;
 SDL_Renderer *renderer;
+TTF_Font *police;
 
 SDL_Renderer *getrenderer(){
     return renderer;
@@ -9,7 +10,9 @@ SDL_Renderer *getrenderer(){
 SDL_Window *getwindow(){
     return screen;
 }
-
+SDL_Window *getpolice(){
+    return police;
+}
 void init(){
 	int screenwidth; int screenheight;
 	screenwidth = SCREEN_WIDTH;
@@ -24,6 +27,14 @@ void init(){
         printf("Impossible d'initialiser le mode écran à : %s\n", SDL_GetError());
         exit(1);
     }
+	if(TTF_Init() == -1)
+	{
+    	fprintf(stderr, "Erreur d'initialisation de TTF_Init : %s\n", TTF_GetError());
+    	exit(EXIT_FAILURE);
+	}
+	else{
+		police=TTF_OpenFont("Amaranth-Regular.ttf", 22);
+	}
 
 }
 
@@ -32,6 +43,7 @@ void cleanup(){
     renderer = NULL;
     SDL_DestroyWindow(screen);
     screen = NULL;
+	TTF_Quit();
 
     SDL_Quit();
 }
