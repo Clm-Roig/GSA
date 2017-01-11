@@ -150,23 +150,32 @@ int getDureePeremptionAliment(int id) {
 }
 
 
-char* getIdAlimentParCouleur(Couleur* coul, int precision) {
+int* getIdAlimentParCouleur(Couleur* coul, int precision) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
     int res = 0;
 
-    char* listeIds = NULL;
-    // Au maximum, tous les aliments conviennent. On prend 4 car on n'aura pas plus de 999 aliments + le symbole ";" entre chaque aliment
-    listeIds = malloc(nbLignesFichier(fichier)*4*sizeof(char));
+    // On retourne 5 aliments maximum
+    int nbAlimentsTotal = 5;
+    int nbAlimentsTrouves = 0;
+
+    int* listeIds = NULL;
+    listeIds = malloc(nbAlimentsTotal*sizeof(int));
+    int i=0;
+    // Initialisation des ids à 0
+    for (i=0; i<nbAlimentsTotal; i++) {
+        listeIds[i]=0;
+    }
 
     char* ligneLu = NULL;
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+
     int idLu;
 
     Couleur* couleurLu = initCouleur();
 
-    int i=2;
-
-    while (i <= nbLignesFichier(fichier)) {
+    // On lit le fichier à partir de la ligne 2 (premier tuple)
+    i=2;
+    while (i <= nbLignesFichier(fichier) && nbAlimentsTrouves < nbAlimentsTotal) {
         ligneLu = lireLigne(fichier,i);
         idLu = atoi(strtok(ligneLu,";"));
 
@@ -178,8 +187,8 @@ char* getIdAlimentParCouleur(Couleur* coul, int precision) {
         if (abs(getRCoul(couleurLu) - getRCoul(coul)) <= precision) {
             if (abs(getGCoul(couleurLu) - getGCoul(coul)) <= precision) {
                 if (abs(getBCoul(couleurLu) - getBCoul(coul)) <= precision) {
-                    sprintf(listeIds,"%d",idLu);
-                    strcat(listeIds,";");
+                    nbAlimentsTrouves++;
+                    listeIds[nbAlimentsTrouves-1] = idLu;
                     res = 1;
                 }
             }
@@ -189,10 +198,6 @@ char* getIdAlimentParCouleur(Couleur* coul, int precision) {
     // Fin de boucle : tout le fichier est parcouru
     fclose(fichier);
 
-    // S'il n'y a pas d'aliments correspondants, on renvoie NULL
-    if(!res) {
-        listeIds = NULL;
-    }
     return listeIds;
 }
 

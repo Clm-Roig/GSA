@@ -7,6 +7,10 @@
 #include "src/ImageBMP.c"
 
 int main() {
-
+    Couleur* coul = initCouleur();
+    setRCoul(25,coul);
+    setGCoul(25,coul);
+    setBCoul(25,coul);
+    getIdAlimentParCouleur(coul,29);
     return 0;
 }
