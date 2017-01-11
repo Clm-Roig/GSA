@@ -19,3 +19,7 @@ doxygen:
 
 clean:
 	rm -f $(obj_dir)* $(bin_dir)*
+	
+start:
+	cd bin
+	./GSA.exe
