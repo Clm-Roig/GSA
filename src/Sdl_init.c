@@ -37,6 +37,7 @@ void cleanup(){
     renderer = NULL;
     SDL_DestroyWindow(screen);
     screen = NULL;
+	TTF_Quit();
 
     SDL_Quit();
 }
