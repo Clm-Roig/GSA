@@ -5,6 +5,14 @@ Couleur* initCouleur(){
     return coul;
 }
 
+Couleur* initCouleurAvecParam(int r, int g, int b) {
+    Couleur* coul = initCouleur();
+    setRCoul(r,coul);
+    setGCoul(g,coul);
+    setBCoul(b,coul);
+    return coul;
+}
+
 void destroyCouleur(Couleur* coul) {
     free(coul);
     coul = NULL;

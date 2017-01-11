@@ -29,10 +29,19 @@ typedef struct Couleur {
 
 // Init + destroy
 /**
-	@brief Constructeur de Couleur (sans param�tres)
+	@brief Constructeur de Couleur (sans paramètres)
 	@return Couleur *
 */
 Couleur* initCouleur();
+
+/**
+	@brief Constructeur de Couleur (avec paramètres)
+	@param int r, la valeur de rouge de la couleur
+	@param int g, la valeur de bleu de la couleur
+	@param int b, la valeur de vert de la couleur
+	@return Couleur *
+*/
+Couleur* initCouleurAvecParam();
 
 /**
 	@brief Destructeur de Couleur (lib�re la m�moire)
