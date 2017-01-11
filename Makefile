@@ -21,4 +21,4 @@ clean:
 	rm -f $(obj_dir)* $(bin_dir)*
 	
 start:
-	.bin/GSA.exe
+	./bin/GSA.exe
