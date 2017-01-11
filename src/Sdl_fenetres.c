@@ -2,6 +2,8 @@
 
 void menu(){
 	SDL_Surface* screenSurface;
+	SDL_Surface* texteAjout;
+	SDL_Surface* texteInv;
 	screenSurface=SDL_GetWindowSurface(getwindow());
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
 
