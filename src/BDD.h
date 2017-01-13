@@ -9,6 +9,7 @@
 #include <math.h>
 
 #include "Couleur.h"
+#include "Temps.h"
 
 // ---- CONSTANTES ---- //
 const char* CHEMIN_ALIMENTS;

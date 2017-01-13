@@ -3,3 +3,6 @@
 // ---- CONSTANTES ---- //
 
 // ---- FONCTIONS ---- //
+struct tm strToTm(char* str) {
+    
+}
