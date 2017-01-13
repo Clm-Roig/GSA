@@ -55,10 +55,9 @@ char* lireLigneParId(FILE* fichier, int id);
 
 // ALIMENTS
 /**
-    @brief renvoie le tuple sans l'id du fichier spécifié
-    @param FILE* fichier, le fichier dont on veut extraire une ligne
+    @brief renvoie le nom de l'aliment ciblé par l'id
     @param int id, l'id du tuple que l'on souhaite obtenir
-    @return char*, le tuple complet sans l'id spécifié extrait du fichier
+    @return char*, le nom de l'aliment
 */
 char* getNomAliment(int id);
 
