@@ -13,8 +13,8 @@
 /**
     @brief converti une string en structure tm
     @param char* str, la chaine à convertir
-    @return struct tm, la structure de temps obtenue
+    @return struct tm*, la structure de temps obtenue
 */
-struct tm strToTm(char* str);
+struct tm* strToTm(char* str);
 
 #endif
