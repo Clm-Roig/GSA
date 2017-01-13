@@ -16,10 +16,8 @@ int main(int argc,char* args[]) {
 	*/
 
 	// Tests Clément
-	time_t secondes;
-	time(&secondes);
-	struct tm* temps = localtime(&secondes);
-	printf("%s",asctime(temps));
+	char* str = "Sun Feb 27 21:39:40 2011";
+	strToTm(str);
 
 	return 0;
 }
