@@ -16,3 +16,5 @@
     @return struct tm, la structure de temps obtenue
 */
 struct tm strToTm(char* str);
+
+#endif
