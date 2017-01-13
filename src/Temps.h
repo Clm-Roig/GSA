@@ -11,7 +11,7 @@
 
 // ---- FONCTIONS ---- //
 /**
-    @brief converti une string en structure tm
+    @brief converti une string au format "Sun Feb 27 21:39:40 2011" en structure tm
     @param char* str, la chaine à convertir
     @return struct tm*, la structure de temps obtenue
 */
