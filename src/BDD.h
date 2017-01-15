@@ -102,7 +102,7 @@ char* getDescriptionPesee(int id);
 /**
     @brief renvoie la date de la pesee ciblée par l'id
     @param int id, l'id de la pesee
-    @return char*, la date de la pesee
+    @return char*, la date de la pesee (nb de sec depuis le 1er janvier 1970)
 */
 char* getDatePesee(int id);
 

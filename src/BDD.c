@@ -236,12 +236,12 @@ char* getDatePesee(int id) {
 
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     ligneLu = lireLigneParId(fichier,id);
-
     strtok(ligneLu,";");    // id
     strtok(NULL,";");       // quantite
     strtok(NULL,";");       // description
     dateLu = strtok(NULL,";");   // date
     fclose(fichier);
+
     return dateLu;
 }
 

@@ -15,6 +15,8 @@ int main(int argc,char* args[]) {
 */
 
 	// Tests Clément
+	FILE* fichier = fopen("data/pesees.txt","a");
+	lireLigneParId(fichier,1);
 
 	return 0;
 }
