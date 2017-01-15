@@ -17,7 +17,7 @@ int main(int argc,char* args[]) {
 
 	// Tests Clément
 	char* str = "Sun Feb 27 21:39:40 2011";
-	printf("\nTest : %d\n",monthToInt("Aug"));
+	printf("\nTest : %d\n",yearToInt("2011"));
 
 	return 0;
 }

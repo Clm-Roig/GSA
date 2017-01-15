@@ -15,10 +15,10 @@ struct tm* strToTm(char* str) {
     char* annee = strtok(NULL," ");
 
     // Conversion dans une struct tm
-    struct tm temps;
-    temps.tm_mday = atoi(jour);
+    struct tm* temps;
+    temps->tm_mday = atoi(jour);
 
-    return &temps;
+    return temps;
 }
 
 int* parseHour(char* str) {
@@ -71,13 +71,17 @@ int monthToInt(char* str) {
     else if(strcmp(str,"Dec") == 0) res = 11;
 
     if (res == -1) {
-        printf("Erreur monthToInt : str pas au bon format.");
+        printf("\nErreur monthToInt : paramètre pas au bon format.");
     }
 
     return res;
-
 }
 
 int yearToInt(char* str) {
-
+    int res;
+    res = atoi(str) - 1900;
+    if (res <= 100) {
+        printf("\nErreur yearToInt : année passée en paramètre incorrecte.");
+    }
+    return res;
 }
