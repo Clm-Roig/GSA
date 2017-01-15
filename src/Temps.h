@@ -20,9 +20,9 @@ struct tm* strToTm(char* str);
 /**
     @brief parse une chaine d'heure (21:36:40 => 21h36 et 40s) en un tableau de int ([21,36,40])
     @param char* str, la chaine à convertir
-    @return *int, le tableau d'entiers correspondant à l'heure
+    @return int*, le tableau d'entiers correspondant à l'heure
 */
-int parseHour(char* str);
+int* parseHour(char* str);
 
 /**
     @brief converti un jour de la semaine (format Mon/Tue/Wed...) en un int compris entre 0 et 6 (0 = dimanche)
