@@ -17,7 +17,7 @@ int main(int argc,char* args[]) {
 
 	// Tests Clément
 	char* str = "Sun Feb 27 21:39:40 2011";
-	strToTm(str);
+	parseHour("21:39:40");
 
 	return 0;
 }
