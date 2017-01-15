@@ -37,8 +37,35 @@ int* parseHour(char* str) {
 }
 
 int wDayToInt(char* str) {
+    int res=-1;
+    
+    if(strcmp(str,"Sat") == 0) {
+        res = 0;
+    }
+    else if(strcmp(str,"Mon") == 0) {
+        res = 1;
+    }
+    else if(strcmp(str,"Tue") == 0) {
+        res = 2;
+    }
+    else if(strcmp(str,"Wed") == 0) {
+        res = 3;
+    }
+    else if(strcmp(str,"Thu") == 0) {
+        res = 4;
+    }
+    else if(strcmp(str,"Fri") == 0) {
+        res = 5;
+    }
+    else if(strcmp(str,"Sat") == 0) {
+        res = 6;
+    }
 
+    if (res == -1) {
+        printf("Erreur wDayToInt : str pas au bon format.");
+    }
 
+    return res;
 }
 
 int monthToInt(char* str) {
