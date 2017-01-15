@@ -2,7 +2,6 @@
 
 int main(int argc,char* args[]) {
 	// Affichage de différentes fenetres
-	/*
 	init();
 
 	menu();
@@ -13,11 +12,5 @@ int main(int argc,char* args[]) {
 	SDL_Delay(3000);
 
 	cleanup();
-	*/
-
-	// Tests Clément
-	char* str = "Sun Feb 27 21:39:40 2011";
-	printf("\nTest : %d\n",yearToInt("2011"));
-
 	return 0;
 }
