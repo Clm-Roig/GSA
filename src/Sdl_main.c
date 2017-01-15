@@ -15,8 +15,10 @@ int main(int argc,char* args[]) {
 */
 
 	// Tests Clément
-	FILE* fichier = fopen("data/pesees.txt","a");
-	lireLigneParId(fichier,1);
+	FILE* fichier = fopen("data/pesees.txt","r");
+	printf(lireLigneParId(fichier,1));
+
+	fclose(fichier);
 
 	return 0;
 }
