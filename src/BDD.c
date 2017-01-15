@@ -407,12 +407,11 @@ int ecrireDonneeAliment(char* nom, Couleur* couleur, int dureeP) {
     return 1;
 }
 
-int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) {
+int ecrireDonneePesee(int quantite,char* description,int id_aliment) {
     FILE* fichier = fopen(CHEMIN_PESEES,"r+");
 
     // Contrôles
     assert(fichier != NULL);
-    assert(date != NULL && strcmp(date,""));
 
     // Saut de ligne avant insertion et formatage des données
     char buffer[TAILLE_MAX_LIGNE]="\n";
@@ -452,7 +451,13 @@ int ecrireDonneePesee(int quantite,char* description,char* date,int id_aliment) 
     }
 
     strcat(buffer,";");
-    strcat(buffer,date);
+
+    // Date au moment de l'enregistrement (en secondes depuis 1er janvier 1970)
+    long int date = (long int)time(NULL);
+    char* dateStr = malloc(12*sizeof(int));
+    sprintf(dateStr,"%ld",date);
+    strcat(buffer,dateStr);
+
     strcat(buffer,";");
     strcat(buffer,id_aliment_char);
 

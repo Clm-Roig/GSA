@@ -2,7 +2,7 @@
 
 int main(int argc,char* args[]) {
 	// Affichage de différentes fenetres
-	init();
+/*	init();
 
 	menu();
 	SDL_Delay(3000);
@@ -12,5 +12,9 @@ int main(int argc,char* args[]) {
 	SDL_Delay(3000);
 
 	cleanup();
+*/
+
+	// Tests Clément
+
 	return 0;
 }

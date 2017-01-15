@@ -10,7 +10,6 @@
 #include <time.h>
 
 #include "Couleur.h"
-#include "Temps.h"
 
 // ---- CONSTANTES ---- //
 const char* CHEMIN_ALIMENTS;
@@ -141,14 +140,13 @@ int setDatePesee(int id, char* nouvDate);
 int ecrireDonneeAliment(char* nom, Couleur* couleur, int dureeP);
 
 /**
-    @brief écrit un tuple pesee (ID / QUANTITE / DESCRIPTION / DATE / ID_ALIMENT)
+    @brief écrit un tuple pesee dans la BDD. La date enregistrée est la date courante
     @param int quantite, la quantité d'aliment pesée
     @param char* description, la description de la pesée
-    @param char* date, la date de la pesée (TODO : format à préciser (heures ? minutes ?)
     @param int id_aliment, l'id de l'aliment pesé
     @return bool, 1 si écriture ok, sinon 0
 */
-int ecrireDonneePesee(int quantite, char* description, char* date, int id_aliment);
+int ecrireDonneePesee(int quantite, char* description, int id_aliment);
 
 // ----- Suppression ---- //
 /**
