@@ -5,11 +5,18 @@
 // ---- FONCTIONS ---- //
 struct tm* strToTm(char* str) {
     // str de la forme "Sun Feb 27 21:39:40 2011"
+    // Recopie de la chaine pour pouvoir la modifier
+    char* str2 = strdup(str);
 
-    struct tm* temps;
+    char* jourSemaine = strtok(str2," ");
+    char* mois = strtok(NULL," ");
+    char* jour = strtok(NULL," ");
+    char* heure = strtok(NULL," ");
+    char* annee = strtok(NULL," ");
 
-    char* jour = NULL;
-    printf(strtok(str,"n"));    // Jour
+    // Conversion dans une struct tm
+    struct tm temps;
+    temps.tm_mday = atoi(jour);
 
-    return temps;
+    return &temps;
 }
