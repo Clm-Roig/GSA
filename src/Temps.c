@@ -38,28 +38,14 @@ int* parseHour(char* str) {
 
 int wDayToInt(char* str) {
     int res=-1;
-    
-    if(strcmp(str,"Sat") == 0) {
-        res = 0;
-    }
-    else if(strcmp(str,"Mon") == 0) {
-        res = 1;
-    }
-    else if(strcmp(str,"Tue") == 0) {
-        res = 2;
-    }
-    else if(strcmp(str,"Wed") == 0) {
-        res = 3;
-    }
-    else if(strcmp(str,"Thu") == 0) {
-        res = 4;
-    }
-    else if(strcmp(str,"Fri") == 0) {
-        res = 5;
-    }
-    else if(strcmp(str,"Sat") == 0) {
-        res = 6;
-    }
+
+    if(strcmp(str,"Sat") == 0) res = 0;
+    else if(strcmp(str,"Mon") == 0) res = 1;
+    else if(strcmp(str,"Tue") == 0) res = 2;
+    else if(strcmp(str,"Wed") == 0) res = 3;
+    else if(strcmp(str,"Thu") == 0) res = 4;
+    else if(strcmp(str,"Fri") == 0) res = 5;
+    else if(strcmp(str,"Sat") == 0) res = 6;
 
     if (res == -1) {
         printf("Erreur wDayToInt : str pas au bon format.");
@@ -69,6 +55,26 @@ int wDayToInt(char* str) {
 }
 
 int monthToInt(char* str) {
+    int res=-1;
+
+    if(strcmp(str,"Jan") == 0) res = 0;
+    else if(strcmp(str,"Feb") == 0) res = 1;
+    else if(strcmp(str,"Mar") == 0) res = 2;
+    else if(strcmp(str,"Apr") == 0) res = 3;
+    else if(strcmp(str,"May") == 0) res = 4;
+    else if(strcmp(str,"Jun") == 0) res = 5;
+    else if(strcmp(str,"Jul") == 0) res = 6;
+    else if(strcmp(str,"Aug") == 0) res = 7;
+    else if(strcmp(str,"Sep") == 0) res = 8;
+    else if(strcmp(str,"Oct") == 0) res = 9;
+    else if(strcmp(str,"Nov") == 0) res = 10;
+    else if(strcmp(str,"Dec") == 0) res = 11;
+
+    if (res == -1) {
+        printf("Erreur monthToInt : str pas au bon format.");
+    }
+
+    return res;
 
 }
 
