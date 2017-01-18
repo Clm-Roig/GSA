@@ -26,13 +26,15 @@ void menu() {
 	// Insertion du texte dans les boutons
 	// TODO : les boutons doivent être des SDL_Surface et non des SDL_Rect pour pouvoir
 	// y inscrire du texte dedans en exécutant SDL_BlitSurface()
-	pos.x=40; pos.y=40;
+	int larg= texteAjout->w;
+	int haut= texteInv->h;
+	pos.x=40 + (390-larg/2); pos.y=40 + (390-haut/2);
+
 	SDL_BlitSurface(texteAjout,NULL,screenSurface,&pos);
-	/*
+
 	pos.x=400; pos.y=400;
-	if(!SDL_BlitSurface(texteInv,NULL,screenSurface,pos)) {
-		printf("Erreur Blit Surface  : %s\n", SDL_GetError());
-	}*/
+	SDL_BlitSurface(texteAjout,NULL,screenSurface,&pos);
+
 	SDL_UpdateWindowSurface(getwindow());
 }
 
