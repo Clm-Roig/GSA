@@ -5,7 +5,7 @@ int main(int argc,char* args[]) {
 	init();
 
 	menu();
-	SDL_Delay(3000);
+	SDL_Delay(6000);
 	peser();
 	SDL_Delay(1000);
 	stock();
