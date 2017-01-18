@@ -23,17 +23,17 @@ void menu() {
 	texteAjout = TTF_RenderText_Blended(getpolice(), "Ajout d'un aliment", couleurBlanc);
 	texteInv = TTF_RenderText_Blended(getpolice(), "Mon stock", couleurBlanc);
 
-	// Insertion du texte dans les boutons
-	// TODO : les boutons doivent être des SDL_Surface et non des SDL_Rect pour pouvoir
-	// y inscrire du texte dedans en exécutant SDL_BlitSurface()
+
 	int larg= texteAjout->w;
-	int haut= texteInv->h;
+	int haut= texteAjout->h;
 	pos.x=buttEnreg.x + ((buttEnreg.w-larg)/2); pos.y=buttEnreg.y + ((buttEnreg.h-haut)/2);
 
 	SDL_BlitSurface(texteAjout,NULL,screenSurface,&pos);
 
+	larg= texteInv->w;
+	haut= texteInv->h;
 	pos.x=buttInv.x + ((buttInv.w-larg)/2); pos.y=buttInv.y + ((buttInv.h-haut)/2);
-	SDL_BlitSurface(texteAjout,NULL,screenSurface,&pos);
+	SDL_BlitSurface(texteInv,NULL,screenSurface,&pos);
 
 	SDL_UpdateWindowSurface(getwindow());
 }
