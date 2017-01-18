@@ -8,7 +8,7 @@ int main(int argc,char* args[]) {
 	init();
 
 
-
+while(1){
     SDL_WaitEvent(&event);
     switch(event.type)
     {
@@ -16,6 +16,7 @@ int main(int argc,char* args[]) {
         	menu();
             break;
     }
+}
 
 
 	menu();
