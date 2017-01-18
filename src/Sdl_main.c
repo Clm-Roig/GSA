@@ -17,6 +17,9 @@ int main(int argc,char* args[]) {
 	// Tests Clément
 	FILE* fichier = fopen("data/pesees.txt","r");
 
+	// Tests de BDD (Clément)
+	printf("\n\nPrint général : %s",lireLigneParId(fichier,2));
+
 	fclose(fichier);
 
 	return 0;

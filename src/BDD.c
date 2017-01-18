@@ -63,9 +63,10 @@ char* lireLigneParId(FILE* fichier, int id) {
     int idLu;
     int max = nbLignesFichier(fichier);
     fseek(fichier,0,0);
+
     // On cherche la ligne correspondante
     if (fichier) {
-        int n = 0;
+        int n = 1;
         fseek(fichier,0,0);
         while(n <= max && idLu != id) {
             ligneLu = lireLigne(fichier,n);
