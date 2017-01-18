@@ -1,8 +1,27 @@
 #include "Sdl_main.h"
 
 int main(int argc,char* args[]) {
+	SDL_Event event;
+
+
 	// Affichage de différentes fenetres
 	init();
+
+
+
+    SDL_WaitEvent(&event);
+    switch(event.type)
+    {
+        case SDL_QUIT:
+            continuer = 0;
+            break;
+        case SDL_MOUSEBUTTONUP:
+        	menu();
+            positionZozor.x = event.button.x;
+            positionZozor.y = event.button.y;
+            break;
+    }
+
 
 	menu();
 	SDL_Delay(6000);
