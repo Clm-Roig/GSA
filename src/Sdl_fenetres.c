@@ -28,7 +28,7 @@ void menu() {
 	// y inscrire du texte dedans en exécutant SDL_BlitSurface()
 	int larg= texteAjout->w;
 	int haut= texteInv->h;
-	pos.x=40 + (390-larg/2); pos.y=40 + (390-haut/2);
+	pos.x=40 + ((390-larg)/2); pos.y=40 + ((400-haut)/2);
 
 	SDL_BlitSurface(texteAjout,NULL,screenSurface,&pos);
 
