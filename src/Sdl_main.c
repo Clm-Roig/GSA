@@ -7,14 +7,22 @@ int main(int argc,char* args[]) {
 	// Affichage de différentes fenetres
 	init();
 
-
-while(1){
+bool loop = True;
+while(loop){
+	int x; int y;
     SDL_WaitEvent(&event);
     switch(event.type)
     {
         case SDL_MOUSEBUTTONUP:
-        	menu();
+        	x = event.button.x;
+            y = event.button.y;
             break;
+    }
+    if(x<=100){
+    	loop= !loop;
+    }
+    else{
+    	menu();
     }
 }
 
