@@ -7,7 +7,7 @@ int main(int argc,char* args[]) {
 	// Affichage de différentes fenetres
 	init();
 
-bool loop = True;
+bool loop = TRUE;
 while(loop){
 	int x; int y;
     SDL_WaitEvent(&event);
