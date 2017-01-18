@@ -8,6 +8,7 @@
 #include "src/ImageBMP.c"
 
 int main() {
+    // BOULOT MATTHIEU
 	// Ouvrir la photo
 		// => FILE* => initImageBMP() ImageBMP (img)
 
@@ -22,6 +23,8 @@ int main() {
 
 	// Renommer la photo
 		// => rename sur FILE* (ou à la main)
+
+    // Si tu as le temps, cherche aussi les durées de péremption moyennes pour chaque aliment + ajoutes-en d'autres
     FILE* fichier = fopen("data/pesees.txt","a");
 
 
