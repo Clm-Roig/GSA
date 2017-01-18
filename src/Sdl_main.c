@@ -9,7 +9,7 @@ int main(int argc,char* args[]) {
 
 int loop = 1;
 while(loop==1){
-	int x = 0; int y = 0;
+	int x = 550; int y = 550;
     SDL_WaitEvent(&event);
     switch(event.type)
     {
