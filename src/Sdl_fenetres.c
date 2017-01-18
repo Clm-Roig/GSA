@@ -54,7 +54,6 @@ void menu() {
 	            	case SDLK_ESCAPE:
 	                    loop= 0;
 	                    break;
-
 	                }
 	                break;
 	    }
@@ -62,7 +61,7 @@ void menu() {
 	 		peser();
 	    }
 	    else{
-	    	menu();
+	    	
 	    }
 	}
 }
@@ -94,7 +93,6 @@ void peser() {
 	            	case SDLK_ESCAPE:
 	                    loop= 0;
 	                    break;
-
 	                }
 	                break;
 	    }
