@@ -9,7 +9,7 @@ int main(int argc,char* args[]) {
 
 int loop = 1;
 while(loop==1){
-	int x; int y;
+	int x = 0; int y = 0;
     SDL_WaitEvent(&event);
     switch(event.type)
     {
@@ -27,12 +27,12 @@ while(loop==1){
 }
 
 
-	menu();
+	/*menu();
 	SDL_Delay(6000);
 	peser();
 	SDL_Delay(1000);
 	stock();
-	SDL_Delay(3000);
+	SDL_Delay(3000);*/
 
 	cleanup();
 
