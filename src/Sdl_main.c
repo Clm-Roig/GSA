@@ -7,8 +7,8 @@ int main(int argc,char* args[]) {
 	// Affichage de différentes fenetres
 	init();
 
-bool loop = TRUE;
-while(loop){
+int loop = 1;
+while(loop==1){
 	int x; int y;
     SDL_WaitEvent(&event);
     switch(event.type)
@@ -19,7 +19,7 @@ while(loop){
             break;
     }
     if(x<=100){
-    	loop= !loop;
+    	loop= 0;
     }
     else{
     	menu();
