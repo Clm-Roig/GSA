@@ -1,30 +1,10 @@
 #include "Sdl_main.h"
 
 int main(int argc,char* args[]) {
-	SDL_Event event;
 
 
 	// Affichage de différentes fenetres
 	init();
-
-int loop = 1;
-while(loop==1){
-	int x = 550; int y = 550;
-    SDL_WaitEvent(&event);
-    switch(event.type)
-    {
-        case SDL_MOUSEBUTTONUP:
-        	x = event.button.x;
-            y = event.button.y;
-            break;
-    }
-    if(x<=100){
-    	loop= 0;
-    }
-    else{
-    	menu();
-    }
-}
 
 
 	/*menu();

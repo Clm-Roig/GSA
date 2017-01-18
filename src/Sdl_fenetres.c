@@ -36,7 +36,37 @@ void menu() {
 	SDL_BlitSurface(texteInv,NULL,screenSurface,&pos);
 
 	SDL_UpdateWindowSurface(getwindow());
+
+	SDL_Event event;
+	int loop = 1;
+	while(loop==1){
+		int x = 550; int y = 550;
+	    SDL_WaitEvent(&event);
+	    switch(event.type)
+	    {
+	        case SDL_MOUSEBUTTONUP:
+	        	x = event.button.x;
+	            y = event.button.y;
+	            break;
+	        case SDL_KEYDOWN:
+	            switch(event.key.keysym.sym)
+	            {
+	            	case SDLK_ESCAPE:
+	                    loop= 0;
+	                    break;
+
+	                }
+	                break;
+	    }
+	    if(x<=100){
+	 		peser();
+	    }
+	    else{
+	    	menu();
+	    }
+	}
 }
+
 
 
 void peser() {
@@ -46,6 +76,35 @@ void peser() {
 	//RAJOUTER VEUILLER PATIENTER
 	//RAJOUTTER POID
 	SDL_UpdateWindowSurface(getwindow());
+
+	SDL_Event event;
+	int loop = 1;
+	while(loop==1){
+		int x = 550; int y = 550;
+	    SDL_WaitEvent(&event);
+	    switch(event.type)
+	    {
+	        case SDL_MOUSEBUTTONUP:
+	        	x = event.button.x;
+	            y = event.button.y;
+	            break;
+	        case SDL_KEYDOWN:
+	            switch(event.key.keysym.sym)
+	            {
+	            	case SDLK_ESCAPE:
+	                    loop= 0;
+	                    break;
+
+	                }
+	                break;
+	    }
+	    if(x<=100){
+	 		peser();
+	    }
+	    else{
+	    	
+	    }
+	}
 }
 
 
