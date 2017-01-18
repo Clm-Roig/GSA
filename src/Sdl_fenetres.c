@@ -28,11 +28,11 @@ void menu() {
 	// y inscrire du texte dedans en exécutant SDL_BlitSurface()
 	int larg= texteAjout->w;
 	int haut= texteInv->h;
-	pos.x=40 + ((390-larg)/2); pos.y=40 + ((400-haut)/2);
+	pos.x=buttEnreg.x + ((buttEnreg.w-larg)/2); pos.y=buttEnreg.y + ((buttEnreg.h-haut)/2);
 
 	SDL_BlitSurface(texteAjout,NULL,screenSurface,&pos);
 
-	pos.x=400; pos.y=400;
+	pos.x=buttInv.x + ((buttInv.w-larg)/2); pos.y=buttInv.y + ((buttInv.h-haut)/2);
 	SDL_BlitSurface(texteAjout,NULL,screenSurface,&pos);
 
 	SDL_UpdateWindowSurface(getwindow());
