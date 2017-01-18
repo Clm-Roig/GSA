@@ -17,8 +17,6 @@ int main(int argc,char* args[]) {
             break;
         case SDL_MOUSEBUTTONUP:
         	menu();
-            positionZozor.x = event.button.x;
-            positionZozor.y = event.button.y;
             break;
     }
 
