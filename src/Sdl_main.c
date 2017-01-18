@@ -12,9 +12,6 @@ int main(int argc,char* args[]) {
     SDL_WaitEvent(&event);
     switch(event.type)
     {
-        case SDL_QUIT:
-            continuer = 0;
-            break;
         case SDL_MOUSEBUTTONUP:
         	menu();
             break;
