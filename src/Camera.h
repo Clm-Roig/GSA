@@ -7,6 +7,8 @@
 #include <string.h>
 #include <assert.h>
 
+#include "BDD.h"
+
 // ---- FONCTIONS ---- //
 
 /**
