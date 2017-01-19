@@ -159,6 +159,7 @@ int peserPhoto(SDL_Surface* screenSurface){
 int peserLoading(SDL_Surface* screenSurface){
 	SDL_Rect pos;
 	SDL_Surface* texteTitre;
+	SDL_Color couleurBlanc = {255, 255, 255};
 
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
 
