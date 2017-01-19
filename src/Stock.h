@@ -8,17 +8,19 @@
 #include <assert.h>
 #include <time.h>
 
+#include "BDD.h"
+
 
 // ---- CONSTANTES ---- //
 
 // ---- FONCTIONS ---- //
 
 /**
-    @brief renvoie le tableau des ids d'aliments ordonné par leur durée avant Peremption (en jour + h)
+    @brief renvoie le tableau des ids de pesées ordonné par leur durée avant Peremption (en jour + h)
     @param int limite, le nombre d'id d'aliments à charger
-    @return int**, le tableau [id => durée avant Péremption]
+    @return int**, le tableau [id de la pesée => durée avant Péremption]
 */
-int** getTabIdDureePeremption(int limite);
+char** getTabIdDureePeremption(int limite);
 
 
 #endif

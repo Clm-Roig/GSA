@@ -17,6 +17,8 @@ const char* CHEMIN_PESEES;
 const char* CHEMIN_ALIMENTS_TEMP;
 const char* CHEMIN_PESEES_TEMP;
 
+const char* CHEMIN_IMAGES_ALIMENTS;
+
 const char* ENTETE_ALIMENTS;
 const char* ENTETE_PESEES;
 #define TAILLE_MAX_LIGNE 300
