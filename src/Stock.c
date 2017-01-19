@@ -16,7 +16,8 @@ long int** getTabIdDureeAvantPer(int limite) {
         tabId[compteurTuples] = strtok(lireLigne(fichier,i),";"); //id
         strtok(NULL,";"); // quantité
         strtok(NULL,";"); // description
-        tabDates[compteurTuples] = strtok(NULL,";"); // date
+        char* date = strtok(NULL,";"); // date
+        tabDates[compteurTuples] = date;
         compteurTuples++;
     }
 
@@ -25,40 +26,33 @@ long int** getTabIdDureeAvantPer(int limite) {
     for(i=0; i < compteurTuples ;i++) {
         // Pour chaque pesée, on récupère l'id de l'aliment pesée puis sa durée de péremption
         // La durée est stockée en jours, on la passe en secondes (1jour=86400sec)
-
-        // ça ok
-        char* test = getIdAlimentPesee(atoi(tabId[i]));
-        printf("\n%s",test);
-
-        // à débugguer
-        long int duree = (long int)getDureePeremptionAliment(getIdAlimentPesee(tabId[i]));
+        char* idAlimentPese = getIdAlimentPesee(atoi(tabId[i]));
+        int duree = getDureePeremptionAliment(atoi(idAlimentPese));
         tabDureePer[i] = 86400*duree;
     }
 
+    // Calcul de la durée restante avant péremption
+    long int** resTabFull[compteurTuples];
+    long int now = (long int) time(NULL);
+
+    for(i=0; i < compteurTuples ;i++) {
+        // Sert à rien ici en soit, mais nécessaire pour strtol()
+        char* ptr;
+        long int dureePassee = now - strtol(tabDates[i],&ptr,10);
+        long int dureeRestante = tabDureePer[i] - dureePassee;
+
+        long int id = strtol(tabId[i],&ptr,10);
+        long int tab[2] = {id,dureeRestante};
+        resTabFull[i] = tab;
+    }
+
+    // resTabFull à débugguer TODO
     //////
-        printf("\n\nPrintf du tableau");
+        printf("\n\nPrintf du tableau full");
         for(i=0; i < compteurTuples ;i++) {
-            printf("\n%ld",tabDureePer[i]);
+            printf("\n%ld %ld",resTabFull[i][0],resTabFull[i][1]);
         }
     //////
-
-
-    // Calcul de la durée restante avant péremption
-/*    char resTabFull[compteurTuples][compteurTuples];
-    for(i=0; i < compteurTuples ;i++) {
-        resTabFull[i] = {tabId[i],  };
-    }
-
-
-    char* date = NULL;
-    long int dateInt;
-    printf("\n\nPrintf en date converti");
-    for(i=0; i < compteurTuples ;i++) {
-        date = tabDates[i];
-        dateInt = atol(date);
-        printf("\n%s",ctime(&dateInt));
-    }
-*/
 
 
 
