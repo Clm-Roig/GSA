@@ -161,7 +161,7 @@ int stock() {
 	//Boutton Menu
 	SDL_Rect buttMenu;
 	buttMenu.x=0; buttMenu.y=0; buttMenu.w=30; buttMenu.h=20;
-	SDL_FillRect(screenSurface,&buttMenu,SDL_MapRGB(screenSurface->format,243, 156, 18);
+	SDL_FillRect(screenSurface,&buttMenu,SDL_MapRGB(screenSurface->format,243, 156, 18));
 	
 
 	SDL_UpdateWindowSurface(getwindow());
