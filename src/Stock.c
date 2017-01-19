@@ -1,5 +1,11 @@
 #include "Stock.h"
 
+// ---- Outils ---- //
+int* sortTab(int* tab,int taille) {
+
+        
+}
+
 // ---- Fonctions ---- //
 
 long int** getTabIdDureeAvantPer(int limite) {

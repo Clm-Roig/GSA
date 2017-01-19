@@ -13,6 +13,16 @@
 
 // ---- CONSTANTES ---- //
 
+// ---- Outils ---- //
+/**
+    @brief classe un tableau d'entiers
+    @param int* tab, le tableau à classer
+    @param int taille, la taille du tableau
+    @return int*, le tableau classé
+*/
+int* sortTab(int* tab,int taille);
+
+
 // ---- FONCTIONS ---- //
 
 /**
@@ -21,6 +31,8 @@
     @return long int**, le tableau [id de la pesée => durée avant Péremption]
 */
 long int** getTabIdDureeAvantPer(int limite);
+
+
 
 
 #endif
