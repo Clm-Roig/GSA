@@ -210,6 +210,9 @@ int peserBase(SDL_Surface* screenSurface){
 	    if((x>=buttRetour.x)&&(x<=(buttRetour.x+buttRetour.w))&&(y>=buttRetour.y)&&(y<=(buttRetour.y+buttRetour.h))){
 	 		return 0;
 	    }
+		else if((x>=buttGo.x)&&(x<=(buttGo.x+buttGo.w))&&(y>=buttGo.y)&&(y<=(buttGo.y+buttGo.h))){
+	 		return 2;
+	    }
 	    else{
 	    	
 	    }
