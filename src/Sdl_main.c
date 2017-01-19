@@ -5,7 +5,7 @@ int main(int argc,char* args[]) {
 	int page = 1;
 
 	// Affichage de différentes fenetres
-	init();
+/*	init();
 
 	while(loop==1){
 		if(page==1){
@@ -24,9 +24,9 @@ int main(int argc,char* args[]) {
 	}
 
 	cleanup();
-
+*/
 	// Tests Clément
-	getTabIdDureePeremption(5);
+	getTabIdDureeAvantPer(5);
 
 	return 0;
 }

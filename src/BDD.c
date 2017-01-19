@@ -262,7 +262,7 @@ char* getIdAlimentPesee(int id) {
     strtok(NULL,";");       // date
     idAlimentLu = strtok(NULL,";");   // id_aliment
     fclose(fichier);
-    return idAlimentLu;
+    return strtok(idAlimentLu,"\n");
 }
 
 // ---- MODIFICATION ---- //
