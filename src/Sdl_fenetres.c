@@ -80,6 +80,15 @@ int peser() {
 	SDL_Surface* screenSurface;
 	screenSurface=SDL_GetWindowSurface(getwindow());
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
+
+
+
+
+
+
+
+
+
 	//RAJOUTER VEUILLER PATIENTER
 	//RAJOUTTER POID
 	SDL_UpdateWindowSurface(getwindow());
@@ -121,7 +130,11 @@ int peser() {
 
 int stock() {
 	SDL_Surface* screenSurface;
+	SDL_Surface* texteTitre;
+	SDL_Rect pos;
+
 	screenSurface=SDL_GetWindowSurface(getwindow());
+	
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
 
 	SDL_Rect objet1;SDL_Rect objet2; SDL_Rect objet3; SDL_Rect objet4; SDL_Rect objet5;
@@ -136,6 +149,15 @@ int stock() {
 	SDL_FillRect(screenSurface,&objet3,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	SDL_FillRect(screenSurface,&objet4,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	SDL_FillRect(screenSurface,&objet5,SDL_MapRGB(screenSurface->format,192, 57, 43));
+
+	//Texte
+	SDL_Color couleurBlanc = {255, 255, 255};
+
+	texteTitre = TTF_RenderText_Blended(getpolice(), "Mon stock", couleurBlanc);
+	pos.x=(800-(textTitre->w))/2;
+	pos.y=10;
+	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
+	
 
 	SDL_UpdateWindowSurface(getwindow());
 
