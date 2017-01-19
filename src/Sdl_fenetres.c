@@ -168,8 +168,8 @@ int peserBase(SDL_Surface* screenSurface){
 	SDL_Color couleurBlanc = {255, 255, 255};
 	texteGo = TTF_RenderText_Blended(getpolice(), "Initialiser", couleurBlanc);
 
-	int larg= texteGo->w;
-	int haut= texteGo->h;
+	larg= texteGo->w;
+	haut= texteGo->h;
 	pos.x=buttGo.x + ((buttGo.w-larg)/2); pos.y=buttGo.y + ((buttGo.h-haut)/2);
 
 	SDL_BlitSurface(texteGo,NULL,screenSurface,&pos);
