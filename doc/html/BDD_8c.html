@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.8"/>
-<title>COAL - Camera connecte: Référence du fichier src/BDD.c</title>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>GSA - Gestionnaire de stock alimentaire: Référence du fichier src/BDD.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -21,8 +22,8 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
-   <div id="projectname">COAL - Camera connecte
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GSA - Gestionnaire de stock alimentaire
    &#160;<span id="projectnumber">1</span>
    </div>
    <div id="projectbrief">Une camera pour gerer son stock de fruits et legumes</div>
@@ -32,7 +33,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.8 -->
+<!-- Généré par Doxygen 1.8.11 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,7 +87,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Fonctions</a>  </div>
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Référence du fichier BDD.c</div>  </div>
 </div><!--header-->
@@ -97,14 +99,8 @@ Graphe des dépendances par inclusion de BDD.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="BDD_8c__incl.png" border="0" usemap="#src_2BDD_8c" alt=""/></div>
 <map name="src_2BDD_8c" id="src_2BDD_8c">
-<area shape="rect" id="node2" href="BDD_8h.html" title="BDD.h" alt="" coords="135,80,198,107"/></map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
-<div class="dyncontent">
-<div class="center"><img src="BDD_8c__dep__incl.png" border="0" usemap="#src_2BDD_8cdep" alt=""/></div>
-<map name="src_2BDD_8cdep" id="src_2BDD_8cdep">
-<area shape="rect" id="node2" href="ReconnaissanceV_8h.html" title="src/ReconnaissanceV.h" alt="" coords="5,80,167,107"/><area shape="rect" id="node3" href="ReconnaissanceV_8c.html" title="src/ReconnaissanceV.c" alt="" coords="5,155,167,181"/></map>
+<area shape="rect" id="node2" href="BDD_8h.html" title="BDD.h" alt="" coords="135,80,198,107"/>
+</map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -122,14 +118,17 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a5cbd90d916e7d58c881628a026e6b33c"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie le tuple sans l'id du fichier spécifié  <a href="#a5cbd90d916e7d58c881628a026e6b33c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5cbd90d916e7d58c881628a026e6b33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac421eb8682809ad0ff758022dd3bc663"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#ac421eb8682809ad0ff758022dd3bc663">getNomAliment</a> (int id)</td></tr>
-<tr class="memdesc:ac421eb8682809ad0ff758022dd3bc663"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie le tuple sans l'id du fichier spécifié  <a href="#ac421eb8682809ad0ff758022dd3bc663">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ac421eb8682809ad0ff758022dd3bc663"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie le nom de l'aliment ciblé par l'id  <a href="#ac421eb8682809ad0ff758022dd3bc663">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac421eb8682809ad0ff758022dd3bc663"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1c437a32ef68a386334006430a51e8b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#aa1c437a32ef68a386334006430a51e8b">getCouleurAliment</a> (int id)</td></tr>
-<tr class="memdesc:aa1c437a32ef68a386334006430a51e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie la couleur de l'aliment ciblé par l'id  <a href="#aa1c437a32ef68a386334006430a51e8b">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aa1c437a32ef68a386334006430a51e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdf7d727d301cdecd3617c5c200be01a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#abdf7d727d301cdecd3617c5c200be01a">getIdAlimentParCouleur</a> (char *couleur, int precision)</td></tr>
-<tr class="memdesc:abdf7d727d301cdecd3617c5c200be01a"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie la liste des id des aliments (id1;id2;id3...) qui ont une couleur proche de la couleur spécifiée  <a href="#abdf7d727d301cdecd3617c5c200be01a">Plus de détails...</a><br /></td></tr>
-<tr class="separator:abdf7d727d301cdecd3617c5c200be01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab26ca29f7c372d3b84385c0b90b16d99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCouleur.html">Couleur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#ab26ca29f7c372d3b84385c0b90b16d99">getCouleurAliment</a> (int id)</td></tr>
+<tr class="memdesc:ab26ca29f7c372d3b84385c0b90b16d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie la couleur de l'aliment ciblé par l'id  <a href="#ab26ca29f7c372d3b84385c0b90b16d99">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab26ca29f7c372d3b84385c0b90b16d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa290c6407083cc08e1d67e175101e131"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#aa290c6407083cc08e1d67e175101e131">getDureePeremptionAliment</a> (int id)</td></tr>
+<tr class="memdesc:aa290c6407083cc08e1d67e175101e131"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie la durée de péremption de l'aliment ciblé par l'id  <a href="#aa290c6407083cc08e1d67e175101e131">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa290c6407083cc08e1d67e175101e131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b102cc03686d7bee7eea0eb662e30f7"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#a4b102cc03686d7bee7eea0eb662e30f7">getIdAlimentParCouleur</a> (<a class="el" href="structCouleur.html">Couleur</a> *coul, int precision)</td></tr>
+<tr class="memdesc:a4b102cc03686d7bee7eea0eb662e30f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie la liste des id des aliments (id1;id2;id3...) qui ont une couleur proche de la couleur spécifiée  <a href="#a4b102cc03686d7bee7eea0eb662e30f7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4b102cc03686d7bee7eea0eb662e30f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1c30331b28ff9625fadfc3e2e922637"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#ab1c30331b28ff9625fadfc3e2e922637">getQuantitePesee</a> (int id)</td></tr>
 <tr class="memdesc:ab1c30331b28ff9625fadfc3e2e922637"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie la quantite de la pesee ciblée par l'id  <a href="#ab1c30331b28ff9625fadfc3e2e922637">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab1c30331b28ff9625fadfc3e2e922637"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,21 +147,39 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a2cf2c5f096d5ffedc7cb4223164ba318"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#a2cf2c5f096d5ffedc7cb4223164ba318">setDatePesee</a> (int id, char *nouvDate)</td></tr>
 <tr class="memdesc:a2cf2c5f096d5ffedc7cb4223164ba318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de modifier la date d'enregistrement d'un aliment pesé  <a href="#a2cf2c5f096d5ffedc7cb4223164ba318">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2cf2c5f096d5ffedc7cb4223164ba318"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeb58983fdba962f874f6acb716f6895"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#adeb58983fdba962f874f6acb716f6895">ecrireDonneeAliment</a> (char *nom, char *couleur)</td></tr>
-<tr class="memdesc:adeb58983fdba962f874f6acb716f6895"><td class="mdescLeft">&#160;</td><td class="mdescRight">écrit un tuple aliment (ID / NOM / COULEUR)  <a href="#adeb58983fdba962f874f6acb716f6895">Plus de détails...</a><br /></td></tr>
-<tr class="separator:adeb58983fdba962f874f6acb716f6895"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84fe20ea3af0ec2377883639d27220f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#a84fe20ea3af0ec2377883639d27220f8">ecrireDonneePesee</a> (int quantite, char *description, char *date, int id_aliment)</td></tr>
-<tr class="memdesc:a84fe20ea3af0ec2377883639d27220f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">écrit un tuple pesee (ID / QUANTITE / DESCRIPTION / DATE / ID_ALIMENT)  <a href="#a84fe20ea3af0ec2377883639d27220f8">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a84fe20ea3af0ec2377883639d27220f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53e20620b5e93b3908f56812e67946d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#a53e20620b5e93b3908f56812e67946d2">ecrireDonneeAliment</a> (char *nom, <a class="el" href="structCouleur.html">Couleur</a> *couleur, int dureeP)</td></tr>
+<tr class="memdesc:a53e20620b5e93b3908f56812e67946d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">écrit un tuple aliment (ID / NOM / COULEUR)  <a href="#a53e20620b5e93b3908f56812e67946d2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a53e20620b5e93b3908f56812e67946d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc11d395a562af0642edb26714ef368"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#aafc11d395a562af0642edb26714ef368">ecrireDonneePesee</a> (int quantite, char *description, int id_aliment)</td></tr>
+<tr class="memdesc:aafc11d395a562af0642edb26714ef368"><td class="mdescLeft">&#160;</td><td class="mdescRight">écrit un tuple pesee dans la BDD. La date enregistrée est la date courante.  <a href="#aafc11d395a562af0642edb26714ef368">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aafc11d395a562af0642edb26714ef368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36f8fa173eee95ef1d8ded0ccc5564fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#a36f8fa173eee95ef1d8ded0ccc5564fa">supprimerDonneeAliment</a> (int id)</td></tr>
 <tr class="memdesc:a36f8fa173eee95ef1d8ded0ccc5564fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">supprime le tuple Aliment spécifié par l'id  <a href="#a36f8fa173eee95ef1d8ded0ccc5564fa">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a36f8fa173eee95ef1d8ded0ccc5564fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7d2929445f6d320317261ed7f629858"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#aa7d2929445f6d320317261ed7f629858">supprimerDonneePesee</a> (int id)</td></tr>
 <tr class="memdesc:aa7d2929445f6d320317261ed7f629858"><td class="mdescLeft">&#160;</td><td class="mdescRight">supprime le tuple Pesée spécifié par l'id  <a href="#aa7d2929445f6d320317261ed7f629858">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa7d2929445f6d320317261ed7f629858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abad9b9f2b59755a00f9d432694da9f21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#abad9b9f2b59755a00f9d432694da9f21">reinitBDD</a> ()</td></tr>
+<tr class="memdesc:abad9b9f2b59755a00f9d432694da9f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">supprime toutes les entrées de pesees.txt et aliments.txt  <a href="#abad9b9f2b59755a00f9d432694da9f21">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abad9b9f2b59755a00f9d432694da9f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a9d84cf1b2b218b198be577ef0567fa9d"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#a9d84cf1b2b218b198be577ef0567fa9d">CHEMIN_ALIMENTS</a> = &quot;data/aliments.txt&quot;</td></tr>
+<tr class="separator:a9d84cf1b2b218b198be577ef0567fa9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9a5238d27b2dbe5a844a463c22b9242"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#af9a5238d27b2dbe5a844a463c22b9242">CHEMIN_PESEES</a> = &quot;data/pesees.txt&quot;</td></tr>
+<tr class="separator:af9a5238d27b2dbe5a844a463c22b9242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25c9c299d78b6054796be8a51c3803d8"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#a25c9c299d78b6054796be8a51c3803d8">CHEMIN_ALIMENTS_TEMP</a> = &quot;data/aliments.txt.tmp&quot;</td></tr>
+<tr class="separator:a25c9c299d78b6054796be8a51c3803d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b8960cc56ecd899864d8ab01cb054cb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#a3b8960cc56ecd899864d8ab01cb054cb">CHEMIN_PESEES_TEMP</a> = &quot;data/pesees.txt.tmp&quot;</td></tr>
+<tr class="separator:a3b8960cc56ecd899864d8ab01cb054cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad39fd10510e230796da6494bc7fe1ca2"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#ad39fd10510e230796da6494bc7fe1ca2">ENTETE_ALIMENTS</a> = &quot;ID_ALIMENT;NOM_ALIMENT;COULEUR_ALIMENT;DUREE_PEREMPTION&quot;</td></tr>
+<tr class="separator:ad39fd10510e230796da6494bc7fe1ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77a3e0643f07e752c0bdb5a5d1f56a76"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDD_8c.html#a77a3e0643f07e752c0bdb5a5d1f56a76">ENTETE_PESEES</a> = &quot;ID_PESEE;QUANTITE_PESEE;DESCRIPTION_PESEE;DATE_PESEE;ID_ALIMENT_PESEE&quot;</td></tr>
+<tr class="separator:a77a3e0643f07e752c0bdb5a5d1f56a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des fonctions</h2>
-<a class="anchor" id="adeb58983fdba962f874f6acb716f6895"></a>
+<a class="anchor" id="a53e20620b5e93b3908f56812e67946d2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -175,8 +192,14 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>couleur</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="structCouleur.html">Couleur</a> *&#160;</td>
+          <td class="paramname"><em>couleur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dureeP</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -189,16 +212,17 @@ Fonctions</h2></td></tr>
 <p>écrit un tuple aliment (ID / NOM / COULEUR) </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">char*</td><td>nom : le nom de l'aliment </td></tr>
-    <tr><td class="paramname">char*</td><td>couleur : la couleur de l'aliment (format : R-G-B) </td></tr>
+    <tr><td class="paramname">char*</td><td>nom, le nom de l'aliment </td></tr>
+    <tr><td class="paramname">Couleur*</td><td>couleur, la couleur de l'aliment (format : R-G-B) </td></tr>
+    <tr><td class="paramname">int</td><td>dureeP, la durée de péremption moyenne de l'aliment </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>int 1 si écriture ok, sinon 0 </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool, 1 si écriture ok, sinon 0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a84fe20ea3af0ec2377883639d27220f8"></a>
+<a class="anchor" id="aafc11d395a562af0642edb26714ef368"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -217,12 +241,6 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>date</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>id_aliment</em>&#160;</td>
         </tr>
@@ -234,26 +252,25 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>écrit un tuple pesee (ID / QUANTITE / DESCRIPTION / DATE / ID_ALIMENT) </p>
+<p>écrit un tuple pesee dans la BDD. La date enregistrée est la date courante. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>quantite : la quantité d'aliment pesée </td></tr>
-    <tr><td class="paramname">char*</td><td>description : la description de la pesée </td></tr>
-    <tr><td class="paramname">char*</td><td>date : la date de la pesée (TODO : format à préciser (heures ? minutes ?) </td></tr>
-    <tr><td class="paramname">int</td><td>id_aliment : l'id de l'aliment pesé </td></tr>
+    <tr><td class="paramname">int</td><td>quantite, la quantité d'aliment pesée </td></tr>
+    <tr><td class="paramname">char*</td><td>description, la description de la pesée </td></tr>
+    <tr><td class="paramname">int</td><td>id_aliment, l'id de l'aliment pesé </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>int 1 si écriture ok, sinon 0 </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool, 1 si écriture ok, sinon 0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aa1c437a32ef68a386334006430a51e8b"></a>
+<a class="anchor" id="ab26ca29f7c372d3b84385c0b90b16d99"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* getCouleurAliment </td>
+          <td class="memname"><a class="el" href="structCouleur.html">Couleur</a>* getCouleurAliment </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
@@ -265,11 +282,11 @@ Fonctions</h2></td></tr>
 <p>renvoie la couleur de l'aliment ciblé par l'id </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>id : l'id de l'aliment </td></tr>
+    <tr><td class="paramname">int</td><td>id, l'id de l'aliment </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>char* la couleur de l'aliment (format r-g-b) </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>char*, la couleur de l'aliment (format r-g-b) </dd></dl>
 
 </div>
 </div>
@@ -290,11 +307,11 @@ Fonctions</h2></td></tr>
 <p>renvoie la date de la pesee ciblée par l'id </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>id : l'id de la pesee </td></tr>
+    <tr><td class="paramname">int</td><td>id, l'id de la pesee </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>char* la date de la pesee </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>char*, la date de la pesee (nb de sec depuis le 1er janvier 1970) </dd></dl>
 
 </div>
 </div>
@@ -315,23 +332,48 @@ Fonctions</h2></td></tr>
 <p>renvoie la description de la pesee ciblée par l'id </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>id : l'id de la pesee </td></tr>
+    <tr><td class="paramname">int</td><td>id, l'id de la pesee </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>char* la description de la pesee </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>char*, la description de la pesee </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="abdf7d727d301cdecd3617c5c200be01a"></a>
+<a class="anchor" id="aa290c6407083cc08e1d67e175101e131"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* getIdAlimentParCouleur </td>
+          <td class="memname">int getDureePeremptionAliment </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>couleur</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>renvoie la durée de péremption de l'aliment ciblé par l'id </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>id, l'id de l'aliment </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int, la durée de péremption de l'aliment </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4b102cc03686d7bee7eea0eb662e30f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* getIdAlimentParCouleur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structCouleur.html">Couleur</a> *&#160;</td>
+          <td class="paramname"><em>coul</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -350,12 +392,12 @@ Fonctions</h2></td></tr>
 <p>renvoie la liste des id des aliments (id1;id2;id3...) qui ont une couleur proche de la couleur spécifiée </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">char*</td><td>: couleur la couleur dont on cherche des aliments </td></tr>
-    <tr><td class="paramname">int</td><td>: precision sur la couleur (pour la couleur 50-50-50, une precision de 10 cherche toutes les couleurs entre 40-40-40 et 60-60-60) </td></tr>
+    <tr><td class="paramname">Couleur*</td><td>coul, la couleur dont on cherche des aliments </td></tr>
+    <tr><td class="paramname">int,precision</td><td>sur la couleur (pour la couleur 50-50-50, une precision de 10 cherche toutes les couleurs entre 40-40-40 et 60-60-60) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>char* la liste des ids des aliments une couleur proche de celle spécifiée </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int*, la liste des ids des aliments une couleur proche de celle spécifiée (5 aliments retournés, avec des id=0 si pas trouvé) </dd></dl>
 
 </div>
 </div>
@@ -376,11 +418,11 @@ Fonctions</h2></td></tr>
 <p>renvoie l'id de l'aliment de la pesee ciblée par l'id </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>id : l'id de la pesee </td></tr>
+    <tr><td class="paramname">int</td><td>id, l'id de la pesee </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>char* l'id de l'aliment pesee </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>char*, l'id de l'aliment pesee </dd></dl>
 
 </div>
 </div>
@@ -401,11 +443,11 @@ Fonctions</h2></td></tr>
 <p>renvoie l'id maximum contenu dans le fichier aliments.txt ou pesees.txt </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">char*</td><td>type le nom du fichier dont on souhaite connaître l'idMax (aliments ou pesees) </td></tr>
+    <tr><td class="paramname">char*</td><td>type, le nom du fichier dont on souhaite connaître l'idMax (aliments ou pesees) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>int l'id maximum utilisé dans le fichier analysé </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int, l'id maximum utilisé dans le fichier analysé </dd></dl>
 
 </div>
 </div>
@@ -423,15 +465,14 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>renvoie le tuple sans l'id du fichier spécifié </p>
+<p>renvoie le nom de l'aliment ciblé par l'id </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">FILE*</td><td>fichier : le fichier dont on veut extraire une ligne </td></tr>
-    <tr><td class="paramname">int</td><td>id : l'id du tuple que l'on souhaite obtenir </td></tr>
+    <tr><td class="paramname">int</td><td>id, l'id de l'aliment ciblé </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>char* le tuple complet sans l'id spécifié extrait du fichier </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>char*, le nom de l'aliment </dd></dl>
 
 </div>
 </div>
@@ -452,11 +493,11 @@ Fonctions</h2></td></tr>
 <p>renvoie la quantite de la pesee ciblée par l'id </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>id : l'id de la pesee </td></tr>
+    <tr><td class="paramname">int</td><td>id, l'id de la pesee </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>char* la quantite pesee </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>char*, la quantite pesee </dd></dl>
 
 </div>
 </div>
@@ -487,12 +528,12 @@ Fonctions</h2></td></tr>
 <p>renvoie la ligne du fichier pointé </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">FILE*</td><td>fichier le fichier que l'on souhaite lire </td></tr>
-    <tr><td class="paramname">int</td><td>n le numéro de la ligne que l'on souhaite lire </td></tr>
+    <tr><td class="paramname">FILE*,fichier</td><td>le fichier que l'on souhaite lire </td></tr>
+    <tr><td class="paramname">int</td><td>n, le numéro de la ligne que l'on souhaite lire </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>char* la ligne issue du fichier </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>char*, la ligne issue du fichier </dd></dl>
 
 </div>
 </div>
@@ -523,12 +564,12 @@ Fonctions</h2></td></tr>
 <p>renvoie le tuple sans l'id du fichier spécifié </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">FILE*</td><td>fichier : le fichier dont on veut extraire une ligne </td></tr>
-    <tr><td class="paramname">int</td><td>id : l'id du tuple que l'on souhaite obtenir </td></tr>
+    <tr><td class="paramname">FILE*</td><td>fichier, le fichier dont on veut extraire une ligne </td></tr>
+    <tr><td class="paramname">int</td><td>id, l'id du tuple que l'on souhaite obtenir </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>char* le tuple complet sans l'id spécifié extrait du fichier </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>char*, le tuple complet sans l'id spécifié extrait du fichier </dd></dl>
 
 </div>
 </div>
@@ -549,11 +590,28 @@ Fonctions</h2></td></tr>
 <p>renvoie le nombre de lignes que contient un fichier </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">FILE*</td><td>fichier le fichier à analyser </td></tr>
+    <tr><td class="paramname">FILE*</td><td>fichier, le fichier à analyser </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>int le nombre de lignes du fichier </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int, le nombre de lignes du fichier </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abad9b9f2b59755a00f9d432694da9f21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reinitBDD </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>supprime toutes les entrées de pesees.txt et aliments.txt </p>
 
 </div>
 </div>
@@ -584,11 +642,11 @@ Fonctions</h2></td></tr>
 <p>Permet de modifier la date d'enregistrement d'un aliment pesé </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>id : le numero id de l'aliment dont on veut changer la date d'enregistrement </td></tr>
+    <tr><td class="paramname">int</td><td>id, le numero id de l'aliment dont on veut changer la date d'enregistrement </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>int 1 si modification ok, sinon 0 </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool, 1 si modification ok, sinon 0 </dd></dl>
 
 </div>
 </div>
@@ -619,12 +677,12 @@ Fonctions</h2></td></tr>
 <p>Permet de modifier la quantité d'un aliment pesé </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>id : le numero id de l'aliment dont on veut changer la quantité </td></tr>
-    <tr><td class="paramname">int</td><td>nouvQte : la nouvelle quantité de l'aliment </td></tr>
+    <tr><td class="paramname">int</td><td>id, le numero id de l'aliment dont on veut changer la quantité </td></tr>
+    <tr><td class="paramname">int</td><td>nouvQte, la nouvelle quantité de l'aliment </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>int 1 si modification ok, sinon 0 </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool, 1 si modification ok, sinon 0 </dd></dl>
 
 </div>
 </div>
@@ -645,11 +703,11 @@ Fonctions</h2></td></tr>
 <p>supprime le tuple Aliment spécifié par l'id </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>id: l'id du tuple aliment à supprimer </td></tr>
+    <tr><td class="paramname">int</td><td>id, l'id du tuple aliment à supprimer </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>int 1 si suppression ok, sinon 0 </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool, 1 si suppression ok, sinon 0 </dd></dl>
 
 </div>
 </div>
@@ -670,20 +728,93 @@ Fonctions</h2></td></tr>
 <p>supprime le tuple Pesée spécifié par l'id </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>id: l'id du tuple pesée à supprimer </td></tr>
+    <tr><td class="paramname">int</td><td>id, l'id du tuple pesée à supprimer </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>int 1 si suppression ok, sinon 0 </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool, 1 si suppression ok, sinon 0 </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a class="anchor" id="a9d84cf1b2b218b198be577ef0567fa9d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* CHEMIN_ALIMENTS = &quot;data/aliments.txt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a25c9c299d78b6054796be8a51c3803d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* CHEMIN_ALIMENTS_TEMP = &quot;data/aliments.txt.tmp&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af9a5238d27b2dbe5a844a463c22b9242"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* CHEMIN_PESEES = &quot;data/pesees.txt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3b8960cc56ecd899864d8ab01cb054cb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* CHEMIN_PESEES_TEMP = &quot;data/pesees.txt.tmp&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad39fd10510e230796da6494bc7fe1ca2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ENTETE_ALIMENTS = &quot;ID_ALIMENT;NOM_ALIMENT;COULEUR_ALIMENT;DUREE_PEREMPTION&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a77a3e0643f07e752c0bdb5a5d1f56a76"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ENTETE_PESEES = &quot;ID_PESEE;QUANTITE_PESEE;DESCRIPTION_PESEE;DATE_PESEE;ID_ALIMENT_PESEE&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Samedi 31 Décembre 2016 15:51:27 pour COAL - Camera connecte par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 19 Janvier 2017 11:40:55 pour GSA - Gestionnaire de stock alimentaire par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.8
+</a> 1.8.11
 </small></address>
 </body>
 </html>

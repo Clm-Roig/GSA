@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['affichermenuprincipal',['afficherMenuPrincipal',['../Interface_8c.html#ae0480c0de1f98d66f7b5a2018fc8d88f',1,'afficherMenuPrincipal():&#160;Interface.c'],['../Interface_8h.html#ae0480c0de1f98d66f7b5a2018fc8d88f',1,'afficherMenuPrincipal():&#160;Interface.c']]]
+  ['bcoul',['bCoul',['../structCouleur.html#a93c88d26d0aa102b560bf55696f25694',1,'Couleur']]],
+  ['bdd_2ec',['BDD.c',['../BDD_8c.html',1,'']]],
+  ['bdd_2eh',['BDD.h',['../BDD_8h.html',1,'']]]
 ];

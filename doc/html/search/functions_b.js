@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['sautlignes',['sautLignes',['../Interface_8c.html#ab72412e1b84724845f51f0b4d868fc33',1,'sautLignes(int n):&#160;Interface.c'],['../Interface_8h.html#ab72412e1b84724845f51f0b4d868fc33',1,'sautLignes(int n):&#160;Interface.c']]],
   ['setbcoul',['setBCoul',['../Couleur_8c.html#a8964346e5cbef1ed6422522a7ca3ce23',1,'setBCoul(int b, Couleur *couleur):&#160;Couleur.c'],['../Couleur_8h.html#a8964346e5cbef1ed6422522a7ca3ce23',1,'setBCoul(int b, Couleur *couleur):&#160;Couleur.c']]],
   ['setdatepesee',['setDatePesee',['../BDD_8c.html#a2cf2c5f096d5ffedc7cb4223164ba318',1,'setDatePesee(int id, char *nouvDate):&#160;BDD.c'],['../BDD_8h.html#a2cf2c5f096d5ffedc7cb4223164ba318',1,'setDatePesee(int id, char *nouvDate):&#160;BDD.c']]],
   ['setgcoul',['setGCoul',['../Couleur_8c.html#afc43ff2f0baa904d02d983a73f5042d7',1,'setGCoul(int g, Couleur *couleur):&#160;Couleur.c'],['../Couleur_8h.html#afc43ff2f0baa904d02d983a73f5042d7',1,'setGCoul(int g, Couleur *couleur):&#160;Couleur.c']]],

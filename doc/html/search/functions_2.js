@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['demarrercam',['demarrerCam',['../Camera_8c.html#abdc0d0d1462891fa8a36ec4fb11a82bc',1,'Camera.c']]],
-  ['demarrercamera',['demarrerCamera',['../Camera_8h.html#a16556ca0a458367aedd43bdb8a93d2ca',1,'Camera.h']]],
-  ['destroycouleur',['destroyCouleur',['../Couleur_8c.html#a07fee7330fef8b3e0b2d0792e5048e09',1,'destroyCouleur(Couleur *coul):&#160;Couleur.c'],['../Couleur_8h.html#a07fee7330fef8b3e0b2d0792e5048e09',1,'destroyCouleur(Couleur *coul):&#160;Couleur.c']]],
-  ['destroyimagebmp',['destroyImageBMP',['../LecteurBMP_8c.html#a252d845b99e1e39b914b8bbfd76874d8',1,'destroyImageBMP(ImageBMP *image):&#160;LecteurBMP.c'],['../LecteurBMP_8h.html#a252d845b99e1e39b914b8bbfd76874d8',1,'destroyImageBMP(ImageBMP *image):&#160;LecteurBMP.c']]]
+  ['ecriredonneealiment',['ecrireDonneeAliment',['../BDD_8c.html#a53e20620b5e93b3908f56812e67946d2',1,'ecrireDonneeAliment(char *nom, Couleur *couleur, int dureeP):&#160;BDD.c'],['../BDD_8h.html#a53e20620b5e93b3908f56812e67946d2',1,'ecrireDonneeAliment(char *nom, Couleur *couleur, int dureeP):&#160;BDD.c']]],
+  ['ecriredonneepesee',['ecrireDonneePesee',['../BDD_8c.html#aafc11d395a562af0642edb26714ef368',1,'ecrireDonneePesee(int quantite, char *description, int id_aliment):&#160;BDD.c'],['../BDD_8h.html#aafc11d395a562af0642edb26714ef368',1,'ecrireDonneePesee(int quantite, char *description, int id_aliment):&#160;BDD.c']]],
+  ['estuni',['estUni',['../ReconnaissanceV_8c.html#a429ad1ecb789033262b9b73a84c0c092',1,'estUni(ImageBMP *image):&#160;ReconnaissanceV.c'],['../ReconnaissanceV_8h.html#a429ad1ecb789033262b9b73a84c0c092',1,'estUni(ImageBMP *image):&#160;ReconnaissanceV.c']]]
 ];
