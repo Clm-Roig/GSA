@@ -116,7 +116,7 @@ int peserBase(SDL_Surface* screenSurface){
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
 
 	//Boutton Menu
-	SDL_Rect buttRetour;
+	SDL_Rect buttRetour; SDL_Color couleurBlanc = {255, 255, 255};
 	buttRetour.x=0; buttRetour.y=0; buttRetour.w=45; buttRetour.h=30;
 	SDL_FillRect(screenSurface,&buttRetour,SDL_MapRGB(screenSurface->format,211, 84, 0));
 	texteRetour = TTF_RenderText_Blended(getpolice(), "<", couleurBlanc);
