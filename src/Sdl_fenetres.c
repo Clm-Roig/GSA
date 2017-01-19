@@ -45,8 +45,8 @@ int menu() {
 	    switch(event.type)
 	    {
 	        case SDL_FINGERDOWN:
-	        	x = event.button.x;
-	            y = event.button.y;
+	        	x = event.tfinger.x;
+	            y = event.tfinger.y;
 	            break;
 	        case SDL_KEYDOWN:
 	            switch(event.key.keysym.sym)
