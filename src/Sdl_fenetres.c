@@ -111,7 +111,22 @@ int peserLancer(SDL_Surface* screenSurface){
 	}
 }
 int peserBase(SDL_Surface* screenSurface){
+	SDL_Surface* texteRetour;
+	SDL_Rect pos;
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
+
+	//Boutton Menu
+	SDL_Rect buttRetour;
+	buttRetour.x=0; buttRetour.y=0; buttRetour.w=45; buttRetour.h=30;
+	SDL_FillRect(screenSurface,&buttRetour,SDL_MapRGB(screenSurface->format,211, 84, 0));
+	texteRetour = TTF_RenderText_Blended(getpolice(), "<", couleurBlanc);
+	int larg= texteRetour->w;
+	int haut= texteRetour->h;
+	pos.x=buttRetour.x + ((buttRetour.w-larg)/2); pos.y=buttRetour.y + ((buttRetour.h-haut)/2);
+	SDL_BlitSurface(texteMenu,NULL,screenSurface,&pos);
+
+
+
 	SDL_UpdateWindowSurface(getwindow());
 	SDL_Event event;
 	int loop = 1;
@@ -138,8 +153,8 @@ int peserBase(SDL_Surface* screenSurface){
 	                }
 	                break;
 	    }
-	    if(x<=100){
-	 		return 2;
+	    if((x>=buttRetour.x)&&(x<=(buttRetour.x+buttRetour.w))&&(y>=buttRetour.y)&&(y<=(buttRetour.y+buttRetour.h))){
+	 		return 0;
 	    }
 	    else{
 	    	
