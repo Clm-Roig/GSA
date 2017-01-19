@@ -2,7 +2,7 @@
 
 // ---- Fonctions ---- //
 
-char** getTabIdDureeAvantPer(int limite) {
+long int** getTabIdDureeAvantPer(int limite) {
     // Pour chauqe ligne, on stocke id=>DureeAvantPeremption
     int resTab[limite][2];
     FILE* fichier = fopen(CHEMIN_PESEES,"r");

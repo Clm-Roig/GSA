@@ -16,11 +16,11 @@
 // ---- FONCTIONS ---- //
 
 /**
-    @brief renvoie le tableau des ids de pesées ordonné par leur durée avant Peremption (en jour)
+    @brief renvoie le tableau des ids de pesées ordonné par leur durée avant Peremption (en secondes)
     @param int limite, le nombre d'id d'aliments à charger
-    @return int**, le tableau [id de la pesée => durée avant Péremption]
+    @return long int**, le tableau [id de la pesée => durée avant Péremption]
 */
-char** getTabIdDureeAvantPer(int limite);
+long int** getTabIdDureeAvantPer(int limite);
 
 
 #endif
