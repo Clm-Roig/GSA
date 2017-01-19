@@ -1,6 +1,6 @@
 #include "Sdl_fenetres.h"
 
-void menu() {
+int menu() {
 	SDL_Surface* screenSurface;
 	SDL_Surface* texteAjout;
 	SDL_Surface* texteInv;
@@ -48,17 +48,25 @@ void menu() {
 	        	x = event.button.x;
 	            y = event.button.y;
 	            break;
+	        case SDL_FINGERDOWN:
+	        	x = event.tfinger.x;
+	            y = event.tfinger.y;
+	            break;
 	        case SDL_KEYDOWN:
 	            switch(event.key.keysym.sym)
 	            {
 	            	case SDLK_ESCAPE:
 	                    loop= 0;
+	                    return 0;
 	                    break;
 	                }
 	                break;
 	    }
-	    if(x<=100){
-	 		peser();
+	    if((x>=buttEnreg.x)&&(x<=(buttEnreg.x+buttEnreg.w))&&(y>=buttEnreg.y)&&(y<=(buttEnreg.y+buttEnreg.h))){
+	 		return 2;
+	    }
+	    else if((x>=buttInv.x)&&(x<=(buttInv.x+buttInv.w))&&(y>=buttInv.y)&&(y<=(buttInv.y+buttInv.h))){
+	 		return 3;
 	    }
 	    else{
 	    	
@@ -68,10 +76,19 @@ void menu() {
 
 
 
-void peser() {
+int peser() {
 	SDL_Surface* screenSurface;
 	screenSurface=SDL_GetWindowSurface(getwindow());
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
+
+
+
+
+
+
+
+
+
 	//RAJOUTER VEUILLER PATIENTER
 	//RAJOUTTER POID
 	SDL_UpdateWindowSurface(getwindow());
@@ -87,17 +104,22 @@ void peser() {
 	        	x = event.button.x;
 	            y = event.button.y;
 	            break;
+	        case SDL_FINGERDOWN:
+	        	x = event.tfinger.x;
+	            y = event.tfinger.y;
+	            break;
 	        case SDL_KEYDOWN:
 	            switch(event.key.keysym.sym)
 	            {
 	            	case SDLK_ESCAPE:
 	                    loop= 0;
+	                    return 0;
 	                    break;
 	                }
 	                break;
 	    }
 	    if(x<=100){
-	 		peser();
+	 		return 1;
 	    }
 	    else{
 	    	
@@ -106,9 +128,13 @@ void peser() {
 }
 
 
-void stock() {
+int stock() {
 	SDL_Surface* screenSurface;
+	SDL_Surface* texteTitre;
+	SDL_Rect pos;
+
 	screenSurface=SDL_GetWindowSurface(getwindow());
+	
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
 
 	SDL_Rect objet1;SDL_Rect objet2; SDL_Rect objet3; SDL_Rect objet4; SDL_Rect objet5;
@@ -124,5 +150,47 @@ void stock() {
 	SDL_FillRect(screenSurface,&objet4,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	SDL_FillRect(screenSurface,&objet5,SDL_MapRGB(screenSurface->format,192, 57, 43));
 
+	//Texte
+	SDL_Color couleurBlanc = {255, 255, 255};
+
+	texteTitre = TTF_RenderText_Blended(getpolice(), "Mon stock", couleurBlanc);
+	pos.x=(800-(texteTitre->w))/2;
+	pos.y=10;
+	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
+	
+
 	SDL_UpdateWindowSurface(getwindow());
+
+	SDL_Event event;
+	int loop = 1;
+	while(loop==1){
+		int x = 550; int y = 550;
+	    SDL_WaitEvent(&event);
+	    switch(event.type)
+	    {
+	        case SDL_MOUSEBUTTONUP:
+	        	x = event.button.x;
+	            y = event.button.y;
+	            break;
+	        case SDL_FINGERDOWN:
+	        	x = event.tfinger.x;
+	            y = event.tfinger.y;
+	            break;
+	        case SDL_KEYDOWN:
+	            switch(event.key.keysym.sym)
+	            {
+	            	case SDLK_ESCAPE:
+	                    loop= 0;
+	                    return 0;
+	                    break;
+	                }
+	                break;
+	    }
+	    if(x<=100){
+	 		return 1;
+	    }
+	    else{
+	    	
+	    }
+	}
 }
