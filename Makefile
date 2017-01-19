@@ -23,6 +23,9 @@ clean:
 start:
 	./bin/GSA.exe
 
-maj:
+forceMaj:
 	git pull &&	make clean && make && make start
+	
+maj:
+	git pull && make && make start
 
