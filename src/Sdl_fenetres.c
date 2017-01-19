@@ -94,12 +94,14 @@ int peser() {
 	            {
 	            	case SDLK_ESCAPE:
 	                    loop= 0;
+	                    return 0;
 	                    break;
 	                }
 	                break;
 	    }
 	    if(x<=100){
-	 		peser();
+	    	printf("Hi");
+	 		return 1;
 	    }
 	    else{
 	    	

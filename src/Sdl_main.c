@@ -22,7 +22,6 @@ int main(int argc,char* args[]) {
 		}
 
 	}
-	menu();
 
 	cleanup();
 
