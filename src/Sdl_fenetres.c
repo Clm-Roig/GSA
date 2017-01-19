@@ -53,12 +53,13 @@ void menu() {
 	            {
 	            	case SDLK_ESCAPE:
 	                    loop= 0;
+	                    return 0;
 	                    break;
 	                }
 	                break;
 	    }
 	    if(x<=100){
-	 		peser();
+	 		return 1;
 	    }
 	    else{
 	    	
