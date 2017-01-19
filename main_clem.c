@@ -29,16 +29,16 @@ int main() {
 		// => rename sur FILE* (ou à la main)
 	char* nvNom = malloc(30*sizeof(char));
 	strcat(nvNom,"data/images_aliments/")
-		
+
 	char* id = NULL;
 	sprintf(id, "%d", getIdMax("aliments"));
-		
+
 	strcat(nvNom,id);
 	strcat(nvNom,".bmp");
-	
+
 	rename("data/images_aliments/aubergine.bmp",nvNom);
 
     // Si tu as le temps, cherche aussi les durées de péremption moyennes pour chaque aliment + ajoutes-en d'autres
-	
+
     return 0;
 }

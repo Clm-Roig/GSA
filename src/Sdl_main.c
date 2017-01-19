@@ -12,9 +12,7 @@ int main(int argc,char* args[]) {
 	cleanup();
 
 	// Tests Clément
-	FILE* fichier = fopen("data/pesees.txt","r");
-
-	fclose(fichier);
+	getTabIdDureePeremption(5);
 
 	return 0;
 }
