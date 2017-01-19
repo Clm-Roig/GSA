@@ -44,7 +44,7 @@ int menu() {
 	    SDL_WaitEvent(&event);
 	    switch(event.type)
 	    {
-	        case SDL_MOUSEBUTTONUP:
+	        case SDL_MOUSEBUTTONDOWN:
 	        	x = event.button.x;
 	            y = event.button.y;
 	            break;
