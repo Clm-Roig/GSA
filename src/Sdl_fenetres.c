@@ -154,7 +154,7 @@ int stock() {
 	SDL_Color couleurBlanc = {255, 255, 255};
 
 	texteTitre = TTF_RenderText_Blended(getpolice(), "Mon stock", couleurBlanc);
-	pos.x=(800-(textTitre->w))/2;
+	pos.x=(800-(texteTitre->w))/2;
 	pos.y=10;
 	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
 	
