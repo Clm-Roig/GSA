@@ -123,7 +123,7 @@ int peserBase(SDL_Surface* screenSurface){
 	int larg= texteRetour->w;
 	int haut= texteRetour->h;
 	pos.x=buttRetour.x + ((buttRetour.w-larg)/2); pos.y=buttRetour.y + ((buttRetour.h-haut)/2);
-	SDL_BlitSurface(texteMenu,NULL,screenSurface,&pos);
+	SDL_BlitSurface(texteRetour,NULL,screenSurface,&pos);
 
 
 
