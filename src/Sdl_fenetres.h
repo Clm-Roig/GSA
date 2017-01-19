@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 #include <stdio.h>
 #include "BDD.h"
+#include "Stock.h"
 #include "Sdl_init.h"
 
 /**

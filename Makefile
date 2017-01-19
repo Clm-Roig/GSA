@@ -8,7 +8,7 @@ EXEC=$(bin_dir)GSA.exe
 
 all: $(EXEC)
 
-$(bin_dir)GSA.exe: $(obj_dir)BDD.o $(obj_dir)Camera.o $(obj_dir)Couleur.o $(obj_dir)ImageBMP.o $(obj_dir)Peremption.o $(obj_dir)ReconnaissanceV.o $(obj_dir)Sdl_fenetres.o $(obj_dir)Sdl_init.o $(obj_dir)Sdl_main.o
+$(bin_dir)GSA.exe: $(obj_dir)BDD.o $(obj_dir)Camera.o $(obj_dir)Couleur.o $(obj_dir)ImageBMP.o $(obj_dir)ReconnaissanceV.o $(obj_dir)Sdl_fenetres.o $(obj_dir)Sdl_init.o $(obj_dir)Sdl_main.o $(obj_dir)Stock.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(obj_dir)%.o: $(src_dir)%.c

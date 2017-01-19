@@ -14,12 +14,11 @@
 // ---- FONCTIONS ---- //
 
 /**
-    @brief renvoie le tableau des ids d'aliments ordonné par leur date de Peremption
+    @brief renvoie le tableau des ids d'aliments ordonné par leur durée avant Peremption (en jour + h)
     @param int limite, le nombre d'id d'aliments à charger
-    @return int**, le tableau [id => durée Péremption]
+    @return int**, le tableau [id => durée avant Péremption]
 */
 int** getTabIdDureePeremption(int limite);
-
 
 
 #endif
