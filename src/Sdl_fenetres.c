@@ -156,13 +156,13 @@ int peser() {
 
 	while(loop==1){
 		if(page==1){
-			page = peserBase();
+			page = peserBase(screenSurface);
 		}
 		else if(page==2){
-			page = peserLancer();
+			page = peserLancer(screenSurface);
 		}
 		else if(page==3){
-			page = peserLancer();
+			page = peserLancer(screenSurface);
 		}
 		else if(page==0){
 			loop = 0;
