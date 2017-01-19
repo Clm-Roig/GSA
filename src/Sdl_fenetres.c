@@ -60,7 +60,7 @@ int menu() {
 	    }
 	    if(x<=100){
 	    	printf("Hi");
-	 		return 1;
+	 		return 2;
 	    }
 	    else{
 	    	
