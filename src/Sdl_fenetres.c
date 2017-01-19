@@ -78,7 +78,6 @@ int peserLoading(SDL_Surface* screenSurface){
 	SDL_Surface* texteRetour;
 	SDL_Rect pos;
 	SDL_Surface* texteTitre;
-	SDL_Rect pos;
 
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
 
