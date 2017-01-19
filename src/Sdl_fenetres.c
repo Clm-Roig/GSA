@@ -58,8 +58,7 @@ int menu() {
 	                }
 	                break;
 	    }
-	    if(x<=100){
-	    	printf("Hi");
+	    if((x>=buttEnreg.x)&&(x<=(buttEnreg.x+buttEnreg.w))&&(y>=buttEnreg.y)&&(y<=(buttEnreg.y+buttEnreg.h))){
 	 		return 2;
 	    }
 	    else{
