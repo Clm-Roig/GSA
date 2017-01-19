@@ -131,6 +131,7 @@ int peser() {
 int stock() {
 	SDL_Surface* screenSurface;
 	SDL_Surface* texteTitre;
+	SDL_Surface* texteMenu;
 	SDL_Rect pos;
 
 	screenSurface=SDL_GetWindowSurface(getwindow());
@@ -160,9 +161,13 @@ int stock() {
 
 	//Boutton Menu
 	SDL_Rect buttMenu;
-	buttMenu.x=0; buttMenu.y=0; buttMenu.w=45; buttMenu.h=33;
+	buttMenu.x=0; buttMenu.y=0; buttMenu.w=45; buttMenu.h=30;
 	SDL_FillRect(screenSurface,&buttMenu,SDL_MapRGB(screenSurface->format,211, 84, 0));
-	
+	texteMenu = TTF_RenderText_Blended(getpolice(), "<", couleurBlanc);
+	int larg= texteMenu->w;
+	int haut= texteMenu->h;
+	pos.x=buttMenu.x + ((buttMenu.w-larg)/2); pos.y=buttMenu.y + ((buttMenu.h-haut)/2);
+	SDL_BlitSurface(texteMenu,NULL,screenSurface,&pos);
 
 	SDL_UpdateWindowSurface(getwindow());
 
