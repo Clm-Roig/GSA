@@ -59,6 +59,7 @@ int menu() {
 	                break;
 	    }
 	    if(x<=100){
+	    	printf("Hi");
 	 		return 1;
 	    }
 	    else{
