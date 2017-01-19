@@ -93,7 +93,6 @@ int peserLoading(SDL_Surface* screenSurface){
 	SDL_BlitSurface(texteRetour,NULL,screenSurface,&pos);
 
 	//Afichez patientez
-	SDL_Color couleurBlanc = {255, 255, 255};
 
 	texteTitre = TTF_RenderText_Blended(getpolice(), "Veuillez patienter", couleurBlanc);
 	pos.x=(800-(texteTitre->w))/2;
@@ -165,7 +164,6 @@ int peserBase(SDL_Surface* screenSurface){
 	SDL_FillRect(screenSurface,&buttGo,SDL_MapRGB(screenSurface->format,192, 57, 43));
 
 	// Texte boutons
-	SDL_Color couleurBlanc = {255, 255, 255};
 	texteGo = TTF_RenderText_Blended(getpolice(), "Initialiser", couleurBlanc);
 
 	larg= texteGo->w;
