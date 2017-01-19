@@ -169,8 +169,7 @@ int peser() {
 		}
 
 	}
-
-	
+	return 1;
 }
 
 
