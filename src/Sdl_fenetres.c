@@ -74,25 +74,9 @@ int menu() {
 	}
 }
 
-
-
-int peser() {
-	SDL_Surface* screenSurface;
-	screenSurface=SDL_GetWindowSurface(getwindow());
+int peserLancer(SDL_Surface* screenSurface){
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
-
-
-
-
-
-
-
-
-
-	//RAJOUTER VEUILLER PATIENTER
-	//RAJOUTTER POID
 	SDL_UpdateWindowSurface(getwindow());
-
 	SDL_Event event;
 	int loop = 1;
 	while(loop==1){
@@ -119,12 +103,74 @@ int peser() {
 	                break;
 	    }
 	    if(x<=100){
-	 		return 1;
+	 		return 3;
 	    }
 	    else{
 	    	
 	    }
 	}
+}
+int peserBase(SDL_Surface* screenSurface){
+	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
+	SDL_UpdateWindowSurface(getwindow());
+	SDL_Event event;
+	int loop = 1;
+	while(loop==1){
+		int x = 550; int y = 550;
+	    SDL_WaitEvent(&event);
+	    switch(event.type)
+	    {
+	        case SDL_MOUSEBUTTONUP:
+	        	x = event.button.x;
+	            y = event.button.y;
+	            break;
+	        case SDL_FINGERDOWN:
+	        	x = event.tfinger.x;
+	            y = event.tfinger.y;
+	            break;
+	        case SDL_KEYDOWN:
+	            switch(event.key.keysym.sym)
+	            {
+	            	case SDLK_ESCAPE:
+	                    loop= 0;
+	                    return 0;
+	                    break;
+	                }
+	                break;
+	    }
+	    if(x<=100){
+	 		return 2;
+	    }
+	    else{
+	    	
+	    }
+	}
+}
+
+int peser() {
+	SDL_Surface* screenSurface;
+	screenSurface=SDL_GetWindowSurface(getwindow());
+
+	int loop = 1;
+	int page = 1;
+
+	while(loop==1){
+		if(page==1){
+			page = peserBase();
+		}
+		else if(page==2){
+			page = peserLancer();
+		}
+		else if(page==3){
+			page = peserLancer();
+		}
+		else if(page==0){
+			loop = 0;
+		}
+
+	}
+
+	
 }
 
 
