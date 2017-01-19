@@ -7,15 +7,7 @@
 #include <string.h>
 #include <assert.h>
 
-// ---- CONSTANTES ---- //
-const char* CHEMIN_IMAGES_ALIMENTS;
-
 // ---- FONCTIONS ---- //
-/**
-	@brief Démarre la caméra
-	@return bool, 1 si la caméra s'est correctement allumée, 0 sinon
-*/
-int demarrerCamera();
 
 /**
 	@brief Prend une photo
@@ -23,6 +15,5 @@ int demarrerCamera();
 	@return bool, 1 si la prise de photo s'est bien passée, 0 sinon
 */
 int prendrePhoto(char* idPesee);
-
 
 #endif

@@ -1,13 +1,6 @@
 #include "Camera.h"
 
-// ---- CONSTANTES ---- //
-const char* CHEMIN_IMAGES_ALIMENTS = "data/images_aliments/";
-
 // ---- FONCTIONS ---- //
-
-int demarrerCam() {
-    return 0;
-}
 
 int prendrePhoto(char* idPesee) {
     // Pour plus d'infos :
