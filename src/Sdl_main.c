@@ -4,15 +4,15 @@ int main(int argc,char* args[]) {
 
 
 	// Affichage de différentes fenetres
-	init();
+/*	init();
 
 
 	menu();
 
 	cleanup();
-
+*/
 	// Tests Clément
-	getTabIdDureePeremption(5);
+	getTabIdDureeAvantPer(5);
 
 	return 0;
 }
