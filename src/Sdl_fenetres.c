@@ -157,6 +157,11 @@ int stock() {
 	pos.x=(800-(texteTitre->w))/2;
 	pos.y=10;
 	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
+
+	//Boutton Menu
+	SDL_Rect buttMenu;
+	buttMenu.x=0; buttMenu.y=0; buttMenu.w=30; buttMenu.h=20;
+	SDL_FillRect(screenSurface,&buttMenu,SDL_MapRGB(screenSurface->format,243, 156, 18);
 	
 
 	SDL_UpdateWindowSurface(getwindow());
@@ -186,7 +191,7 @@ int stock() {
 	                }
 	                break;
 	    }
-	    if(x<=100){
+	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
 	 		return 1;
 	    }
 	    else{
