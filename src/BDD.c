@@ -147,7 +147,8 @@ int getDureePeremptionAliment(int id) {
     dureePchar = strtok(NULL,";");
 
     // Conversion char* en int
-    int dureeP = atoi(dureePchar);
+    int dureeP;
+    dureeP = atoi(dureePchar);
 
     return dureeP;
 }
