@@ -1,6 +1,6 @@
 #include "Sdl_fenetres.h"
 
-void menu() {
+int menu() {
 	SDL_Surface* screenSurface;
 	SDL_Surface* texteAjout;
 	SDL_Surface* texteInv;
@@ -69,7 +69,7 @@ void menu() {
 
 
 
-void peser() {
+int peser() {
 	SDL_Surface* screenSurface;
 	screenSurface=SDL_GetWindowSurface(getwindow());
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
@@ -107,7 +107,7 @@ void peser() {
 }
 
 
-void stock() {
+int stock() {
 	SDL_Surface* screenSurface;
 	screenSurface=SDL_GetWindowSurface(getwindow());
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
