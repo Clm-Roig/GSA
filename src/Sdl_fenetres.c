@@ -181,6 +181,8 @@ int peserLoading(SDL_Surface* screenSurface){
 	ImageBMP* img;
 
 	control = prendrePhoto(nomPhoto);
+
+	printf("\nChemin photo : %s",chemin);
 /*
 	fic = fopen(chemin, "rb");
 	if (!fic) {
