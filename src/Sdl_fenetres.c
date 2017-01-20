@@ -170,11 +170,12 @@ int peserLoading(SDL_Surface* screenSurface){
 	//On lance la premiere photo, on la traite
 	int control;
 
-	char* nomPhoto = "fond.bmp";
+	char* nomPhoto = "fond";
 	char* chemin = NULL;
 	chemin = malloc(100*sizeof(char));
 	strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
     strcat(chemin,nomPhoto);
+	strcat(chemin,".bmp");
 
 	FILE* fic;
 	ImageBMP* img;
