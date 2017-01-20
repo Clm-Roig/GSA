@@ -28,7 +28,7 @@ int prendrePhoto(char* idPesee) {
 
     printf("chemin exec : %s",exec);
 
-    //system(exec);
+    system(exec);
 
     return 1;
 }

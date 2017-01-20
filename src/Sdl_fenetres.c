@@ -181,7 +181,7 @@ int peserLoading(SDL_Surface* screenSurface){
 	ImageBMP* img;
 
 	control = prendrePhoto(nomPhoto);
-
+/*
 	fic = fopen(chemin, "rb");
 	if (!fic) {
 		printf("Erreur ouverture fichier ok");
@@ -192,7 +192,7 @@ int peserLoading(SDL_Surface* screenSurface){
 
 	printf("\nMon image est prise : %d", control);
 	printf("\nMon image est unie : %d", estUni(img));
-
+*/
 	return 3; //On passe au menu suivant
 
 }
