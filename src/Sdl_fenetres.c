@@ -69,7 +69,7 @@ int menu() {
 	 		return 3;
 	    }
 	    else{
-	    	
+
 	    }
 	}
 }
@@ -146,7 +146,7 @@ int peserPhoto(SDL_Surface* screenSurface){
 	 		return 2;
 	    }
 	    else{
-	    	
+
 	    }
 	}
 }
@@ -168,33 +168,31 @@ int peserLoading(SDL_Surface* screenSurface){
 	SDL_UpdateWindowSurface(getwindow());
 
 	//On lance la premiere photo, on la traite
-	int control; 
-	char* nomPhoto = "fond";
+	int control;
+
+	char* nomPhoto = "fond.bmp";
 	char* chemin = NULL;
 	chemin = malloc(100*sizeof(char));
-	strcat(chemin,CHEMIN_IMAGES_ALIMENTS);
-	strcat(chemin,"fond.bmp");
-	
-	printf("Chemin : %s",chemin);
-	
-	FILE* fic; 
+	strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
+    strcat(chemin,nomPhoto);
+
+	FILE* fic;
 	ImageBMP* img;
-	
+
 	control = prendrePhoto(nomPhoto);
-	
+
 	fic = fopen(chemin, "rb");
 	if (fic) {
 		printf("Ouverture fichier ok");
 	}
-	
+
 	img = initImageBMP(fic);
 	fclose(fic);
-	// remove(chemin);
-	
+	remove(chemin);
+
 	printf("\nMon image est prise : %d", control);
 	printf("\nMon image est unie : %d", estUni(img));
-	
-	
+
 	return 3; //On passe au menu suivant
 
 }
@@ -277,7 +275,7 @@ int peserBase(SDL_Surface* screenSurface){
 	 		return 2; //On passe au menu suivant
 	    }
 	    else{
-	    	
+
 	    }
 	}
 }
@@ -315,7 +313,7 @@ int stock() {
 	SDL_Rect pos;
 
 	screenSurface=SDL_GetWindowSurface(getwindow());
-	
+
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
 
 	SDL_Rect objet1;SDL_Rect objet2; SDL_Rect objet3; SDL_Rect objet4; SDL_Rect objet5;
@@ -380,7 +378,7 @@ int stock() {
 	 		return 1;
 	    }
 	    else{
-	    	
+
 	    }
 	}
 }
