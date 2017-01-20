@@ -14,8 +14,8 @@ int prendrePhoto(char* idPesee) {
 
     char* fonction = "raspistill -n -t 100 -w 1000 -h 1000 -e bmp -o ";
 
-    char* chemin = malloc(50*sizeof(char));
-    strcat(chemin,CHEMIN_IMAGES_ALIMENTS);
+    char* chemin = malloc(100*sizeof(char));
+    strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
     strcat(chemin,idPesee);
     char* extension = ".bmp";
 
@@ -25,6 +25,8 @@ int prendrePhoto(char* idPesee) {
     strcat(exec,chemin);
     strcat(exec,extension);
     strcat(exec,"\"");
+
+    printf("chemin photo : %s",exec);
 
     system(exec);
 

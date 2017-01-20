@@ -185,7 +185,6 @@ int peserLoading(SDL_Surface* screenSurface){
 	if (!fic) {
 		printf("Erreur ouverture fichier ok");
 	}
-
 	img = initImageBMP(fic);
 	fclose(fic);
 	remove(chemin);
