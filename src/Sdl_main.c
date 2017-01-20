@@ -26,13 +26,5 @@ int main(int argc,char* args[]) {
 
 	cleanup();
 
-	// Tests Clément
-/*	long int** test = getTabIdDureeAvantPer(3);
-	int i;
-	printf("Printf tableau 3 :");
-	for (i=0; i<3 ; i++) {
-		printf("\n%ld  |  %ld",test[i][0],test[i][1]);
-	}
-*/
 	return 0;
 }

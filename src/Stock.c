@@ -66,24 +66,19 @@ long int** getTabIdDureeAvantPer(int limite) {
         limite = compteurTuples;
     }
 
-    long int resTab[limite][2];
+    // Allocation du tableau final
+    long int **resTab = malloc(sizeof(*resTab)*limite);
+    for (i = 0; i < limite; i++) {
+        resTab[i] = malloc(sizeof(**resTab)*2);
+    }
+
+    // Remplissage du tableau final
     for (i = 0; i < limite; i++) {
         resTab[i][0] = resTabFull[i][0];
         resTab[i][1] = resTabFull[i][1];
     }
 
-    // TODO : à finir
-/*
-    long int *pResTab[limite][2] = &resTab;
-
-
-    printf("\n%ld  |  %ld",pResTab[0][0],pResTab[0][1]);
-
-    for (i = 0; i < limite; i++) {
-        printf("\n%ld  |  %ld",pResTab[i][0],pResTab[i][1]);
-    }
-*/
-    //return pResTab;
+    return resTab;
 }
 
 /*
