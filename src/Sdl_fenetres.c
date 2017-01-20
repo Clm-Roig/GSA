@@ -176,13 +176,13 @@ int peserLoading(SDL_Surface* screenSurface){
 	//On lance la premiere photo, on la traite
 	int control; char* nomPhoto = "fond";
 	FILE* fic; ImageBMP* img;
-	do {
+	
 		control= prendrePhoto(nomPhoto);
 		fic= fopen(CHEMIN_IMAGES_ALIMENTS, "rb");
 		img = initImageBMP(fic);
 		fclose(fic);
 		// supprimer fond.bmp
-	} while(!estUni(img));
+	printf("Mon image est unie : %d", control);
 	
 	
 	return 3; //On passe au menu suivant
