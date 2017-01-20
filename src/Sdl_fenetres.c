@@ -174,7 +174,17 @@ int peserLoading(SDL_Surface* screenSurface){
 	SDL_UpdateWindowSurface(getwindow());
 
 	//On lance la premiere photo, on la traite
-	SDL_Delay(3000);
+	int control; char* nomPhoto = "fond";
+	FILE* fic; ImageBMP* img;
+	do {
+		control= prendrePhoto(nomPhoto);
+		fic= fopen(CHEMIN_IMAGES_ALIMENTS, "rb");
+		img = initImageBMP(fic);
+		fclose(fic);
+		// supprimer fond.bmp
+	} while(!estUni(img));
+	
+	
 	return 3; //On passe au menu suivant
 
 }
