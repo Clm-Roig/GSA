@@ -113,12 +113,6 @@ int peserPhoto(SDL_Surface* screenSurface){
 
 
 
-
-
-
-
-
-
 	SDL_UpdateWindowSurface(getwindow());
 	SDL_Event event;
 	int loop = 1;
@@ -180,6 +174,7 @@ int peserLoading(SDL_Surface* screenSurface){
 	chemin = malloc(100*sizeof(char));
 	strcat(chemin,CHEMIN_IMAGES_ALIMENTS);
 	strcat(chemin,"fond.bmp");
+	
 	printf("Chemin : %s",chemin);
 	
 	FILE* fic; 
@@ -188,6 +183,10 @@ int peserLoading(SDL_Surface* screenSurface){
 	control = prendrePhoto(nomPhoto);
 	
 	fic = fopen(chemin, "rb");
+	if (fic) {
+		printf("Ouverture fichier ok");
+	}
+	
 	img = initImageBMP(fic);
 	fclose(fic);
 	// remove(chemin);
