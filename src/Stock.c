@@ -1,16 +1,9 @@
 #include "Stock.h"
 
 // ---- Outils ---- //
-int* sortTab(int* tab,int taille) {
-
-        
-}
 
 // ---- Fonctions ---- //
-
 long int** getTabIdDureeAvantPer(int limite) {
-    // Pour chauqe ligne, on stocke id=>DureeAvantPeremption
-    int resTab[limite][2];
     FILE* fichier = fopen(CHEMIN_PESEES,"r");
 
     // On récupère tous les ids et dates des pesees
@@ -38,7 +31,7 @@ long int** getTabIdDureeAvantPer(int limite) {
     }
 
     // Calcul de la durée restante avant péremption
-    long int** resTabFull[compteurTuples];
+    long int resTabFull[compteurTuples][2];
     long int now = (long int) time(NULL);
 
     for(i=0; i < compteurTuples ;i++) {
@@ -49,17 +42,44 @@ long int** getTabIdDureeAvantPer(int limite) {
 
         long int id = strtol(tabId[i],&ptr,10);
         long int tab[2] = {id,dureeRestante};
-        resTabFull[i] = tab;
+        resTabFull[i][0] = tab[0];
+        resTabFull[i][1] = tab[1];
     }
 
-    // resTabFull à débugguer TODO
-    //////
-        printf("\n\nPrintf du tableau full");
-        for(i=0; i < compteurTuples ;i++) {
-            printf("\n%ld %ld",resTabFull[i][0],resTabFull[i][1]);
+    // Classer le tableau
+    int j;
+    for (i = 0; i < compteurTuples; i++) {
+        for (j = i + 1; j < compteurTuples; j++) {
+            if(resTabFull[i][1] > resTabFull[j][1]) {
+                long int id = resTabFull[i][0];
+                long int duree =  resTabFull[i][1];
+                resTabFull[i][0] = resTabFull[j][0];
+                resTabFull[i][1] = resTabFull[j][1];
+                resTabFull[j][0] = id;
+                resTabFull[j][1] = duree;
+            }
         }
-    //////
+    }
 
+    // Couper à partir de "limite"
+    if(limite > compteurTuples) {
+        limite = compteurTuples;
+    }
 
+    long int resTab[limite][2];
+    for (i = 0; i < limite; i++) {
+        resTab[i][0] = resTabFull[i][0];
+        resTab[i][1] = resTabFull[i][1];
+    }
 
+    return resTab;
 }
+
+/*
+//////
+    printf("\n\nPrintf du tableau");
+    for(i=0; i < limite ;i++) {
+        printf("\n%ld %ld",resTab[i][0],resTab[i][1]);
+    }
+//////
+*/

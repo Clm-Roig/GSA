@@ -27,7 +27,7 @@ int main(int argc,char* args[]) {
 	cleanup();
 */
 	// Tests Clément
-	getTabIdDureeAvantPer(5);
+	getTabIdDureeAvantPer(3);
 
 	return 0;
 }
