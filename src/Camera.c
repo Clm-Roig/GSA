@@ -25,9 +25,7 @@ int prendrePhoto(char* idPesee) {
     strcat(exec,chemin);
     strcat(exec,extension);
     strcat(exec,"\"");
-
-    printf("chemin exec : %s",exec);
-
+    
     system(exec);
 
     return 1;

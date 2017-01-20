@@ -182,12 +182,11 @@ int peserLoading(SDL_Surface* screenSurface){
 
 	control = prendrePhoto(nomPhoto);
 
-	printf("\nChemin photo : %s",chemin);
-/*
 	fic = fopen(chemin, "rb");
 	if (!fic) {
-		printf("Erreur ouverture fichier ok");
+		printf("Erreur ouverture fichier");
 	}
+	/*
 	img = initImageBMP(fic);
 	fclose(fic);
 	remove(chemin);
