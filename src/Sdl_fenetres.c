@@ -189,7 +189,7 @@ int peserLoading(SDL_Surface* screenSurface){
 	fic = fopen(CHEMIN_IMAGES_ALIMENTS, "rb");
 	img = initImageBMP(fic);
 	fclose(fic);
-	remove(chemin);
+	// remove(chemin);
 	
 	printf("\nMon image est prise : %d", control);
 	printf("\nMon image est unie : %d", estUni(img));
