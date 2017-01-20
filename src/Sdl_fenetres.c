@@ -174,13 +174,21 @@ int peserLoading(SDL_Surface* screenSurface){
 	SDL_UpdateWindowSurface(getwindow());
 
 	//On lance la premiere photo, on la traite
-	int control; char* nomPhoto = "fond";
+	int control; 
+	char* nomPhoto = "fond";
+	char* chemin = NULL;
+	chemin = malloc(50*sizeof(char));
+	strcat(chemin,CHEMIN_IMAGES_ALIMENTS);
+	strcat(chemin,"fond.bmp");
+	printf(chemin);
+	
 	FILE* fic; ImageBMP* img;
 	
-		control= prendrePhoto(nomPhoto);
-		fic= fopen(CHEMIN_IMAGES_ALIMENTS, "rb");
-		img = initImageBMP(fic);
-		fclose(fic);
+	control= prendrePhoto(nomPhoto);
+	fic= fopen(CHEMIN_IMAGES_ALIMENTS, "rb");
+	img = initImageBMP(fic);
+	fclose(fic);
+		
 		// supprimer fond.bmp
 	printf("Mon image est unie : %d", control);
 	
