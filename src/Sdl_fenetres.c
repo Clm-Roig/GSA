@@ -186,14 +186,13 @@ int peserLoading(SDL_Surface* screenSurface){
 	if (!fic) {
 		printf("Erreur ouverture fichier");
 	}
-	/*
 	img = initImageBMP(fic);
 	fclose(fic);
 	remove(chemin);
 
 	printf("\nMon image est prise : %d", control);
 	printf("\nMon image est unie : %d", estUni(img));
-*/
+
 	return 3; //On passe au menu suivant
 
 }
