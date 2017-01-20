@@ -74,7 +74,6 @@ long int** getTabIdDureeAvantPer(int limite) {
 
     long int *pResTab[limite][2] = &resTab;
 
-
     printf("\n%ld  |  %ld",pResTab[0][0],pResTab[0][1]);
     /*
     for (i = 0; i < limite; i++) {
