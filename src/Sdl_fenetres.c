@@ -182,15 +182,17 @@ int peserLoading(SDL_Surface* screenSurface){
 	strcat(chemin,"fond.bmp");
 	printf(chemin);
 	
-	FILE* fic; ImageBMP* img;
+	FILE* fic; 
+	ImageBMP* img;
 	
-	control= prendrePhoto(nomPhoto);
-	fic= fopen(CHEMIN_IMAGES_ALIMENTS, "rb");
+	control = prendrePhoto(nomPhoto);
+	fic = fopen(CHEMIN_IMAGES_ALIMENTS, "rb");
 	img = initImageBMP(fic);
 	fclose(fic);
-		
-		// supprimer fond.bmp
-	printf("Mon image est unie : %d", control);
+	remove(chemin);
+	
+	printf("\nMon image est prise : %d", control);
+	printf("\nMon image est unie : %d", estUni(img));
 	
 	
 	return 3; //On passe au menu suivant
