@@ -177,7 +177,7 @@ int peserLoading(SDL_Surface* screenSurface){
 	int control; 
 	char* nomPhoto = "fond";
 	char* chemin = NULL;
-	chemin = malloc(50*sizeof(char));
+	chemin = malloc(500*sizeof(char));
 	strcat(chemin,CHEMIN_IMAGES_ALIMENTS);
 	strcat(chemin,"fond.bmp");
 	printf(chemin);
