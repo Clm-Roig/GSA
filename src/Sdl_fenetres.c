@@ -738,7 +738,6 @@ int stock() {
 	duree3 = duree3 / 3600;
 	duree4 = duree4 / 3600;
 	duree5 = duree5 / 3600;
-	printf("%d %d %d %d\n",duree1, duree2, duree3, duree4 );
 	//Conversion en rapport à 2 semaines
 	//336h dans deux semaines
 	duree1 = rapport14J(duree1);
@@ -746,18 +745,17 @@ int stock() {
 	duree3 = rapport14J(duree3);
 	duree4 = rapport14J(duree4);
 	duree5 = rapport14J(duree5);
-	printf("%d %d %d %d\n",duree1, duree2, duree3, duree4 );
 	//Affichage barre duree peremption
 	SDL_Rect barre1;
 	SDL_Rect barre2;
 	SDL_Rect barre3;
 	SDL_Rect barre4;
 	SDL_Rect barre5;
-	barre1.x=(pos1.x)+40+pos1.w; barre1.y=pos1.y+15; barre1.w=(float)((float)1/(float)duree1)*600; barre1.h=30;
-	barre2.x=(pos2.x)+40+pos2.w; barre2.y=pos2.y+15; barre2.w=(float)((float)1/(float)duree2)*600; barre2.h=30;
-	barre3.x=(pos3.x)+40+pos3.w; barre3.y=pos3.y+15; barre3.w=(float)((float)1/(float)duree3)*600; barre3.h=30;
-	barre4.x=(pos4.x)+40+pos4.w; barre4.y=pos4.y+15; barre4.w=(float)((float)1/(float)duree4)*600; barre4.h=30;
-	barre5.x=(pos5.x)+40+pos5.w; barre5.y=pos5.y+15; barre5.w=(float)((float)1/(float)duree5)*600; barre5.h=30;
+	barre1.x=(pos1.x)+40+pos1.w; barre1.y=pos1.y+15; barre1.w=(float)((float)duree1/100)*600; barre1.h=30;
+	barre2.x=(pos2.x)+40+pos2.w; barre2.y=pos2.y+15; barre2.w=(float)((float)duree2/100)*600; barre2.h=30;
+	barre3.x=(pos3.x)+40+pos3.w; barre3.y=pos3.y+15; barre3.w=(float)((float)duree3/100)*600; barre3.h=30;
+	barre4.x=(pos4.x)+40+pos4.w; barre4.y=pos4.y+15; barre4.w=(float)((float)duree4/100)*600; barre4.h=30;
+	barre5.x=(pos5.x)+40+pos5.w; barre5.y=pos5.y+15; barre5.w=(float)((float)duree5/100)*600; barre5.h=30;
 	
 
 	if(duree1<=30){
