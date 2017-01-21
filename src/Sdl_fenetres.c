@@ -346,7 +346,10 @@ int peserChoix() {
 	SDL_Surface* screenSurface;
 	SDL_Surface* texteTitre;
 	SDL_Surface* texteMenu;
+	SDL_Surface* texteAutres;
 	SDL_Rect pos;
+	SDL_Color couleurBlanc = {255, 255, 255};
+	SDL_Color couleurNoir = {0, 0, 0};
 
 	// Fond d'écran
 	screenSurface = SDL_GetWindowSurface(getwindow());
@@ -370,10 +373,8 @@ int peserChoix() {
 	SDL_FillRect(screenSurface,&objet5,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	SDL_FillRect(screenSurface,&objet6,SDL_MapRGB(screenSurface->format,192, 57, 43));
 
-	// Texte
-	SDL_Color couleurBlanc = {255, 255, 255};
-
-	texteTitre = TTF_RenderText_Blended(getpolice(), "Choisissez votre aliment", couleurBlanc);
+	// Texte haut
+	texteTitre = TTF_RenderText_Blended(getpolice(), "Choisissez votre aliment", couleurNoir);
 	pos.x = (800-(texteTitre->w))/2;
 	pos.y = 10;
 	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
@@ -554,6 +555,7 @@ int peserChoix() {
 	}
 }
 
+
 int peser() {
 	SDL_Surface* screenSurface;
 	screenSurface = SDL_GetWindowSurface(getwindow());
@@ -590,6 +592,9 @@ int stock() {
 	SDL_Surface* texteTitre;
 	SDL_Surface* texteMenu;
 	SDL_Rect pos;
+	SDL_Color couleurNoir = {0, 0, 0};
+	SDL_Color couleurBlanc = {255, 255, 255};
+
 
 	// Fond d'écran
 	screenSurface = SDL_GetWindowSurface(getwindow());
@@ -612,9 +617,7 @@ int stock() {
 	SDL_FillRect(screenSurface,&objet5,SDL_MapRGB(screenSurface->format,192, 57, 43));
 
 	// Texte
-	SDL_Color couleurBlanc = {255, 255, 255};
-
-	texteTitre = TTF_RenderText_Blended(getpolice(), "Mon stock", couleurBlanc);
+	texteTitre = TTF_RenderText_Blended(getpolice(), "Mon stock", couleurNoir);
 	pos.x = (800-(texteTitre->w))/2;
 	pos.y = 10;
 	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
