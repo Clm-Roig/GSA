@@ -722,11 +722,11 @@ int stock() {
 	SDL_Rect barre3;
 	SDL_Rect barre4;
 	SDL_Rect barre5;
-	barre1.x=(pos1.x)+40+pos1.w; barre1.y=pos1.y+15; barre1.w=(float)((float)1/(float)duree1)*600; barre1.h=30;
-	barre2.x=(pos2.x)+40+pos2.w; barre2.y=pos2.y+15; barre2.w=(float)((float)1/(float)duree2)*600; barre2.h=30;
-	barre3.x=(pos3.x)+40+pos3.w; barre3.y=pos3.y+15; barre3.w=(float)((float)1/(float)duree3)*600; barre3.h=30;
-	barre4.x=(pos4.x)+40+pos4.w; barre4.y=pos4.y+15; barre4.w=(float)((float)1/(float)duree4)*600; barre4.h=30;
-	barre5.x=(pos5.x)+40+pos5.w; barre5.y=pos5.y+15; barre5.w=(float)((float)1/(float)duree5)*600; barre5.h=30;
+	barre1.x=(pos1.x)+40+pos1.w; barre1.y=pos1.y+15; barre1.w=(float)((float)1-((float)1/(float)duree1))*600; barre1.h=30;
+	barre2.x=(pos2.x)+40+pos2.w; barre2.y=pos2.y+15; barre2.w=(float)((float)1-((float)1/(float)duree2))*600; barre2.h=30;
+	barre3.x=(pos3.x)+40+pos3.w; barre3.y=pos3.y+15; barre3.w=(float)((float)1-((float)1/(float)duree3))*600; barre3.h=30;
+	barre4.x=(pos4.x)+40+pos4.w; barre4.y=pos4.y+15; barre4.w=(float)((float)1-((float)1/(float)duree4))*600; barre4.h=30;
+	barre5.x=(pos5.x)+40+pos5.w; barre5.y=pos5.y+15; barre5.w=(float)((float)1-((float)1/(float)duree5))*600; barre5.h=30;
 	SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,192, 57, 43));
