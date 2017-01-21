@@ -390,6 +390,20 @@ int stock() {
 	SDL_BlitSurface(image4,NULL,screenSurface,&pos4);
 	SDL_BlitSurface(image5,NULL,screenSurface,&pos5);
 
+	// Durée de péremption
+	long int duree1 = listeIdDuree[0][1];
+	long int duree2 = listeIdDuree[1][1];
+	long int duree3 = listeIdDuree[2][1];
+	long int duree4 = listeIdDuree[3][1];
+	long int duree5 = listeIdDuree[4][1];
+
+	// Conversion en heures
+	duree1 = duree1 / 3600;
+	duree2 = duree2 / 3600;
+	duree3 = duree3 / 3600;
+	duree4 = duree4 / 3600;
+	duree5 = duree5 / 3600;
+
 	SDL_UpdateWindowSurface(getwindow());
 
 	SDL_Event event;
