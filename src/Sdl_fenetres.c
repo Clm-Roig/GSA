@@ -256,7 +256,7 @@ int peserLoading2(SDL_Surface* screenSurface) {
 		remove(chemin);
 
 		if(estUni(img) != 1) {
-			//On affiche un message attention si pas reconnu 
+			//On affiche un message attention si pas reconnu
 			texteAttention = TTF_RenderText_Blended(getpolice(), "Attention aliment non detecté", couleurRouge);
 			pos.x = (800-(texteAttention->w))/2;
 			pos.y = 280;
@@ -707,7 +707,6 @@ int stock() {
 	duree3 = duree3 / 3600;
 	duree4 = duree4 / 3600;
 	duree5 = duree5 / 3600;
-	printf("%d\n",duree1 );
 
 	//Conversion en rapport à 2 semaines
 	//336h dans deux semaines
