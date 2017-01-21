@@ -762,7 +762,7 @@ int stock() {
 	if(duree1<=30){
 		SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree1<=60){
+	else if (duree1<=40){
 		SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
@@ -772,7 +772,7 @@ int stock() {
 	if(duree2<=30){
 		SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree2<=60){
+	else if (duree2<=40){
 		SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
@@ -782,7 +782,7 @@ int stock() {
 	if(duree3<=30){
 		SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree3<=60){
+	else if (duree3<=40){
 		SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
@@ -792,7 +792,7 @@ int stock() {
 	if(duree4<=30){
 		SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree4<=60){
+	else if (duree4<=40){
 		SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
@@ -802,7 +802,7 @@ int stock() {
 	if(duree5<=30){
 		SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree5<=60){
+	else if (duree5<=40){
 		SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
