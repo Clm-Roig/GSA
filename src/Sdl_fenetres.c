@@ -485,10 +485,11 @@ int peserChoix() {
 	SDL_FillRect(screenSurface,&bouttonAutre,SDL_MapRGB(screenSurface->format,211, 84, 0));
 
 	//Texte Autre aliment
-	texteTitre = TTF_RenderText_Blended(getpolice(), "Autres", couleurBlanc);
-	pos.x = (800-(bouttonAutre->w))/2;
-	pos.y = 10;
-	SDL_BlitSurface(bouttonAutre,NULL,screenSurface,&pos);
+	texteAutres = TTF_RenderText_Blended(getpolice(), "Autres", couleurBlanc);
+	larg = texteAutres->w;
+	haut = texteAutres->h;
+	pos.x =bouttonAutre.x + ((bouttonAutre.w-larg)/2); pos.y=bouttonAutre.y + ((bouttonAutre.h-haut)/2);
+	SDL_BlitSurface(texteAutres,NULL,screenSurface,&pos);
 
 	SDL_UpdateWindowSurface(getwindow());
 
