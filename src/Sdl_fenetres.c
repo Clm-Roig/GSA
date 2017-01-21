@@ -78,21 +78,17 @@ int peserPhoto(SDL_Surface* screenSurface){
 	SDL_Rect pos;
 	SDL_Surface* texteGo;
 
-
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
-	//Boutton Retour
+
+	// Bouton Retour
 	SDL_Rect buttRetour; SDL_Color couleurBlanc = {255, 255, 255};
 	buttRetour.x=0; buttRetour.y=0; buttRetour.w=45; buttRetour.h=30;
 	SDL_FillRect(screenSurface,&buttRetour,SDL_MapRGB(screenSurface->format,211, 84, 0));
 	texteRetour = TTF_RenderText_Blended(getpolice(), "<", couleurBlanc);
-	int larg= texteRetour->w;
-	int haut= texteRetour->h;
+	int larg = texteRetour->w;
+	int haut = texteRetour->h;
 	pos.x=buttRetour.x + ((buttRetour.w-larg)/2); pos.y=buttRetour.y + ((buttRetour.h-haut)/2);
 	SDL_BlitSurface(texteRetour,NULL,screenSurface,&pos);
-
-
-
-
 
 	// Boutons menu
 	SDL_Rect buttGo;
@@ -103,15 +99,11 @@ int peserPhoto(SDL_Surface* screenSurface){
 	// Texte boutons
 	texteGo = TTF_RenderText_Blended(getpolice(), "Prendre Photo", couleurBlanc);
 
-	larg= texteGo->w;
-	haut= texteGo->h;
-	pos.x=buttGo.x + ((buttGo.w-larg)/2); pos.y=buttGo.y + ((buttGo.h-haut)/2);
+	larg = texteGo->w;
+	haut = texteGo->h;
+	pos.x = buttGo.x + ((buttGo.w-larg)/2); pos.y=buttGo.y + ((buttGo.h-haut)/2);
 
 	SDL_BlitSurface(texteGo,NULL,screenSurface,&pos);
-
-
-
-
 
 	SDL_UpdateWindowSurface(getwindow());
 	SDL_Event event;
@@ -120,7 +112,7 @@ int peserPhoto(SDL_Surface* screenSurface){
 		int x = -1; int y = -1;
 	    SDL_WaitEvent(&event);
 	    switch(event.type)
-	    {
+		{
 	        case SDL_MOUSEBUTTONUP:
 	        	x = event.button.x;
 	            y = event.button.y;
@@ -130,36 +122,37 @@ int peserPhoto(SDL_Surface* screenSurface){
 	            y = event.tfinger.y;
 	            break;
 	        case SDL_KEYDOWN:
-	            switch(event.key.keysym.sym)
-	            {
+
+	            switch(event.key.keysym.sym) {
 	            	case SDLK_ESCAPE:
 	                    loop= 0;
 	                    return 0;
 	                    break;
-	                }
+	            }
 	                break;
 	    }
+
+		// Clic Boutons
 	    if((x>=buttRetour.x)&&(x<=(buttRetour.x+buttRetour.w))&&(y>=buttRetour.y)&&(y<=(buttRetour.y+buttRetour.h))){
 	 		return 0;
 	    }
 		else if((x>=buttGo.x)&&(x<=(buttGo.x+buttGo.w))&&(y>=buttGo.y)&&(y<=(buttGo.y+buttGo.h))){
 	 		return 2;
 	    }
-	    else{
+	    else {
 
 	    }
 	}
 }
-int peserLoading(SDL_Surface* screenSurface){
+
+int peserLoading(SDL_Surface* screenSurface) {
 	SDL_Rect pos;
 	SDL_Surface* texteTitre;
 	SDL_Color couleurBlanc = {255, 255, 255};
 
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
 
-
-	//Afichez patientez
-
+	// Afficher patientez
 	texteTitre = TTF_RenderText_Blended(getpolice(), "Veuillez patienter", couleurBlanc);
 	pos.x=(800-(texteTitre->w))/2;
 	pos.y=240;
@@ -167,35 +160,37 @@ int peserLoading(SDL_Surface* screenSurface){
 
 	SDL_UpdateWindowSurface(getwindow());
 
-	//On lance la premiere photo, on la traite
-	int control;
-
-	char* nomPhoto = "fond";
-	char* chemin = NULL;
-	chemin = malloc(100*sizeof(char));
-	strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
-    strcat(chemin,nomPhoto);
-	strcat(chemin,".bmp");
-
+	// On lance la premiere photo (fond) et on la contrôle
 	FILE* fic;
 	ImageBMP* img;
+	int photoPrise;
 
-	control = prendrePhoto(nomPhoto);
+	do {
+		char* nomPhoto = "fond";
+		char* chemin = NULL;
+		chemin = malloc(100*sizeof(char));
+		strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
+	    strcat(chemin,nomPhoto);
+		strcat(chemin,".bmp");
 
-	fic = fopen(chemin, "rb");
-	if (!fic) {
-		printf("Erreur ouverture fichier");
-	}
-	img = initImageBMP(fic);
-	fclose(fic);
-	remove(chemin);
+		photoPrise = prendrePhoto(nomPhoto);
 
-	printf("\nMon image est prise : %d", control);
-	printf("\nMon image est unie : %d", estUni(img));
+		fic = fopen(chemin, "rb");
+		if (!fic) {
+			printf("Erreur ouverture fichier");
+		}
+		img = initImageBMP(fic);
+		fclose(fic);
+		remove(chemin);
+
+		if(estUni(img) != 1) {
+			// Afficher "Veuillez choisir un fond uni svp."
+		}
+	} while(estUni(img) != 1 || photoPrise != 1);
 
 	return 3; //On passe au menu suivant
-
 }
+
 int peserBase(SDL_Surface* screenSurface){
 	SDL_Surface* texteRetour;
 	SDL_Rect pos;
