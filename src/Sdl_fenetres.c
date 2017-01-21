@@ -159,7 +159,7 @@ int peserLoading(SDL_Surface* screenSurface) {
 	SDL_Surface* texteTitre;
 	SDL_Surface* texteAttention;
 	SDL_Color couleurBlanc = {255, 255, 255};
-	SDL_Color couleurRouge = {192, 57, 43};
+	SDL_Color couleurRouge = {255, 0, 0};
 
 	// Fond d'écran
 	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
@@ -201,7 +201,7 @@ int peserLoading(SDL_Surface* screenSurface) {
 		if(estUni(img) != 1) {
 			texteAttention = TTF_RenderText_Blended(getpolice(), "Attention fond non unie", couleurRouge);
 			pos.x = (800-(texteAttention->w))/2;
-			pos.y = 300;
+			pos.y = 280;
 			SDL_BlitSurface(texteAttention,NULL,screenSurface,&pos);
 			SDL_UpdateWindowSurface(getwindow());
 		}
