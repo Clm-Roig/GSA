@@ -6,9 +6,12 @@ int menu() {
 	SDL_Surface* texteInv;
 	SDL_Rect pos;
 
-	// Fond bleu
-	screenSurface=SDL_GetWindowSurface(getwindow());
-	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
+	// Fond d'écran
+	screenSurface = SDL_GetWindowSurface(getwindow());
+	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
+	SDL_Rect pos_fond_ecran;
+	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
+	SDL_BlitSurface(fond_ecran,NULL,screenSurface,&pos_fond_ecran);
 
 	// Boutons menu
 	SDL_Rect buttEnreg; SDL_Rect buttInv;
@@ -80,7 +83,11 @@ int peserPhoto(SDL_Surface* screenSurface){
 	SDL_Rect pos;
 	SDL_Surface* texteGo;
 
-	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
+	// Fond d'écran
+	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
+	SDL_Rect pos_fond_ecran;
+	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
+	SDL_BlitSurface(fond_ecran,NULL,screenSurface,&pos_fond_ecran);
 
 	// Bouton Retour
 	SDL_Rect buttRetour; SDL_Color couleurBlanc = {255, 255, 255};
@@ -152,7 +159,11 @@ int peserLoading(SDL_Surface* screenSurface) {
 	SDL_Surface* texteTitre;
 	SDL_Color couleurBlanc = {255, 255, 255};
 
-	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
+	// Fond d'écran
+	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
+	SDL_Rect pos_fond_ecran;
+	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
+	SDL_BlitSurface(fond_ecran,NULL,screenSurface,&pos_fond_ecran);
 
 	// Afficher patientez
 	texteTitre = TTF_RenderText_Blended(getpolice(), "Veuillez patienter", couleurBlanc);
@@ -198,8 +209,13 @@ int peserBase(SDL_Surface* screenSurface){
 	SDL_Rect pos;
 	SDL_Surface* texteGo;
 
-	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
-	//Boutton Retour
+	// Fond d'écran
+	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
+	SDL_Rect pos_fond_ecran;
+	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
+	SDL_BlitSurface(fond_ecran,NULL,screenSurface,&pos_fond_ecran);
+
+	// Bouton Retour
 	SDL_Rect buttRetour; SDL_Color couleurBlanc = {255, 255, 255};
 	buttRetour.x=0; buttRetour.y=0; buttRetour.w=45; buttRetour.h=30;
 	SDL_FillRect(screenSurface,&buttRetour,SDL_MapRGB(screenSurface->format,211, 84, 0));
@@ -285,7 +301,12 @@ int stock() {
 	SDL_Surface* texteMenu;
 	SDL_Rect pos;
 
-	screenSurface=SDL_GetWindowSurface(getwindow());
+	// Fond d'écran
+	screenSurface = SDL_GetWindowSurface(getwindow());
+	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
+	SDL_Rect pos_fond_ecran;
+	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
+	SDL_BlitSurface(fond_ecran,NULL,screenSurface,&pos_fond_ecran);
 
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
 
