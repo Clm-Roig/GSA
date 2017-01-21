@@ -188,7 +188,8 @@ int peserLoading(SDL_Surface* screenSurface) {
 	    strcat(chemin,nomPhoto);
 		strcat(chemin,".bmp");
 
-		photoPrise = prendrePhoto(nomPhoto);
+	//	photoPrise = prendrePhoto(nomPhoto);
+		photoPrise = 1;
 
 		fic = fopen(chemin, "rb");
 		if (!fic) {
@@ -244,7 +245,8 @@ int peserLoading2(SDL_Surface* screenSurface) {
 	    strcat(chemin,nomPhoto);
 		strcat(chemin,".bmp");
 
-		photoPrise = prendrePhoto(nomPhoto);
+	//	photoPrise = prendrePhoto(nomPhoto);
+		photoPrise = 1;
 
 		fic = fopen(chemin, "rb");
 		if (!fic) {
@@ -342,6 +344,7 @@ int peserBase(SDL_Surface* screenSurface){
 }
 
 int peserChoix() {
+
 	SDL_Surface* screenSurface;
 	SDL_Surface* texteTitre;
 	SDL_Surface* texteMenu;
@@ -404,7 +407,7 @@ int peserChoix() {
 	coulFond = couleurDominante(imgFond);
 
 	fclose(ficFond);
-	//remove(cheminFond);
+	remove(cheminFond);
 
 	// Récupération de la couleur de l'aliment pris en photo
 	char* nomPhoto = "aliment";
@@ -420,11 +423,11 @@ int peserChoix() {
 	coulAlim = couleurDominanteHorsFond(img,coulFond);
 
 	fclose(photo);
-	//remove(chemin);
+	remove(chemin);
 
 	// Chargement des 5 aliments probables
 	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
-	int* listeAlim = getIdAlimentParCouleur(coulAlim,20);
+	int* listeAlim = getIdAlimentParCouleur(coulAlim,40);
 
 	// Construction du chemin vers l'image
 	char* chemin1 = malloc(100*sizeof(char*));
@@ -756,7 +759,7 @@ int stock() {
 	barre3.x=(pos3.x)+40+pos3.w; barre3.y=pos3.y+15; barre3.w=(float)((float)duree3/100)*600; barre3.h=30;
 	barre4.x=(pos4.x)+40+pos4.w; barre4.y=pos4.y+15; barre4.w=(float)((float)duree4/100)*600; barre4.h=30;
 	barre5.x=(pos5.x)+40+pos5.w; barre5.y=pos5.y+15; barre5.w=(float)((float)duree5/100)*600; barre5.h=30;
-	
+
 
 	if(duree1<=30){
 		SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,192, 57, 43));
@@ -808,7 +811,7 @@ int stock() {
 		SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,46, 204, 113));
 	}
 
-	
+
 
 	SDL_UpdateWindowSurface(getwindow());
 
@@ -865,6 +868,6 @@ int stock() {
 	 		marche = supprimerDonneePesee(listeIdDuree[4][0]);
 	 		return 3; // retour au menu Accueil
 	    }
-	
+
 	}
 }
