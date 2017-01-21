@@ -758,11 +758,58 @@ int stock() {
 	barre3.x=(pos3.x)+40+pos3.w; barre3.y=pos3.y+15; barre3.w=(float)((float)1/(float)duree3)*600; barre3.h=30;
 	barre4.x=(pos4.x)+40+pos4.w; barre4.y=pos4.y+15; barre4.w=(float)((float)1/(float)duree4)*600; barre4.h=30;
 	barre5.x=(pos5.x)+40+pos5.w; barre5.y=pos5.y+15; barre5.w=(float)((float)1/(float)duree5)*600; barre5.h=30;
-	SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,192, 57, 43));
-	SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,192, 57, 43));
-	SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,192, 57, 43));
-	SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,192, 57, 43));
-	SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,192, 57, 43));
+	
+	if(duree1<=30){
+		SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,192, 57, 43));
+	}
+	else if (duree1<=60){
+		SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,230, 126, 34));
+	}
+	else{
+		SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,46, 204, 113));
+	}
+
+	if(duree2<=30){
+		SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,192, 57, 43));
+	}
+	else if (duree2<=60){
+		SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,230, 126, 34));
+	}
+	else{
+		SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,46, 204, 113));
+	}
+
+	if(duree3<=30){
+		SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,192, 57, 43));
+	}
+	else if (duree3<=60){
+		SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,230, 126, 34));
+	}
+	else{
+		SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,46, 204, 113));
+	}
+
+	if(duree4<=30){
+		SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,192, 57, 43));
+	}
+	else if (duree4<=60){
+		SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,230, 126, 34));
+	}
+	else{
+		SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,46, 204, 113));
+	}
+
+	if(duree5<=30){
+		SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,192, 57, 43));
+	}
+	else if (duree5<=60){
+		SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,230, 126, 34));
+	}
+	else{
+		SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,46, 204, 113));
+	}
+
+	
 
 	SDL_UpdateWindowSurface(getwindow());
 
