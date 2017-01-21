@@ -9,36 +9,31 @@
 #include "src/Camera.c"
 
 int main() {
-    // BOULOT MATTHIEU
-	// Ouvrir la photo
-		// => FILE* => initImageBMP() ImageBMP (img)
-	FILE* fichier = fopen("data/images_aliments/aubergine.bmp","rb");
+
+	// Ajout d'un aliment dans la BDD (changer nom du fichier .bmp à 3 endroits)
+	FILE* fichier = fopen("data/images_aliments/tomate.bmp","rb");
 	ImageBMP* img = initImageBMP(fichier);
-	// L'analyser (couleurDominanteHorsFond)
-		// => Couleur* blanc = initCouleurAvecParam(255,255,255)
-		// => coul = couleurDominanteHorsFond(img,blanc)
+
+	// Analyse de l'image
 	Couleur* blanc = initCouleurAvecParam(255,255,255);
 	Couleur* coulDom = couleurDominanteHorsFond(img,blanc);
 
 	fclose(fichier);
 
-		// => sauver en BDD ecrireDonneesAliment(.....)
-	ecrireDonneeAliment("aubergine",coulDom,0);
+	// Sauver en BDD
+	ecrireDonneeAliment("tomate",coulDom,0);
 
 	// Renommer la photo
-		// => rename sur FILE* (ou à la main)
-	char* nvNom = malloc(30*sizeof(char));
-	strcat(nvNom,"data/images_aliments/")
+	char* nvNom = malloc(50*sizeof(char));
+	strcpy(nvNom,"data/images_aliments/");
 
-	char* id = NULL;
+	char* id = malloc(4*sizeof(char));
 	sprintf(id, "%d", getIdMax("aliments"));
 
 	strcat(nvNom,id);
 	strcat(nvNom,".bmp");
 
-	rename("data/images_aliments/aubergine.bmp",nvNom);
-
-    // Si tu as le temps, cherche aussi les durées de péremption moyennes pour chaque aliment + ajoutes-en d'autres
+	rename("data/images_aliments/tomate.bmp",nvNom);
 
     return 0;
 }
