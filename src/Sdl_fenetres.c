@@ -199,6 +199,7 @@ int peserLoading(SDL_Surface* screenSurface) {
 		remove(chemin);
 
 		if(estUni(img) != 1) {
+			//On affiche un message attention
 			texteAttention = TTF_RenderText_Blended(getpolice(), "Attention fond non unie", couleurRouge);
 			pos.x = (800-(texteAttention->w))/2;
 			pos.y = 280;
