@@ -859,10 +859,12 @@ int stock() {
 	 		int marche=0;
 	 		marche = supprimerDonneePesee(listeIdDuree[3][0]);
 	 		return 1; // retour au menu Accueil
+		}
 	    else if((x>=objet5.x)&&(x<=(objet5.x+objet5.w))&&(y>=objet5.y)&&(y<=(objet5.y+objet5.h))){
 	 		int marche=0;
 	 		marche = supprimerDonneePesee(listeIdDuree[4][0]);
 	 		return 1; // retour au menu Accueil
 	    }
-	}
+	
+}
 }
