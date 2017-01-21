@@ -252,7 +252,6 @@ int peserLoading2(SDL_Surface* screenSurface) {
 		}
 		img = initImageBMP(fic);
 		fclose(fic);
-		remove(chemin);
 
 		// Si la photo est unie, soit l'aliment prend toute la photo, soit il n'y a pas d'aliment en plus du fond
 		if(estUni(img) == 1) {
