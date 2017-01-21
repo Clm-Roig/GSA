@@ -23,24 +23,24 @@ int menu() {
 	texteAjout = TTF_RenderText_Blended(getpolice(), "Ajout d'un aliment", couleurBlanc);
 	texteInv = TTF_RenderText_Blended(getpolice(), "Mon stock", couleurBlanc);
 
-
-	int larg= texteAjout->w;
-	int haut= texteAjout->h;
+	int larg = texteAjout->w;
+	int haut = texteAjout->h;
 	pos.x=buttEnreg.x + ((buttEnreg.w-larg)/2); pos.y=buttEnreg.y + ((buttEnreg.h-haut)/2);
 
 	SDL_BlitSurface(texteAjout,NULL,screenSurface,&pos);
 
-	larg= texteInv->w;
-	haut= texteInv->h;
-	pos.x=buttInv.x + ((buttInv.w-larg)/2); pos.y=buttInv.y + ((buttInv.h-haut)/2);
+	larg = texteInv->w;
+	haut = texteInv->h;
+	pos.x =buttInv.x + ((buttInv.w-larg)/2); pos.y=buttInv.y + ((buttInv.h-haut)/2);
 	SDL_BlitSurface(texteInv,NULL,screenSurface,&pos);
 
 	SDL_UpdateWindowSurface(getwindow());
 
 	SDL_Event event;
 	int loop = 1;
-	while(loop==1){
+	while(loop == 1) {
 		int x = -1; int y = -1;
+
 	    SDL_WaitEvent(&event);
 	    switch(event.type)
 	    {
@@ -62,6 +62,7 @@ int menu() {
 	                }
 	                break;
 	    }
+
 	    if((x>=buttEnreg.x)&&(x<=(buttEnreg.x+buttEnreg.w))&&(y>=buttEnreg.y)&&(y<=(buttEnreg.y+buttEnreg.h))){
 	 		return 2;
 	    }
@@ -73,6 +74,7 @@ int menu() {
 	    }
 	}
 }
+
 int peserPhoto(SDL_Surface* screenSurface){
 	SDL_Surface* texteRetour;
 	SDL_Rect pos;
@@ -154,8 +156,8 @@ int peserLoading(SDL_Surface* screenSurface) {
 
 	// Afficher patientez
 	texteTitre = TTF_RenderText_Blended(getpolice(), "Veuillez patienter", couleurBlanc);
-	pos.x=(800-(texteTitre->w))/2;
-	pos.y=240;
+	pos.x = (800-(texteTitre->w))/2;
+	pos.y = 240;
 	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
 
 	SDL_UpdateWindowSurface(getwindow());
@@ -196,7 +198,6 @@ int peserBase(SDL_Surface* screenSurface){
 	SDL_Rect pos;
 	SDL_Surface* texteGo;
 
-
 	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
 	//Boutton Retour
 	SDL_Rect buttRetour; SDL_Color couleurBlanc = {255, 255, 255};
@@ -207,10 +208,6 @@ int peserBase(SDL_Surface* screenSurface){
 	int haut= texteRetour->h;
 	pos.x=buttRetour.x + ((buttRetour.w-larg)/2); pos.y=buttRetour.y + ((buttRetour.h-haut)/2);
 	SDL_BlitSurface(texteRetour,NULL,screenSurface,&pos);
-
-
-
-
 
 	// Boutons menu
 	SDL_Rect buttGo;
@@ -226,16 +223,6 @@ int peserBase(SDL_Surface* screenSurface){
 	pos.x=buttGo.x + ((buttGo.w-larg)/2); pos.y=buttGo.y + ((buttGo.h-haut)/2);
 
 	SDL_BlitSurface(texteGo,NULL,screenSurface,&pos);
-
-
-
-
-
-
-
-
-
-
 
 	SDL_UpdateWindowSurface(getwindow());
 	SDL_Event event;
@@ -300,7 +287,6 @@ int peser() {
 	return 1;
 }
 
-
 int stock() {
 	SDL_Surface* screenSurface;
 	SDL_Surface* texteTitre;
@@ -324,22 +310,23 @@ int stock() {
 	SDL_FillRect(screenSurface,&objet4,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	SDL_FillRect(screenSurface,&objet5,SDL_MapRGB(screenSurface->format,192, 57, 43));
 
-	//Texte
+	// Texte
 	SDL_Color couleurBlanc = {255, 255, 255};
 
 	texteTitre = TTF_RenderText_Blended(getpolice(), "Mon stock", couleurBlanc);
-	pos.x=(800-(texteTitre->w))/2;
-	pos.y=10;
+	pos.x = (800-(texteTitre->w))/2;
+	pos.y = 10;
 	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
 
-	//Boutton Menu
+	// Bouton Menu
 	SDL_Rect buttMenu;
 	buttMenu.x=0; buttMenu.y=0; buttMenu.w=45; buttMenu.h=30;
 	SDL_FillRect(screenSurface,&buttMenu,SDL_MapRGB(screenSurface->format,211, 84, 0));
 	texteMenu = TTF_RenderText_Blended(getpolice(), "<", couleurBlanc);
-	int larg= texteMenu->w;
-	int haut= texteMenu->h;
-	pos.x=buttMenu.x + ((buttMenu.w-larg)/2); pos.y=buttMenu.y + ((buttMenu.h-haut)/2);
+	int larg = texteMenu->w;
+	int hau t= texteMenu->h;
+	pos.x = buttMenu.x + ((buttMenu.w-larg)/2);
+	pos.y = buttMenu.y + ((buttMenu.h-haut)/2);
 	SDL_BlitSurface(texteMenu,NULL,screenSurface,&pos);
 
 	SDL_UpdateWindowSurface(getwindow());
@@ -372,7 +359,7 @@ int stock() {
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
 	 		return 1;
 	    }
-	    else{
+	    else {
 
 	    }
 	}
