@@ -53,7 +53,7 @@ void destroyCouleur(Couleur* coul);
 /**
 	@brief Transforme la couleur en chaine de caract�res
 	@param Couleur* coul
-	@return char*, la couleur en chaine de caract�res ("R:42 G:53 B:66")
+	@return char*, la couleur en chaine de caract�res ("42-255-0")
 */
 char* toCharCouleur(Couleur* coul);
 

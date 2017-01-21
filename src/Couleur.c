@@ -26,7 +26,7 @@ char* toCharCouleur(Couleur* coul) {
     int gcoul = getGCoul(coul);
     int bcoul = getBCoul(coul);
 
-    sprintf(chaine,"R:%d G:%d B:%d",rcoul,gcoul,bcoul);
+    sprintf(chaine,"%d-%d-%d",rcoul,gcoul,bcoul);
 
     return chaine;
 }
