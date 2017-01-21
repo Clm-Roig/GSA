@@ -146,7 +146,7 @@ int peserPhoto(SDL_Surface* screenSurface){
 	 		return 0; // Fermeture de la pesée
 	    }
 		else if((x>=buttGo.x)&&(x<=(buttGo.x+buttGo.w))&&(y>=buttGo.y)&&(y<=(buttGo.y+buttGo.h))){
-	 		return 4; // peserLoading()
+	 		return 4; // peserLoading2()
 	    }
 	    else {
 
@@ -196,7 +196,6 @@ int peserLoading(SDL_Surface* screenSurface) {
 		}
 		img = initImageBMP(fic);
 		fclose(fic);
-		remove(chemin);
 
 		if(estUni(img) != 1) {
 			//On affiche un message attention
@@ -232,13 +231,29 @@ int peserLoading2(SDL_Surface* screenSurface) {
 
 	SDL_UpdateWindowSurface(getwindow());
 
-	// On lance la premiere photo (fond) et on la contrôle
+	// On ouvre le fond et on en extrait la couleur dominante
+	FILE* ficFond;
+	ImageBMP* imgFond;
+	char* cheminFond = NULL;
+
+	cheminFond = malloc(100*sizeof(char));
+	strcpy(cheminFond,CHEMIN_IMAGES_ALIMENTS);
+	strcat(cheminFond,"fond.bmp");
+
+	ficFond = fopen(cheminFond,"rb");
+	imgFond = initImageBMP(ficFond);
+	Couleur* coulFond = initCouleur();
+	coulFond = couleurDominante(imgFond);
+
+	fclose(ficFond);
+
+	// On prend une nouvelle photo (aliment + fond) et on controle qu'il y a bien un aliment
 	FILE* fic;
 	ImageBMP* img;
 	int photoPrise;
 
 	do {
-		char* nomPhoto = "euhJeSaisPas";
+		char* nomPhoto = "aliment";
 		char* chemin = NULL;
 		chemin = malloc(100*sizeof(char));
 		strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
@@ -255,8 +270,9 @@ int peserLoading2(SDL_Surface* screenSurface) {
 		fclose(fic);
 		remove(chemin);
 
+		// Si la photo est unie, soit l'aliment prend toute la photo, soit il n'y a pas d'aliment en plus du fond
 		if(estUni(img) != 1) {
-			//On affiche un message attention si pas reconnu
+			// Message d'avertissement
 			texteAttention = TTF_RenderText_Blended(getpolice(), "Attention aliment non detecté", couleurRouge);
 			pos.x = (800-(texteAttention->w))/2;
 			pos.y = 280;
@@ -265,7 +281,7 @@ int peserLoading2(SDL_Surface* screenSurface) {
 		}
 	} while(estUni(img) != 1 || photoPrise != 1);
 
-	return 5; // On passe a la prise de photo de l'aliment
+	return 5; // On passe au choix de l'aliment reconnu
 }
 
 int peserBase(SDL_Surface* screenSurface){
@@ -390,43 +406,70 @@ int peserChoix() {
 	pos.y = buttMenu.y + ((buttMenu.h-haut)/2);
 	SDL_BlitSurface(texteMenu,NULL,screenSurface,&pos);
 
-	// Chargement des 5 aliments probable
-	long int** listeIdDuree = getTabIdDureeAvantPer(5);
-	int i;
+	// Couleur du fond
+	FILE* ficFond;
+	ImageBMP* imgFond;
+	char* cheminFond = NULL;
+
+	cheminFond = malloc(100*sizeof(char));
+	strcpy(cheminFond,CHEMIN_IMAGES_ALIMENTS);
+	strcat(cheminFond,"fond.bmp");
+
+	ficFond = fopen(cheminFond,"rb");
+	imgFond = initImageBMP(ficFond);
+	Couleur* coulFond = initCouleur();
+	coulFond = couleurDominante(imgFond);
+
+	// Récupération de la couleur de l'aliment pris en photo
+	char* nomPhoto = "aliment";
+	char* chemin = NULL;
+	chemin = malloc(100*sizeof(char));
+	strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
+	strcat(chemin,nomPhoto);
+	strcat(chemin,".bmp");
+
+	FILE* photo = fopen(chemin,"rb");
+	ImageBMP* img = initImageBMP(photo);
+	Couleur* coulAlim = initCouleur();
+	coulAlim = couleurDominanteHorsFond(img,coulFond);
+
+	// Chargement des 5 aliments probables
+	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
+	int* listeAlim = getIdAlimentParCouleur(coulAlim,20);
 
 	// Construction du chemin vers l'image
 	char* chemin1 = malloc(100*sizeof(char*));
 	strcpy(chemin1,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar1 = malloc(4*sizeof(char));
-	sprintf(idchar1,"%ld",listeIdDuree[0][0]);
+	sprintf(idchar1,"%ld",listeAlim[0]);
 	strcat(chemin1,idchar1);
 	strcat(chemin1,".bmp");
 
 	char* chemin2 = malloc(100*sizeof(char*));
 	strcpy(chemin2,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar2 = malloc(4*sizeof(char));
-	sprintf(idchar2,"%ld",listeIdDuree[1][0]);
+	sprintf(idchar2,"%ld",listeAlim[1]);
 	strcat(chemin2,idchar2);
 	strcat(chemin2,".bmp");
 
 	char* chemin3 = malloc(100*sizeof(char*));
 	strcpy(chemin3,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar3 = malloc(4*sizeof(char));
-	sprintf(idchar3,"%ld",listeIdDuree[2][0]);
+	sprintf(idchar3,"%ld",listeAlim[2]);
 	strcat(chemin3,idchar3);
 	strcat(chemin3,".bmp");
 
 	char* chemin4 = malloc(100*sizeof(char*));
 	strcpy(chemin4,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar4 = malloc(4*sizeof(char));
-	sprintf(idchar4,"%ld",listeIdDuree[3][0]);
+	sprintf(idchar4,"%ld",listeAlim[3]);
 	strcat(chemin4,idchar4);
 	strcat(chemin4,".bmp");
 
 	char* chemin5 = malloc(100*sizeof(char*));
 	strcpy(chemin5,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar5 = malloc(4*sizeof(char));
-	sprintf(idchar5,"%ld",listeIdDuree[4][0]);
+	sprintf(idchar5,"%ld",listeAlim[4]);
 	strcat(chemin5,idchar5);
 	strcat(chemin5,".bmp");
 
@@ -479,16 +522,16 @@ int peserChoix() {
 	SDL_BlitSurface(image4,NULL,screenSurface,&pos4);
 	SDL_BlitSurface(image5,NULL,screenSurface,&pos5);
 
-	//Ajout boutton Autre aliment
+	// Ajout boutton Autre aliment
 	SDL_Rect bouttonAutre;
 	bouttonAutre.x=objet6.x+10; bouttonAutre.y=objet6.y+10; bouttonAutre.w=160; bouttonAutre.h=160;
 	SDL_FillRect(screenSurface,&bouttonAutre,SDL_MapRGB(screenSurface->format,211, 84, 0));
 
-	//Texte Autre aliment
+	// Texte Autre aliment
 	texteAutres = TTF_RenderText_Blended(getpolice(), "Autres", couleurBlanc);
 	larg = texteAutres->w;
 	haut = texteAutres->h;
-	pos.x =bouttonAutre.x + ((bouttonAutre.w-larg)/2); pos.y=bouttonAutre.y + ((bouttonAutre.h-haut)/2);
+	pos.x = bouttonAutre.x + ((bouttonAutre.w-larg)/2); pos.y=bouttonAutre.y + ((bouttonAutre.h-haut)/2);
 	SDL_BlitSurface(texteAutres,NULL,screenSurface,&pos);
 
 	SDL_UpdateWindowSurface(getwindow());
@@ -607,7 +650,6 @@ int stock() {
 
 	// Chargement des 5 aliments qui vont bientôt périmer
 	long int** listeIdDuree = getTabIdDureeAvantPer(5);
-	int i;
 
 	// Construction du chemin vers l'image
 	char* chemin1 = malloc(100*sizeof(char*));
