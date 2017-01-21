@@ -454,6 +454,7 @@ int stock() {
 	duree3 = duree3 / 3600;
 	duree4 = duree4 / 3600;
 	duree5 = duree5 / 3600;
+	printf("%d\n",duree1 );
 
 	//Conversion en rapport à 2 semaines
 	//336h dans deux semaines
@@ -462,8 +463,7 @@ int stock() {
 	duree3 = rapport14J(duree3);
 	duree4 = rapport14J(duree4);
 	duree5 = rapport14J(duree5);
-	printf(duree1);
-
+	printf("%d\n",duree1 );
 
 	//Affichage barre duree peremption
 	SDL_Rect barre1;
