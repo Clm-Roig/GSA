@@ -441,28 +441,28 @@ int peserChoix() {
 	char* chemin1 = malloc(100*sizeof(char*));
 	strcpy(chemin1,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar1 = malloc(4*sizeof(char));
-	sprintf(idchar1,"%ld",listeAlim[0]);
+	sprintf(idchar1,"%d",listeAlim[0]);
 	strcat(chemin1,idchar1);
 	strcat(chemin1,".bmp");
 
 	char* chemin2 = malloc(100*sizeof(char*));
 	strcpy(chemin2,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar2 = malloc(4*sizeof(char));
-	sprintf(idchar2,"%ld",listeAlim[1]);
+	sprintf(idchar2,"%d",listeAlim[1]);
 	strcat(chemin2,idchar2);
 	strcat(chemin2,".bmp");
 
 	char* chemin3 = malloc(100*sizeof(char*));
 	strcpy(chemin3,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar3 = malloc(4*sizeof(char));
-	sprintf(idchar3,"%ld",listeAlim[2]);
+	sprintf(idchar3,"%d",listeAlim[2]);
 	strcat(chemin3,idchar3);
 	strcat(chemin3,".bmp");
 
 	char* chemin4 = malloc(100*sizeof(char*));
 	strcpy(chemin4,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar4 = malloc(4*sizeof(char));
-	sprintf(idchar4,"%ld",listeAlim[3]);
+	sprintf(idchar4,"%d",listeAlim[3]);
 	strcat(chemin4,idchar4);
 	strcat(chemin4,".bmp");
 
