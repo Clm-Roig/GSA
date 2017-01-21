@@ -404,7 +404,7 @@ int peserChoix() {
 	coulFond = couleurDominante(imgFond);
 
 	fclose(ficFond);
-	remove(cheminFond);
+	//remove(cheminFond);
 
 	// Récupération de la couleur de l'aliment pris en photo
 	char* nomPhoto = "aliment";
@@ -420,7 +420,7 @@ int peserChoix() {
 	coulAlim = couleurDominanteHorsFond(img,coulFond);
 
 	fclose(photo);
-	remove(chemin);
+	//remove(chemin);
 
 	// Chargement des 5 aliments probables
 	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
