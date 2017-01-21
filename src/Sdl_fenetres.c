@@ -587,7 +587,7 @@ int rapport14J(int duree){
 		return 100;
 	}
 	else{
-		return (336/duree);
+		return ((float)duree/336)*100;
 	}
 }
 
@@ -746,7 +746,7 @@ int stock() {
 	duree3 = rapport14J(duree3);
 	duree4 = rapport14J(duree4);
 	duree5 = rapport14J(duree5);
-	printf("%d %d %d %d\n",duree1, duree2, duree3, duree4 );	printf("%d %d %d %d\n",duree1, duree2, duree3, duree4 );
+	printf("%d %d %d %d\n",duree1, duree2, duree3, duree4 );
 	//Affichage barre duree peremption
 	SDL_Rect barre1;
 	SDL_Rect barre2;
