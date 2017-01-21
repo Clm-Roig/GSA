@@ -462,6 +462,7 @@ int stock() {
 	duree3 = rapport14J(duree3);
 	duree4 = rapport14J(duree4);
 	duree5 = rapport14J(duree5);
+	printf(duree1);
 
 
 	//Affichage barre duree peremption
