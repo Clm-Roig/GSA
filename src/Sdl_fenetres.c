@@ -136,10 +136,10 @@ int peserPhoto(SDL_Surface* screenSurface){
 
 		// Clic Boutons
 	    if((x>=buttRetour.x)&&(x<=(buttRetour.x+buttRetour.w))&&(y>=buttRetour.y)&&(y<=(buttRetour.y+buttRetour.h))){
-	 		return 0;
+	 		return 0; // Fermeture de la pesée
 	    }
 		else if((x>=buttGo.x)&&(x<=(buttGo.x+buttGo.w))&&(y>=buttGo.y)&&(y<=(buttGo.y+buttGo.h))){
-	 		return 2;
+	 		return 2; // peserLoading()
 	    }
 	    else {
 
@@ -190,7 +190,7 @@ int peserLoading(SDL_Surface* screenSurface) {
 		}
 	} while(estUni(img) != 1 || photoPrise != 1);
 
-	return 3; //On passe au menu suivant
+	return 3; // Affichage du stock
 }
 
 int peserBase(SDL_Surface* screenSurface){
@@ -251,10 +251,10 @@ int peserBase(SDL_Surface* screenSurface){
 	                break;
 	    }
 	    if((x>=buttRetour.x)&&(x<=(buttRetour.x+buttRetour.w))&&(y>=buttRetour.y)&&(y<=(buttRetour.y+buttRetour.h))){
-	 		return 0;
+	 		return 0; // Sortie du programme
 	    }
 		else if((x>=buttGo.x)&&(x<=(buttGo.x+buttGo.w))&&(y>=buttGo.y)&&(y<=(buttGo.y+buttGo.h))){
-	 		return 2; //On passe au menu suivant
+	 		return 2; // On passe au menu peser()
 	    }
 	    else{
 
@@ -276,7 +276,7 @@ int peser() {
 		else if(page==0) loop = 0;
 	}
 
-	return 1;
+	return 1; // retour au menu Accueil
 }
 
 int stock() {
@@ -349,7 +349,7 @@ int stock() {
 	                break;
 	    }
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
-	 		return 1;
+	 		return 1; // retour au menu Accueil
 	    }
 	    else {
 
