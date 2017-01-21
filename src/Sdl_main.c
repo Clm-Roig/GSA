@@ -9,19 +9,12 @@ int main(int argc,char* args[]) {
 	init();
 
 	while(loop==1){
-		if(page==1){
-			page = menu();
-		}
-		else if(page==2){
-			page = peser();
-		}
-		else if(page==3){
-			page = stock();
-		}
-		else if(page==0){
-			loop = 0;
-		}
 
+		if(page==1) page = menu();
+		else if(page==2) page = peser();
+		else if(page==3) page = stock();
+		else if(page==0) loop = 0;
+		
 	}
 
 	cleanup();

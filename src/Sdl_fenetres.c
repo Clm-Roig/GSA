@@ -269,21 +269,13 @@ int peser() {
 	int loop = 1;
 	int page = 1;
 
-	while(loop==1){
-		if(page==1){
-			page = peserBase(screenSurface);
-		}
-		else if(page==2){
-			page = peserLoading(screenSurface);
-		}
-		else if(page==3){
-			page = peserPhoto(screenSurface);
-		}
-		else if(page==0){
-			loop = 0;
-		}
-
+	while(loop==1) {
+		if(page==1) page = peserBase(screenSurface);
+		else if(page==2) page = peserLoading(screenSurface);
+		else if(page==3) page = peserPhoto(screenSurface);
+		else if(page==0) loop = 0;
 	}
+
 	return 1;
 }
 
@@ -324,7 +316,7 @@ int stock() {
 	SDL_FillRect(screenSurface,&buttMenu,SDL_MapRGB(screenSurface->format,211, 84, 0));
 	texteMenu = TTF_RenderText_Blended(getpolice(), "<", couleurBlanc);
 	int larg = texteMenu->w;
-	int hau t= texteMenu->h;
+	int haut = texteMenu->h;
 	pos.x = buttMenu.x + ((buttMenu.w-larg)/2);
 	pos.y = buttMenu.y + ((buttMenu.h-haut)/2);
 	SDL_BlitSurface(texteMenu,NULL,screenSurface,&pos);
