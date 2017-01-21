@@ -21,7 +21,7 @@ void init() {
 	screenwidth = SCREEN_WIDTH;
 	screenheight = SCREEN_HEIGHT;
 
-    screen = SDL_CreateWindow("Coal - Connected ",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,screenwidth, screenheight,SDL_WINDOW_OPENGL|SDL_WINDOW_BORDERLESS);
+    screen = SDL_CreateWindow("GSA - Gestionnaire de Stock Alimentaire",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,screenwidth, screenheight,SDL_WINDOW_OPENGL|SDL_WINDOW_BORDERLESS);
 
     renderer = SDL_CreateRenderer(screen, -1, SDL_RENDERER_PRESENTVSYNC);
 
