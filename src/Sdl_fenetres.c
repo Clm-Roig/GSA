@@ -866,5 +866,5 @@ int stock() {
 	 		return 3; // retour au menu Accueil
 	    }
 	
+	}
 }
-
