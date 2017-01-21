@@ -390,7 +390,27 @@ int stock() {
 	SDL_Surface *image5 = SDL_LoadBMP(chemin5);
 
 	// Redimensionnement des images (60x60 pixels)
-	// TODO : libraire SDL_gfx, fonction rotozoom() sur les images
+	// Librairie SDL_gfx, fonction zoomSurface() sur les images
+	// Les images étant carrées, on ne récupère que la hauteur
+	int h1 = image1->h;
+	double zoom1 = 60 / (double)h1;
+	image1 = zoomSurface(image1,zoom1,zoom1,0);
+
+	int h2 = image2->h;
+	double zoom2 = 60 / (double)h2;
+	image2 = zoomSurface(image2,zoom2,zoom2,0);
+
+	int h3 = image3->h;
+	double zoom3 = 60 / (double)h3;
+	image3 = zoomSurface(image3,zoom3,zoom3,0);
+
+	int h4 = image4->h;
+	double zoom4 = 60 / (double)h4;
+	image4 = zoomSurface(image4,zoom4,zoom4,0);
+
+	int h5 = image5->h;
+	double zoom5 = 60 / (double)h5;
+	image5 = zoomSurface(image5,zoom5,zoom5,0);
 
 	// Positionnement desi mages
 	SDL_Rect pos1;
