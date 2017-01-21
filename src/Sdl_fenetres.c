@@ -146,7 +146,7 @@ int peserPhoto(SDL_Surface* screenSurface){
 	 		return 0; // Fermeture de la pesée
 	    }
 		else if((x>=buttGo.x)&&(x<=(buttGo.x+buttGo.w))&&(y>=buttGo.y)&&(y<=(buttGo.y+buttGo.h))){
-	 		return 2; // peserLoading()
+	 		return 4; // peserLoading()
 	    }
 	    else {
 
@@ -208,7 +208,64 @@ int peserLoading(SDL_Surface* screenSurface) {
 		}
 	} while(estUni(img) != 1 || photoPrise != 1);
 
-	return 3; // Affichage du stock
+	return 3; // On passe a la prise de photo de l'aliment
+}
+
+int peserLoading2(SDL_Surface* screenSurface) {
+	SDL_Rect pos;
+	SDL_Surface* texteTitre;
+	SDL_Surface* texteAttention;
+	SDL_Color couleurBlanc = {255, 255, 255};
+	SDL_Color couleurRouge = {255, 0, 0};
+
+	// Fond d'écran
+	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
+	SDL_Rect pos_fond_ecran;
+	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
+	SDL_BlitSurface(fond_ecran,NULL,screenSurface,&pos_fond_ecran);
+
+	// Afficher patientez
+	texteTitre = TTF_RenderText_Blended(getpolice(), "Veuillez patienter", couleurBlanc);
+	pos.x = (800-(texteTitre->w))/2;
+	pos.y = 240;
+	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
+
+	SDL_UpdateWindowSurface(getwindow());
+
+	// On lance la premiere photo (fond) et on la contrôle
+	FILE* fic;
+	ImageBMP* img;
+	int photoPrise;
+
+	do {
+		char* nomPhoto = "fond";
+		char* chemin = NULL;
+		chemin = malloc(100*sizeof(char));
+		strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
+	    strcat(chemin,nomPhoto);
+		strcat(chemin,".bmp");
+
+		photoPrise = prendrePhoto(nomPhoto);
+
+		fic = fopen(chemin, "rb");
+		if (!fic) {
+			printf("Erreur ouverture fichier");
+		}
+		img = initImageBMP(fic);
+		fclose(fic);
+		remove(chemin);
+
+		if(estUni(img) != 1) {
+			//On affiche un message attention si pas reconnu 
+			texteAttention = TTF_RenderText_Blended(getpolice(), "Attention aliment non detecté", couleurRouge);
+			pos.x = (800-(texteAttention->w))/2;
+			pos.y = 280;
+			SDL_BlitSurface(texteAttention,NULL,screenSurface,&pos);
+			SDL_UpdateWindowSurface(getwindow());
+		}
+	} while(estUni(img) != 1 || photoPrise != 1);
+
+	return 3; // On passe a la prise de photo de l'aliment
 }
 
 int peserBase(SDL_Surface* screenSurface){
@@ -296,6 +353,7 @@ int peser() {
 		if(page==1) page = peserBase(screenSurface);
 		else if(page==2) page = peserLoading(screenSurface);
 		else if(page==3) page = peserPhoto(screenSurface);
+		else if(page==4) page = peserLoading2(screenSurface);
 		else if(page==0) loop = 0;
 	}
 
