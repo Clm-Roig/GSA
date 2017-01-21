@@ -321,6 +321,75 @@ int stock() {
 	pos.y = buttMenu.y + ((buttMenu.h-haut)/2);
 	SDL_BlitSurface(texteMenu,NULL,screenSurface,&pos);
 
+	// Chargement des 5 aliments qui vont bientôt périmer
+	long int** listeIdDuree = getTabIdDureeAvantPer(5);
+	int i;
+
+	// Construction du chemin vers l'image
+	char* chemin1 = malloc(100*sizeof(char*));
+	strcpy(chemin1,CHEMIN_IMAGES_ALIMENTS);
+	char* idchar1 = malloc(4*sizeof(char));
+	sprintf(idchar1,"%ld",listeIdDuree[0][0]);
+	strcat(chemin1,idchar1);
+	strcat(chemin1,".bmp");
+
+	char* chemin2 = malloc(100*sizeof(char*));
+	strcpy(chemin2,CHEMIN_IMAGES_ALIMENTS);
+	char* idchar2 = malloc(4*sizeof(char));
+	sprintf(idchar2,"%ld",listeIdDuree[1][0]);
+	strcat(chemin2,idchar2);
+	strcat(chemin2,".bmp");
+
+	char* chemin3 = malloc(100*sizeof(char*));
+	strcpy(chemin3,CHEMIN_IMAGES_ALIMENTS);
+	char* idchar3 = malloc(4*sizeof(char));
+	sprintf(idchar3,"%ld",listeIdDuree[2][0]);
+	strcat(chemin3,idchar3);
+	strcat(chemin3,".bmp");
+
+	char* chemin4 = malloc(100*sizeof(char*));
+	strcpy(chemin4,CHEMIN_IMAGES_ALIMENTS);
+	char* idchar4 = malloc(4*sizeof(char));
+	sprintf(idchar4,"%ld",listeIdDuree[3][0]);
+	strcat(chemin4,idchar4);
+	strcat(chemin4,".bmp");
+
+	char* chemin5 = malloc(100*sizeof(char*));
+	strcpy(chemin5,CHEMIN_IMAGES_ALIMENTS);
+	char* idchar5 = malloc(4*sizeof(char));
+	sprintf(idchar5,"%ld",listeIdDuree[4][0]);
+	strcat(chemin5,idchar5);
+	strcat(chemin5,".bmp");
+
+	// Images
+	SDL_Surface *image1 = SDL_LoadBMP(chemin1);
+	SDL_Surface *image2 = SDL_LoadBMP(chemin2);
+	SDL_Surface *image3 = SDL_LoadBMP(chemin3);
+	SDL_Surface *image4 = SDL_LoadBMP(chemin4);
+	SDL_Surface *image5 = SDL_LoadBMP(chemin5);
+
+	// Redimensionnement des images (60x60 pixels)
+	// TODO : libraire SDL_gfx, fonction rotozoom() sur les images
+
+	// Positionnement desi mages
+	SDL_Rect pos1;
+	pos1.x = objet1.x; pos1.y = objet1.y;
+	SDL_Rect pos2;
+	pos2.x = objet2.x; pos2.y = objet2.y;
+	SDL_Rect pos3;
+	pos3.x = objet3.x; pos3.y = objet3.y;
+	SDL_Rect pos4;
+	pos4.x = objet4.x; pos4.y = objet4.y;
+	SDL_Rect pos5;
+	pos5.x = objet5.x; pos5.y = objet5.y;
+
+	// Blittage des images
+	SDL_BlitSurface(image1,NULL,screenSurface,&pos1);
+	SDL_BlitSurface(image2,NULL,screenSurface,&pos2);
+	SDL_BlitSurface(image3,NULL,screenSurface,&pos3);
+	SDL_BlitSurface(image4,NULL,screenSurface,&pos4);
+	SDL_BlitSurface(image5,NULL,screenSurface,&pos5);
+
 	SDL_UpdateWindowSurface(getwindow());
 
 	SDL_Event event;
