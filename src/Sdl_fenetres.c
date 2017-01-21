@@ -231,23 +231,7 @@ int peserLoading2(SDL_Surface* screenSurface) {
 
 	SDL_UpdateWindowSurface(getwindow());
 
-	// On ouvre le fond et on en extrait la couleur dominante
-	FILE* ficFond;
-	ImageBMP* imgFond;
-	char* cheminFond = NULL;
-
-	cheminFond = malloc(100*sizeof(char));
-	strcpy(cheminFond,CHEMIN_IMAGES_ALIMENTS);
-	strcat(cheminFond,"fond.bmp");
-
-	ficFond = fopen(cheminFond,"rb");
-	imgFond = initImageBMP(ficFond);
-	Couleur* coulFond = initCouleur();
-	coulFond = couleurDominante(imgFond);
-
-	fclose(ficFond);
-
-	// On prend une nouvelle photo (aliment + fond) et on controle qu'il y a bien un aliment
+	// On prend une nouvelle photo (aliment + fond) et on controle qu'il y ait bien un aliment
 	FILE* fic;
 	ImageBMP* img;
 	int photoPrise;
@@ -271,7 +255,7 @@ int peserLoading2(SDL_Surface* screenSurface) {
 		remove(chemin);
 
 		// Si la photo est unie, soit l'aliment prend toute la photo, soit il n'y a pas d'aliment en plus du fond
-		if(estUni(img) != 1) {
+		if(estUni(img) == 1) {
 			// Message d'avertissement
 			texteAttention = TTF_RenderText_Blended(getpolice(), "Attention aliment non detecté", couleurRouge);
 			pos.x = (800-(texteAttention->w))/2;
@@ -279,7 +263,7 @@ int peserLoading2(SDL_Surface* screenSurface) {
 			SDL_BlitSurface(texteAttention,NULL,screenSurface,&pos);
 			SDL_UpdateWindowSurface(getwindow());
 		}
-	} while(estUni(img) != 1 || photoPrise != 1);
+	} while(estUni(img) == 1 || photoPrise != 1);
 
 	return 5; // On passe au choix de l'aliment reconnu
 }
@@ -420,6 +404,9 @@ int peserChoix() {
 	Couleur* coulFond = initCouleur();
 	coulFond = couleurDominante(imgFond);
 
+	fclose(ficFond);
+	remove(cheminFond);
+
 	// Récupération de la couleur de l'aliment pris en photo
 	char* nomPhoto = "aliment";
 	char* chemin = NULL;
@@ -432,6 +419,9 @@ int peserChoix() {
 	ImageBMP* img = initImageBMP(photo);
 	Couleur* coulAlim = initCouleur();
 	coulAlim = couleurDominanteHorsFond(img,coulFond);
+
+	fclose(photo);
+	remove(chemin);
 
 	// Chargement des 5 aliments probables
 	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
@@ -469,7 +459,7 @@ int peserChoix() {
 	char* chemin5 = malloc(100*sizeof(char*));
 	strcpy(chemin5,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar5 = malloc(4*sizeof(char));
-	sprintf(idchar5,"%ld",listeAlim[4]);
+	sprintf(idchar5,"%d",listeAlim[4]);
 	strcat(chemin5,idchar5);
 	strcat(chemin5,".bmp");
 
