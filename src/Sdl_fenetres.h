@@ -22,3 +22,10 @@ int peser();
 	@return 1 si on doit aller au menu, 2 si à la peser, 3 si au stock, 0 pour quitter
 */
 int stock();
+
+/**
+	@brief Convertie une durée en heure en un rapport en % sur deux semaines
+	@param int duree Une durée exprimé en heure
+	@return int un pourcentage sous forme d'un int compris entre 0 et 100
+*/
+int rapport14J(int duree);

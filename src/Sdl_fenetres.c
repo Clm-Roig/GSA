@@ -295,6 +295,18 @@ int peser() {
 	return 1; // retour au menu Accueil
 }
 
+int rapport14J(int duree){
+	if(duree<=0){
+		return 0;
+	}
+	else if(duree <= 336){
+		return 100;
+	}
+	else{
+		return (duree/336);
+	}
+}
+
 int stock() {
 	SDL_Surface* screenSurface;
 	SDL_Surface* texteTitre;
@@ -442,6 +454,32 @@ int stock() {
 	duree3 = duree3 / 3600;
 	duree4 = duree4 / 3600;
 	duree5 = duree5 / 3600;
+
+	//Conversion en rapport à 2 semaines
+	//336h dans deux semaines
+	duree1 = rapport14J(duree1);
+	duree2 = rapport14J(duree2);
+	duree3 = rapport14J(duree3);
+	duree4 = rapport14J(duree4);
+	duree5 = rapport14J(duree5);
+
+
+	//Affichage barre duree peremption
+	SDL_Rect barre1;
+	SDL_Rect barre2;
+	SDL_Rect barre3;
+	SDL_Rect barre4;
+	SDL_Rect barre5;
+	barre1.x=pos1.x; barre1.y=pos1.y; barre1.w=duree1; barre1.h=60;
+	barre2.x=pos2.x; barre2.y=pos2.y; barre2.w=duree2; barre2.h=60;
+	barre3.x=pos3.x; barre3.y=pos3.y; barre3.w=duree3; barre3.h=60;
+	barre4.x=pos4.x; barre4.y=pos4.y; barre4.w=duree4; barre4.h=60;
+	barre5.x=pos5.x; barre5.y=pos5.y; barre5.w=duree5; barre5.h=60;
+	SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,192, 57, 43));
+	SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,192, 57, 43));
+	SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,192, 57, 43));
+	SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,192, 57, 43));
+	SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,192, 57, 43));
 
 	SDL_UpdateWindowSurface(getwindow());
 
