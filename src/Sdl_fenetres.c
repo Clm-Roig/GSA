@@ -840,8 +840,29 @@ int stock() {
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
 	 		return 1; // retour au menu Accueil
 	    }
-	    else {
-
+	    else if((x>=objet1.x)&&(x<=(objet1.x+objet1.w))&&(y>=objet1.y)&&(y<=(objet1.y+objet1.h))){
+	 		int marche=0;
+	 		marche = supprimerDonneePesee(int id);
+	 		return 1; // retour au menu Accueil
+	    }
+	    else if((x>=objet2.x)&&(x<=(objet2.x+objet2.w))&&(y>=objet2.y)&&(y<=(objet2.y+objet2.h))){
+	 		int marche=0;
+	 		marche = supprimerDonneePesee(int id);
+	 		return 1; // retour au menu Accueil
+	    }
+	    else if((x>=objet3.x)&&(x<=(objet3.x+objet3.w))&&(y>=objet3.y)&&(y<=(objet3.y+objet3.h))){
+	 		int marche=0;
+	 		marche = supprimerDonneePesee(int id);
+	 		return 1; // retour au menu Accueil
+	    }
+	    else if((x>=objet4.x)&&(x<=(objet4.x+objet4.w))&&(y>=objet4.y)&&(y<=(objet4.y+objet4.h))){
+	 		int marche=0;
+	 		marche = supprimerDonneePesee(int id);
+	 		return 1; // retour au menu Accueil
+	    else if((x>=objet5.x)&&(x<=(objet5.x+objet5.w))&&(y>=objet5.y)&&(y<=(objet5.y+objet5.h))){
+	 		int marche=0;
+	 		marche = supprimerDonneePesee(int id);
+	 		return 1; // retour au menu Accueil
 	    }
 	}
 }
