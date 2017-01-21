@@ -383,8 +383,7 @@ int ecrireDonneeAliment(char* nom, Couleur* couleur, int dureeP) {
     assert(fichier != NULL);
     fseek(fichier,0,SEEK_END);
 
-    // Saut de ligne avant insertion et formatage des données
-    char buffer[TAILLE_MAX_LIGNE]="\n";
+    char buffer[TAILLE_MAX_LIGNE] = "\n";
 
     // Obtention de l'id du nouvel aliment
     int id = getIdMax("aliments") + 1;
@@ -533,7 +532,6 @@ int supprimerDonneePesee(int id){
 void reinitBDD() {
     FILE* fichierTempPesees = fopen(CHEMIN_PESEES_TEMP,"a");
     fprintf(fichierTempPesees,"%s",ENTETE_PESEES);
-    fclose(fichierTempPesees);
 
     if(remove(CHEMIN_PESEES) != 0 || rename(CHEMIN_PESEES_TEMP,CHEMIN_PESEES) != 0) {
         printf("\nErreur reinit pesees.txt.");
@@ -542,7 +540,6 @@ void reinitBDD() {
 
     FILE* fichierTempAliments = fopen(CHEMIN_ALIMENTS_TEMP,"a");
     fprintf(fichierTempAliments,"%s",ENTETE_ALIMENTS);
-    fclose(fichierTempAliments);
 
     if(remove(CHEMIN_ALIMENTS) != 0) {
         printf("\nErreur suppression aliments.txt.");

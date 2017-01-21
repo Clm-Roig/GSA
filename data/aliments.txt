@@ -1,4 +1,11 @@
 ID_ALIMENT;NOM_ALIMENT;COULEUR_ALIMENT;DUREE_PEREMPTION
-1;aliment_test;255-255-0;3
-2;aliment_test2;30-152-210;4
-3;caviar;130-12-2;5
+1;banane;230-192-53;0
+2;citron;240-188-28;0
+3;courgette;53-83-36;0
+4;framboise;222-57-62;0
+5;orange;245-143-22;0
+6;pomme_jaune;246-213-82;0
+7;pomme_rouge;185-50-41;0
+8;pomme_verte;179-202-62;0
+9;salade;106-151-34;0
+10;tomate;217-76-42;0

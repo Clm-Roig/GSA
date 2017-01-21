@@ -23,7 +23,7 @@ int main() {
 	fclose(fichier);
 
 		// => sauver en BDD ecrireDonneesAliment(.....)
-	ecrireDonneesAliment("aubergine",coulDom,0);
+	ecrireDonneeAliment("aubergine",coulDom,0);
 
 	// Renommer la photo
 		// => rename sur FILE* (ou à la main)
