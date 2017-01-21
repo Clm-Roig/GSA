@@ -280,7 +280,7 @@ int peserBase(SDL_Surface* screenSurface){
 
 int peser() {
 	SDL_Surface* screenSurface;
-	screenSurface=SDL_GetWindowSurface(getwindow());
+	screenSurface = SDL_GetWindowSurface(getwindow());
 
 	int loop = 1;
 	int page = 1;
@@ -307,8 +307,6 @@ int stock() {
 	SDL_Rect pos_fond_ecran;
 	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
 	SDL_BlitSurface(fond_ecran,NULL,screenSurface,&pos_fond_ecran);
-
-	SDL_FillRect(screenSurface,NULL,SDL_MapRGB(screenSurface->format,44, 62, 80));
 
 	SDL_Rect objet1;SDL_Rect objet2; SDL_Rect objet3; SDL_Rect objet4; SDL_Rect objet5;
 	objet1.x=40; objet1.y=40; objet1.w=60; objet1.h=60;
@@ -412,7 +410,7 @@ int stock() {
 	double zoom5 = 60 / (double)h5;
 	image5 = zoomSurface(image5,zoom5,zoom5,0);
 
-	// Positionnement desi mages
+	// Positionnement des images
 	SDL_Rect pos1;
 	pos1.x = objet1.x; pos1.y = objet1.y;
 	SDL_Rect pos2;
