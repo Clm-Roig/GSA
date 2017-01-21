@@ -157,7 +157,9 @@ int peserPhoto(SDL_Surface* screenSurface){
 int peserLoading(SDL_Surface* screenSurface) {
 	SDL_Rect pos;
 	SDL_Surface* texteTitre;
+	SDL_Surface* texteAttention;
 	SDL_Color couleurBlanc = {255, 255, 255};
+	SDL_Color couleurRouge = {192, 57, 43};
 
 	// Fond d'écran
 	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
@@ -197,7 +199,11 @@ int peserLoading(SDL_Surface* screenSurface) {
 		remove(chemin);
 
 		if(estUni(img) != 1) {
-			// Afficher "Veuillez choisir un fond uni svp."
+			texteAttention = TTF_RenderText_Blended(getpolice(), "Attention fond non unie", couleurRouge);
+			pos.x = (800-(texteAttention->w))/2;
+			pos.y = 300;
+			SDL_BlitSurface(texteAttention,NULL,screenSurface,&pos);
+			SDL_UpdateWindowSurface(getwindow());
 		}
 	} while(estUni(img) != 1 || photoPrise != 1);
 
