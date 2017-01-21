@@ -710,7 +710,9 @@ int stock() {
 
 	//Conversion en rapport à 2 semaines
 	//336h dans deux semaines
+	printf("%d\n", duree1 );
 	duree1 = rapport14J(duree1);
+	printf("%d\n", duree1 );
 	duree2 = rapport14J(duree2);
 	duree3 = rapport14J(duree3);
 	duree4 = rapport14J(duree4);
