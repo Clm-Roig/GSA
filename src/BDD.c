@@ -336,8 +336,8 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
 
         // Le H est cyclique
         float ecartH = abs(hAl - hBdd);
-        if(360.0 - ecartH < 180) {
-            ecartH = 360 - ecartH;
+        if(360.0 - ecartH < 180.0) {
+            ecartH = 360.0 - ecartH;
         }
 
         if (ecartH < seuilH) {
