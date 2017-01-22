@@ -580,7 +580,7 @@ int ecrireDonneePesee(int quantite,char* description,int id_aliment) {
     strcat(buffer,idchar);
     strcat(buffer,";");
 
-    if (strcmp(quantite_char,"") = 0) {
+    if (strcmp(quantite_char,"") == 0) {
          strcat(buffer," ");
     }
     else {
@@ -588,7 +588,7 @@ int ecrireDonneePesee(int quantite,char* description,int id_aliment) {
     }
     strcat(buffer,";");
 
-    if (strcmp(description,"") = 0) {
+    if (strcmp(description,"") == 0) {
          strcat(buffer," ");
     }
     else {
