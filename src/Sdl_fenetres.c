@@ -753,7 +753,7 @@ int stock() {
 	SDL_BlitSurface(image5,NULL,screenSurface,&pos5);
 
 	//Ligne vertical
-	SDL_Rect objet4; SDL_Rect objet5;
+	SDL_Rect interface7J; SDL_Rect interface14J;
 	interface7J.x=(pos1.x)+40+pos1.w+300; interface7J.y=40; interface7J.w=3; interface7J.h=400;
 	interface14J.x=(pos1.x)+40+pos1.w+600; interface14J.y=40; interface14J.w=3; interface14J.h=400;
 	SDL_FillRect(screenSurface,&objet5,SDL_MapRGB(screenSurface->format,255, 255, 255));
