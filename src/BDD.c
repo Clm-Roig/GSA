@@ -324,7 +324,7 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         }
         */
 
-        int seuilH = 10;
+        int seuilH = 0;
         int seuilS = 25;
         int seuilL = 25;
         if (abs(hAl - hBdd) < seuilH) {
