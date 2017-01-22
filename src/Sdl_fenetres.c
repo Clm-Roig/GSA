@@ -648,7 +648,7 @@ int stock() {
 	SDL_FillRect(screenSurface,&objet5,SDL_MapRGB(screenSurface->format,192, 57, 43));
 
 	// Texte
-	texteTitre = TTF_RenderText_Blended(getpolice(), "Mon stock                                    7J                                    14J", couleurNoir);
+	texteTitre = TTF_RenderText_Blended(getpolice(), "Mon stock                                      7J                                      14J", couleurNoir);
 	pos.x = (800-(texteTitre->w))/2;
 	pos.y = 10;
 	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
