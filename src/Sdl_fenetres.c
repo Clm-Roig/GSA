@@ -586,7 +586,7 @@ int peser() {
 		else if(page==3) page = peserPhoto(screenSurface);
 		else if(page==4) page = peserLoading2(screenSurface);
 		else if(page==5) page = peserChoix(screenSurface);
-		else if(page==6) page = peserChoixComplet(screenSurface);
+		else if(page==6) page = peserChoix(screenSurface);
 		else if(page==0) loop = 0;
 	}
 
