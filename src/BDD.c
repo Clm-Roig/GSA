@@ -257,7 +257,7 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         sAl = delta / (1 - soust);
     }
 
-
+    printf(" HSL%f %f %f", hAl,sAl,lAl);
     // On lit le fichier à partir de la ligne 2 (premier tuple)
     i=2;
     while (i <= nbLignesFichier(fichier) && nbAlimentsTrouves < nbAlimentsTotal) {
@@ -331,9 +331,9 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         }
         */
 
-        int seuilH = 20;
-        int seuilS = 25;
-        int seuilL = 15;
+        float seuilH = 5;
+        float seuilS = 0.20;
+        float seuilL = 0.20;
         if (abs(hAl - hBdd) < seuilH) {
             if (abs(sAl - sBdd) < seuilS) {
                 if (abs(lAl - lBdd) < seuilL) {
