@@ -82,6 +82,41 @@ char* lireLigneParId(FILE* fichier, int id) {
 }
 
 // Lecture Aliments
+int* getIdsAliments(int nbAliments){
+    FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
+
+    // On retourne 5 aliments maximum
+    int nbAlimentsTotal = nbAliments;
+    int nbAlimentsTrouves = 0;
+
+    int* listeIds = NULL;
+    listeIds = malloc(nbAlimentsTotal*sizeof(int));
+    int i=0;
+    // Initialisation des ids à 0
+    for (i=0; i<nbAlimentsTotal ;i++) {
+        listeIds[i]=0;
+    }
+
+    char* ligneLu = NULL;
+    ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+
+    int idLu;
+
+    Couleur* couleurLu = initCouleur();
+
+    // On lit le fichier à partir de la ligne 2 (premier tuple)
+    i=2;
+    while (i <= nbLignesFichier(fichier) && nbAlimentsTrouves < nbAlimentsTotal) {
+        nbAlimentsTrouves++;
+        listeIds[nbAlimentsTrouves-1] = idLu;
+        i++;
+    }
+    // Fin de boucle : tout le fichier est parcouru
+    fclose(fichier);
+
+    return listeIds;
+}
+
 char* getNomAliment(int id) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
     char* ligneLu = NULL;
@@ -152,7 +187,6 @@ int getDureePeremptionAliment(int id) {
 
     return dureeP;
 }
-
 
 int* getIdAlimentParCouleur(Couleur* coul, int precision) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");

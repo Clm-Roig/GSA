@@ -58,6 +58,13 @@ char* lireLigneParId(FILE* fichier, int id);
 
 // ALIMENTS
 /**
+    @brief renvoie la liste des ids des nbAliments premiers aliments de la BDD (si pas assez d'aliment, id=0)
+    @param int inbAliments, le nombre d'aliments à retourner
+    @return int*, le tableau des ids des aliments de taille nbAliments
+*/
+int* getIdsAliments(int nbAliments);
+
+/**
     @brief renvoie le nom de l'aliment ciblé par l'id
     @param int id, l'id de l'aliment ciblé
     @return char*, le nom de l'aliment
