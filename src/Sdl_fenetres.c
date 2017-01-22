@@ -640,13 +640,13 @@ int peserChoixComplet() {
 			// Librairie SDL_gfx, fonction zoomSurface() sur les images
 			// Les images étant carrées, on ne récupère que la hauteur
 			int h = image->h;
-			double zoom = 100 / (double)h;
+			double zoom = 80 / (double)h;
 			image = zoomSurface(image,zoom,zoom,0);
 			// Positionnement des images
 			SDL_Rect pos;
 			pos.x = objet.x+10; pos.y = objet.y+10;
 			SDL_BlitSurface(image,NULL,screenSurface,&pos);
-			
+
 		}
 	}
 	SDL_UpdateWindowSurface(getwindow());
