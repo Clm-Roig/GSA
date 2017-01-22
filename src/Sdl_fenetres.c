@@ -688,7 +688,7 @@ int peserChoixComplet() {
 	 			return 1;
 	 		}
 	 		else if((x>=200)&&(x<300)){
-	 			if(listeAlim[1]]!=0){
+	 			if(listeAlim[1]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[1]]);
 	 			}
@@ -733,7 +733,7 @@ int peserChoixComplet() {
 	 			return 1;
 	 		}
 	 		else if((x>=200)&&(x<300)){
-	 			if(listeAlim[7]]!=0){
+	 			if(listeAlim[7]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[7]]);
 	 			}
@@ -778,7 +778,7 @@ int peserChoixComplet() {
 	 			return 1;
 	 		}
 	 		else if((x>=200)&&(x<300)){
-	 			if(listeAlim[13]]!=0){
+	 			if(listeAlim[13]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[13]]);
 	 			}
@@ -823,7 +823,7 @@ int peserChoixComplet() {
 	 			return 1;
 	 		}
 	 		else if((x>=200)&&(x<300)){
-	 			if(listeAlim[19]]!=0){
+	 			if(listeAlim[19]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[19]]);
 	 			}
