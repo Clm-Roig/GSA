@@ -679,13 +679,186 @@ int peserChoixComplet() {
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
 	 		return 1; // retour au menu Accueil
 	    }
-	   /* else if((x>=objet1.x)&&(x<=(objet1.x+objet1.w))&&(y>=objet1.y)&&(y<=(objet1.y+objet1.h))){
-	 		if(listeAlim[0]!=0){
-	 		char * desc = "Une pesee";
-	 		int marche2 = ecrireDonneePesee(1,desc,listeAlim[0]);
+	   else if((y>40)&&(y<140)){
+	 		if((x>=100)&&(x<200)){
+	 			if(listeAlim[0]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[0]);
+	 			}
+	 			return 1;
 	 		}
-	 		return 1;
-	    }*/
+	 		else if((x>=200)&&(x<300)){
+	 			if(listeAlim[1]]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[1]]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=300)&&(x<400)){
+	 			if(listeAlim[2]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[2]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=400)&&(x<500)){
+	 			if(listeAlim[3]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[3]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=500)&&(x<600)){
+	 			if(listeAlim[4]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[4]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=600)&&(x<700)){
+	 			if(listeAlim[5]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[5]);
+	 			}
+	 			return 1;
+	 		}
+
+	    }
+	   else if((y>140)&&(y<240)){
+	 		if((x>=100)&&(x<200)){
+	 			if(listeAlim[6]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[6]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=200)&&(x<300)){
+	 			if(listeAlim[7]]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[7]]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=300)&&(x<400)){
+	 			if(listeAlim[8]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[8]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=400)&&(x<500)){
+	 			if(listeAlim[9]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[9]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=500)&&(x<600)){
+	 			if(listeAlim[10]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[10]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=600)&&(x<700)){
+	 			if(listeAlim[11]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[11]);
+	 			}
+	 			return 1;
+	 		}
+
+	    }
+	    else if((y>=240)&&(y<340)){
+	 		if((x>=100)&&(x<200)){
+	 			if(listeAlim[12]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[12]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=200)&&(x<300)){
+	 			if(listeAlim[13]]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[13]]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=300)&&(x<400)){
+	 			if(listeAlim[14]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[14]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=400)&&(x<500)){
+	 			if(listeAlim[15]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[15]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=500)&&(x<600)){
+	 			if(listeAlim[16]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[16]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=600)&&(x<700)){
+	 			if(listeAlim[17]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[17]);
+	 			}
+	 			return 1;
+	 		}
+
+	    }
+	    else if((y>=340)&&(y<440)){
+	 		if((x>=100)&&(x<200)){
+	 			if(listeAlim[18]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[18]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=200)&&(x<300)){
+	 			if(listeAlim[19]]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[19]]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=300)&&(x<400)){
+	 			if(listeAlim[20]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[20]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=400)&&(x<500)){
+	 			if(listeAlim[21]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[21]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=500)&&(x<600)){
+	 			if(listeAlim[22]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[22]);
+	 			}
+	 			return 1;
+	 		}
+	 		else if((x>=600)&&(x<700)){
+	 			if(listeAlim[23]!=0){
+	 			char * desc = "Une pesee";
+	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[23]);
+	 			}
+	 			return 1;
+	 		}
+
+	    }
 	    else {
 
 	    }
