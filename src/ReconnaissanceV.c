@@ -129,13 +129,13 @@ Couleur* couleurDominanteHorsFond(ImageBMP* image, Couleur* couleurFond) {
         }
 
         // Si la somme des différences est supérieur au seuil, alors ce sont des pixels de l'aliment.
-        if ((diffR > PRECISION_COULEUR_HORS_FOND/3)&&(diffB > PRECISION_COULEUR_HORS_FOND/3)&&(diffG > PRECISION_COULEUR_HORS_FOND/3)) {
+        if (diffR + diffG + diffB > PRECISION_COULEUR_HORS_FOND) {
             moyenneRAliment += valeurRPixel;
             moyenneGAliment += valeurGPixel;
             moyenneBAliment += valeurBPixel;
             cptPixelsAliment ++;
         }
-
+        
     }
 
     // Calcul des moyennes pour chaque composante des pixels de l'aliment
