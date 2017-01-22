@@ -616,7 +616,7 @@ int peserChoixComplet() {
 	pos.x = buttMenu.x + ((buttMenu.w-larg)/2);
 	pos.y = buttMenu.y + ((buttMenu.h-haut)/2);
 	SDL_BlitSurface(texteMenu,NULL,screenSurface,&pos);
-	
+
 	// Chargement des 24 aliments probables
 	int* listeAlim = getIdsAliments(24);
 
@@ -677,7 +677,7 @@ int peserChoixComplet() {
 	                break;
 	    }
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
-	 		return 1; // retour au menu Accueil
+	 		return 0; // retour au menu Accueil
 	    }
 	   else if((y>40)&&(y<140)){
 	 		if((x>=100)&&(x<200)){
@@ -685,42 +685,42 @@ int peserChoixComplet() {
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[0]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=200)&&(x<300)){
 	 			if(listeAlim[1]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[1]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=300)&&(x<400)){
 	 			if(listeAlim[2]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[2]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=400)&&(x<500)){
 	 			if(listeAlim[3]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[3]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=500)&&(x<600)){
 	 			if(listeAlim[4]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[4]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=600)&&(x<700)){
 	 			if(listeAlim[5]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[5]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 
 	    }
@@ -730,42 +730,42 @@ int peserChoixComplet() {
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[6]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=200)&&(x<300)){
 	 			if(listeAlim[7]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[7]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=300)&&(x<400)){
 	 			if(listeAlim[8]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[8]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=400)&&(x<500)){
 	 			if(listeAlim[9]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[9]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=500)&&(x<600)){
 	 			if(listeAlim[10]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[10]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=600)&&(x<700)){
 	 			if(listeAlim[11]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[11]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 
 	    }
@@ -775,14 +775,14 @@ int peserChoixComplet() {
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[12]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=200)&&(x<300)){
 	 			if(listeAlim[13]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[13]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=300)&&(x<400)){
 	 			if(listeAlim[14]!=0){
@@ -796,21 +796,21 @@ int peserChoixComplet() {
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[15]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=500)&&(x<600)){
 	 			if(listeAlim[16]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[16]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=600)&&(x<700)){
 	 			if(listeAlim[17]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[17]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 
 	    }
@@ -820,47 +820,47 @@ int peserChoixComplet() {
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[18]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=200)&&(x<300)){
 	 			if(listeAlim[19]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[19]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=300)&&(x<400)){
 	 			if(listeAlim[20]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[20]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=400)&&(x<500)){
 	 			if(listeAlim[21]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[21]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=500)&&(x<600)){
 	 			if(listeAlim[22]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[22]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 	 		else if((x>=600)&&(x<700)){
 	 			if(listeAlim[23]!=0){
 	 			char * desc = "Une pesee";
 	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[23]);
 	 			}
-	 			return 1;
+	 			return 0;
 	 		}
 
 	    }
 	    else {
-
+				
 	    }
 	}
 }
@@ -1041,7 +1041,7 @@ int stock() {
 	interface14J.x=(objet1.x)+40+objet1.w+600; interface14J.y=objet1.y; interface14J.w=2; interface14J.h=400;
 	SDL_FillRect(screenSurface,&interface7J,SDL_MapRGB(screenSurface->format,138, 138, 138));
 	SDL_FillRect(screenSurface,&interface14J,SDL_MapRGB(screenSurface->format,138, 138, 138));
-	
+
 	// Durée de péremption
 	long int duree1 = listeIdDuree[0][1];
 	long int duree2 = listeIdDuree[1][1];
@@ -1055,7 +1055,7 @@ int stock() {
 	duree3 = duree3 / 3600;
 	duree4 = duree4 / 3600;
 	duree5 = duree5 / 3600;
-	
+
 	//Conversion en rapport à 2 semaines
 	//336h dans deux semaines
 	duree1 = rapport14J(duree1);
