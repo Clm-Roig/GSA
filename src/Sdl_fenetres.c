@@ -538,6 +538,34 @@ int peserChoix() {
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
 	 		return 1; // retour au menu Accueil
 	    }
+		else if((x>=bouttonAutre.x)&&(x<=(bouttonAutre.x+bouttonAutre.w))&&(y>=bouttonAutre.y)&&(y<=(bouttonAutre.y+bouttonAutre.h))){
+	 		return 6; // On passe au choix dans la liste des aliments complete
+	    }
+	    else if((x>=objet1.x)&&(x<=(objet1.x+objet1.w))&&(y>=objet1.y)&&(y<=(objet1.y+objet1.h))){
+	 		char * desc = "Une pesee";
+	 		int marche2 = ecrireDonneePesee(1,desc,listeAlim[0]);
+	 		return 1;
+	    }
+	   	else if((x>=objet2.x)&&(x<=(objet2.x+objet2.w))&&(y>=objet2.y)&&(y<=(objet2.y+objet2.h))){
+	 		char * desc = "Une pesee";
+	 		int marche2 = ecrireDonneePesee(1,desc,listeAlim[1]);
+	 		return 1;
+	    }
+	    else if((x>=objet3.x)&&(x<=(objet3.x+objet3.w))&&(y>=objet3.y)&&(y<=(objet3.y+objet3.h))){
+	 		char * desc = "Une pesee";
+	 		int marche2 = ecrireDonneePesee(1,desc,listeAlim[2]);
+	 		return 1;
+	    }
+	    else if((x>=objet4.x)&&(x<=(objet4.x+objet4.w))&&(y>=objet4.y)&&(y<=(objet4.y+objet4.h))){
+	 		char * desc = "Une pesee";
+	 		int marche2 = ecrireDonneePesee(1,desc,listeAlim[3]);
+	 		return 1;
+	    }
+	    else if((x>=objet5.x)&&(x<=(objet5.x+objet5.w))&&(y>=objet5.y)&&(y<=(objet5.y+objet5.h))){
+	 		char * desc = "Une pesee";
+	 		int marche2 = ecrireDonneePesee(1,desc,listeAlim[4]);
+	 		return 1;
+	    }
 	    else {
 
 	    }
@@ -558,6 +586,7 @@ int peser() {
 		else if(page==3) page = peserPhoto(screenSurface);
 		else if(page==4) page = peserLoading2(screenSurface);
 		else if(page==5) page = peserChoix(screenSurface);
+		else if(page==6) page = peserChoixComplet(screenSurface);
 		else if(page==0) loop = 0;
 	}
 
