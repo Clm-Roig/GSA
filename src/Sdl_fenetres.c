@@ -626,7 +626,7 @@ int peserChoixComplet() {
 		for(j=0; j<6; j++){
 			SDL_Rect objet;
 			objet.x=30+(100*j); objet.y=60+(100*i); objet.w=100; objet.h=100;
-			SDL_FillRect(screenSurface,&objet1,SDL_MapRGB(screenSurface->format,192, 57, 43));
+			SDL_FillRect(screenSurface,&objet,SDL_MapRGB(screenSurface->format,192, 57, 43));
 			// Construction du chemin vers l'image
 			char* chemin = malloc(100*sizeof(char*));
 			strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
