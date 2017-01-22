@@ -618,7 +618,7 @@ int peserChoixComplet() {
 	SDL_BlitSurface(texteMenu,NULL,screenSurface,&pos);
 	
 	// Chargement des 24 aliments probables
-	int* listeAlim = getIdsAliments(int nbAliments);
+	int* listeAlim = getIdsAliments(24);
 
 	//Affichage de la grille
 	int i,j;
