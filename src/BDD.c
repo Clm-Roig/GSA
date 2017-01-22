@@ -257,7 +257,7 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         sAl = delta / (1 - soust);
     }
 
-    printf(" HSL%f %f %f", hAl,sAl,lAl);
+    printf("\nHSL photo : %f %f %f", hAl,sAl,lAl);
     // On lit le fichier à partir de la ligne 2 (premier tuple)
     i=2;
     while (i <= nbLignesFichier(fichier) && nbAlimentsTrouves < nbAlimentsTotal) {
@@ -299,7 +299,7 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         float deltaB = cMaxBdd - cMinBdd;
 
         // Calcul H
-        if(cMaxBdd == rapRbdd) hBdd = 60.0* ( (rapGal - rapBal)/delta );
+        if(cMaxBdd == rapRbdd) hBdd = 60.0* ( (rapGbdd - rapBbdd)/deltaB );
         if(cMaxBdd == rapGbdd) hBdd = 60.0*( ( (rapBbdd - rapRbdd) / deltaB) + 2.0);
         if(cMaxBdd == rapBbdd) hBdd = 60.0*( ( (rapRbdd - rapGbdd) / deltaB) + 4.0);
 
@@ -331,6 +331,9 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         float seuilH = 5;
         float seuilS = 0.20;
         float seuilL = 0.20;
+
+        printf("\nHSL %s : %f %f %f",getNomAliment(idLu),hBdd,sBdd,lBdd);
+
         if (abs(hAl - hBdd) < seuilH) {
             if (abs(sAl - sBdd) < seuilS) {
                 if (abs(lAl - lBdd) < seuilL) {
