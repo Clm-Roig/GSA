@@ -325,8 +325,8 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         */
 
         float seuilH = 5;
-        float seuilS = 0.25;
-        float seuilL = 0.75;
+        float seuilS = 0.30;
+        float seuilL = 0.35;
         if (abs(hAl - hBdd) < seuilH) {
             if (abs(sAl - sBdd) < seuilS) {
                 if (abs(lAl - lBdd) < seuilL) {
