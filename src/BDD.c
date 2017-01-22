@@ -255,7 +255,7 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         sAl = delta / (1 - soust);
     }
 
-    printf(" HSL%d %d %d", hAl,sAl,lAl)
+    printf(" HSL%d %d %d", hAl,sAl,lAl);
     // On lit le fichier à partir de la ligne 2 (premier tuple)
     i=2;
     while (i <= nbLignesFichier(fichier) && nbAlimentsTrouves < nbAlimentsTotal) {
