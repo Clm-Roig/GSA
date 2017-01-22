@@ -9,6 +9,7 @@ int prendrePhoto(char* idPesee) {
     // raspistill permet de prendre une photo
     // -n annule la preview de la photo
     // -t delai avant prise de la photo
+    // -ex Exposition
     // -w et -h hauteur et largeur de 1000pxls
     // -e spécifie l'encodage de la photo
     // -co contraste (0 à 100)
