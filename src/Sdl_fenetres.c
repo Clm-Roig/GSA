@@ -621,8 +621,9 @@ int peserChoixComplet() {
 	int* listeAlim = getIdsAliments(int nbAliments);
 
 	//Affichage de la grille
-	for(int i=0; i<4; i++){
-		for(int j=0; j<6; j++){
+	int i,j;
+	for(i=0; i<4; i++){
+		for(j=0; j<6; j++){
 			SDL_Rect objet;
 			objet.x=30+(100*j); objet.y=60+(100*i); objet.w=100; objet.h=100;
 			SDL_FillRect(screenSurface,&objet1,SDL_MapRGB(screenSurface->format,192, 57, 43));
