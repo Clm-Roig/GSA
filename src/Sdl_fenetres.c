@@ -403,7 +403,7 @@ int peserChoix() {
 	imgFond = initImageBMP(ficFond);
 	Couleur* coulFond = initCouleur();
 	coulFond = couleurDominante(imgFond);
-	printf("\Couleur Fond = %s",toCharCouleur(coulFond);
+	printf("\nCouleur Fond = %s",toCharCouleur(coulFond));
 
 	fclose(ficFond);
 	remove(cheminFond);
@@ -420,7 +420,7 @@ int peserChoix() {
 	ImageBMP* img = initImageBMP(photo);
 	Couleur* coulAlim = initCouleur();
 	coulAlim = couleurDominanteHorsFond(img,coulFond);
-	printf("\Couleur Aliment = %s",toCharCouleur(coulAlim);
+	printf("\nCouleur Aliment = %s",toCharCouleur(coulAlim));
 
 	fclose(photo);
 	remove(chemin);
