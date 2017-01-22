@@ -642,10 +642,11 @@ int peserChoixComplet() {
 			int h = image->h;
 			double zoom = 100 / (double)h;
 			image = zoomSurface(image,zoom,zoom,0);
-			/*// Positionnement des images
+			// Positionnement des images
 			SDL_Rect pos;
 			pos.x = objet.x+10; pos.y = objet.y+10;
-			SDL_BlitSurface(image,NULL,screenSurface,&pos);*/
+			SDL_BlitSurface(image,NULL,screenSurface,&pos);
+			
 		}
 	}
 	SDL_UpdateWindowSurface(getwindow());
