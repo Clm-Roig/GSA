@@ -187,7 +187,7 @@ int peserLoading(SDL_Surface* screenSurface) {
 	int photoPrise;
 
 	do {
-		photoPrise = prendrePhoto("fond.bmp");
+		photoPrise = prendrePhoto("fond");
 
 		fic = fopen(CHEMIN_PHOTO_FOND, "rb");
 		if (!fic) {
@@ -236,7 +236,7 @@ int peserLoading2(SDL_Surface* screenSurface) {
 	int photoPrise;
 
 	do {
-		photoPrise = prendrePhoto("aliment.bmp");
+		photoPrise = prendrePhoto("aliment");
 
 		fic = fopen(CHEMIN_PHOTO_ALIMENT, "rb");
 		if (!fic) {
@@ -385,7 +385,6 @@ int peserChoix() {
 	// Couleur du fond
 	FILE* ficFond;
 	ImageBMP* imgFond;
-	char* cheminFond = NULL;
 
 	ficFond = fopen(CHEMIN_PHOTO_FOND,"rb");
 	imgFond = initImageBMP(ficFond);
