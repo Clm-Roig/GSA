@@ -2,7 +2,8 @@
 
 // ---- CONSTANTES ---- //
 const int PRECISION_COULEUR_FOND_UNI = 80;
-const int PRECISION_COULEUR_HORS_FOND = 200;const int PRECISION_COULEUR_RECHERCHE_ALIMENT = 40;
+const int PRECISION_COULEUR_HORS_FOND = 200;
+const int PRECISION_COULEUR_RECHERCHE_ALIMENT = 40;
 
 // ---- FONCTIONS ---- //
 
@@ -128,12 +129,13 @@ Couleur* couleurDominanteHorsFond(ImageBMP* image, Couleur* couleurFond) {
         }
 
         // Si la somme des différences est supérieur au seuil, alors ce sont des pixels de l'aliment.
-        if (diffR + diffG + diffB > PRECISION_COULEUR_HORS_FOND) {
+        if ((diffR > PRECISION_COULEUR_HORS_FOND/3)&&(diffB > PRECISION_COULEUR_HORS_FOND/3)&&(diffG > PRECISION_COULEUR_HORS_FOND/3)) {
             moyenneRAliment += valeurRPixel;
             moyenneGAliment += valeurGPixel;
             moyenneBAliment += valeurBPixel;
             cptPixelsAliment ++;
         }
+
     }
 
     // Calcul des moyennes pour chaque composante des pixels de l'aliment
