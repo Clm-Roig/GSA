@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>GSA - Gestionnaire de stock alimentaire: Membres de fichier</title>
+<title>GSA - Gestionnaire de stock alimentaire: Référence du fichier src/Stock.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,19 +63,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
-      <li class="current"><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
-  <div id="navrow3" class="tabs2">
-    <ul class="tablist">
-      <li><a href="globals.html"><span>Tout</span></a></li>
-      <li><a href="globals_func.html"><span>Fonctions</span></a></li>
-      <li><a href="globals_vars.html"><span>Variables</span></a></li>
-      <li><a href="globals_type.html"><span>Définitions&#160;de&#160;type</span></a></li>
-      <li class="current"><a href="globals_defs.html"><span>Macros</span></a></li>
-    </ul>
-  </div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -90,18 +80,73 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier Stock.h</div>  </div>
+</div><!--header-->
 <div class="contents">
-&#160;<ul>
-<li>SCREEN_HEIGHT
-: <a class="el" href="Sdl__init_8h.html#a6974d08a74da681b3957b2fead2608b8">Sdl_init.h</a>
-</li>
-<li>SCREEN_WIDTH
-: <a class="el" href="Sdl__init_8h.html#a2cd109632a6dcccaa80b43561b1ab700">Sdl_init.h</a>
-</li>
-<li>TAILLE_MAX_LIGNE
-: <a class="el" href="BDD_8h.html#a601a2636f191cf6906b9241b3c4506f1">BDD.h</a>
-</li>
-</ul>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="BDD_8h_source.html">BDD.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de Stock.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="Stock_8h__incl.png" border="0" usemap="#src_2Stock_8h" alt=""/></div>
+<map name="src_2Stock_8h" id="src_2Stock_8h">
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="Stock_8h__dep__incl.png" border="0" usemap="#src_2Stock_8hdep" alt=""/></div>
+<map name="src_2Stock_8hdep" id="src_2Stock_8hdep">
+</map>
+</div>
+</div>
+<p><a href="Stock_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a10d1c1843acb6032ee70b1c8b295ec72"><td class="memItemLeft" align="right" valign="top">long int **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Stock_8h.html#a10d1c1843acb6032ee70b1c8b295ec72">getTabIdDureeAvantPer</a> (int limite)</td></tr>
+<tr class="memdesc:a10d1c1843acb6032ee70b1c8b295ec72"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie le tableau des ids de pesées ordonné par leur durée avant Peremption (en secondes). Si limite est supérieur au nombre de pesées, on renvoie toutes les pesées ordonnées.  <a href="#a10d1c1843acb6032ee70b1c8b295ec72">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a10d1c1843acb6032ee70b1c8b295ec72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a10d1c1843acb6032ee70b1c8b295ec72"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long int** getTabIdDureeAvantPer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>limite</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>renvoie le tableau des ids de pesées ordonné par leur durée avant Peremption (en secondes). Si limite est supérieur au nombre de pesées, on renvoie toutes les pesées ordonnées. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>limite, le nombre d'id d'aliments à charger </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>long int**, le tableau [id de la pesée =&gt; durée avant Péremption] </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

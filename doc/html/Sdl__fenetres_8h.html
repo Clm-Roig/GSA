@@ -87,14 +87,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Fonctions</a>  </div>
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Référence du fichier Sdl_fenetres.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;SDL2/SDL.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="BDD_8h_source.html">BDD.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ReconnaissanceV_8h_source.html">ReconnaissanceV.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Stock_8h_source.html">Stock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Camera_8h_source.html">Camera.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Sdl__init_8h_source.html">Sdl_init.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de Sdl_fenetres.h:</div>
@@ -120,23 +123,33 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a2a0e843767aeea4f433a28b9c54f573a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Sdl__fenetres_8h.html#a2a0e843767aeea4f433a28b9c54f573a">menu</a> ()</td></tr>
-<tr class="memdesc:a2a0e843767aeea4f433a28b9c54f573a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le rendu pour le menu de choix d'action.  <a href="#a2a0e843767aeea4f433a28b9c54f573a">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a2a0e843767aeea4f433a28b9c54f573a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2645e14a6583c20a2661e2b4f829d21d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Sdl__fenetres_8h.html#a2645e14a6583c20a2661e2b4f829d21d">peser</a> ()</td></tr>
-<tr class="memdesc:a2645e14a6583c20a2661e2b4f829d21d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le rendu pour la page de pesee.  <a href="#a2645e14a6583c20a2661e2b4f829d21d">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a2645e14a6583c20a2661e2b4f829d21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af482c6562bb2350ab4bc326319f4a765"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Sdl__fenetres_8h.html#af482c6562bb2350ab4bc326319f4a765">stock</a> ()</td></tr>
-<tr class="memdesc:af482c6562bb2350ab4bc326319f4a765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le rendu pour la page des stocks.  <a href="#af482c6562bb2350ab4bc326319f4a765">Plus de détails...</a><br /></td></tr>
-<tr class="separator:af482c6562bb2350ab4bc326319f4a765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae83fcdbeb2b6757fc741ae953b633ee1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Sdl__fenetres_8h.html#ae83fcdbeb2b6757fc741ae953b633ee1">menu</a> ()</td></tr>
+<tr class="memdesc:ae83fcdbeb2b6757fc741ae953b633ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le rendu pour le menu de choix d'action.  <a href="#ae83fcdbeb2b6757fc741ae953b633ee1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae83fcdbeb2b6757fc741ae953b633ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34be59d14ef6ead769d8ed64e7891684"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Sdl__fenetres_8h.html#a34be59d14ef6ead769d8ed64e7891684">peser</a> ()</td></tr>
+<tr class="memdesc:a34be59d14ef6ead769d8ed64e7891684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le rendu pour la page de pesee.  <a href="#a34be59d14ef6ead769d8ed64e7891684">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a34be59d14ef6ead769d8ed64e7891684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeced1c3b5d8795f4aeaee98f7209c168"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Sdl__fenetres_8h.html#aeced1c3b5d8795f4aeaee98f7209c168">stock</a> ()</td></tr>
+<tr class="memdesc:aeced1c3b5d8795f4aeaee98f7209c168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le rendu pour la page des stocks.  <a href="#aeced1c3b5d8795f4aeaee98f7209c168">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aeced1c3b5d8795f4aeaee98f7209c168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35ede9e5ceefa28af77fe9dfe83b53d5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Sdl__fenetres_8h.html#a35ede9e5ceefa28af77fe9dfe83b53d5">rapport14J</a> (int duree)</td></tr>
+<tr class="memdesc:a35ede9e5ceefa28af77fe9dfe83b53d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertie une durée en heure en un rapport en % sur deux semaines.  <a href="#a35ede9e5ceefa28af77fe9dfe83b53d5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a35ede9e5ceefa28af77fe9dfe83b53d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a8895837c3a117b9e517281d0364bc42e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Sdl__fenetres_8h.html#a8895837c3a117b9e517281d0364bc42e">CHEMIN_PHOTO_FOND</a></td></tr>
+<tr class="separator:a8895837c3a117b9e517281d0364bc42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c5cc8a7da7d62a04e367e97fba5b01c"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Sdl__fenetres_8h.html#a4c5cc8a7da7d62a04e367e97fba5b01c">CHEMIN_PHOTO_ALIMENT</a></td></tr>
+<tr class="separator:a4c5cc8a7da7d62a04e367e97fba5b01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des fonctions</h2>
-<a class="anchor" id="a2a0e843767aeea4f433a28b9c54f573a"></a>
+<a class="anchor" id="ae83fcdbeb2b6757fc741ae953b633ee1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void menu </td>
+          <td class="memname">int menu </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -145,15 +158,16 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Modifie le rendu pour le menu de choix d'action. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>1 si on doit aller au menu, 2 si à la peser, 3 si au stock, 0 pour quitter </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a2645e14a6583c20a2661e2b4f829d21d"></a>
+<a class="anchor" id="a34be59d14ef6ead769d8ed64e7891684"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void peser </td>
+          <td class="memname">int peser </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -162,15 +176,41 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Modifie le rendu pour la page de pesee. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>1 si on doit aller au menu, 2 si à la peser, 3 si au stock, 0 pour quitter </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="af482c6562bb2350ab4bc326319f4a765"></a>
+<a class="anchor" id="a35ede9e5ceefa28af77fe9dfe83b53d5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void stock </td>
+          <td class="memname">int rapport14J </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>duree</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convertie une durée en heure en un rapport en % sur deux semaines. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>duree Une durée exprimé en heure </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int un pourcentage sous forme d'un int compris entre 0 et 100 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aeced1c3b5d8795f4aeaee98f7209c168"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stock </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -179,13 +219,39 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Modifie le rendu pour la page des stocks. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>1 si on doit aller au menu, 2 si à la peser, 3 si au stock, 0 pour quitter </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a class="anchor" id="a4c5cc8a7da7d62a04e367e97fba5b01c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* CHEMIN_PHOTO_ALIMENT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8895837c3a117b9e517281d0364bc42e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* CHEMIN_PHOTO_FOND</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Jeudi 19 Janvier 2017 11:40:55 pour GSA - Gestionnaire de stock alimentaire par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche 22 Janvier 2017 23:03:38 pour GSA - Gestionnaire de stock alimentaire par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>
