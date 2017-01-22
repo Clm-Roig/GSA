@@ -187,9 +187,9 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         setBCoul(getBCoul(getCouleurAliment(idLu)),couleurLu);
 
         // On regarde si la couleur est proche de celle demandée
-        printf("\nEcart Rouge (aliment - alimentBDD %s) en valeur absolue (doit être positif !) : %d",getNomAliment(idLu),abs(getRCoul(couleurLu) - getRCoul(coul)));
-        printf("\nEcart Vert (aliment - alimentBDD %s) en valeur absolue (doit être positif !) : %d",getNomAliment(idLu),abs(getGCoul(couleurLu) - getGCoul(coul)));
-        printf("\nEcart Bleu (aliment - alimentBDD %s) en valeur absolue (doit être positif !) : %d",getNomAliment(idLu),abs(getBCoul(couleurLu) - getBCoul(coul)));
+        printf("\nEcart Rouge (aliment - alimentBDD %s) en valeur absolue : %d",getNomAliment(idLu),abs(getRCoul(couleurLu) - getRCoul(coul)));
+        printf("\nEcart Vert (aliment - alimentBDD %s) en valeur absolue : %d",getNomAliment(idLu),abs(getGCoul(couleurLu) - getGCoul(coul)));
+        printf("\nEcart Bleu (aliment - alimentBDD %s) en valeur absolue : %d",getNomAliment(idLu),abs(getBCoul(couleurLu) - getBCoul(coul)));
 
         if (abs(getRCoul(couleurLu) - getRCoul(coul)) <= precision) {
             if (abs(getGCoul(couleurLu) - getGCoul(coul)) <= precision) {
