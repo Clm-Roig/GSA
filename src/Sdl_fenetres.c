@@ -188,8 +188,7 @@ int peserLoading(SDL_Surface* screenSurface) {
 	    strcat(chemin,nomPhoto);
 		strcat(chemin,".bmp");
 
-	//	photoPrise = prendrePhoto(nomPhoto);
-		photoPrise = 1;
+		photoPrise = prendrePhoto(nomPhoto);
 
 		fic = fopen(chemin, "rb");
 		if (!fic) {
