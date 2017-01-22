@@ -582,6 +582,114 @@ int peserChoix() {
 	}
 }
 
+int peserChoixComplet() {
+
+	SDL_Surface* screenSurface;
+	SDL_Surface* texteTitre;
+	SDL_Surface* texteMenu;
+	SDL_Surface* texteAutres;
+	SDL_Rect pos;
+	SDL_Color couleurBlanc = {255, 255, 255};
+	SDL_Color couleurNoir = {0, 0, 0};
+
+	// Fond d'écran
+	screenSurface = SDL_GetWindowSurface(getwindow());
+	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
+	SDL_Rect pos_fond_ecran;
+	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
+	SDL_BlitSurface(fond_ecran,NULL,screenSurface,&pos_fond_ecran);
+
+
+	// Texte haut
+	texteTitre = TTF_RenderText_Blended(getpolice(), "Choisissez votre aliment", couleurNoir);
+	pos.x = (800-(texteTitre->w))/2;
+	pos.y = 10;
+	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
+
+	// Bouton Menu
+	SDL_Rect buttMenu;
+	buttMenu.x=0; buttMenu.y=0; buttMenu.w=45; buttMenu.h=30;
+	SDL_FillRect(screenSurface,&buttMenu,SDL_MapRGB(screenSurface->format,211, 84, 0));
+	texteMenu = TTF_RenderText_Blended(getpolice(), "<", couleurBlanc);
+	int larg = texteMenu->w;
+	int haut = texteMenu->h;
+	pos.x = buttMenu.x + ((buttMenu.w-larg)/2);
+	pos.y = buttMenu.y + ((buttMenu.h-haut)/2);
+	SDL_BlitSurface(texteMenu,NULL,screenSurface,&pos);
+	
+	// Chargement des 24 aliments probables
+	int* listeAlim = getIdsAliments(int nbAliments);
+
+	//Affichage de la grille
+	for(int i=0; i<4; i++){
+		for(int j=0; j<6; j++){
+			SDL_Rect objet;
+			objet.x=30+(100*j); objet.y=60+(100*i); objet.w=100; objet.h=100;
+			SDL_FillRect(screenSurface,&objet1,SDL_MapRGB(screenSurface->format,192, 57, 43));
+			// Construction du chemin vers l'image
+			char* chemin = malloc(100*sizeof(char*));
+			strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
+			char* idchar = malloc(4*sizeof(char));
+			sprintf(idchar,"%d",listeAlim[(i*3)+j]);
+			strcat(chemin,idchar);
+			strcat(chemin,".bmp");
+			// Images
+			SDL_Surface *image = SDL_LoadBMP(chemin);
+			// Redimensionnement des images (170x170 pixels)
+			// Librairie SDL_gfx, fonction zoomSurface() sur les images
+			// Les images étant carrées, on ne récupère que la hauteur
+			int h = image->h;
+			double zoom = 160 / (double)h;
+			image = zoomSurface(image,zoom,zoom,0);
+			// Positionnement des images
+			SDL_Rect pos;
+			pos.x = objet.x+10; pos.y = objet.y+10;
+			SDL_BlitSurface(image,NULL,screenSurface,&pos);
+		}
+	}
+	SDL_UpdateWindowSurface(getwindow());
+
+	SDL_Event event;
+	int loop = 1;
+	while(loop==1){
+		int x = -1; int y = -1;
+	    SDL_WaitEvent(&event);
+	    switch(event.type)
+	    {
+	        case SDL_MOUSEBUTTONUP:
+	        	x = event.button.x;
+	            y = event.button.y;
+	            break;
+	        case SDL_FINGERDOWN:
+	        	x = event.tfinger.x;
+	            y = event.tfinger.y;
+	            break;
+	        case SDL_KEYDOWN:
+	            switch(event.key.keysym.sym)
+	            {
+	            	case SDLK_ESCAPE:
+	                    loop= 0;
+	                    return 0;
+	                    break;
+	                }
+	                break;
+	    }
+	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
+	 		return 1; // retour au menu Accueil
+	    }
+	   /* else if((x>=objet1.x)&&(x<=(objet1.x+objet1.w))&&(y>=objet1.y)&&(y<=(objet1.y+objet1.h))){
+	 		if(listeAlim[0]!=0){
+	 		char * desc = "Une pesee";
+	 		int marche2 = ecrireDonneePesee(1,desc,listeAlim[0]);
+	 		}
+	 		return 1;
+	    }*/
+	    else {
+
+	    }
+	}
+}
+
 
 int peser() {
 	SDL_Surface* screenSurface;
@@ -596,7 +704,7 @@ int peser() {
 		else if(page==3) page = peserPhoto(screenSurface);
 		else if(page==4) page = peserLoading2(screenSurface);
 		else if(page==5) page = peserChoix(screenSurface);
-		else if(page==6) page = peserChoix(screenSurface);
+		else if(page==6) page = peserChoixComplet(screenSurface);
 		else if(page==0) loop = 0;
 	}
 
