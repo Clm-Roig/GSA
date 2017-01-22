@@ -334,7 +334,13 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
 
         printf("\nHSL %s : %f %f %f",getNomAliment(idLu),hBdd,sBdd,lBdd);
 
-        if (abs(hAl - hBdd) < seuilH) {
+        // Le H est cyclique
+        float ecartH = abs(hAl - hBdd);
+        if(360.0 - ecartH < 180) {
+            ecartH = 360 - ecartH;
+        }
+
+        if (ecartH < seuilH) {
             if (abs(sAl - sBdd) < seuilS) {
                 if (abs(lAl - lBdd) < seuilL) {
                     nbAlimentsTrouves++;
