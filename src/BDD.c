@@ -240,9 +240,11 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
     float delta = cMaxAl - cMinAl;
 
     // Calcul H
-    if(cMaxAl == rapRal) hAl = 60.0* ( ( (int)((rapGal - rapBal)/delta) ) % 6) ;
+    if(cMaxAl == rapRal) hAl = 60.0* ( (rapGal - rapBal)/delta );
     if(cMaxAl == rapGal) hAl = 60.0*( ( (rapBal - rapRal) /delta) + 2.0);
     if(cMaxAl == rapBal) hAl = 60.0*( ( (rapRal - rapGal) /delta) + 4.0);
+
+    if(hAl < 0) hAl += 360;
 
     // Calcul L
     lAl = (cMaxAl + cMinAl) / 2.0;
@@ -297,9 +299,14 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         float deltaB = cMaxBdd - cMinBdd;
 
         // Calcul H
-        if(cMaxBdd == rapRbdd) hBdd = 60.0* ( ( (int)((rapGbdd - rapBbdd)/deltaB) ) % 6) ;
+        if(cMaxBdd == rapRbdd) {
+            hBdd = 60.0* ( (rapGbdd - rapBbdd)/deltaB );
+        }
+
         if(cMaxBdd == rapGbdd) hBdd = 60.0*( ( (rapBbdd - rapRbdd) / deltaB) + 2.0);
         if(cMaxBdd == rapBbdd) hBdd = 60.0*( ( (rapRbdd - rapGbdd) / deltaB) + 4.0);
+
+        if(hBdd < 0) hBdd += 360;
 
         // Calcul L
         lBdd = (cMaxBdd + cMinBdd) / 2.0;
