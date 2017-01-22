@@ -102,11 +102,11 @@ int* getIdsAliments(int nbAliments){
 
     int idLu;
 
-    Couleur* couleurLu = initCouleur();
-
     // On lit le fichier à partir de la ligne 2 (premier tuple)
     i=2;
     while (i <= nbLignesFichier(fichier) && nbAlimentsTrouves < nbAlimentsTotal) {
+        ligneLu = lireLigne(fichier,i);
+        idLu = atoi(strtok(ligneLu,";"));
         nbAlimentsTrouves++;
         listeIds[nbAlimentsTrouves-1] = idLu;
         i++;
@@ -210,21 +210,110 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
 
     Couleur* couleurLu = initCouleur();
 
+    // Conversion HSL de la couleur passée en paramètre
+    float rapRal = (float)getRCoul(coul)/255.0;
+    float rapGal = (float)getGCoul(coul)/255.0;
+    float rapBal = (float)getBCoul(coul)/255.0;
+
+    float hAl; float sAl; float lAl;
+
+    // Calcul Cmax
+    float cMaxAl;
+    if(rapRal > rapGal) {
+        if(rapRal > rapBal) cMaxAl = rapRal;
+        else cMaxAl = rapBal;
+    }
+    else {
+        if(rapGal > rapBal) cMaxAl = rapGal;
+    }
+
+    // Calcul Cmin
+    float cMinAl;
+    if(rapRal < rapGal){
+        if(rapRal < rapBal) cMinAl = rapRal;
+        else cMinAl = rapBal;
+    }
+    else {
+        if(rapGal < rapBal) cMinAl = rapGal;
+    }
+
+    float delta = cMaxAl - cMinAl;
+
+    // Calcul H
+    if(cMaxAl == rapRal) hAl = 60.0* ( ( (int)((rapGal - rapBal)/delta) ) % 6) ;
+    if(cMaxAl == rapGal) hAl = 60.0*( ( (rapBal - rapRal) /delta) + 2.0);
+    if(cMaxAl == rapBal) hAl = 60.0*( ( (rapRal - rapGal) /delta) + 4.0);
+
+    // Calcul L
+    lAl = (cMaxAl + cMinAl) / 2.0;
+
+    // Calcul S
+    if (delta == 0) sAl = 0;
+    else {
+        float soust = 2*lAl-1;
+        if (soust < 0) soust = -soust;
+        sAl = delta / (1 - soust);
+    }
+
+
     // On lit le fichier à partir de la ligne 2 (premier tuple)
     i=2;
     while (i <= nbLignesFichier(fichier) && nbAlimentsTrouves < nbAlimentsTotal) {
-        ligneLu = lireLigne(fichier,i);
+
         idLu = atoi(strtok(ligneLu,";"));
 
         setRCoul(getRCoul(getCouleurAliment(idLu)),couleurLu);
         setGCoul(getGCoul(getCouleurAliment(idLu)),couleurLu);
         setBCoul(getBCoul(getCouleurAliment(idLu)),couleurLu);
 
-        // On regarde si la couleur est proche de celle demandée
-        printf("\nEcart Rouge (aliment - alimentBDD %s) en valeur absolue : %d",getNomAliment(idLu),abs(getRCoul(couleurLu) - getRCoul(coul)));
-        printf("\nEcart Vert (aliment - alimentBDD %s) en valeur absolue : %d",getNomAliment(idLu),abs(getGCoul(couleurLu) - getGCoul(coul)));
-        printf("\nEcart Bleu (aliment - alimentBDD %s) en valeur absolue : %d",getNomAliment(idLu),abs(getBCoul(couleurLu) - getBCoul(coul)));
+        // On regarde si la couleur est proche de celle demandée (conversion en HSL)
+        // Conversion HSL de la couleur passée en paramètre
+        float rapRbdd = (float) (getRCoul(getCouleurAliment(idLu))/255.0);
+        float rapGbdd = (float) (getGCoul(getCouleurAliment(idLu))/255.0);
+        float rapBbdd = (float) (getBCoul(getCouleurAliment(idLu))/255.0);
 
+        float hBdd; float sBdd; float lBdd;
+
+        // Calcul Cmax
+        float cMaxBdd;
+        if(rapRbdd > rapGbdd) {
+            if(rapRbdd > rapBbdd) cMaxBdd = rapRbdd;
+            else cMaxBdd = rapBbdd;
+        }
+        else {
+            if(rapGbdd > rapBbdd) cMaxBdd = rapGbdd;
+        }
+
+        // Calcul Cmin
+        float cMinBdd;
+        if(rapRbdd < rapGbdd){
+            if(rapRbdd < rapBbdd) cMinBdd = rapRbdd;
+            else cMinBdd = rapBbdd;
+        }
+        else {
+            if(rapGbdd < rapBbdd) cMinBdd = rapGbdd;
+        }
+
+        float deltaB = cMaxBdd - cMinBdd;
+
+        // Calcul H
+        if(cMaxBdd == rapRbdd) hBdd = 60.0* ( ( (int)((rapGbdd - rapBbdd)/deltaB) ) % 6) ;
+        if(cMaxBdd == rapGbdd) hBdd = 60.0*( ( (rapBbdd - rapRbdd) / deltaB) + 2.0);
+        if(cMaxBdd == rapBbdd) hBdd = 60.0*( ( (rapRbdd - rapGbdd) / deltaB) + 4.0);
+
+        // Calcul L
+        lBdd = (cMaxBdd + cMinBdd) / 2.0;
+
+        // Calcul S
+        if (deltaB == 0) sBdd = 0;
+        else {
+            float soustB = 2*lBdd-1;
+            if (soustB < 0) soustB = -soustB;
+            sBdd = deltaB / (1 - soustB);
+        }
+
+        // On regarde si la couleur est proche de celle demandée
+        /*
         if (abs(getRCoul(couleurLu) - getRCoul(coul)) <= precision) {
             if (abs(getGCoul(couleurLu) - getGCoul(coul)) <= precision) {
                 if (abs(getBCoul(couleurLu) - getBCoul(coul)) <= precision) {
@@ -233,6 +322,21 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
                 }
             }
         }
+        */
+
+        int seuilH = 20;
+        int seuilS = 25;
+        int seuilL = 15;
+        if (abs(hAl - hBdd) < seuilH) {
+            if (abs(sAl - sBdd) < seuilS) {
+                if (abs(lAl - lBdd) < seuilL) {
+                    nbAlimentsTrouves++;
+                    listeIds[nbAlimentsTrouves-1] = idLu;
+                }
+            }
+        }
+
+
         i++;
     }
     // Fin de boucle : tout le fichier est parcouru
