@@ -625,16 +625,16 @@ int peserChoixComplet() {
 	for(i=0; i<4; i++){
 		for(j=0; j<6; j++){
 			SDL_Rect objet;
-			objet.x=30+(100*j); objet.y=60+(100*i); objet.w=100; objet.h=100;
+			objet.x=100+(100*j); objet.y=60+(100*i); objet.w=100; objet.h=100;
 			SDL_FillRect(screenSurface,&objet,SDL_MapRGB(screenSurface->format,192, 57, 43));
-			/*// Construction du chemin vers l'image
+			// Construction du chemin vers l'image
 			char* chemin = malloc(100*sizeof(char*));
 			strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
 			char* idchar = malloc(4*sizeof(char));
 			sprintf(idchar,"%d",listeAlim[(i*3)+j]);
 			strcat(chemin,idchar);
 			strcat(chemin,".bmp");
-			// Images
+			/*// Images
 			SDL_Surface *image = SDL_LoadBMP(chemin);
 			// Redimensionnement des images (170x170 pixels)
 			// Librairie SDL_gfx, fonction zoomSurface() sur les images
