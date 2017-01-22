@@ -240,7 +240,7 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
     float delta = cMaxAl - cMinAl;
 
     // Calcul H
-    if(cMaxAl == rapRal) hAl = 60.0* ( ( (int)((rapGal - rapBal)/delta) ) % 6) ;
+    if(cMaxAl == rapRal) hAl = 60.0* ( ( (int)((rapGal - rapBal)/delta))%6) ;
     if(cMaxAl == rapGal) hAl = 60.0*( ( (rapBal - rapRal) /delta) + 2.0);
     if(cMaxAl == rapBal) hAl = 60.0*( ( (rapRal - rapGal) /delta) + 4.0);
 
@@ -325,8 +325,8 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         */
 
         float seuilH = 5;
-        float seuilS = 0.30;
-        float seuilL = 0.35;
+        float seuilS = 0.20;
+        float seuilL = 0.20;
         if (abs(hAl - hBdd) < seuilH) {
             if (abs(sAl - sBdd) < seuilS) {
                 if (abs(lAl - lBdd) < seuilL) {
