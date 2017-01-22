@@ -648,7 +648,7 @@ int stock() {
 	SDL_FillRect(screenSurface,&objet5,SDL_MapRGB(screenSurface->format,192, 57, 43));
 
 	// Texte
-	texteTitre = TTF_RenderText_Blended(getpolice(), "Mon stock", couleurNoir);
+	texteTitre = TTF_RenderText_Blended(getpolice(), "Mon stock                7J            14J", couleurNoir);
 	pos.x = (800-(texteTitre->w))/2;
 	pos.y = 10;
 	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
@@ -756,8 +756,8 @@ int stock() {
 	SDL_Rect interface7J; SDL_Rect interface14J;
 	interface7J.x=(objet1.x)+40+objet1.w+300; interface7J.y=objet1.y; interface7J.w=2; interface7J.h=400;
 	interface14J.x=(objet1.x)+40+objet1.w+600; interface14J.y=objet1.y; interface14J.w=2; interface14J.h=400;
-	SDL_FillRect(screenSurface,&interface7J,SDL_MapRGB(screenSurface->format,138, 138, 0));
-	SDL_FillRect(screenSurface,&interface14J,SDL_MapRGB(screenSurface->format,138, 138, 0));
+	SDL_FillRect(screenSurface,&interface7J,SDL_MapRGB(screenSurface->format,138, 138, 138));
+	SDL_FillRect(screenSurface,&interface14J,SDL_MapRGB(screenSurface->format,138, 138, 138));
 	
 	// Durée de péremption
 	long int duree1 = listeIdDuree[0][1];
