@@ -622,7 +622,7 @@ int peserChoixComplet() {
 
 	//Affichage de la grille
 	int i,j;
-	for(i=0; i<4; i++){
+	/*for(i=0; i<4; i++){
 		for(j=0; j<6; j++){
 			SDL_Rect objet;
 			objet.x=30+(100*j); objet.y=60+(100*i); objet.w=100; objet.h=100;
@@ -647,7 +647,7 @@ int peserChoixComplet() {
 			pos.x = objet.x+10; pos.y = objet.y+10;
 			SDL_BlitSurface(image,NULL,screenSurface,&pos);
 		}
-	}
+	}*/
 	SDL_UpdateWindowSurface(getwindow());
 
 	SDL_Event event;
