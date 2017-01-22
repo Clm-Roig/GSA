@@ -631,12 +631,12 @@ int peserChoixComplet() {
 			char* chemin = malloc(100*sizeof(char*));
 			strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
 			char* idchar = malloc(4*sizeof(char));
-			sprintf(idchar,"%d",listeAlim[(i*3)+j]);
+			sprintf(idchar,"%d",listeAlim[(i*6)+j]);
 			strcat(chemin,idchar);
 			strcat(chemin,".bmp");
-			/*// Images
+			// Images
 			SDL_Surface *image = SDL_LoadBMP(chemin);
-			// Redimensionnement des images (170x170 pixels)
+			/*// Redimensionnement des images (170x170 pixels)
 			// Librairie SDL_gfx, fonction zoomSurface() sur les images
 			// Les images étant carrées, on ne récupère que la hauteur
 			int h = image->h;
