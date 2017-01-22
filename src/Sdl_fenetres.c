@@ -403,6 +403,7 @@ int peserChoix() {
 	imgFond = initImageBMP(ficFond);
 	Couleur* coulFond = initCouleur();
 	coulFond = couleurDominante(imgFond);
+	printf("\Couleur Fond = %s",toCharCouleur(coulFond);
 
 	fclose(ficFond);
 	remove(cheminFond);
@@ -419,13 +420,16 @@ int peserChoix() {
 	ImageBMP* img = initImageBMP(photo);
 	Couleur* coulAlim = initCouleur();
 	coulAlim = couleurDominanteHorsFond(img,coulFond);
+	printf("\Couleur Aliment = %s",toCharCouleur(coulAlim);
 
 	fclose(photo);
 	remove(chemin);
 
 	// Chargement des 5 aliments probables
 	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
-	int* listeAlim = getIdAlimentParCouleur(coulAlim,100);
+	int seuil = 100;
+	int* listeAlim = getIdAlimentParCouleur(coulAlim,seuil);
+	printf("\nSeuil = %d",seuil);
 
 	// Construction du chemin vers l'image
 	char* chemin1 = malloc(100*sizeof(char*));
