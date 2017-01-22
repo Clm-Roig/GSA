@@ -259,7 +259,7 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
     // On lit le fichier à partir de la ligne 2 (premier tuple)
     i=2;
     while (i <= nbLignesFichier(fichier) && nbAlimentsTrouves < nbAlimentsTotal) {
-
+        ligneLu = lireLigne(fichier,i);
         idLu = atoi(strtok(ligneLu,";"));
 
         setRCoul(getRCoul(getCouleurAliment(idLu)),couleurLu);
