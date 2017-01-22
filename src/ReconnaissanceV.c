@@ -2,7 +2,7 @@
 
 // ---- CONSTANTES ---- //
 const int PRECISION_COULEUR_FOND_UNI = 80;
-const int PRECISION_COULEUR_HORS_FOND = 200;
+const int PRECISION_COULEUR_HORS_FOND = 220;
 const int PRECISION_COULEUR_RECHERCHE_ALIMENT = 40;
 
 // ---- FONCTIONS ---- //
@@ -135,7 +135,7 @@ Couleur* couleurDominanteHorsFond(ImageBMP* image, Couleur* couleurFond) {
             moyenneBAliment += valeurBPixel;
             cptPixelsAliment ++;
         }
-        
+
     }
 
     // Calcul des moyennes pour chaque composante des pixels de l'aliment
