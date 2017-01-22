@@ -631,13 +631,16 @@ int stock() {
 	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
 	SDL_BlitSurface(fond_ecran,NULL,screenSurface,&pos_fond_ecran);
 
+
+
+
+
 	SDL_Rect objet1;SDL_Rect objet2; SDL_Rect objet3; SDL_Rect objet4; SDL_Rect objet5;
 	objet1.x=40; objet1.y=40; objet1.w=60; objet1.h=60;
 	objet2.x=40; objet2.y=125; objet2.w=60; objet2.h=60;
 	objet3.x=40; objet3.y=210; objet3.w=60; objet3.h=60;
 	objet4.x=40; objet4.y=295; objet4.w=60; objet4.h=60;
 	objet5.x=40; objet5.y=380; objet5.w=60; objet5.h=60;
-
 	SDL_FillRect(screenSurface,&objet1,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	SDL_FillRect(screenSurface,&objet2,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	SDL_FillRect(screenSurface,&objet3,SDL_MapRGB(screenSurface->format,192, 57, 43));
@@ -749,6 +752,13 @@ int stock() {
 	SDL_BlitSurface(image4,NULL,screenSurface,&pos4);
 	SDL_BlitSurface(image5,NULL,screenSurface,&pos5);
 
+	//Ligne vertical
+	SDL_Rect objet4; SDL_Rect objet5;
+	interface7J.x=(pos1.x)+40+pos1.w+300; interface7J.y=40; interface7J.w=3; interface7J.h=400;
+	interface14J.x=(pos1.x)+40+pos1.w+600; interface14J.y=40; interface14J.w=3; interface14J.h=400;
+	SDL_FillRect(screenSurface,&objet5,SDL_MapRGB(screenSurface->format,255, 255, 255));
+	SDL_FillRect(screenSurface,&objet5,SDL_MapRGB(screenSurface->format,255, 255, 255));
+	
 	// Durée de péremption
 	long int duree1 = listeIdDuree[0][1];
 	long int duree2 = listeIdDuree[1][1];
@@ -762,6 +772,7 @@ int stock() {
 	duree3 = duree3 / 3600;
 	duree4 = duree4 / 3600;
 	duree5 = duree5 / 3600;
+	
 	//Conversion en rapport à 2 semaines
 	//336h dans deux semaines
 	duree1 = rapport14J(duree1);
@@ -769,6 +780,7 @@ int stock() {
 	duree3 = rapport14J(duree3);
 	duree4 = rapport14J(duree4);
 	duree5 = rapport14J(duree5);
+
 	//Affichage barre duree peremption
 	SDL_Rect barre1;
 	SDL_Rect barre2;
