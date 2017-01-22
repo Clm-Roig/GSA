@@ -5,6 +5,10 @@
 #include "Camera.h"
 #include "Sdl_init.h"
 
+// ---- CONSTANTES ---- //
+const char* CHEMIN_PHOTO_FOND;
+const char* CHEMIN_PHOTO_ALIMENT;
+
 /**
 	@brief Modifie le rendu pour le menu de choix d'action
 	@return 1 si on doit aller au menu, 2 si à la peser, 3 si au stock, 0 pour quitter

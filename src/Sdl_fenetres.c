@@ -1,5 +1,11 @@
 #include "Sdl_fenetres.h"
 
+// ---- CONSTANTES ---- //
+const char* CHEMIN_PHOTO_FOND = "data/images_aliments/fond.bmp";
+const char* CHEMIN_PHOTO_ALIMENT = "data/images_aliments/aliment.bmp";
+
+// ---- FONCTIONS ---- //
+
 int menu() {
 	SDL_Surface* screenSurface;
 	SDL_Surface* texteAjout;
@@ -181,16 +187,9 @@ int peserLoading(SDL_Surface* screenSurface) {
 	int photoPrise;
 
 	do {
-		char* nomPhoto = "fond";
-		char* chemin = NULL;
-		chemin = malloc(100*sizeof(char));
-		strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
-	    strcat(chemin,nomPhoto);
-		strcat(chemin,".bmp");
-
 		photoPrise = prendrePhoto(nomPhoto);
 
-		fic = fopen(chemin, "rb");
+		fic = fopen(CHEMIN_PHOTO_FOND, "rb");
 		if (!fic) {
 			printf("Erreur ouverture fichier");
 		}
@@ -237,16 +236,9 @@ int peserLoading2(SDL_Surface* screenSurface) {
 	int photoPrise;
 
 	do {
-		char* nomPhoto = "aliment";
-		char* chemin = NULL;
-		chemin = malloc(100*sizeof(char));
-		strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
-	    strcat(chemin,nomPhoto);
-		strcat(chemin,".bmp");
-
 		photoPrise = prendrePhoto(nomPhoto);
 
-		fic = fopen(chemin, "rb");
+		fic = fopen(CHEMIN_PHOTO_ALIMENT, "rb");
 		if (!fic) {
 			printf("Erreur ouverture fichier");
 		}
@@ -395,35 +387,24 @@ int peserChoix() {
 	ImageBMP* imgFond;
 	char* cheminFond = NULL;
 
-	cheminFond = malloc(100*sizeof(char));
-	strcpy(cheminFond,CHEMIN_IMAGES_ALIMENTS);
-	strcat(cheminFond,"fond.bmp");
-
-	ficFond = fopen(cheminFond,"rb");
+	ficFond = fopen(CHEMIN_PHOTO_FOND,"rb");
 	imgFond = initImageBMP(ficFond);
 	Couleur* coulFond = initCouleur();
 	coulFond = couleurDominante(imgFond);
 	printf("\nCouleur Fond = %s",toCharCouleur(coulFond));
 
 	fclose(ficFond);
-	remove(cheminFond);
+	remove(CHEMIN_PHOTO_FOND);
 
 	// Récupération de la couleur de l'aliment pris en photo
-	char* nomPhoto = "aliment";
-	char* chemin = NULL;
-	chemin = malloc(100*sizeof(char));
-	strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
-	strcat(chemin,nomPhoto);
-	strcat(chemin,".bmp");
-
-	FILE* photo = fopen(chemin,"rb");
+	FILE* photo = fopen(CHEMIN_PHOTO_ALIMENT,"rb");
 	ImageBMP* img = initImageBMP(photo);
 	Couleur* coulAlim = initCouleur();
 	coulAlim = couleurDominanteHorsFond(img,coulFond);
 	printf("\nCouleur Aliment = %s",toCharCouleur(coulAlim));
 
 	fclose(photo);
-	remove(chemin);
+	remove(CHEMIN_PHOTO_ALIMENT);
 
 	// Chargement des 5 aliments probables
 	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
