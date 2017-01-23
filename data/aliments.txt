@@ -15,3 +15,11 @@ ID_ALIMENT;NOM_ALIMENT;COULEUR_ALIMENT;DUREE_PEREMPTION
 14;haricot_vert;100-139-59;3
 15;poire;213-170-39;2
 16;pomme_de_terre;207-159-52;12
+17;abricot;249-127-85;6
+18;aubergine;62-44-64;7
+19;carotte;248-126-67;13
+20;cerise;109-44-55;4
+21;concombre;69-85-52;7
+22;oignon_jaune;208-125-66;8
+23;oignon_rouge;145-75-88;8
+24;peche;248-125-75;3

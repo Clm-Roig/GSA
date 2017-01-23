@@ -11,7 +11,7 @@
 int main() {
 
 	// Ajout d'un aliment dans la BDD (changer nom du fichier .bmp à 3 endroits)
-	FILE* fichier = fopen("data/images_aliments/pomme_de_terre.bmp","rb");
+	FILE* fichier = fopen("data/images_aliments/peche.bmp","rb");
 	ImageBMP* img = initImageBMP(fichier);
 
 	// Analyse de l'image
@@ -21,7 +21,7 @@ int main() {
 	fclose(fichier);
 
 	// Sauver en BDD
-	ecrireDonneeAliment("pomme_de_terre",coulDom,0);
+	ecrireDonneeAliment("peche",coulDom,0);
 
 	// Renommer la photo
 	char* nvNom = malloc(50*sizeof(char));
@@ -33,7 +33,7 @@ int main() {
 	strcat(nvNom,id);
 	strcat(nvNom,".bmp");
 
-	rename("data/images_aliments/pomme_de_terre.bmp",nvNom);
+	rename("data/images_aliments/peche.bmp",nvNom);
 
     return 0;
 }
