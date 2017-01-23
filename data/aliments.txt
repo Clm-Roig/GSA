@@ -9,3 +9,10 @@ ID_ALIMENT;NOM_ALIMENT;COULEUR_ALIMENT;DUREE_PEREMPTION
 8;pomme_verte;179-202-62;5
 9;salade;106-151-34;9
 10;tomate;217-76-42;10
+11;brocolis;90-121-66;0
+12;chou_fleur;139-147-88;0
+13;fraise;183-62-44;0
+14;haricot_vert;100-139-59;0
+15;mure;56-60-61;0
+16;poire;213-170-39;0
+17;pomme_de_terre;207-159-52;0
