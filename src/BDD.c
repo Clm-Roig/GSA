@@ -297,13 +297,13 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         }
         else {
             if(rapGbdd < rapBbdd) cMinBdd = rapGbdd;
-            else cMaxBdd = rapBbdd;
+            else cMinBdd = rapBbdd;
         }
 
         float deltaB = cMaxBdd - cMinBdd;
 
         // Calcul H
-        if(cMaxBdd == rapRbdd) hBdd = 60.0* ( (rapGbdd - rapBbdd)/deltaB );
+        if(cMaxBdd == rapRbdd) hBdd = 60.0* ( (rapGbdd - rapBbdd) / deltaB );
         if(cMaxBdd == rapGbdd) hBdd = 60.0*( ( (rapBbdd - rapRbdd) / deltaB) + 2.0);
         if(cMaxBdd == rapBbdd) hBdd = 60.0*( ( (rapRbdd - rapGbdd) / deltaB) + 4.0);
 
