@@ -297,7 +297,7 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         }
         else {
             if(rapGbdd < rapBbdd) cMinBdd = rapGbdd;
-            else cMaxBdd = rapBbdd;
+            else cMinBdd = rapBbdd;
         }
 
         float deltaB = cMaxBdd - cMinBdd;
