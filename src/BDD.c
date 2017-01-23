@@ -225,6 +225,7 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
     }
     else {
         if(rapGal > rapBal) cMaxAl = rapGal;
+        else cMaxAl = rapRal;
     }
 
     // Calcul Cmin
@@ -235,6 +236,7 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
     }
     else {
         if(rapGal < rapBal) cMinAl = rapGal;
+        else cMinAl = rapBal;
     }
 
     float delta = cMaxAl - cMinAl;
@@ -284,6 +286,7 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         }
         else {
             if(rapGbdd > rapBbdd) cMaxBdd = rapGbdd;
+            else cMaxBdd = rapRbdd;
         }
 
         // Calcul Cmin
@@ -294,6 +297,7 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         }
         else {
             if(rapGbdd < rapBbdd) cMinBdd = rapGbdd;
+            else cMaxBdd = rapBbdd;
         }
 
         float deltaB = cMaxBdd - cMinBdd;
