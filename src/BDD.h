@@ -88,10 +88,9 @@ int getDureePeremptionAliment(int id);
 /**
     @brief renvoie la liste des id des aliments (id1;id2;id3...) qui ont une couleur proche de la couleur spécifiée
     @param Couleur* coul, la couleur dont on cherche des aliments
-    @param int, precision sur la couleur (pour la couleur 50-50-50, une precision de 10 cherche toutes les couleurs entre 40-40-40 et 60-60-60)
     @return int*, la liste des ids des aliments une couleur proche de celle spécifiée (5 aliments retournés, avec des id=0 si pas trouvé)
 */
-int* getIdAlimentParCouleur(Couleur* coul,int precision);
+int* getIdAlimentParCouleur(Couleur* coul);
 
 // PESEES
 /**

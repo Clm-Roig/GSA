@@ -188,7 +188,7 @@ int getDureePeremptionAliment(int id) {
     return dureeP;
 }
 
-int* getIdAlimentParCouleur(Couleur* coul, int precision) {
+int* getIdAlimentParCouleur(Couleur* coul) {
     FILE* fichier = fopen(CHEMIN_ALIMENTS,"r");
 
     // On retourne 5 aliments maximum
@@ -260,9 +260,18 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
     }
 
     printf("\nHSL photo : %f %f %f", hAl,sAl,lAl);
+
     // On lit le fichier à partir de la ligne 2 (premier tuple)
+    // On va stocker les ids de tous les aliments proches et on renverra les plus pertinents (dans l'ordre)
+    int tabId[nbLignesFichier(fichier)];
+    float tabPertinence[nbLignesFichier(fichier)];
+    for (i=0 ; i<nbLignesFichier(fichier) ; i++) {
+        tabId[i] = 0;
+        tabPertinence[i] = 0;
+    }
+
     i=2;
-    while (i <= nbLignesFichier(fichier) && nbAlimentsTrouves < nbAlimentsTotal) {
+    while (i <= nbLignesFichier(fichier)) {
         ligneLu = lireLigne(fichier,i);
         idLu = atoi(strtok(ligneLu,";"));
 
@@ -320,19 +329,7 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
             sBdd = deltaB / (1 - soustB);
         }
 
-        // On regarde si la couleur est proche de celle demandée
-        /*
-        if (abs(getRCoul(couleurLu) - getRCoul(coul)) <= precision) {
-            if (abs(getGCoul(couleurLu) - getGCoul(coul)) <= precision) {
-                if (abs(getBCoul(couleurLu) - getBCoul(coul)) <= precision) {
-                    nbAlimentsTrouves++;
-                    listeIds[nbAlimentsTrouves-1] = idLu;
-                }
-            }
-        }
-        */
-
-        float seuilH = 5;
+        float seuilH = 20;
         float seuilS = 0.20;
         float seuilL = 0.20;
 
@@ -347,17 +344,39 @@ int* getIdAlimentParCouleur(Couleur* coul, int precision) {
         if (ecartH < seuilH) {
             if (abs(sAl - sBdd) < seuilS) {
                 if (abs(lAl - lBdd) < seuilL) {
+                    tabId[nbAlimentsTrouves] = idLu;
+                    tabPertinence[nbAlimentsTrouves] = ecartH;
                     nbAlimentsTrouves++;
-                    listeIds[nbAlimentsTrouves-1] = idLu;
                 }
             }
         }
 
-
         i++;
     }
+
     // Fin de boucle : tout le fichier est parcouru
     fclose(fichier);
+
+    // On récupère les 5 aliments plus pertinents
+    // Classement du tableau
+    int j;
+    for (i = 0; i < nbAlimentsTrouves; i++) {
+        for (j = i + 1; j < nbAlimentsTrouves; j++) {
+            if(tabPertinence[i] > tabPertinence[j]) {
+                int id = tabId[i];
+                int pertinence =  tabPertinence[i];
+                tabId[i] = tabId[j];
+                tabPertinence[i] = tabPertinence[j];
+                tabId[j] = id;
+                tabPertinence[j] = pertinence;
+            }
+        }
+    }
+
+    // On recopie les 5 premiers dans listeIds
+    for (i = 0; i < 5; i++) {
+        listeIds[i] = tabId[i];
+    }
 
     return listeIds;
 }
