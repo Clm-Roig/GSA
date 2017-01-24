@@ -138,8 +138,6 @@ Couleur* couleurDominanteHorsFond(ImageBMP* image, Couleur* couleurFond) {
 
     }
 
-	printf("\n\n%d pixels composent l'aliment",cptPixelsAliment);
-
     // Calcul des moyennes pour chaque composante des pixels de l'aliment
     if(cptPixelsAliment != 0) {
         moyenneRAliment = moyenneRAliment / cptPixelsAliment;
