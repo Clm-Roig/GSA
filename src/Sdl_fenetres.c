@@ -187,8 +187,7 @@ int peserLoading(SDL_Surface* screenSurface) {
 	int photoPrise;
 
 	do {
-		// photoPrise = prendrePhoto("fond");
-		photoPrise = 1;
+		photoPrise = prendrePhoto("fond");
 
 		fic = fopen(CHEMIN_PHOTO_FOND, "rb");
 		if (!fic) {
@@ -237,8 +236,7 @@ int peserLoading2(SDL_Surface* screenSurface) {
 	int photoPrise;
 
 	do {
-		// photoPrise = prendrePhoto("aliment");
-		photoPrise = 1;
+		photoPrise = prendrePhoto("aliment");
 
 		fic = fopen(CHEMIN_PHOTO_ALIMENT, "rb");
 		if (!fic) {
