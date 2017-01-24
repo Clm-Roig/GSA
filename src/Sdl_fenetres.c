@@ -406,10 +406,8 @@ int peserChoix() {
 	remove(CHEMIN_PHOTO_ALIMENT);
 
 	// Chargement des 5 aliments probables
-	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
-	int seuil = 60;
-	int* listeAlim = getIdAlimentParCouleur(coulAlim,seuil);
-	printf("\nSeuil = %d",seuil);
+	// TODO : leur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
+	int* listeAlim = getIdAlimentParCouleur(coulAlim);
 
 	// Construction du chemin vers l'image
 	char* chemin1 = malloc(100*sizeof(char*));
