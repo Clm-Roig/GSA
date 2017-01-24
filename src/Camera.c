@@ -14,7 +14,7 @@ int prendrePhoto(char* idPesee) {
     // -e spécifie l'encodage de la photo
     // -co contraste (0 à 100)
 
-    char* fonction = "raspistill -co 50 -ex off -t 3000 -w 900 -h 900 -e bmp -o ";
+    char* fonction = "raspistill -co 80 -ex off -t 3000 -w 900 -h 900 -e bmp -o ";
 
     char* chemin = malloc(200*sizeof(char));
     strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
