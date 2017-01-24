@@ -13,8 +13,8 @@ int menu() {
 	SDL_Rect pos;
 
 	// Suppression fichiers restants (au cas où)
-  	remove(CHEMIN_PHOTO_FOND);
-  	remove(CHEMIN_PHOTO_ALIMENT);
+  //	remove(CHEMIN_PHOTO_FOND);
+  //	remove(CHEMIN_PHOTO_ALIMENT);
 
 	// Fond d'écran
 	screenSurface = SDL_GetWindowSurface(getwindow());
@@ -406,7 +406,7 @@ int peserChoix() {
 	printf("\nCouleur Fond = %s",toCharCouleur(coulFond));
 
 	fclose(ficFond);
-	remove(CHEMIN_PHOTO_FOND);
+//	remove(CHEMIN_PHOTO_FOND);
 
 	// Récupération de la couleur de l'aliment pris en photo
 	FILE* photo = fopen(CHEMIN_PHOTO_ALIMENT,"rb");
@@ -416,7 +416,7 @@ int peserChoix() {
 	printf("\nCouleur Aliment = %s",toCharCouleur(coulAlim));
 
 	fclose(photo);
-	remove(CHEMIN_PHOTO_ALIMENT);
+//	remove(CHEMIN_PHOTO_ALIMENT);
 
 	// Chargement des 5 aliments probables
 	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
