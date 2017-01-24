@@ -416,7 +416,7 @@ int peserChoix() {
 	printf("\nCouleur Aliment = %s",toCharCouleur(coulAlim));
 
 	fclose(photo);
-	remove(CHEMIN_PHOTO_ALIMENT);
+	// remove(CHEMIN_PHOTO_ALIMENT);
 
 	// Chargement des 5 aliments probables
 	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
