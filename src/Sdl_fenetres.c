@@ -13,8 +13,8 @@ int menu() {
 	SDL_Rect pos;
 
 	// Suppression fichiers restants (au cas où)
-	remove(CHEMIN_PHOTO_FOND);
-	remove(CHEMIN_PHOTO_ALIMENT);
+  	remove(CHEMIN_PHOTO_FOND);
+  	remove(CHEMIN_PHOTO_ALIMENT);
 
 	// Fond d'écran
 	screenSurface = SDL_GetWindowSurface(getwindow());
@@ -207,6 +207,10 @@ int peserLoading(SDL_Surface* screenSurface) {
 			pos.y = 280;
 			SDL_BlitSurface(texteAttention,NULL,screenSurface,&pos);
 			SDL_UpdateWindowSurface(getwindow());
+
+			if(remove(CHEMIN_PHOTO_FOND) == -1) {
+				printf("\nErreur suppression fond.");
+			}
 		}
 	} while(estUni(img) != 1 || photoPrise != 1);
 
@@ -257,7 +261,12 @@ int peserLoading2(SDL_Surface* screenSurface) {
 			pos.y = 280;
 			SDL_BlitSurface(texteAttention,NULL,screenSurface,&pos);
 			SDL_UpdateWindowSurface(getwindow());
+
+			if(remove(CHEMIN_PHOTO_ALIMENT) == -1) {
+				printf("\nErreur suppression photo aliment.");
+			}
 		}
+
 	} while(estUni(img) == 1 || photoPrise != 1);
 
 	return 5; // On passe au choix de l'aliment reconnu
@@ -410,7 +419,7 @@ int peserChoix() {
 	remove(CHEMIN_PHOTO_ALIMENT);
 
 	// Chargement des 5 aliments probables
-	// TODO : leur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
+	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
 	int* listeAlim = getIdAlimentParCouleur(coulAlim);
 
 	// Construction du chemin vers l'image
@@ -880,8 +889,8 @@ int peser() {
 		else if(page==2) page = peserLoading(screenSurface);
 		else if(page==3) page = peserPhoto(screenSurface);
 		else if(page==4) page = peserLoading2(screenSurface);
-		else if(page==5) page = peserChoix(screenSurface);
-		else if(page==6) page = peserChoixComplet(screenSurface);
+		else if(page==5) page = peserChoix();
+		else if(page==6) page = peserChoixComplet();
 		else if(page==0) loop = 0;
 	}
 
