@@ -12,6 +12,10 @@ int menu() {
 	SDL_Surface* texteInv;
 	SDL_Rect pos;
 
+	// Suppression fichiers restants (au cas où)
+	remove(CHEMIN_PHOTO_FOND);
+	remove(CHEMIN_PHOTO_ALIMENT);
+
 	// Fond d'écran
 	screenSurface = SDL_GetWindowSurface(getwindow());
 	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
