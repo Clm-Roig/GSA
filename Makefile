@@ -18,6 +18,7 @@ doxygen:
 	doxygen Doxyfile
 
 clean:
+	find . -type f | xargs -n 5 touch
 	rm -f $(obj_dir)* $(bin_dir)*
 
 start:
