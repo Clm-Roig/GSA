@@ -243,7 +243,7 @@ int peserLoading2(SDL_Surface* screenSurface) {
 	ImageBMP* img;
 	int photoPrise;
 
-	do {
+	//do {
 		photoPrise = prendrePhoto("aliment");
 
 		fic = fopen(CHEMIN_PHOTO_ALIMENT, "rb");
@@ -254,7 +254,7 @@ int peserLoading2(SDL_Surface* screenSurface) {
 		fclose(fic);
 
 		// Si la photo est unie, soit l'aliment prend toute la photo, soit il n'y a pas d'aliment en plus du fond
-		if(estUni(img) == 1) {
+/*		if(estUni(img) == 1) {
 			// Message d'avertissement
 			texteAttention = TTF_RenderText_Blended(getpolice(), "Attention aliment non detecté", couleurRouge);
 			pos.x = (800-(texteAttention->w))/2;
@@ -266,8 +266,8 @@ int peserLoading2(SDL_Surface* screenSurface) {
 				printf("\nErreur suppression photo aliment.");
 			}
 		}
-
-	} while(estUni(img) == 1 || photoPrise != 1);
+*/
+//	} while(estUni(img) == 1 || photoPrise != 1);
 
 	return 5; // On passe au choix de l'aliment reconnu
 }
@@ -416,7 +416,7 @@ int peserChoix() {
 	printf("\nCouleur Aliment = %s",toCharCouleur(coulAlim));
 
 	fclose(photo);
-	// remove(CHEMIN_PHOTO_ALIMENT);
+	remove(CHEMIN_PHOTO_ALIMENT);
 
 	// Chargement des 5 aliments probables
 	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
