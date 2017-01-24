@@ -1,7 +1,7 @@
 #include "Sdl_main.h"
 
 int main(int argc,char* args[]) {
-/*
+
 	int loop = 1;
 	int page = 1;
 
@@ -18,11 +18,6 @@ int main(int argc,char* args[]) {
 	}
 
 	cleanup();
-*/
-
-	Couleur* coul = initCouleurAvecParam(208,201,30);
-	int i;
-	getIdAlimentParCouleur(coul);
 
 	return 0;
 }
