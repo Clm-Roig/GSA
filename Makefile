@@ -28,4 +28,3 @@ forceMaj:
 	
 maj:
 	git pull && make && make start
-
