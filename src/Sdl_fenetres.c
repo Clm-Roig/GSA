@@ -82,11 +82,12 @@ int menu() {
 	    else if((x>=buttInv.x)&&(x<=(buttInv.x+buttInv.w))&&(y>=buttInv.y)&&(y<=(buttInv.y+buttInv.h))){
 	 		return 3;
 	    }
-	    else{
 
-	    }
-	}
-}
+	} // end while event
+
+	printf("\nErreur, sortie de boucle non-désirée (fonction menu())");
+	return -1;
+} // end fontion menu()
 
 int peserPhoto(SDL_Surface* screenSurface){
 	SDL_Surface* texteRetour;
@@ -158,11 +159,12 @@ int peserPhoto(SDL_Surface* screenSurface){
 		else if((x>=buttGo.x)&&(x<=(buttGo.x+buttGo.w))&&(y>=buttGo.y)&&(y<=(buttGo.y+buttGo.h))){
 	 		return 4; // peserLoading2()
 	    }
-	    else {
+	} // end while event
 
-	    }
-	}
-}
+	printf("\nErreur, sortie de boucle non-désirée (fonction peserPhoto())");
+	return -1;
+
+} // end fonction peserPhoto()
 
 int peserLoading(SDL_Surface* screenSurface) {
 	SDL_Rect pos;
@@ -360,8 +362,11 @@ int peserBase(SDL_Surface* screenSurface){
 		else if((x>=buttGo.x)&&(x<=(buttGo.x+buttGo.w))&&(y>=buttGo.y)&&(y<=(buttGo.y+buttGo.h))){
 	 		return 2; // On passe au menu peser()
 	    }
-	}
-}
+	} // end while event
+
+	printf("\nErreur, sortie de boucle non-désirée (fonction peserBase())");
+	return -1;
+} // en fonction peserBase()
 
 int peserChoix() {
 
@@ -563,59 +568,65 @@ int peserChoix() {
 	                }
 	                break;
 	    }
+
+		int marche2;
+
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
 	 		return 0; // retour au menu Accueil
 	    }
 		else if((x>=bouttonAutre.x)&&(x<=(bouttonAutre.x+bouttonAutre.w))&&(y>=bouttonAutre.y)&&(y<=(bouttonAutre.y+bouttonAutre.h))){
 	 		return 6; // On passe au choix dans la liste des aliments complete
 	    }
-	    else if((x>=objet1.x)&&(x<=(objet1.x+objet1.w))&&(y>=objet1.y)&&(y<=(objet1.y+objet1.h))){
-	 		if(listeAlim[0]!=0){
-	 		char * desc = "Une pesee";
-	 		int marche2 = ecrireDonneePesee(1,desc,listeAlim[0]);
-	 		}
-	 		return 0;
-	    }
-	   	else if((x>=objet2.x)&&(x<=(objet2.x+objet2.w))&&(y>=objet2.y)&&(y<=(objet2.y+objet2.h))){
-	 		if(listeAlim[1]!=0){
-	 		char * desc = "Une pesee";
-	 		int marche2 = ecrireDonneePesee(1,desc,listeAlim[1]);
-	 		}
-	 		return 0;
-	    }
-	    else if((x>=objet3.x)&&(x<=(objet3.x+objet3.w))&&(y>=objet3.y)&&(y<=(objet3.y+objet3.h))){
-	 		if(listeAlim[2]!=0){
-	 		char * desc = "Une pesee";
-	 		int marche2 = ecrireDonneePesee(1,desc,listeAlim[2]);
-	 		}
-	 		return 0;
-	    }
-	    else if((x>=objet4.x)&&(x<=(objet4.x+objet4.w))&&(y>=objet4.y)&&(y<=(objet4.y+objet4.h))){
-	 		if(listeAlim[3]!=0){
-	 		char * desc = "Une pesee";
-	 		int marche2 = ecrireDonneePesee(1,desc,listeAlim[3]);
-	 		}
-	 		return 0;
-	    }
-	    else if((x>=objet5.x)&&(x<=(objet5.x+objet5.w))&&(y>=objet5.y)&&(y<=(objet5.y+objet5.h))){
-	 		if(listeAlim[4]!=0){
-	 		char * desc = "Une pesee";
-	 		int marche2 = ecrireDonneePesee(1,desc,listeAlim[4]);
-	 		}
-	 		return 0;
-	    }
-	    else {
 
-	    }
-	}
-}
+	    else {
+			if((x>=objet1.x)&&(x<=(objet1.x+objet1.w))&&(y>=objet1.y)&&(y<=(objet1.y+objet1.h))){
+		 		if(listeAlim[0]!=0){
+			 		char * desc = "Une pesee";
+			 		marche2 = ecrireDonneePesee(1,desc,listeAlim[0]);
+		 		}
+		    }
+		   	else if((x>=objet2.x)&&(x<=(objet2.x+objet2.w))&&(y>=objet2.y)&&(y<=(objet2.y+objet2.h))){
+		 		if(listeAlim[1]!=0){
+			 		char * desc = "Une pesee";
+			 		marche2 = ecrireDonneePesee(1,desc,listeAlim[1]);
+		 		}
+		    }
+		    else if((x>=objet3.x)&&(x<=(objet3.x+objet3.w))&&(y>=objet3.y)&&(y<=(objet3.y+objet3.h))){
+		 		if(listeAlim[2]!=0){
+			 		char * desc = "Une pesee";
+			 		marche2 = ecrireDonneePesee(1,desc,listeAlim[2]);
+		 		}
+		    }
+		    else if((x>=objet4.x)&&(x<=(objet4.x+objet4.w))&&(y>=objet4.y)&&(y<=(objet4.y+objet4.h))){
+		 		if(listeAlim[3]!=0){
+			 		char * desc = "Une pesee";
+			 		marche2 = ecrireDonneePesee(1,desc,listeAlim[3]);
+		 		}
+		    }
+		    else if((x>=objet5.x)&&(x<=(objet5.x+objet5.w))&&(y>=objet5.y)&&(y<=(objet5.y+objet5.h))){
+		 		if(listeAlim[4]!=0){
+			 		char * desc = "Une pesee";
+			 		marche2 = ecrireDonneePesee(1,desc,listeAlim[4]);
+		 		}
+		    }
+
+			if(marche2 != 1) {
+				printf("\nErreur suppression d'un aliment en stock");
+			}
+			return 0;
+		}
+	} // end while event
+
+	printf("\nErreur, sortie de boucle non-désirée (fonction peserChoix())");
+	return -1;
+
+} // end fonction peserChoix()
 
 int peserChoixComplet() {
 
 	SDL_Surface* screenSurface;
 	SDL_Surface* texteTitre;
 	SDL_Surface* texteMenu;
-	SDL_Surface* texteAutres;
 	SDL_Rect pos;
 	SDL_Color couleurBlanc = {255, 255, 255};
 	SDL_Color couleurNoir = {0, 0, 0};
@@ -674,14 +685,14 @@ int peserChoixComplet() {
 			SDL_Rect pos;
 			pos.x = objet.x+10; pos.y = objet.y+10;
 			SDL_BlitSurface(image,NULL,screenSurface,&pos);
-
 		}
 	}
+
 	SDL_UpdateWindowSurface(getwindow());
 
 	SDL_Event event;
 	int loop = 1;
-	while(loop==1){
+	while(loop == 1){
 		int x = -1; int y = -1;
 	    SDL_WaitEvent(&event);
 	    switch(event.type)
@@ -698,201 +709,184 @@ int peserChoixComplet() {
 	            switch(event.key.keysym.sym)
 	            {
 	            	case SDLK_ESCAPE:
-	                    loop= 0;
+	                    loop = 0;
 	                    return 0;
 	                    break;
 	                }
 	                break;
 	    }
+
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
 	 		return 0; // retour au menu Accueil
 	    }
-	   else if((y>40)&&(y<140)){
-	 		if((x>=100)&&(x<200)){
-	 			if(listeAlim[0]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[0]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=200)&&(x<300)){
-	 			if(listeAlim[1]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[1]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=300)&&(x<400)){
-	 			if(listeAlim[2]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[2]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=400)&&(x<500)){
-	 			if(listeAlim[3]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[3]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=500)&&(x<600)){
-	 			if(listeAlim[4]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[4]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=600)&&(x<700)){
-	 			if(listeAlim[5]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[5]);
-	 			}
-	 			return 0;
-	 		}
 
-	    }
-	   else if((y>140)&&(y<240)){
-	 		if((x>=100)&&(x<200)){
-	 			if(listeAlim[6]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[6]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=200)&&(x<300)){
-	 			if(listeAlim[7]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[7]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=300)&&(x<400)){
-	 			if(listeAlim[8]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[8]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=400)&&(x<500)){
-	 			if(listeAlim[9]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[9]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=500)&&(x<600)){
-	 			if(listeAlim[10]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[10]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=600)&&(x<700)){
-	 			if(listeAlim[11]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[11]);
-	 			}
-	 			return 0;
-	 		}
+		// Clic bouton aliment => enregistrement en BDD + quitter
+		else {
+			int marche2 = 0;
+			char * desc = "Une pesee";
 
-	    }
-	    else if((y>=240)&&(y<340)){
-	 		if((x>=100)&&(x<200)){
-	 			if(listeAlim[12]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[12]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=200)&&(x<300)){
-	 			if(listeAlim[13]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[13]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=300)&&(x<400)){
-	 			if(listeAlim[14]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[14]);
-	 			}
-	 			return 1;
-	 		}
-	 		else if((x>=400)&&(x<500)){
-	 			if(listeAlim[15]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[15]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=500)&&(x<600)){
-	 			if(listeAlim[16]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[16]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=600)&&(x<700)){
-	 			if(listeAlim[17]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[17]);
-	 			}
-	 			return 0;
-	 		}
+		   	if((y>40)&&(y<140)){
+		 		if((x>=100)&&(x<200)){
+		 			if(listeAlim[0]!=0){
+			 			marche2 = ecrireDonneePesee(1,desc,listeAlim[0]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=200)&&(x<300)){
+		 			if(listeAlim[1]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[1]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=300)&&(x<400)){
+		 			if(listeAlim[2]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[2]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=400)&&(x<500)){
+		 			if(listeAlim[3]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[3]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=500)&&(x<600)){
+		 			if(listeAlim[4]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[4]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=600)&&(x<700)){
+		 			if(listeAlim[5]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[5]);
+						return 0;
+		 			}
+		 		}
 
-	    }
-	    else if((y>=340)&&(y<440)){
-	 		if((x>=100)&&(x<200)){
-	 			if(listeAlim[18]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[18]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=200)&&(x<300)){
-	 			if(listeAlim[19]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[19]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=300)&&(x<400)){
-	 			if(listeAlim[20]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[20]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=400)&&(x<500)){
-	 			if(listeAlim[21]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[21]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=500)&&(x<600)){
-	 			if(listeAlim[22]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[22]);
-	 			}
-	 			return 0;
-	 		}
-	 		else if((x>=600)&&(x<700)){
-	 			if(listeAlim[23]!=0){
-	 			char * desc = "Une pesee";
-	 			int marche2 = ecrireDonneePesee(1,desc,listeAlim[23]);
-	 			}
-	 			return 0;
-	 		}
+		    }
+		   	else if((y>140)&&(y<240)){
+		 		if((x>=100)&&(x<200)){
+		 			if(listeAlim[6]!=0) {
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[6]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=200)&&(x<300)){
+		 			if(listeAlim[7]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[7]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=300)&&(x<400)){
+		 			if(listeAlim[8]!=0) {
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[8]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=400)&&(x<500)){
+		 			if(listeAlim[9]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[9]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=500)&&(x<600)){
+		 			if(listeAlim[10]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[10]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=600)&&(x<700)){
+		 			if(listeAlim[11]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[11]);
+						return 0;
+		 			}
+		 		}
 
-	    }
-	    else {
+		    }
+		    else if((y>=240)&&(y<340)){
+		 		if((x>=100)&&(x<200)){
+		 			if(listeAlim[12]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[12]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=200)&&(x<300)){
+		 			if(listeAlim[13]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[13]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=300)&&(x<400)){
+		 			if(listeAlim[14]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[14]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=400)&&(x<500)){
+		 			if(listeAlim[15]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[15]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=500)&&(x<600)){
+		 			if(listeAlim[16]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[16]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=600)&&(x<700)){
+		 			if(listeAlim[17]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[17]);
+						return 0;
+		 			}
+		 		}
 
-	    }
-	}
-}
+		    }
+		    else if((y>=340)&&(y<440)){
+		 		if((x>=100)&&(x<200)){
+		 			if(listeAlim[18]!=0) {
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[18]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=200)&&(x<300)){
+		 			if(listeAlim[19]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[19]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=300)&&(x<400)){
+		 			if(listeAlim[20]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[20]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=400)&&(x<500)){
+		 			if(listeAlim[21]!=0) {
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[21]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=500)&&(x<600)){
+		 			if(listeAlim[22]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[22]);
+						return 0;
+		 			}
+		 		}
+		 		else if((x>=600)&&(x<700)){
+		 			if(listeAlim[23]!=0){
+		 				marche2 = ecrireDonneePesee(1,desc,listeAlim[23]);
+						return 0;
+		 			}
+		 		}
+			} // endif 4ème ligne
+	    } // end else (clic aliments)
+	}	// end while event
 
+	printf("\nErreur, sortie de boucle non-désirée (fonction peserChoixComplet())");
+	return -1;
+
+}	// end fonction
 
 int peser() {
 	SDL_Surface* screenSurface;
@@ -934,7 +928,6 @@ int stock() {
 	SDL_Color couleurNoir = {138, 138, 138};
 	SDL_Color couleurBlanc = {255, 255, 255};
 
-
 	// Fond d'écran
 	screenSurface = SDL_GetWindowSurface(getwindow());
 	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
@@ -942,10 +935,7 @@ int stock() {
 	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
 	SDL_BlitSurface(fond_ecran,NULL,screenSurface,&pos_fond_ecran);
 
-
-
-
-
+	// Stock
 	SDL_Rect objet1;SDL_Rect objet2; SDL_Rect objet3; SDL_Rect objet4; SDL_Rect objet5;
 	objet1.x=40; objet1.y=40; objet1.w=60; objet1.h=60;
 	objet2.x=40; objet2.y=125; objet2.w=60; objet2.h=60;
@@ -1077,27 +1067,16 @@ int stock() {
 	long int duree4 = listeIdDuree[3][1];
 	long int duree5 = listeIdDuree[4][1];
 
-	// Conversion en heures
-	duree1 = duree1 / 3600;
-	duree2 = duree2 / 3600;
-	duree3 = duree3 / 3600;
-	duree4 = duree4 / 3600;
-	duree5 = duree5 / 3600;
-
-	//Conversion en rapport à 2 semaines
-	//336h dans deux semaines
-	duree1 = rapport14J(duree1);
-	duree2 = rapport14J(duree2);
-	duree3 = rapport14J(duree3);
-	duree4 = rapport14J(duree4);
-	duree5 = rapport14J(duree5);
+	// Conversion en heure puis rapport à 2 semaines
+	// 3600s dans 1h, 336h dans deux semaines
+	duree1 = rapport14J(duree1 / 3600);
+	duree2 = rapport14J(duree2 / 3600);
+	duree3 = rapport14J(duree3 / 3600);
+	duree4 = rapport14J(duree4 / 3600);
+	duree5 = rapport14J(duree5 / 3600);
 
 	//Affichage barre duree peremption
-	SDL_Rect barre1;
-	SDL_Rect barre2;
-	SDL_Rect barre3;
-	SDL_Rect barre4;
-	SDL_Rect barre5;
+	SDL_Rect barre1; SDL_Rect barre2; SDL_Rect barre3; SDL_Rect barre4; SDL_Rect barre5;
 	barre1.x=(pos1.x)+40+pos1.w; barre1.y=pos1.y+15; barre1.w=(float)((float)duree1/100)*600; barre1.h=30;
 	barre2.x=(pos2.x)+40+pos2.w; barre2.y=pos2.y+15; barre2.w=(float)((float)duree2/100)*600; barre2.h=30;
 	barre3.x=(pos3.x)+40+pos3.w; barre3.y=pos3.y+15; barre3.w=(float)((float)duree3/100)*600; barre3.h=30;
@@ -1105,57 +1084,55 @@ int stock() {
 	barre5.x=(pos5.x)+40+pos5.w; barre5.y=pos5.y+15; barre5.w=(float)((float)duree5/100)*600; barre5.h=30;
 
 
-	if(duree1<=30){
+	if(duree1<=20){
 		SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree1<=60){
+	else if (duree1<=50){
 		SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
 		SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,46, 204, 113));
 	}
 
-	if(duree2<=30){
+	if(duree2<=20){
 		SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree2<=60){
+	else if (duree2<=50){
 		SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
 		SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,46, 204, 113));
 	}
 
-	if(duree3<=30){
+	if(duree3<=20){
 		SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree3<=60){
+	else if (duree3<=50){
 		SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
 		SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,46, 204, 113));
 	}
 
-	if(duree4<=30){
+	if(duree4<=20){
 		SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree4<=60){
+	else if (duree4<=50){
 		SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
 		SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,46, 204, 113));
 	}
 
-	if(duree5<=30){
+	if(duree5<=20){
 		SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree5<=60){
+	else if (duree5<=50){
 		SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
 		SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,46, 204, 113));
 	}
-
-
 
 	SDL_UpdateWindowSurface(getwindow());
 
@@ -1187,31 +1164,34 @@ int stock() {
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
 	 		return 1; // retour au menu Accueil
 	    }
-	    else if((x>=objet1.x)&&(x<=(objet1.x+objet1.w))&&(y>=objet1.y)&&(y<=(objet1.y+objet1.h))){
-	 		int marche=0;
-	 		marche = supprimerDonneePesee(listeIdDuree[0][0]);
-	 		return 3; // retour au menu Accueil
-	    }
-	    else if((x>=objet2.x)&&(x<=(objet2.x+objet2.w))&&(y>=objet2.y)&&(y<=(objet2.y+objet2.h))){
-	 		int marche=0;
-	 		marche = supprimerDonneePesee(listeIdDuree[1][0]);
-	 		return 3; // retour au menu Accueil
-	    }
-	    else if((x>=objet3.x)&&(x<=(objet3.x+objet3.w))&&(y>=objet3.y)&&(y<=(objet3.y+objet3.h))){
-	 		int marche=0;
-	 		marche = supprimerDonneePesee(listeIdDuree[2][0]);
-	 		return 3; // retour au menu Accueil
-	    }
-	    else if((x>=objet4.x)&&(x<=(objet4.x+objet4.w))&&(y>=objet4.y)&&(y<=(objet4.y+objet4.h))){
-	 		int marche=0;
-	 		marche = supprimerDonneePesee(listeIdDuree[3][0]);
-	 		return 3; // retour au menu Accueil
-		}
-	    else if((x>=objet5.x)&&(x<=(objet5.x+objet5.w))&&(y>=objet5.y)&&(y<=(objet5.y+objet5.h))){
-	 		int marche=0;
-	 		marche = supprimerDonneePesee(listeIdDuree[4][0]);
-	 		return 3; // retour au menu Accueil
-	    }
 
-	}
-}
+		// Suppression d'un aliment en stock + retour accueil
+	    else {
+			int controleSuppr = 0;
+			if((x>=objet1.x)&&(x<=(objet1.x+objet1.w))&&(y>=objet1.y)&&(y<=(objet1.y+objet1.h))){
+		 		controleSuppr = supprimerDonneePesee(listeIdDuree[0][0]);
+		 		return 3; // retour stock
+		    }
+		    else if((x>=objet2.x)&&(x<=(objet2.x+objet2.w))&&(y>=objet2.y)&&(y<=(objet2.y+objet2.h))){
+		 		controleSuppr = supprimerDonneePesee(listeIdDuree[1][0]);
+		 		return 3; // retour stock
+		    }
+		    else if((x>=objet3.x)&&(x<=(objet3.x+objet3.w))&&(y>=objet3.y)&&(y<=(objet3.y+objet3.h))){
+		 		controleSuppr = supprimerDonneePesee(listeIdDuree[2][0]);
+		 		return 3; // retour stock
+		    }
+		    else if((x>=objet4.x)&&(x<=(objet4.x+objet4.w))&&(y>=objet4.y)&&(y<=(objet4.y+objet4.h))){
+		 		controleSuppr = supprimerDonneePesee(listeIdDuree[3][0]);
+		 		return 3; // retour stock
+			}
+		    else if((x>=objet5.x)&&(x<=(objet5.x+objet5.w))&&(y>=objet5.y)&&(y<=(objet5.y+objet5.h))){
+		 		controleSuppr = supprimerDonneePesee(listeIdDuree[4][0]);
+		 		return 3; // retour stock
+		    }
+		}
+	} // end while event
+
+	printf("\nErreur, sortie de boucle non-désirée (fonction stock())");
+	return -1;
+
+} // end fonction
