@@ -40,13 +40,6 @@ Couleur* couleurDominante(ImageBMP* image);
 	@param Couleur* couleurFond, la couleur du fond de l'image
 	@return Couleur*, la couleur dominante de l'image, sans prendre en compte le fond
 */
-Couleur* couleurDominanteHorsFond(ImageBMP* image, Couleur* couleurFond);
-
-/**
-    @brief Renseigne sur la présence (ou non) d'au moins un aliment ayant une couleur proche du paramètre
-	@param Couleur* coul, la couleur que l'on souhaite utiliser pour chercher des aliments
-	@return int, 1 (True) s'il existe au moins un aliment proche de la couleur, 0 (False)
-*/
-int rechercheAliment(Couleur* coul);
+Couleur* couleurDominanteHorsFond(ImageBMP* image, Couleur* couleurFond);
 
 #endif

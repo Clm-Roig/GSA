@@ -202,7 +202,7 @@ int peserLoading(SDL_Surface* screenSurface) {
 
 		if(estUni(img) != 1) {
 			//On affiche un message attention
-			texteAttention = TTF_RenderText_Blended(getpolice(), "Attention fond non unie", couleurRouge);
+			texteAttention = TTF_RenderText_Blended(getpolice(), "Attention fond non uni", couleurRouge);
 			pos.x = (800-(texteAttention->w))/2;
 			pos.y = 280;
 			SDL_BlitSurface(texteAttention,NULL,screenSurface,&pos);
@@ -484,7 +484,7 @@ int peserChoix() {
 	SDL_Surface *image4 = SDL_LoadBMP(chemin4);
 	SDL_Surface *image5 = SDL_LoadBMP(chemin5);
 
-	// Redimensionnement des images (170x170 pixels)
+	// Redimensionnement des images (160x160 pixels)
 	// Librairie SDL_gfx, fonction zoomSurface() sur les images
 	// Les images étant carrées, on ne récupère que la hauteur
 	int h1 = image1->h;
