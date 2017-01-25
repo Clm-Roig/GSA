@@ -716,7 +716,9 @@ int peserChoixComplet() {
 	                break;
 	    }
 
+		printf("\n\n event trouvé !");
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
+			printf("\n\n 1er if = Retour accueil");
 	 		return 0; // retour au menu Accueil
 	    }
 
@@ -881,8 +883,6 @@ int peserChoixComplet() {
 		 		}
 			} // endif 4ème ligne
 	    } // end else (clic aliments)
-
-		printf("\n\nje suis passé après le while");
 	}	// end while event
 
 	printf("\nErreur, sortie de boucle non-désirée (fonction peserChoixComplet())");
