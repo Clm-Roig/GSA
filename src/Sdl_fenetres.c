@@ -569,7 +569,7 @@ int peserChoix() {
 	                break;
 	    }
 
-		int marche2;
+		int marche2 = 0;
 
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
 	 		return 0; // retour au menu Accueil
