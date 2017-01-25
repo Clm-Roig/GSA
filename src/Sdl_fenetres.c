@@ -215,9 +215,11 @@ int peserLoading(SDL_Surface* screenSurface) {
 			// On donne la possibilité de quitter en appuyant sur échap
 			SDL_Event event;
 			int loop = 1;
-			while(loop==1) {
+			while(loop == 1) {
+				printf("\ndans le boucle1");
 				// Après 3s, si pas d'échap, on boucle
 				SDL_WaitEventTimeout(&event,3000);
+				printf("\n dans le boucle2");
 				switch(event.type) {
 					case SDL_KEYDOWN:
 						switch(event.key.keysym.sym) {
