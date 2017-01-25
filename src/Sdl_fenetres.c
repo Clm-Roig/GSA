@@ -152,6 +152,7 @@ int peserPhoto(SDL_Surface* screenSurface){
 	                break;
 	    }
 
+		printf("\n\nClic en x=%d  y=%d",x,y);
 		// Clic Boutons
 	    if((x>=buttRetour.x)&&(x<=(buttRetour.x+buttRetour.w))&&(y>=buttRetour.y)&&(y<=(buttRetour.y+buttRetour.h))){
 	 		return 0; // Fermeture de la pesée
@@ -716,9 +717,7 @@ int peserChoixComplet() {
 	                break;
 	    }
 
-		printf("\n\n event trouvé !");
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
-			printf("\n\n 1er if = Retour accueil");
 	 		return 0; // retour au menu Accueil
 	    }
 
