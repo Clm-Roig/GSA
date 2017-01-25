@@ -211,7 +211,26 @@ int peserLoading(SDL_Surface* screenSurface) {
 			if(remove(CHEMIN_PHOTO_FOND) == -1) {
 				printf("\nErreur suppression fond.");
 			}
-		}
+
+			// On donne la possibilité de quitter en appuyant sur échap
+			SDL_Event event;
+			int loop = 1;
+			int x = -1; int y = -1;
+			// Après 3s, si pas d'échap, on boucle
+			SDL_WaitEventTimeout(&event,3000);
+			switch(event.type) {
+				case SDL_KEYDOWN:
+					switch(event.key.keysym.sym)
+					{
+						case SDLK_ESCAPE:
+							loop = 0;
+							return 0;
+							break;
+						}
+						break;
+			}
+		} //endif
+
 	} while(estUni(img) != 1 || photoPrise != 1);
 
 	return 3; // On passe a la prise de photo de l'aliment
