@@ -881,6 +881,8 @@ int peserChoixComplet() {
 		 		}
 			} // endif 4ème ligne
 	    } // end else (clic aliments)
+
+		printf("\n\nje suis passé après le while")
 	}	// end while event
 
 	printf("\nErreur, sortie de boucle non-désirée (fonction peserChoixComplet())");
