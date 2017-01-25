@@ -216,10 +216,9 @@ int peserLoading(SDL_Surface* screenSurface) {
 			SDL_Event event;
 			int loop = 1;
 			while(loop == 1) {
-				printf("\ndans le boucle1");
+				printf("\n dans le boucle1");
 				// Après 3s, si pas d'échap, on boucle
 				SDL_WaitEventTimeout(&event,3000);
-				printf("\n dans le boucle2");
 				switch(event.type) {
 					case SDL_KEYDOWN:
 						switch(event.key.keysym.sym) {
@@ -332,7 +331,7 @@ int peserBase(SDL_Surface* screenSurface){
 	SDL_UpdateWindowSurface(getwindow());
 	SDL_Event event;
 	int loop = 1;
-	while(loop==1){
+//	while(loop==1){
 		int x = -1; int y = -1;
 	    SDL_WaitEvent(&event);
 	    switch(event.type)
@@ -349,7 +348,7 @@ int peserBase(SDL_Surface* screenSurface){
 	            switch(event.key.keysym.sym)
 	            {
 	            	case SDLK_ESCAPE:
-	                    loop= 0;
+	                    loop = 0;
 	                    return 0;
 	                    break;
 	                }
@@ -361,10 +360,10 @@ int peserBase(SDL_Surface* screenSurface){
 		else if((x>=buttGo.x)&&(x<=(buttGo.x+buttGo.w))&&(y>=buttGo.y)&&(y<=(buttGo.y+buttGo.h))){
 	 		return 2; // On passe au menu peser()
 	    }
-	    else{
+	    else {
 
 	    }
-	}
+//	}
 }
 
 int peserChoix() {
