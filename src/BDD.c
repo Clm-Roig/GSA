@@ -329,7 +329,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
             sBdd = deltaB / (1 - soustB);
         }
 
-        float seuilH = 5;
+        float seuilH = 15;
         float seuilS = 0.20;
         float seuilL = 0.20;
 
