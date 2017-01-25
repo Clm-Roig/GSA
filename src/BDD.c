@@ -561,7 +561,7 @@ int ecrireDonneeAliment(char* nom, Couleur* couleur, int dureeP) {
     assert(fichier != NULL);
     fseek(fichier,0,SEEK_END);
 
-    char buffer[TAILLE_MAX_LIGNE] = "\n";
+    char buffer[TAILLE_MAX_LIGNE] = "";
 
     // Obtention de l'id du nouvel aliment
     int id = getIdMax("aliments") + 1;
@@ -582,6 +582,7 @@ int ecrireDonneeAliment(char* nom, Couleur* couleur, int dureeP) {
     strcat(buffer,toCharCouleur(couleur));
     strcat(buffer,";");
     strcat(buffer,dureePchar);
+    strcat(buffer,"\n");
 
     fprintf(fichier,"%s",buffer);
     fclose(fichier);
@@ -595,7 +596,7 @@ int ecrireDonneePesee(int quantite,char* description,int id_aliment) {
     assert(fichier != NULL);
 
     // Saut de ligne avant insertion et formatage des données
-    char buffer[TAILLE_MAX_LIGNE]="\n";
+    char buffer[TAILLE_MAX_LIGNE]= "";
 
     // Obtention de l'id de la nouvelle pesée
     int id = getIdMax("pesees") + 1;
@@ -641,6 +642,7 @@ int ecrireDonneePesee(int quantite,char* description,int id_aliment) {
 
     strcat(buffer,";");
     strcat(buffer,id_aliment_char);
+    strcat(buffer,"\n");
 
     fprintf(fichier,"%s",buffer);
     fclose(fichier);
@@ -687,13 +689,13 @@ int supprimerDonneePesee(int id){
 
     FILE* fichierTemp = fopen(CHEMIN_PESEES_TEMP,"a");
 
-
     // Recopie du fichier dans le fichier .tmp sauf la ligne à supprimer
     char* ligneLu = NULL;
     ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
-    while(fgets(ligneLu, TAILLE_MAX_LIGNE, fichier) != NULL) {
-        if(strcmp(ligneLu,ligneASupprimer)) {
-            fprintf(fichierTemp,"%s",ligneLu);
+
+    while (fgets(ligneLu,TAILLE_MAX_LIGNE,fichier)) {
+        if (strcmp(ligneLu,ligneASupprimer) != 0) {
+            fputs(ligneLu,fichierTemp);
         }
     }
 
@@ -710,6 +712,7 @@ int supprimerDonneePesee(int id){
 void reinitPesees() {
     FILE* fichierTempPesees = fopen(CHEMIN_PESEES_TEMP,"a");
     fprintf(fichierTempPesees,"%s",ENTETE_PESEES);
+    fprintf(fichierTempPesees,"%s","\n");
 
     if(remove(CHEMIN_PESEES) != 0 ) {
         printf("\nErreur suppression pesees.txt.");
@@ -724,6 +727,7 @@ void reinitPesees() {
 void reinitAliments() {
     FILE* fichierTempAliments = fopen(CHEMIN_ALIMENTS_TEMP,"a");
     fprintf(fichierTempAliments,"%s",ENTETE_ALIMENTS);
+    fprintf(fichierTempAliments,"%s","\n");
 
     if(remove(CHEMIN_ALIMENTS) != 0) {
         printf("\nErreur suppression aliments.txt.");
