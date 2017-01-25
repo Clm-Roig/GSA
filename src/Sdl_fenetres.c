@@ -152,13 +152,14 @@ int peserPhoto(SDL_Surface* screenSurface){
 	                break;
 	    }
 
-		printf("\n\nClic en x=%d  y=%d",x,y);
 		// Clic Boutons
 	    if((x>=buttRetour.x)&&(x<=(buttRetour.x+buttRetour.w))&&(y>=buttRetour.y)&&(y<=(buttRetour.y+buttRetour.h))){
-	 		return 0; // Fermeture de la pesée
+			printf("\npeserPhoto ret 0");
+			return 0; // Fermeture de la pesée
 	    }
 		else if((x>=buttGo.x)&&(x<=(buttGo.x+buttGo.w))&&(y>=buttGo.y)&&(y<=(buttGo.y+buttGo.h))){
-	 		return 4; // peserLoading2()
+			printf("\npeserPhoto ret 4");
+			return 4; // peserLoading2()
 	    }
 	} // end while event
 
