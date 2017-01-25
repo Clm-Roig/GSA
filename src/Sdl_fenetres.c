@@ -331,7 +331,7 @@ int peserBase(SDL_Surface* screenSurface){
 	SDL_UpdateWindowSurface(getwindow());
 	SDL_Event event;
 	int loop = 1;
-//	while(loop==1){
+	while(loop == 1){
 		int x = -1; int y = -1;
 	    SDL_WaitEvent(&event);
 	    switch(event.type)
@@ -360,10 +360,7 @@ int peserBase(SDL_Surface* screenSurface){
 		else if((x>=buttGo.x)&&(x<=(buttGo.x+buttGo.w))&&(y>=buttGo.y)&&(y<=(buttGo.y+buttGo.h))){
 	 		return 2; // On passe au menu peser()
 	    }
-	    else {
-
-	    }
-//	}
+	}
 }
 
 int peserChoix() {
