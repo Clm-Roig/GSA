@@ -572,12 +572,10 @@ int peserChoix() {
 		int marche2;
 
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
-			printf("\nPeser choix ret 0 (accueil)");
 	 		return 0; // retour au menu Accueil
 	    }
 		else if((x>=bouttonAutre.x)&&(x<=(bouttonAutre.x+bouttonAutre.w))&&(y>=bouttonAutre.y)&&(y<=(bouttonAutre.y+bouttonAutre.h))){
 	 		return 6; // On passe au choix dans la liste des aliments complete
-			printf("\nPeser choix ret 6 (choix complet)");
 	    }
 
 	    else {
@@ -612,11 +610,14 @@ int peserChoix() {
 		 		}
 		    }
 
+			// On boucle, ça n'a pas sauvé
 			if(marche2 != 1) {
 				printf("\nErreur suppression d'un aliment en stock");
+			} else {
+			// enregistrement ok
+				return 0;
 			}
-			printf("\nPeser choix ret 0 (accueil) APRES SAUVEGARDE");
-			return 0;
+
 		}
 	} // end while event
 
