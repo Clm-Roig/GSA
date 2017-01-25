@@ -154,11 +154,9 @@ int peserPhoto(SDL_Surface* screenSurface){
 
 		// Clic Boutons
 	    if((x>=buttRetour.x)&&(x<=(buttRetour.x+buttRetour.w))&&(y>=buttRetour.y)&&(y<=(buttRetour.y+buttRetour.h))){
-			printf("\npeserPhoto ret 0");
 			return 0; // Fermeture de la pesée
 	    }
 		else if((x>=buttGo.x)&&(x<=(buttGo.x+buttGo.w))&&(y>=buttGo.y)&&(y<=(buttGo.y+buttGo.h))){
-			printf("\npeserPhoto ret 4");
 			return 4; // peserLoading2()
 	    }
 	} // end while event
@@ -574,10 +572,12 @@ int peserChoix() {
 		int marche2;
 
 	    if((x>=buttMenu.x)&&(x<=(buttMenu.x+buttMenu.w))&&(y>=buttMenu.y)&&(y<=(buttMenu.y+buttMenu.h))){
+			printf("\nPeser choix ret 0 (accueil)");
 	 		return 0; // retour au menu Accueil
 	    }
 		else if((x>=bouttonAutre.x)&&(x<=(bouttonAutre.x+bouttonAutre.w))&&(y>=bouttonAutre.y)&&(y<=(bouttonAutre.y+bouttonAutre.h))){
 	 		return 6; // On passe au choix dans la liste des aliments complete
+			printf("\nPeser choix ret 6 (choix complet)");
 	    }
 
 	    else {
@@ -615,6 +615,7 @@ int peserChoix() {
 			if(marche2 != 1) {
 				printf("\nErreur suppression d'un aliment en stock");
 			}
+			printf("\nPeser choix ret 0 (accueil) APRES SAUVEGARDE");
 			return 0;
 		}
 	} // end while event
