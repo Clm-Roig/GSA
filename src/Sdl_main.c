@@ -14,6 +14,10 @@ int main(int argc,char* args[]) {
 		else if(page==2) page = peser();
 		else if(page==3) page = stock();
 		else if(page==0) loop = 0;
+		else if(page==-1) {
+			printf("Erreur interface");
+			loop = 0;
+		}
 
 	}
 
