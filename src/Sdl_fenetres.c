@@ -215,19 +215,19 @@ int peserLoading(SDL_Surface* screenSurface) {
 			// On donne la possibilité de quitter en appuyant sur échap
 			SDL_Event event;
 			int loop = 1;
-			int x = -1; int y = -1;
-			// Après 3s, si pas d'échap, on boucle
-			SDL_WaitEventTimeout(&event,3000);
-			switch(event.type) {
-				case SDL_KEYDOWN:
-					switch(event.key.keysym.sym)
-					{
-						case SDLK_ESCAPE:
-							loop = 0;
-							return 0;
-							break;
+			while(loop==1) {
+				// Après 3s, si pas d'échap, on boucle
+				SDL_WaitEventTimeout(&event,3000);
+				switch(event.type) {
+					case SDL_KEYDOWN:
+						switch(event.key.keysym.sym) {
+							case SDLK_ESCAPE:
+								loop = 0;
+								return 0;
+								break;
 						}
-						break;
+					break;
+				}
 			}
 		} //endif
 
