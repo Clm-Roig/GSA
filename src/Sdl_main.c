@@ -1,7 +1,7 @@
 #include "Sdl_main.h"
 
 int main(int argc,char* args[]) {
-/*
+
 	int loop = 1;
 	int page = 1;
 
@@ -23,9 +23,7 @@ int main(int argc,char* args[]) {
 
 	cleanup();
 
-*/
-
-//
+/*
 	if (1){
 		reinitPesees();
 		ecrireDonneePesee(1,"Une pesee à Clément",20);
@@ -38,6 +36,6 @@ int main(int argc,char* args[]) {
 	else {
 		supprimerDonneePesee(4);
 	}
-
+*/
 	return 0;
 }
