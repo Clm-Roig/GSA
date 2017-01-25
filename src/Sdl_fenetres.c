@@ -33,8 +33,8 @@ int menu() {
 
 	// Texte boutons
 	SDL_Color couleurBlanc = {255, 255, 255};
-	texteAjout = TTF_RenderText_Blended(getpolice(), "Ajout d'un aliment", couleurBlanc);
-	texteInv = TTF_RenderText_Blended(getpolice(), "Mon stock", couleurBlanc);
+	texteAjout = TTF_RenderUTF8_Blended(getpolice(), "Ajout d'un aliment", couleurBlanc);
+	texteInv = TTF_RenderUTF8_Blended(getpolice(), "Mon stock", couleurBlanc);
 
 	int larg = texteAjout->w;
 	int haut = texteAjout->h;
@@ -104,7 +104,7 @@ int peserPhoto(SDL_Surface* screenSurface){
 	SDL_Rect buttRetour; SDL_Color couleurBlanc = {255, 255, 255};
 	buttRetour.x=0; buttRetour.y=0; buttRetour.w=45; buttRetour.h=30;
 	SDL_FillRect(screenSurface,&buttRetour,SDL_MapRGB(screenSurface->format,211, 84, 0));
-	texteRetour = TTF_RenderText_Blended(getpolice(), "<", couleurBlanc);
+	texteRetour = TTF_RenderUTF8_Blended(getpolice(), "<", couleurBlanc);
 	int larg = texteRetour->w;
 	int haut = texteRetour->h;
 	pos.x=buttRetour.x + ((buttRetour.w-larg)/2); pos.y=buttRetour.y + ((buttRetour.h-haut)/2);
@@ -117,7 +117,7 @@ int peserPhoto(SDL_Surface* screenSurface){
 	SDL_FillRect(screenSurface,&buttGo,SDL_MapRGB(screenSurface->format,192, 57, 43));
 
 	// Texte boutons
-	texteGo = TTF_RenderText_Blended(getpolice(), "Prendre Photo", couleurBlanc);
+	texteGo = TTF_RenderUTF8_Blended(getpolice(), "Prendre Photo", couleurBlanc);
 
 	larg = texteGo->w;
 	haut = texteGo->h;
@@ -180,7 +180,7 @@ int peserLoading(SDL_Surface* screenSurface) {
 	SDL_BlitSurface(fond_ecran,NULL,screenSurface,&pos_fond_ecran);
 
 	// Afficher patientez
-	texteTitre = TTF_RenderText_Blended(getpolice(), "Veuillez patienter", couleurBlanc);
+	texteTitre = TTF_RenderUTF8_Blended(getpolice(), "Veuillez patienter", couleurBlanc);
 	pos.x = (800-(texteTitre->w))/2;
 	pos.y = 240;
 	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
@@ -204,7 +204,7 @@ int peserLoading(SDL_Surface* screenSurface) {
 
 		if(estUni(img) != 1) {
 			//On affiche un message attention
-			texteAttention = TTF_RenderText_Blended(getpolice(), "Attention fond non uni", couleurRouge);
+			texteAttention = TTF_RenderUTF8_Blended(getpolice(), "Attention fond non uni", couleurRouge);
 			pos.x = (800-(texteAttention->w))/2;
 			pos.y = 280;
 			SDL_BlitSurface(texteAttention,NULL,screenSurface,&pos);
@@ -253,7 +253,7 @@ int peserLoading2(SDL_Surface* screenSurface) {
 	SDL_BlitSurface(fond_ecran,NULL,screenSurface,&pos_fond_ecran);
 
 	// Afficher patientez
-	texteTitre = TTF_RenderText_Blended(getpolice(), "Veuillez patienter", couleurBlanc);
+	texteTitre = TTF_RenderUTF8_Blended(getpolice(), "Veuillez patienter", couleurBlanc);
 	pos.x = (800-(texteTitre->w))/2;
 	pos.y = 240;
 	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
@@ -278,7 +278,7 @@ int peserLoading2(SDL_Surface* screenSurface) {
 		// Si la photo est unie, soit l'aliment prend toute la photo, soit il n'y a pas d'aliment en plus du fond
 		if(estUni(img) == 1) {
 			// Message d'avertissement
-			texteAttention = TTF_RenderText_Blended(getpolice(), "Attention aliment non detecté", couleurRouge);
+			texteAttention = TTF_RenderUTF8_Blended(getpolice(), "Attention aliment non detecté", couleurRouge);
 			pos.x = (800-(texteAttention->w))/2;
 			pos.y = 280;
 			SDL_BlitSurface(texteAttention,NULL,screenSurface,&pos);
@@ -309,7 +309,7 @@ int peserBase(SDL_Surface* screenSurface){
 	SDL_Rect buttRetour; SDL_Color couleurBlanc = {255, 255, 255};
 	buttRetour.x=0; buttRetour.y=0; buttRetour.w=45; buttRetour.h=30;
 	SDL_FillRect(screenSurface,&buttRetour,SDL_MapRGB(screenSurface->format,211, 84, 0));
-	texteRetour = TTF_RenderText_Blended(getpolice(), "<", couleurBlanc);
+	texteRetour = TTF_RenderUTF8_Blended(getpolice(), "<", couleurBlanc);
 	int larg= texteRetour->w;
 	int haut= texteRetour->h;
 	pos.x=buttRetour.x + ((buttRetour.w-larg)/2); pos.y=buttRetour.y + ((buttRetour.h-haut)/2);
@@ -322,7 +322,7 @@ int peserBase(SDL_Surface* screenSurface){
 	SDL_FillRect(screenSurface,&buttGo,SDL_MapRGB(screenSurface->format,192, 57, 43));
 
 	// Texte boutons
-	texteGo = TTF_RenderText_Blended(getpolice(), "Initialiser", couleurBlanc);
+	texteGo = TTF_RenderUTF8_Blended(getpolice(), "Initialiser", couleurBlanc);
 
 	larg= texteGo->w;
 	haut= texteGo->h;
@@ -401,7 +401,7 @@ int peserChoix() {
 	SDL_FillRect(screenSurface,&objet6,SDL_MapRGB(screenSurface->format,192, 57, 43));
 
 	// Texte haut
-	texteTitre = TTF_RenderText_Blended(getpolice(), "Choisissez votre aliment", couleurNoir);
+	texteTitre = TTF_RenderUTF8_Blended(getpolice(), "Choisissez votre aliment", couleurNoir);
 	pos.x = (800-(texteTitre->w))/2;
 	pos.y = 10;
 	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
@@ -410,7 +410,7 @@ int peserChoix() {
 	SDL_Rect buttMenu;
 	buttMenu.x=0; buttMenu.y=0; buttMenu.w=45; buttMenu.h=30;
 	SDL_FillRect(screenSurface,&buttMenu,SDL_MapRGB(screenSurface->format,211, 84, 0));
-	texteMenu = TTF_RenderText_Blended(getpolice(), "<", couleurBlanc);
+	texteMenu = TTF_RenderUTF8_Blended(getpolice(), "<", couleurBlanc);
 	int larg = texteMenu->w;
 	int haut = texteMenu->h;
 	pos.x = buttMenu.x + ((buttMenu.w-larg)/2);
@@ -535,7 +535,7 @@ int peserChoix() {
 	SDL_FillRect(screenSurface,&bouttonAutre,SDL_MapRGB(screenSurface->format,211, 84, 0));
 
 	// Texte Autre aliment
-	texteAutres = TTF_RenderText_Blended(getpolice(), "Autres", couleurBlanc);
+	texteAutres = TTF_RenderUTF8_Blended(getpolice(), "Autres", couleurBlanc);
 	larg = texteAutres->w;
 	haut = texteAutres->h;
 	pos.x = bouttonAutre.x + ((bouttonAutre.w-larg)/2); pos.y=bouttonAutre.y + ((bouttonAutre.h-haut)/2);
@@ -640,7 +640,7 @@ int peserChoixComplet() {
 
 
 	// Texte haut
-	texteTitre = TTF_RenderText_Blended(getpolice(), "Choisissez votre aliment", couleurNoir);
+	texteTitre = TTF_RenderUTF8_Blended(getpolice(), "Choisissez votre aliment", couleurNoir);
 	pos.x = (800-(texteTitre->w))/2;
 	pos.y = 10;
 	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
@@ -649,7 +649,7 @@ int peserChoixComplet() {
 	SDL_Rect buttMenu;
 	buttMenu.x=0; buttMenu.y=0; buttMenu.w=45; buttMenu.h=30;
 	SDL_FillRect(screenSurface,&buttMenu,SDL_MapRGB(screenSurface->format,211, 84, 0));
-	texteMenu = TTF_RenderText_Blended(getpolice(), "<", couleurBlanc);
+	texteMenu = TTF_RenderUTF8_Blended(getpolice(), "<", couleurBlanc);
 	int larg = texteMenu->w;
 	int haut = texteMenu->h;
 	pos.x = buttMenu.x + ((buttMenu.w-larg)/2);
@@ -949,7 +949,7 @@ int stock() {
 	SDL_FillRect(screenSurface,&objet5,SDL_MapRGB(screenSurface->format,192, 57, 43));
 
 	// Texte
-	texteTitre = TTF_RenderText_Blended(getpolice(), "     Mon stock                                 7J                                      14J", couleurNoir);
+	texteTitre = TTF_RenderUTF8_Blended(getpolice(), "     Mon stock                                 7J                                      14J", couleurNoir);
 	pos.x = (800-(texteTitre->w))/2;
 	pos.y = 10;
 	SDL_BlitSurface(texteTitre,NULL,screenSurface,&pos);
@@ -958,7 +958,7 @@ int stock() {
 	SDL_Rect buttMenu;
 	buttMenu.x=0; buttMenu.y=0; buttMenu.w=45; buttMenu.h=30;
 	SDL_FillRect(screenSurface,&buttMenu,SDL_MapRGB(screenSurface->format,211, 84, 0));
-	texteMenu = TTF_RenderText_Blended(getpolice(), "<", couleurBlanc);
+	texteMenu = TTF_RenderUTF8_Blended(getpolice(), "<", couleurBlanc);
 	int larg = texteMenu->w;
 	int haut = texteMenu->h;
 	pos.x = buttMenu.x + ((buttMenu.w-larg)/2);
