@@ -712,11 +712,10 @@ int peserChoixComplet() {
 			SDL_Rect pos;
 			pos.x = objet.x+10; pos.y = objet.y+10;
 			SDL_BlitSurface(image,NULL,screenSurface,&pos);
+			free(chemin);
+			free(idchar);
 		}
 	}
-
-	free(chemin);
-	free(idchar);
 
 	SDL_UpdateWindowSurface(getwindow());
 
