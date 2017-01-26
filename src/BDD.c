@@ -380,7 +380,9 @@ int* getIdAlimentParCouleur(Couleur* coul) {
     // On recopie les 5 premiers dans listeIds
     for (i=0; i < nbAlimentsTotal ; i++) {
     //    listeIds[i] =
-        printf("tabId[i] : %d",tabId[i]);
+        printf("\n\ni = %d",i);
+        printf("\nlisteIds[i] : %d",listeIds[i]);
+        printf("\ntabId[i] : %d",tabId[i]);
     }
 
     return listeIds;
