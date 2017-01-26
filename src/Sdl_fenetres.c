@@ -89,12 +89,14 @@ int menu() {
 	return -1;
 } // end fontion menu()
 
-int peserPhoto(SDL_Surface* screenSurface){
+int peserPhoto(){
+	SDL_Surface* screenSurface;
 	SDL_Surface* texteRetour;
 	SDL_Rect pos;
 	SDL_Surface* texteGo;
 
 	// Fond d'écran
+	screenSurface = SDL_GetWindowSurface(getwindow());
 	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
 	SDL_Rect pos_fond_ecran;
 	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
@@ -166,7 +168,8 @@ int peserPhoto(SDL_Surface* screenSurface){
 
 } // end fonction peserPhoto()
 
-int peserLoading(SDL_Surface* screenSurface) {
+int peserLoading() {
+	SDL_Surface* screenSurface;
 	SDL_Rect pos;
 	SDL_Surface* texteTitre;
 	SDL_Surface* texteAttention;
@@ -174,6 +177,7 @@ int peserLoading(SDL_Surface* screenSurface) {
 	SDL_Color couleurRouge = {255, 0, 0};
 
 	// Fond d'écran
+	screenSurface = SDL_GetWindowSurface(getwindow());
 	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
 	SDL_Rect pos_fond_ecran;
 	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
@@ -239,7 +243,8 @@ int peserLoading(SDL_Surface* screenSurface) {
 	return 3; // On passe a la prise de photo de l'aliment
 }
 
-int peserLoading2(SDL_Surface* screenSurface) {
+int peserLoading2() {
+	SDL_Surface* screenSurface;
 	SDL_Rect pos;
 	SDL_Surface* texteTitre;
 	SDL_Surface* texteAttention;
@@ -247,6 +252,7 @@ int peserLoading2(SDL_Surface* screenSurface) {
 	SDL_Color couleurRouge = {255, 0, 0};
 
 	// Fond d'écran
+	screenSurface = SDL_GetWindowSurface(getwindow());
 	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
 	SDL_Rect pos_fond_ecran;
 	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
@@ -294,12 +300,14 @@ int peserLoading2(SDL_Surface* screenSurface) {
 	return 5; // On passe au choix de l'aliment reconnu
 }
 
-int peserBase(SDL_Surface* screenSurface){
+int peserBase(){
+	SDL_Furface* screenSurface;
 	SDL_Surface* texteRetour;
 	SDL_Rect pos;
 	SDL_Surface* texteGo;
 
 	// Fond d'écran
+	screenSurface = SDL_GetWindowSurface(getwindow());
 	SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
 	SDL_Rect pos_fond_ecran;
 	pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
@@ -519,8 +527,7 @@ int peserChoix() {
 	// Redimensionnement des images (160x160 pixels)
 	// Librairie SDL_gfx, fonction zoomSurface() sur les images
 	// Les images étant carrées, on ne récupère que la hauteur
-	int h1 = 42;
-	h1 = image1->h;
+	int h1 = image1->h;
 	double zoom1 = 160 / (double)h1;
 	image1 = zoomSurface(image1,zoom1,zoom1,0);
 
@@ -924,17 +931,14 @@ int peserChoixComplet() {
 }	// end fonction
 
 int peser() {
-	SDL_Surface* screenSurface;
-	screenSurface = SDL_GetWindowSurface(getwindow());
-
 	int loop = 1;
 	int page = 1;
 
 	while(loop==1) {
-		if(page==1) page = peserBase(screenSurface);
-		else if(page==2) page = peserLoading(screenSurface);
-		else if(page==3) page = peserPhoto(screenSurface);
-		else if(page==4) page = peserLoading2(screenSurface);
+		if(page==1) page = peserBase();
+		else if(page==2) page = peserLoading();
+		else if(page==3) page = peserPhoto();
+		else if(page==4) page = peserLoading2();
 		else if(page==5) page = peserChoix();
 		else if(page==6) page = peserChoixComplet();
 		else if(page==0) loop = 0;
