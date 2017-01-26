@@ -25,7 +25,7 @@ start:
 	./bin/GSA.exe
 
 forceMaj:
-	git pull &&	make clean && make && make start
+	git pull && make clean && make && make start
 	
 maj:
 	git pull && make && make start
