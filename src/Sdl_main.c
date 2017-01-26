@@ -1,6 +1,7 @@
 #include "Sdl_main.h"
 
 int main(int argc,char* args[]) {
+
 	int loop = 1;
 	int page = 1;
 
