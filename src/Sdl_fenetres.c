@@ -451,9 +451,11 @@ int peserChoix() {
 	}
 
 	// Construction du chemin vers l'image
-	char* chemin1 = malloc(100*sizeof(char));
+	char* chemin1 = NULL;
+	chemin1 = malloc(100*sizeof(char));
 	strcpy(chemin1,CHEMIN_IMAGES_ALIMENTS);
-	char* idchar1 = malloc(4*sizeof(char));
+	char* idchar1 = NULL;
+	idchar1 = malloc(4*sizeof(char));
 	sprintf(idchar1,"%d",listeAlim[0]);
 	strcat(chemin1,idchar1);
 	strcat(chemin1,".bmp");
@@ -462,9 +464,11 @@ int peserChoix() {
 	SDL_Surface *image1 = SDL_LoadBMP(chemin1);
 	free(chemin1);
 
-	char* chemin2 = malloc(100*sizeof(char));
+	char* chemin2 = NULL;
+	chemin2 = malloc(100*sizeof(char));
 	strcpy(chemin2,CHEMIN_IMAGES_ALIMENTS);
-	char* idchar2 = malloc(4*sizeof(char));
+	char* idchar2 = NULL;
+	idchar2 = malloc(4*sizeof(char));
 	sprintf(idchar2,"%d",listeAlim[1]);
 	strcat(chemin2,idchar2);
 	strcat(chemin2,".bmp");
@@ -473,9 +477,11 @@ int peserChoix() {
 	SDL_Surface *image2 = SDL_LoadBMP(chemin2);
 	free(chemin2);
 
-	char* chemin3 = malloc(100*sizeof(char));
+	char* chemin3 = NULL;
+	chemin3 = malloc(100*sizeof(char));
 	strcpy(chemin3,CHEMIN_IMAGES_ALIMENTS);
-	char* idchar3 = malloc(4*sizeof(char));
+	char* idchar3 = NULL;
+	idchar3 = malloc(4*sizeof(char));
 	sprintf(idchar3,"%d",listeAlim[2]);
 	strcat(chemin3,idchar3);
 	strcat(chemin3,".bmp");
@@ -484,9 +490,11 @@ int peserChoix() {
 	SDL_Surface *image3 = SDL_LoadBMP(chemin3);
 	free(chemin3);
 
-	char* chemin4 = malloc(100*sizeof(char));
+	char* chemin4 = NULL;
+	chemin4 = malloc(100*sizeof(char));
 	strcpy(chemin4,CHEMIN_IMAGES_ALIMENTS);
-	char* idchar4 = malloc(4*sizeof(char));
+	char* idchar4 = NULL;
+	idchar4 = malloc(4*sizeof(char));
 	sprintf(idchar4,"%d",listeAlim[3]);
 	strcat(chemin4,idchar4);
 	strcat(chemin4,".bmp");
@@ -495,9 +503,11 @@ int peserChoix() {
 	SDL_Surface *image4 = SDL_LoadBMP(chemin4);
 	free(chemin4);
 
-	char* chemin5 = malloc(100*sizeof(char));
+	char* chemin5 = NULL;
+	chemin5 = malloc(100*sizeof(char));
 	strcpy(chemin5,CHEMIN_IMAGES_ALIMENTS);
-	char* idchar5 = malloc(4*sizeof(char));
+	char* idchar5 = NULL;
+	idchar5 = malloc(4*sizeof(char));
 	sprintf(idchar5,"%d",listeAlim[4]);
 	strcat(chemin5,idchar5);
 	strcat(chemin5,".bmp");
