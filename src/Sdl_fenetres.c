@@ -482,10 +482,6 @@ int peserChoix() {
 	strcat(chemin5,".bmp");
 
 	// Images
-	printf("\nChemin1 : %s",chemin1);
-	printf("\nChemin2 : %s",chemin2);
-	printf("\nChemin3 : %s",chemin3);
-	printf("\nChemin4 : %s",chemin4);
 	printf("\nChemin5 : %s",chemin5);
 
 	SDL_Surface *image1 = SDL_LoadBMP(chemin1);
