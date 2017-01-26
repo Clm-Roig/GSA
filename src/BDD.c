@@ -359,13 +359,14 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         i++;
     }
 
-    printf("\naprès le while");
     // Fin de boucle : tout le fichier est parcouru
     fclose(fichier);
 
     // On récupère les 5 aliments plus pertinents
     // Classement du tableau
     int j;
+
+    printf("\nAvant le classement");
     for (i = 0; i < nbAlimentsTrouves; i++) {
         for (j = i + 1; j < nbAlimentsTrouves; j++) {
             if(tabPertinence[i] > tabPertinence[j]) {
@@ -379,6 +380,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         }
     }
 
+    printf("\nAvant la recopie");
     // On recopie les 5 premiers dans listeIds
     for (i = 0; i < 5; i++) {
         listeIds[i] = tabId[i];
