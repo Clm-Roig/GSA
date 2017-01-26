@@ -475,6 +475,14 @@ int peserChoix() {
 	strcat(chemin3,".bmp");
 	free(idchar3);
 
+	char* chemin5 = malloc(100*sizeof(char));
+	strcpy(chemin5,CHEMIN_IMAGES_ALIMENTS);
+	char* idchar5 = malloc(4*sizeof(char));
+	sprintf(idchar5,"%d",listeAlim[4]);
+	strcat(chemin5,idchar5);
+	strcat(chemin5,".bmp");
+	free(idchar5);
+
 	char* chemin4 = malloc(100*sizeof(char));
 	strcpy(chemin4,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar4 = malloc(4*sizeof(char));
@@ -483,12 +491,6 @@ int peserChoix() {
 	strcat(chemin4,".bmp");
 	free(idchar4);
 
-	char* chemin5 = malloc(100*sizeof(char));
-	strcpy(chemin5,CHEMIN_IMAGES_ALIMENTS);
-	char* idchar5 = malloc(4*sizeof(char));
-	sprintf(idchar5,"%d",listeAlim[4]);
-	strcat(chemin5,idchar5);
-	strcat(chemin5,".bmp");
 
 	// Images
 	printf("\nChemin5 : %s",chemin5);
