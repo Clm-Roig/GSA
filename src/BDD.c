@@ -381,9 +381,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
     for (i=0; i < nbAlimentsTotal ; i++) {
         listeIds[i] = tabId[i];
     }
-    printf("\nJuste avant le return");
 
-    // Seg fault wtf
     return listeIds;
 }
 
