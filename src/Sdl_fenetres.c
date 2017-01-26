@@ -546,7 +546,7 @@ int peserChoix() {
 	SDL_BlitSurface(image2,NULL,screenSurface,&pos2);
 	SDL_BlitSurface(image3,NULL,screenSurface,&pos3);
 	SDL_BlitSurface(image4,NULL,screenSurface,&pos4);
-	SDL_BlitSurface(image5,NULL,screenSurface,&pos5);
+//	SDL_BlitSurface(image5,NULL,screenSurface,&pos5);
 
 	// Ajout boutton Autre aliment
 	SDL_Rect bouttonAutre;
