@@ -277,8 +277,6 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         ligneLu = lireLigne(fichier,i);
         idLu = atoi(strtok(ligneLu,";"));
 
-        printf("\nid Lu : %d",idLu);
-
         setRCoul(getRCoul(getCouleurAliment(idLu)),couleurLu);
         setGCoul(getGCoul(getCouleurAliment(idLu)),couleurLu);
         setBCoul(getBCoul(getCouleurAliment(idLu)),couleurLu);
