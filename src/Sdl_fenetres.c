@@ -370,6 +370,8 @@ int peserBase(SDL_Surface* screenSurface){
 
 int peserChoix() {
 
+	printf("\nPeser Choix atteint");
+
 	SDL_Surface* screenSurface;
 	SDL_Surface* texteTitre;
 	SDL_Surface* texteMenu;
@@ -442,8 +444,10 @@ int peserChoix() {
 
 	// Chargement des 5 aliments probables
 	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
+	printf("\nAvant getIdAlimentParCouleur");
 	int* listeAlim = getIdAlimentParCouleur(coulAlim);
-
+	printf("\nAprès getIdAlimentParCouleur");
+	
 	// Construction du chemin vers l'image
 	char* chemin1 = malloc(100*sizeof(char*));
 	strcpy(chemin1,CHEMIN_IMAGES_ALIMENTS);

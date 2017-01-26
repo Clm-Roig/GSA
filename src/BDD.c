@@ -332,9 +332,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         float seuilH = 15;
         float seuilS = 0.20;
         float seuilL = 0.20;
-
-        printf("\nHSL %s : %f %f %f",getNomAliment(idLu),hBdd,sBdd,lBdd);
-
+        
         // Le H est cyclique
         float ecartH = abs(hAl - hBdd);
         if(360.0 - ecartH < 180.0) {
