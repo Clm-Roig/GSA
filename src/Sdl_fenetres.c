@@ -301,7 +301,7 @@ int peserLoading2() {
 }
 
 int peserBase(){
-	SDL_Furface* screenSurface;
+	SDL_Surface* screenSurface;
 	SDL_Surface* texteRetour;
 	SDL_Rect pos;
 	SDL_Surface* texteGo;
