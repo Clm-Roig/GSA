@@ -384,7 +384,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
 
     printf("\nJuste avant le return");
     printf("\nPrintf du tableau");
-    for(i=0; i < limite ; i++) {
+    for(i=0; i < nbAlimentsTotal ; i++) {
         printf("\n%d",listeIds[i]);
     }
     return listeIds;
