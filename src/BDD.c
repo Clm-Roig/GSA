@@ -273,9 +273,9 @@ int* getIdAlimentParCouleur(Couleur* coul) {
     i=2;
 
     printf("\nAvant le while ok");
-    while (i <= nbLignesFichier(fichier)) {
+    while (i < nbLignesFichier(fichier)) {
         printf("\nwhile n° %d",i);
-        
+
         ligneLu = lireLigne(fichier,i);
         idLu = atoi(strtok(ligneLu,";"));
 
