@@ -493,9 +493,8 @@ int peserChoix() {
 	free(idchar4);
 
 	SDL_Surface *image4 = SDL_LoadBMP(chemin4);
-		printf("\nChemin4 : %s",chemin4);
 	free(chemin4);
-
+/*
 	char* chemin5 = malloc(100*sizeof(char));
 	strcpy(chemin5,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar5 = malloc(4*sizeof(char));
@@ -505,12 +504,8 @@ int peserChoix() {
 	free(idchar5);
 
 	SDL_Surface *image5 = SDL_LoadBMP(chemin5);
-	printf("\nChemin5 : %s",chemin5);
 	free(chemin5);
-
-
-
-
+*/
 	// Redimensionnement des images (160x160 pixels)
 	// Librairie SDL_gfx, fonction zoomSurface() sur les images
 	// Les images étant carrées, on ne récupère que la hauteur
@@ -529,11 +524,11 @@ int peserChoix() {
 	int h4 = image4->h;
 	double zoom4 = 160 / (double)h4;
 	image4 = zoomSurface(image4,zoom4,zoom4,0);
-
+/*
 	int h5 = image5->h;
 	double zoom5 = 160 / (double)h5;
 	image5 = zoomSurface(image5,zoom5,zoom5,0);
-
+*/
 	// Positionnement des images
 	SDL_Rect pos1;
 	pos1.x = objet1.x+10; pos1.y = objet1.y+10;
