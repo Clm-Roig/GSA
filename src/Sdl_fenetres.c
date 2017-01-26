@@ -445,7 +445,7 @@ int peserChoix() {
 	printf("\nAvant getIdAlimentParCouleur");
 
 	int* listeAlim = NULL;
-	listeAliment = getIdAlimentParCouleur(coulAlim);
+	listeAlim = getIdAlimentParCouleur(coulAlim);
 
 	printf("\nAprès getIdAlimentParCouleur");
 
