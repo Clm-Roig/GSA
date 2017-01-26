@@ -444,8 +444,6 @@ int peserChoix() {
 	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
 
 	int* listeAlim = getIdAlimentParCouleur(coulAlim);
-	
-	printf("\nAprès getIdAlimentParCouleur");
 
 	// Construction du chemin vers l'image
 	char* chemin1 = malloc(100*sizeof(char*));
@@ -484,6 +482,12 @@ int peserChoix() {
 	strcat(chemin5,".bmp");
 
 	// Images
+	printf("\nChemin1 : %s",chemin1);
+	printf("\nChemin2 : %s",chemin2);
+	printf("\nChemin3 : %s",chemin3);
+	printf("\nChemin4 : %s",chemin4);
+	printf("\nChemin5 : %s",chemin5);
+
 	SDL_Surface *image1 = SDL_LoadBMP(chemin1);
 	SDL_Surface *image2 = SDL_LoadBMP(chemin2);
 	SDL_Surface *image3 = SDL_LoadBMP(chemin3);
