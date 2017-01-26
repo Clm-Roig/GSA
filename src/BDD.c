@@ -385,8 +385,6 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         listeIds[i] = tabId[i];
     }
 
-    printf("\nAprès la recopie");
-
     return listeIds;
 }
 
