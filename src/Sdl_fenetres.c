@@ -447,7 +447,7 @@ int peserChoix() {
 	printf("\nAvant getIdAlimentParCouleur");
 	int* listeAlim = getIdAlimentParCouleur(coulAlim);
 	printf("\nAprès getIdAlimentParCouleur");
-	
+
 	// Construction du chemin vers l'image
 	char* chemin1 = malloc(100*sizeof(char*));
 	strcpy(chemin1,CHEMIN_IMAGES_ALIMENTS);
@@ -1162,8 +1162,8 @@ int stock() {
 	            switch(event.key.keysym.sym)
 	            {
 	            	case SDLK_ESCAPE:
-	                    loop= 0;
-	                    return 0;
+	                    loop = 0;
+	                    return 1;
 	                    break;
 	                }
 	                break;
