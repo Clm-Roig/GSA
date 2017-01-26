@@ -445,6 +445,10 @@ int peserChoix() {
 
 	int* listeAlim = getIdAlimentParCouleur(coulAlim);
 
+	for(i=0; i<5 ;i++){
+		printf("\n%d : %d"i,listeAlim[i]);
+	}
+
 	// Construction du chemin vers l'image
 	char* chemin1 = malloc(100*sizeof(char));
 	strcpy(chemin1,CHEMIN_IMAGES_ALIMENTS);
@@ -466,14 +470,14 @@ int peserChoix() {
 	sprintf(idchar3,"%d",listeAlim[2]);
 	strcat(chemin3,idchar3);
 	strcat(chemin3,".bmp");
-/*
+
 	char* chemin4 = malloc(100*sizeof(char));
 	strcpy(chemin4,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar4 = malloc(4*sizeof(char));
 	sprintf(idchar4,"%d",listeAlim[3]);
 	strcat(chemin4,idchar4);
 	strcat(chemin4,".bmp");
-*/
+
 	char* chemin5 = malloc(100*sizeof(char));
 	strcpy(chemin5,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar5 = malloc(4*sizeof(char));
