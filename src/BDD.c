@@ -382,10 +382,6 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         listeIds[i] = tabId[i];
     }
 
-    // Free memory
-    free(tabId);
-    free(tabPertinence);
-    free(ligneLu);
     printf("\nJuste avant le return");
 
     // Seg fault wtf
