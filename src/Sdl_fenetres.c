@@ -459,6 +459,9 @@ int peserChoix() {
 	strcat(chemin1,".bmp");
 	free(idchar1);
 
+	SDL_Surface *image1 = SDL_LoadBMP(chemin1);
+	free(chemin1);
+
 	char* chemin2 = malloc(100*sizeof(char));
 	strcpy(chemin2,CHEMIN_IMAGES_ALIMENTS);
 	char* idchar2 = malloc(4*sizeof(char));
@@ -466,6 +469,9 @@ int peserChoix() {
 	strcat(chemin2,idchar2);
 	strcat(chemin2,".bmp");
 	free(idchar2);
+
+	SDL_Surface *image2 = SDL_LoadBMP(chemin2);
+	free(chemin2);
 
 	char* chemin3 = malloc(100*sizeof(char));
 	strcpy(chemin3,CHEMIN_IMAGES_ALIMENTS);
@@ -475,13 +481,8 @@ int peserChoix() {
 	strcat(chemin3,".bmp");
 	free(idchar3);
 
-	char* chemin5 = malloc(100*sizeof(char));
-	strcpy(chemin5,CHEMIN_IMAGES_ALIMENTS);
-	char* idchar5 = malloc(4*sizeof(char));
-	sprintf(idchar5,"%d",listeAlim[4]);
-	strcat(chemin5,idchar5);
-	strcat(chemin5,".bmp");
-	free(idchar5);
+	SDL_Surface *image3 = SDL_LoadBMP(chemin3);
+	free(chemin3);
 
 	char* chemin4 = malloc(100*sizeof(char));
 	strcpy(chemin4,CHEMIN_IMAGES_ALIMENTS);
@@ -490,16 +491,25 @@ int peserChoix() {
 	strcat(chemin4,idchar4);
 	strcat(chemin4,".bmp");
 	free(idchar4);
+	SDL_Surface *image4 = SDL_LoadBMP(chemin4);
+	free(chemin4);
 
+	SDL_Surface *image3 = SDL_LoadBMP(chemin3);
+	free(chemin3);
 
-	// Images
+	char* chemin5 = malloc(100*sizeof(char));
+	strcpy(chemin5,CHEMIN_IMAGES_ALIMENTS);
+	char* idchar5 = malloc(4*sizeof(char));
+	sprintf(idchar5,"%d",listeAlim[4]);
+	strcat(chemin5,idchar5);
+	strcat(chemin5,".bmp");
+	free(idchar5);
+
+	SDL_Surface *image5 = SDL_LoadBMP(chemin5);
+	free(chemin5);
+
 	printf("\nChemin5 : %s",chemin5);
 
-	SDL_Surface *image1 = SDL_LoadBMP(chemin1);
-	SDL_Surface *image2 = SDL_LoadBMP(chemin2);
-	SDL_Surface *image3 = SDL_LoadBMP(chemin3);
-	SDL_Surface *image4 = SDL_LoadBMP(chemin4);
-	SDL_Surface *image5 = SDL_LoadBMP(chemin5);
 
 	// Redimensionnement des images (160x160 pixels)
 	// Librairie SDL_gfx, fonction zoomSurface() sur les images
@@ -704,6 +714,9 @@ int peserChoixComplet() {
 			SDL_BlitSurface(image,NULL,screenSurface,&pos);
 		}
 	}
+
+	free(chemin);
+	free(idchar);
 
 	SDL_UpdateWindowSurface(getwindow());
 
