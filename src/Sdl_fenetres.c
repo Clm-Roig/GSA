@@ -453,6 +453,7 @@ int peserChoix() {
 
 	int* listeAlim = getIdAlimentParCouleur(coulAlim);
 
+	// listeAlim ne contient pas le 5ème id... wtf
 	int i;
 	for(i=0; i<5 ;i++){
 		printf("\n%d : %d",i,listeAlim[i]);
