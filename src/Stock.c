@@ -18,6 +18,8 @@ long int** getTabIdDureeAvantPer(int limite) {
         char* date = strtok(NULL,";"); // date
         tabDates[compteurTuples] = date;
         compteurTuples++;
+
+        printf("\nTabId en stock : %s",tabId[compteurTuples]);
     }
 
     // Récupèration des durées de péremption de chaque aliment pesé
