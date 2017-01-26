@@ -19,13 +19,10 @@ long int** getTabIdDureeAvantPer(int limite) {
         strtok(ligneLu,";"); // id pesée
         strtok(NULL,";"); // quantité
         strtok(NULL,";"); // description
-        char* date = strtok(NULL,";"); // date
-
-        tabId[compteurTuples] = strtok(ligneLu,";"); //id aliment
-        tabDates[compteurTuples] = date;
+        tabDates[compteurTuples] = strtok(NULL,";"); // date
+        tabId[compteurTuples] = strtok(NULL,";"); //id aliment
 
         printf("\nidaliment : %s",tabId[compteurTuples]);
-        printf("\ndate : %s",tabDates[compteurTuples]);
 
         compteurTuples++;
     }
