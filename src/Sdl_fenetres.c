@@ -443,8 +443,9 @@ int peserChoix() {
 	// Chargement des 5 aliments probables
 	// TODO : getIdAlimentParCouleur doit pouvoir prendre un offset en paramètre (pour l'instant il renvoie 5 alims)
 	printf("\nAvant getIdAlimentParCouleur");
-	
-	int* listeAlim = getIdAlimentParCouleur(coulAlim);
+
+	int* listeAlim = NULL;
+	listeAliment = getIdAlimentParCouleur(coulAlim);
 
 	printf("\nAprès getIdAlimentParCouleur");
 
