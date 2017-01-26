@@ -383,7 +383,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
     }
 
     printf("Avant return");
-    return listeIds;
+    return &listeIds[0];
 }
 
 // Lecture Pesees
