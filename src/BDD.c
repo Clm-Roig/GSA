@@ -383,10 +383,8 @@ int* getIdAlimentParCouleur(Couleur* coul) {
     }
 
     printf("\nJuste avant le return");
-    printf("\nPrintf du tableau");
-    for(i=0; i < nbAlimentsTotal ; i++) {
-        printf("\n%d",listeIds[i]);
-    }
+
+    // Seg fault wtf
     return listeIds;
 }
 
