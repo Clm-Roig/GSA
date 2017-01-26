@@ -379,6 +379,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
     for (i=0; i < nbAlimentsTotal ; i++) {
         listeIds[i] = tabId[i];
     }
+    printf("\nCase 5 : %d",listeIds[4]);
 
     return listeIds;
 }
