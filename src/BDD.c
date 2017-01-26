@@ -385,6 +385,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         printf("\ntabId[i] : %d",tabId[i]);
     }
 
+    printf("Avant return");
     return listeIds;
 }
 
