@@ -195,12 +195,12 @@ int* getIdAlimentParCouleur(Couleur* coul) {
     int nbAlimentsTotal = 5;
     int nbAlimentsTrouves = 0;
 
-    int* listeIds = NULL;
-    listeIds = malloc(nbAlimentsTotal*sizeof(int));
+    int* Ids = NULL;
+    Ids = malloc(nbAlimentsTotal*sizeof(int));
     int i=0;
     // Initialisation des ids à 0
     for (i=0; i < nbAlimentsTotal; i++) {
-        listeIds[i]=0;
+        Ids[i]=0;
     }
 
     char* ligneLu = NULL;
@@ -377,12 +377,12 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         }
     }
 
-    // On recopie les 5 premiers dans listeIds
+    // On recopie les 5 premiers (=nbAlimentsTotal) dans Ids
     for (i=0; i < nbAlimentsTotal ; i++) {
-        listeIds[i] = tabId[i];
+        Ids[i] = tabId[i];
     }
 
-    return listeIds;
+    return Ids;
 }
 
 // Lecture Pesees
