@@ -491,11 +491,9 @@ int peserChoix() {
 	strcat(chemin4,idchar4);
 	strcat(chemin4,".bmp");
 	free(idchar4);
+
 	SDL_Surface *image4 = SDL_LoadBMP(chemin4);
 	free(chemin4);
-
-	SDL_Surface *image3 = SDL_LoadBMP(chemin3);
-	free(chemin3);
 
 	char* chemin5 = malloc(100*sizeof(char));
 	strcpy(chemin5,CHEMIN_IMAGES_ALIMENTS);
