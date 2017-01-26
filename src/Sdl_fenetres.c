@@ -519,7 +519,8 @@ int peserChoix() {
 	// Redimensionnement des images (160x160 pixels)
 	// Librairie SDL_gfx, fonction zoomSurface() sur les images
 	// Les images étant carrées, on ne récupère que la hauteur
-	int h1 = image1->h;
+	int h1 = 42;
+	h1 = image1->h;
 	double zoom1 = 160 / (double)h1;
 	image1 = zoomSurface(image1,zoom1,zoom1,0);
 
