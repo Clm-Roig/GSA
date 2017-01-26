@@ -350,8 +350,6 @@ int* getIdAlimentParCouleur(Couleur* coul) {
                     tabPertinence[nbAlimentsTrouves] = ecartH;
                     nbAlimentsTrouves++;
                     printf("\nnbAliments trouvés : %d",nbAlimentsTrouves);
-
-
                 }
             }
         }
@@ -381,8 +379,8 @@ int* getIdAlimentParCouleur(Couleur* coul) {
 
     // On recopie les 5 premiers dans listeIds
     for (i=0; i < nbAlimentsTotal ; i++) {
-        printf("\n i = %d",i);
-        listeIds[i] = tabId[i];
+    //    listeIds[i] =
+        printf("tabId[i] : %d",tabId[i]);
     }
 
     return listeIds;
