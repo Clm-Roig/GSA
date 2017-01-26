@@ -11,15 +11,18 @@ long int** getTabIdDureeAvantPer(int limite) {
     int compteurTuples = 0;
     char* tabId[nbLignesFichier(fichier)-1];
     char* tabDates[nbLignesFichier(fichier)-1];
+    char* ligneLu = NULL;
+    ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
     for(i=2; i <= nbLignesFichier(fichier) ;i++){
-        tabId[compteurTuples] = strtok(lireLigne(fichier,i),";"); //id
+        ligneLu = lireLigne(fichier,i);
+        tabId[compteurTuples] = strtok(ligneLu,";"); //id
         strtok(NULL,";"); // quantité
         strtok(NULL,";"); // description
         char* date = strtok(NULL,";"); // date
         tabDates[compteurTuples] = date;
         compteurTuples++;
 
-        printf("\nTabId en stock : %s",tabId[compteurTuples]);
+        printf("\nLigne lu : %s",ligneLu);
     }
 
     // Récupèration des durées de péremption de chaque aliment pesé
