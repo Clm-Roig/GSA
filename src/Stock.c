@@ -11,15 +11,18 @@ long int** getTabIdDureeAvantPer(int limite) {
     int compteurTuples = 0;
     char* tabId[nbLignesFichier(fichier)-1];
     char* tabDates[nbLignesFichier(fichier)-1];
-    char* ligneLu = NULL;
-    ligneLu = malloc(TAILLE_MAX_LIGNE*sizeof(char));
+
     for(i=2; i <= nbLignesFichier(fichier) ;i++){
-        ligneLu = lireLigne(fichier,i);
-        tabId[compteurTuples] = strtok(ligneLu,";"); //id
+        char* ligneLu = lireLigne(fichier,i);
+
+        strtok(ligneLu,";"); // id pesée
         strtok(NULL,";"); // quantité
         strtok(NULL,";"); // description
         char* date = strtok(NULL,";"); // date
+
+        tabId[compteurTuples] = strtok(ligneLu,";"); //id aliment
         tabDates[compteurTuples] = date;
+
         compteurTuples++;
 
         printf("\nLigne lu : %s",ligneLu);
