@@ -377,14 +377,13 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         }
     }
 
-    printf("\nClassement ok");
-
     // On recopie les 5 premiers dans listeIds
     for (i=0; i < nbAlimentsTotal ; i++) {
         listeIds[i] = tabId[i];
     }
 
-    return listeIds;
+    int* ptr = 3;
+    return ptr;
 }
 
 // Lecture Pesees
