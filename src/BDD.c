@@ -199,7 +199,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
     listeIds = malloc(nbAlimentsTotal*sizeof(int));
     int i=0;
     // Initialisation des ids à 0
-    for (i=0; i<nbAlimentsTotal; i++) {
+    for (i=0; i < nbAlimentsTotal; i++) {
         listeIds[i]=0;
     }
 
@@ -379,12 +379,13 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         }
     }
 
-    printf("\nAvant la recopie");
     // On recopie les 5 premiers dans listeIds
-    for (i=0; i < 5 ; i++) {
+    for (i=0; i < nbAlimentsTotal ; i++) {
         printf("\n i = %d",i);
         listeIds[i] = tabId[i];
     }
+
+    printf("\nAprès la recopie");
 
     return listeIds;
 }
