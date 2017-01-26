@@ -80,9 +80,22 @@ long int** getTabIdDureeAvantPer(int limite) {
     }
 
     // Remplissage du tableau final
-    for (i = 0; i < limite; i++) {
-        resTab[i][0] = resTabFull[i][0];
-        resTab[i][1] = resTabFull[i][1];
+    if(limite >= compteurTuples) {
+        for (i = 0; i < limite; i++) {
+            resTab[i][0] = resTabFull[i][0];
+            resTab[i][1] = resTabFull[i][1];
+        }
+    }
+    // Il y avait moins de pesees que la limite, on remplit avec des 0
+    else {
+        for (i = 0; i < compteurTuples; i++) {
+            resTab[i][0] = resTabFull[i][0];
+            resTab[i][1] = resTabFull[i][1];
+        }
+        for (i = compteurTuples; i < limite; i++) {
+            resTab[i][0] = 0;
+            resTab[i][1] = 0;
+        }
     }
 
     return resTab;
