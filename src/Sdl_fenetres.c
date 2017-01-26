@@ -446,7 +446,7 @@ int peserChoix() {
 	int* listeAlim = getIdAlimentParCouleur(coulAlim);
 
 	for(i=0; i<5 ;i++){
-		printf("\n%d : %d"i,listeAlim[i]);
+		printf("\n%d : %d",i,listeAlim[i]);
 	}
 
 	// Construction du chemin vers l'image
