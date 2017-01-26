@@ -272,12 +272,12 @@ int* getIdAlimentParCouleur(Couleur* coul) {
 
     i=2;
 
-    printf("\nAvant le while ok");
     while (i < nbLignesFichier(fichier)) {
-        printf("\nwhile n° %d",i);
 
         ligneLu = lireLigne(fichier,i);
         idLu = atoi(strtok(ligneLu,";"));
+
+        printf("\nid Lu : %d",idLu);
 
         setRCoul(getRCoul(getCouleurAliment(idLu)),couleurLu);
         setGCoul(getGCoul(getCouleurAliment(idLu)),couleurLu);
@@ -348,6 +348,9 @@ int* getIdAlimentParCouleur(Couleur* coul) {
                 if (abs(lAl - lBdd) < seuilL) {
                     tabId[nbAlimentsTrouves] = idLu;
                     tabPertinence[nbAlimentsTrouves] = ecartH;
+
+                    printf("\nnbAliments trouvés : %d",nbAlimentsTrouves);
+
                     nbAlimentsTrouves++;
                 }
             }
