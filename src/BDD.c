@@ -346,10 +346,9 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         if (ecartH < seuilH) {
             if (abs(sAl - sBdd) < seuilS) {
                 if (abs(lAl - lBdd) < seuilL) {
+                    tabId[nbAlimentsTrouves] = idLu;
+                    tabPertinence[nbAlimentsTrouves] = ecartH;
                     nbAlimentsTrouves++;
-                    tabId[nbAlimentsTrouves-1] = idLu;
-                    tabPertinence[nbAlimentsTrouves*1] = ecartH;
-
                     printf("\nnbAliments trouvés : %d",nbAlimentsTrouves);
 
 
@@ -360,6 +359,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         i++;
     }
 
+    printf("\naprès le while");
     // Fin de boucle : tout le fichier est parcouru
     fclose(fichier);
 
