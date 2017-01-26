@@ -493,6 +493,7 @@ int peserChoix() {
 	free(idchar4);
 
 	SDL_Surface *image4 = SDL_LoadBMP(chemin4);
+		printf("\nChemin4 : %s",chemin4);
 	free(chemin4);
 
 	char* chemin5 = malloc(100*sizeof(char));
@@ -504,9 +505,10 @@ int peserChoix() {
 	free(idchar5);
 
 	SDL_Surface *image5 = SDL_LoadBMP(chemin5);
+	printf("\nChemin5 : %s",chemin5);
 	free(chemin5);
 
-	printf("\nChemin5 : %s",chemin5);
+
 
 
 	// Redimensionnement des images (160x160 pixels)
