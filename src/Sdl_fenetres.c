@@ -370,8 +370,6 @@ int peserBase(SDL_Surface* screenSurface){
 
 int peserChoix() {
 
-	printf("\nPeser Choix atteint");
-
 	SDL_Surface* screenSurface;
 	SDL_Surface* texteTitre;
 	SDL_Surface* texteMenu;

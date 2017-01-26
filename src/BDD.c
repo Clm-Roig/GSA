@@ -271,7 +271,11 @@ int* getIdAlimentParCouleur(Couleur* coul) {
     }
 
     i=2;
+
+    printf("\nAvant le while ok");
     while (i <= nbLignesFichier(fichier)) {
+        printf("\nwhile n° %d",i);
+        
         ligneLu = lireLigne(fichier,i);
         idLu = atoi(strtok(ligneLu,";"));
 
@@ -332,7 +336,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         float seuilH = 15;
         float seuilS = 0.20;
         float seuilL = 0.20;
-        
+
         // Le H est cyclique
         float ecartH = abs(hAl - hBdd);
         if(360.0 - ecartH < 180.0) {
