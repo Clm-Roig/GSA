@@ -610,13 +610,12 @@ int peserChoix() {
 		 		}
 		    }
 
-			// On boucle, ça n'a pas sauvé
-			if(marche2 != 1) {
-				printf("\nErreur suppression d'un aliment en stock");
-			} else {
-			// enregistrement ok
+			// Ecriture d'un aliment en BDD ok
+			if(marche2 == 1) {
+				printf("\nEnregistrement d'un aliment dans le stock.");
 				return 0;
 			}
+			// on boucle, aucun event notable ou erreur sauvegarde aliment en BDD
 
 		}
 	} // end while event
