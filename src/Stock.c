@@ -14,15 +14,12 @@ long int** getTabIdDureeAvantPer(int limite) {
 
     for(i=2; i <= nbLignesFichier(fichier) ;i++){
         char* ligneLu = lireLigne(fichier,i);
-        printf("\nLigne lu : %s",ligneLu);
 
         strtok(ligneLu,";"); // id pesée
         strtok(NULL,";"); // quantité
         strtok(NULL,";"); // description
         tabDates[compteurTuples] = strtok(NULL,";"); // date
         tabId[compteurTuples] = strtok(NULL,";"); //id aliment
-
-        printf("\nidaliment : %s",tabId[compteurTuples]);
 
         compteurTuples++;
     }
@@ -66,11 +63,6 @@ long int** getTabIdDureeAvantPer(int limite) {
                 resTabFull[j][1] = duree;
             }
         }
-    }
-
-    // Couper à partir de "limite"
-    if(limite > compteurTuples) {
-        limite = compteurTuples;
     }
 
     // Allocation du tableau final

@@ -1168,7 +1168,7 @@ int stock() {
 	 		return 1; // retour au menu Accueil
 	    }
 
-		// Suppression d'un aliment en stock + retour accueil
+		// Suppression d'un aliment en stock + retour stock (même affichage)
 	    else {
 			int controleSuppr = 0;
 			if((x>=objet1.x)&&(x<=(objet1.x+objet1.w))&&(y>=objet1.y)&&(y<=(objet1.y+objet1.h))){
