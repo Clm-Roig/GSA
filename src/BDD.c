@@ -366,7 +366,6 @@ int* getIdAlimentParCouleur(Couleur* coul) {
     // Classement du tableau
     int j;
 
-    printf("\nAvant le classement");
     for (i = 0; i < nbAlimentsTrouves; i++) {
         for (j = i + 1; j < nbAlimentsTrouves; j++) {
             if(tabPertinence[i] > tabPertinence[j]) {
@@ -382,7 +381,8 @@ int* getIdAlimentParCouleur(Couleur* coul) {
 
     printf("\nAvant la recopie");
     // On recopie les 5 premiers dans listeIds
-    for (i = 0; i < 5; i++) {
+    for (i=0; i < 5 ; i++) {
+        printf("\n i = %d",i);
         listeIds[i] = tabId[i];
     }
 
