@@ -14,6 +14,7 @@ long int** getTabIdDureeAvantPer(int limite) {
 
     for(i=2; i <= nbLignesFichier(fichier) ;i++){
         char* ligneLu = lireLigne(fichier,i);
+        printf("\n\nLigne lu : %s",ligneLu);
 
         strtok(ligneLu,";"); // id pesée
         strtok(NULL,";"); // quantité
@@ -23,9 +24,9 @@ long int** getTabIdDureeAvantPer(int limite) {
         tabId[compteurTuples] = strtok(ligneLu,";"); //id aliment
         tabDates[compteurTuples] = date;
 
-        compteurTuples++;
+        printf("\nidaliment : %s",tabId[compteurTuples]);
 
-        printf("\nLigne lu : %s",ligneLu);
+        compteurTuples++;
     }
 
     // Récupèration des durées de péremption de chaque aliment pesé
