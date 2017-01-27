@@ -39,7 +39,7 @@ int main(int argc,char* args[]) {
 */
 
 
-	Couleur* coul = initCouleurAvecParam(8,146,190);
+	Couleur* coul = initCouleurAvecParam(180,146,19);
 	int* liste = getIdAlimentParCouleur(coul);
 	int i;
 	for(i=0; i<5 ;i++){
