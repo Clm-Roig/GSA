@@ -1007,7 +1007,7 @@ int stock() {
 
 	int j;
 	printf("\n\nTab id + duree avant péremp");
-	for(j=0; j<24 ;j++) {
+	for(j=0; j<5 ;j++) {
 		printf("\n%d  |  %ld  |  %ld",j,listeIdDuree[j][0],listeIdDuree[j][1]);
 	}
 
