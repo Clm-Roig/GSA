@@ -710,7 +710,6 @@ int peserChoixComplet() {
 			strcat(chemin,".bmp");
 
 			// Images
-			printf("i = %d",i);
 			SDL_Surface *image = SDL_LoadBMP(chemin);
 
 			// Redimensionnement des images (170x170 pixels)

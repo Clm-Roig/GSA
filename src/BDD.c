@@ -107,8 +107,8 @@ int* getIdsAliments(int nbAliments){
     while (i <= nbLignesFichier(fichier) && nbAlimentsTrouves < nbAlimentsTotal) {
         ligneLu = lireLigne(fichier,i);
         idLu = atoi(strtok(ligneLu,";"));
+        listeIds[nbAlimentsTrouves] = idLu;
         nbAlimentsTrouves++;
-        listeIds[nbAlimentsTrouves-1] = idLu;
         i++;
     }
     // Fin de boucle : tout le fichier est parcouru
