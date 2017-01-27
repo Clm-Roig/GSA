@@ -225,7 +225,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
     }
     else {
         if(rapGal > rapBal) cMaxAl = rapGal;
-        else cMaxAl = rapRal;
+        else cMaxAl = rapBal;
     }
 
     // Calcul Cmin
@@ -297,7 +297,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
         }
         else {
             if(rapGbdd > rapBbdd) cMaxBdd = rapGbdd;
-            else cMaxBdd = rapRbdd;
+            else cMaxBdd = rapBbdd;
         }
 
         // Calcul Cmin
