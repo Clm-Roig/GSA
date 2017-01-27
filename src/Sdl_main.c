@@ -45,9 +45,9 @@ int main(int argc,char* args[]) {
 	for(i=0; i<5 ;i++){
 		printf("\n%d",liste[i]);
 	}
-
+*/
 	return 0;
 
-*/
+
 
 }
