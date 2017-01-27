@@ -347,7 +347,6 @@ int* getIdAlimentParCouleur(Couleur* coul) {
                     tabId[nbAlimentsTrouves] = idLu;
                     tabPertinence[nbAlimentsTrouves] = ecartH;
                     nbAlimentsTrouves++;
-                    printf("\nnbAliments trouvés : %d",nbAlimentsTrouves);
                 }
             }
         }

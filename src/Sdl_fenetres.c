@@ -453,12 +453,6 @@ int peserChoix() {
 
 	int* listeAlim = getIdAlimentParCouleur(coulAlim);
 
-	// listeAlim ne contient pas le 5ème id... wtf
-	int i;
-	for(i=0; i<5 ;i++){
-		printf("\n%d : %d",i,listeAlim[i]);
-	}
-
 	// Construction du chemin vers l'image
 	char* chemin1 = NULL;
 	chemin1 = malloc(100*sizeof(char));
