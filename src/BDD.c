@@ -347,6 +347,7 @@ int* getIdAlimentParCouleur(Couleur* coul) {
                     tabId[nbAlimentsTrouves] = idLu;
                     tabPertinence[nbAlimentsTrouves] = ecartH;
                     nbAlimentsTrouves++;
+                    printf("\nHSL %s : %f %f %f",getNomAliment(idLu),hBdd,sBdd,lBdd);
                 }
             }
         }
