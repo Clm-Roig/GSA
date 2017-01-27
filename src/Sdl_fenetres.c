@@ -1213,27 +1213,27 @@ int stock() {
 			int controleSuppr = 0;
 			if((x>=objet1.x)&&(x<=(objet1.x+objet1.w))&&(y>=objet1.y)&&(y<=(objet1.y+objet1.h))){
 		 		controleSuppr = supprimerDonneePesee(listeIdDuree[0][0]);
-				printf("\nSuppression de la %d",getNomAliment(listeIdDuree[0][0]);
+				printf("\nSuppression de la (du) %d",getNomAliment(listeIdDuree[0][0]);
 		 		return 3; // retour stock
 		    }
 		    else if((x>=objet2.x)&&(x<=(objet2.x+objet2.w))&&(y>=objet2.y)&&(y<=(objet2.y+objet2.h))){
 		 		controleSuppr = supprimerDonneePesee(listeIdDuree[1][0]);
-				printf("\nSuppression de la %d",getNomAliment(listeIdDuree[1][0]);
+				printf("\nSuppression de la (du) %d",getNomAliment(listeIdDuree[1][0]);
 		 		return 3; // retour stock
 		    }
 		    else if((x>=objet3.x)&&(x<=(objet3.x+objet3.w))&&(y>=objet3.y)&&(y<=(objet3.y+objet3.h))){
 		 		controleSuppr = supprimerDonneePesee(listeIdDuree[2][0]);
-				printf("\nSuppression de la %d",getNomAliment(listeIdDuree[2][0]);
+				printf("\nSuppression de la (du) %d",getNomAliment(listeIdDuree[2][0]);
 		 		return 3; // retour stock
 		    }
 		    else if((x>=objet4.x)&&(x<=(objet4.x+objet4.w))&&(y>=objet4.y)&&(y<=(objet4.y+objet4.h))){
 		 		controleSuppr = supprimerDonneePesee(listeIdDuree[3][0]);
-				printf("\nSuppression de la %d",getNomAliment(listeIdDuree[3][0]);
+				printf("\nSuppression de la (du) %d",getNomAliment(listeIdDuree[3][0]);
 		 		return 3; // retour stock
 			}
 		    else if((x>=objet5.x)&&(x<=(objet5.x+objet5.w))&&(y>=objet5.y)&&(y<=(objet5.y+objet5.h))){
 		 		controleSuppr = supprimerDonneePesee(listeIdDuree[4][0]);
-				printf("\nSuppression de la %d",getNomAliment(listeIdDuree[4][0]);
+				printf("\nSuppression de la (du) %d",getNomAliment(listeIdDuree[4][0]);
 		 		return 3; // retour stock
 		    }
 		}
