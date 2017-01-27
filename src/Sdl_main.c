@@ -39,11 +39,10 @@ int main(int argc,char* args[]) {
 */
 /*
 
-	Couleur* coul = initCouleurAvecParam(180,146,19);
-	int* liste = getIdAlimentParCouleur(coul);
+	long int** liste = getTabIdDureeAvantPer(5);
 	int i;
 	for(i=0; i<5 ;i++){
-		printf("\n%d",liste[i]);
+		printf("\n%ld | %ld",liste[i][0],liste[i][1]);
 	}
 */
 
