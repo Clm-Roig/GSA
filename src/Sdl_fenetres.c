@@ -222,7 +222,6 @@ int peserLoading() {
 			SDL_Event event;
 			int loop = 1;
 			while(loop == 1) {
-				printf("\n dans le boucle1");
 				// Après 3s, si pas d'échap, on boucle
 				SDL_WaitEventTimeout(&event,3000);
 				switch(event.type) {
