@@ -1,7 +1,7 @@
 #include "Sdl_main.h"
 
 int main(int argc,char* args[]) {
-
+/*
 	int loop = 1;
 	int page = 1;
 
@@ -22,7 +22,7 @@ int main(int argc,char* args[]) {
 	}
 
 	cleanup();
-
+*/
 /*
 	if (1){
 		reinitPesees();
@@ -37,9 +37,10 @@ int main(int argc,char* args[]) {
 		supprimerDonneePesee(4);
 	}
 */
-/*
 
-	long int** liste = getTabIdDureeAvantPer(5);
+
+	getTabIdDureeAvantPer(5);
+/*
 	int i;
 	for(i=0; i<5 ;i++){
 		printf("\n%ld | %ld",liste[i][0],liste[i][1]);

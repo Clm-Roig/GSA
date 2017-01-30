@@ -5,31 +5,45 @@
 // ---- Fonctions ---- //
 long int** getTabIdDureeAvantPer(int limite) {
     FILE* fichier = fopen(CHEMIN_PESEES,"r");
+    int nbPesees = nbLignesFichier(fichier);
 
     // On récupère tous les ids et dates des pesees
     int i;
     int compteurTuples = 0;
-    char* tabId[nbLignesFichier(fichier)-1];
-    char* tabDates[nbLignesFichier(fichier)-1];
 
-    for(i=2; i <= nbLignesFichier(fichier) ;i++){
+    char* tabIdAl[nbPesees-1];
+    char* tabDates[nbPesees-1];
+    char* tabIdPes[nbPesees-1];
+
+    for(i=2; i <= nbPesees ;i++){
         char* ligneLu = lireLigne(fichier,i);
+        char* tok = strtok(ligneLu,";");
 
-        strtok(ligneLu,";"); // id pesée
-        strtok(NULL,";"); // quantité
-        strtok(NULL,";"); // description
-        tabDates[compteurTuples] = strtok(NULL,";"); // date
-        tabId[compteurTuples] = strtok(NULL,";"); //id aliment
+        tabIdPes[compteurTuples] = tok; // id pesée
+
+        tok = strtok(NULL,";"); // quantité
+        tok = strtok(NULL,";"); // description
+        tok = strtok(NULL,";"); // date
+        tabDates[compteurTuples] = tok;
+
+        tok = strtok(NULL,";"); // id aliment
+        tabIdAl[compteurTuples] = tok;
 
         compteurTuples++;
     }
 
+	for(i=0; i<compteurTuples ;i++){
+		printf("\n%s",tabIdPes[i]);
+	}
+
+
+/*
     // Récupèration des durées de péremption de chaque aliment pesé
     long int tabDureePer[compteurTuples];
     for(i=0; i < compteurTuples ;i++) {
         // Pour chaque pesée, on récupère l'id de l'aliment pesée puis sa durée de péremption
         // La durée est stockée en jours, on la passe en secondes (1jour=86400sec)
-        char* idAlimentPese = getIdAlimentPesee(atoi(tabId[i]));
+        char* idAlimentPese = getIdAlimentPesee(atoi(tabIdAl[i]));
         int duree = getDureePeremptionAliment(atoi(idAlimentPese));
         tabDureePer[i] = 86400*duree;
     }
@@ -44,7 +58,7 @@ long int** getTabIdDureeAvantPer(int limite) {
         long int dureePassee = now - strtol(tabDates[i],&ptr,10);
         long int dureeRestante = tabDureePer[i] - dureePassee;
 
-        long int id = strtol(tabId[i],&ptr,10);
+        long int id = strtol(tabIdAl[i],&ptr,10);
         long int tab[2] = {id,dureeRestante};
         resTabFull[i][0] = tab[0];
         resTabFull[i][1] = tab[1];
@@ -91,7 +105,7 @@ long int** getTabIdDureeAvantPer(int limite) {
     }
 
     return resTab;
-}
+*/}
 
 /*
 //////
