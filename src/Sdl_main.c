@@ -39,13 +39,5 @@ int main(int argc,char* args[]) {
 */
 
 
-	getTabIdDureeAvantPer(5);
-/*
-	int i;
-	for(i=0; i<5 ;i++){
-		printf("\n%ld | %ld",liste[i][0],liste[i][1]);
-	}
-*/
-
 	return 0;
 }

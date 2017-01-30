@@ -1,7 +1,5 @@
 #include "Stock.h"
 
-// ---- Outils ---- //
-
 // ---- Fonctions ---- //
 long int** getTabIdDureeAvantPer(int limite) {
     FILE* fichier = fopen(CHEMIN_PESEES,"r");
@@ -32,12 +30,6 @@ long int** getTabIdDureeAvantPer(int limite) {
         compteurTuples++;
     }
 
-	for(i=0; i<compteurTuples ;i++){
-		printf("\n%s",tabIdPes[i]);
-	}
-
-
-/*
     // Récupèration des durées de péremption de chaque aliment pesé
     long int tabDureePer[compteurTuples];
     for(i=0; i < compteurTuples ;i++) {
@@ -48,33 +40,39 @@ long int** getTabIdDureeAvantPer(int limite) {
         tabDureePer[i] = 86400*duree;
     }
 
-    // Calcul de la durée restante avant péremption
-    long int resTabFull[compteurTuples][2];
+    // Calcul de la durée restante avant péremption + remplissage du tableau
+    long int resTabFull[compteurTuples][3];
     long int now = (long int) time(NULL);
 
     for(i=0; i < compteurTuples ;i++) {
-        // Sert à rien ici en soit, mais nécessaire pour strtol()
+        // ptr sert à rien ici en soit, mais nécessaire pour strtol()
         char* ptr;
         long int dureePassee = now - strtol(tabDates[i],&ptr,10);
         long int dureeRestante = tabDureePer[i] - dureePassee;
+        long int idAl = strtol(tabIdAl[i],&ptr,10);
+        long int idPes = strtol(tabIdPes[i],&ptr,10);
 
-        long int id = strtol(tabIdAl[i],&ptr,10);
-        long int tab[2] = {id,dureeRestante};
-        resTabFull[i][0] = tab[0];
-        resTabFull[i][1] = tab[1];
+        resTabFull[i][0] = idAl;
+        resTabFull[i][1] = dureeRestante;
+        resTabFull[i][2] = idPes;
     }
 
-    // Classer le tableau
+    // Classer le tableau par durée avant péremption
     int j;
     for (i = 0; i < compteurTuples; i++) {
         for (j = i + 1; j < compteurTuples; j++) {
             if(resTabFull[i][1] > resTabFull[j][1]) {
-                long int id = resTabFull[i][0];
+                long int idAl = resTabFull[i][0];
                 long int duree =  resTabFull[i][1];
+                long int idPes = resTabFull[i][2];
+
                 resTabFull[i][0] = resTabFull[j][0];
                 resTabFull[i][1] = resTabFull[j][1];
-                resTabFull[j][0] = id;
+                resTabFull[i][2] = resTabFull[j][2];
+
+                resTabFull[j][0] = idAl;
                 resTabFull[j][1] = duree;
+                resTabFull[j][2] = idPes;
             }
         }
     }
@@ -82,7 +80,7 @@ long int** getTabIdDureeAvantPer(int limite) {
     // Allocation du tableau final
     long int **resTab = malloc(sizeof(*resTab)*limite);
     for (i = 0; i < limite; i++) {
-        resTab[i] = malloc(sizeof(**resTab)*2);
+        resTab[i] = malloc(sizeof(**resTab)*3);
     }
 
     // Remplissage du tableau final
@@ -90,6 +88,7 @@ long int** getTabIdDureeAvantPer(int limite) {
         for (i = 0; i < limite; i++) {
             resTab[i][0] = resTabFull[i][0];
             resTab[i][1] = resTabFull[i][1];
+            resTab[i][2] = resTabFull[i][2];
         }
     }
     // Il y avait moins de pesees que la limite, on remplit avec des 0
@@ -97,15 +96,17 @@ long int** getTabIdDureeAvantPer(int limite) {
         for (i = 0; i < compteurTuples; i++) {
             resTab[i][0] = resTabFull[i][0];
             resTab[i][1] = resTabFull[i][1];
+            resTab[i][2] = resTabFull[i][2];
         }
         for (i = compteurTuples; i < limite; i++) {
             resTab[i][0] = 0;
             resTab[i][1] = 0;
+            resTab[i][2] = 0;
         }
     }
 
     return resTab;
-*/}
+}
 
 /*
 //////
