@@ -10,20 +10,18 @@
 
 #include "BDD.h"
 
-
 // ---- CONSTANTES ---- //
 
-// ---- Outils ---- //
 
 // ---- FONCTIONS ---- //
 
 /**
-    @brief renvoie le tableau des ids de pesées ordonné par leur durée avant Peremption (en secondes).
+    @brief renvoie le tableau des tuples : idAliment, dureeAvantPeremption, idPesee
     Si limite est supérieur au nombre de pesées, on renvoie toutes les pesées ordonnées.
+    Si limite est inférieure au nombre de pesées, on renvoie des idAl,duree,idPes = 0
     @param int limite, le nombre d'id d'aliments à charger
-    @return long int**, le tableau [id de la pesée => durée avant Péremption]
+    @return long int**, le tableau [i] => [idAliment, dureeAvPeremtpion, idPesee] (cases 0,1,2)
 */
 long int** getTabIdDureeAvantPer(int limite);
-
 
 #endif
