@@ -35,9 +35,8 @@ long int** getTabIdDureeAvantPer(int limite) {
     for(i=0; i < compteurTuples ;i++) {
         // Pour chaque pesée, on récupère l'id de l'aliment pesée puis sa durée de péremption
         // La durée est stockée en jours, on la passe en secondes (1jour=86400sec)
-        char* idAlimentPese = getIdAlimentPesee(atoi(tabIdAl[i]));
-        int duree = getDureePeremptionAliment(atoi(idAlimentPese));
-        tabDureePer[i] = 86400*duree;
+        int duree = getDureePeremptionAliment(atoi(tabIdAl[i]));
+        tabDureePer[i] = (long int)86400*duree;
     }
 
     // Calcul de la durée restante avant péremption + remplissage du tableau

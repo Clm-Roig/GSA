@@ -1004,6 +1004,11 @@ int stock() {
 
 	// Chargement des 5 aliments qui vont bientôt périmer
 	long int** listeIdDuree = getTabIdDureeAvantPer(5);
+	int j;
+	for(j=0; j<5 ;j++){
+		printf("\n%s   |   %ld   |   %ld",getNomAliment(listeIdDuree[j][0]),listeIdDuree[j][1],listeIdDuree[j][2]);
+	}
+
 
 	// Construction du chemin vers l'image
 	char* chemin1 = malloc(100*sizeof(char*));
@@ -1124,51 +1129,51 @@ int stock() {
 	if(duree1<=20){
 		SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree1<=50){
+	else if (duree1<=40){
 		SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
-		SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,46, 204, 113));
+		SDL_FillRect(screenSurface,&barre1,SDL_MapRGB(screenSurface->format,80, 204, 80));
 	}
 
 	if(duree2<=20){
 		SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree2<=50){
+	else if (duree2<=40){
 		SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
-		SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,46, 204, 113));
+		SDL_FillRect(screenSurface,&barre2,SDL_MapRGB(screenSurface->format,80, 204, 80));
 	}
 
 	if(duree3<=20){
 		SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree3<=50){
+	else if (duree3<=40){
 		SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
-		SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,46, 204, 113));
+		SDL_FillRect(screenSurface,&barre3,SDL_MapRGB(screenSurface->format,80, 204, 80));
 	}
 
 	if(duree4<=20){
 		SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree4<=50){
+	else if (duree4<=40){
 		SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
-		SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,46, 204, 113));
+		SDL_FillRect(screenSurface,&barre4,SDL_MapRGB(screenSurface->format,80, 204, 80));
 	}
 
 	if(duree5<=20){
 		SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,192, 57, 43));
 	}
-	else if (duree5<=50){
+	else if (duree5<=40){
 		SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,230, 126, 34));
 	}
 	else{
-		SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,46, 204, 113));
+		SDL_FillRect(screenSurface,&barre5,SDL_MapRGB(screenSurface->format,80, 204, 80));
 	}
 
 	SDL_UpdateWindowSurface(getwindow());
@@ -1206,23 +1211,23 @@ int stock() {
 	    else {
 			int controleSuppr = 0;
 			if((x>=objet1.x)&&(x<=(objet1.x+objet1.w))&&(y>=objet1.y)&&(y<=(objet1.y+objet1.h))){
-		 		controleSuppr = supprimerDonneePesee(listeIdDuree[0][0]);
+		 		controleSuppr = supprimerDonneePesee(listeIdDuree[0][2]);
 		 		return 3; // retour stock
 		    }
 		    else if((x>=objet2.x)&&(x<=(objet2.x+objet2.w))&&(y>=objet2.y)&&(y<=(objet2.y+objet2.h))){
-		 		controleSuppr = supprimerDonneePesee(listeIdDuree[1][0]);
+		 		controleSuppr = supprimerDonneePesee(listeIdDuree[1][2]);
 		 		return 3; // retour stock
 		    }
 		    else if((x>=objet3.x)&&(x<=(objet3.x+objet3.w))&&(y>=objet3.y)&&(y<=(objet3.y+objet3.h))){
-		 		controleSuppr = supprimerDonneePesee(listeIdDuree[2][0]);
+		 		controleSuppr = supprimerDonneePesee(listeIdDuree[2][2]);
 		 		return 3; // retour stock
 		    }
 		    else if((x>=objet4.x)&&(x<=(objet4.x+objet4.w))&&(y>=objet4.y)&&(y<=(objet4.y+objet4.h))){
-		 		controleSuppr = supprimerDonneePesee(listeIdDuree[3][0]);
+		 		controleSuppr = supprimerDonneePesee(listeIdDuree[3][2]);
 		 		return 3; // retour stock
 			}
 		    else if((x>=objet5.x)&&(x<=(objet5.x+objet5.w))&&(y>=objet5.y)&&(y<=(objet5.y+objet5.h))){
-		 		controleSuppr = supprimerDonneePesee(listeIdDuree[4][0]);
+		 		controleSuppr = supprimerDonneePesee(listeIdDuree[4][2]);
 		 		return 3; // retour stock
 		    }
 		}
