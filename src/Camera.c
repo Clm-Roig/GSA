@@ -15,7 +15,7 @@ int prendrePhoto(char* idPesee) {
     // -co contraste (de -100 à +100)
     // -rot rotation de l'image (0 à 360°)
 
-    char* fonction = "raspistill -rot 180 -co 25 -ex night -t 3000 -w 800 -h 800 -e bmp -o ";
+    char* fonction = "raspistill -rot 180 -co 25 -ex auto -t 1800 -w 800 -h 800 -e bmp -o ";
 
     char* chemin = malloc(200*sizeof(char));
     strcpy(chemin,CHEMIN_IMAGES_ALIMENTS);
