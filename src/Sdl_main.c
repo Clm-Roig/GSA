@@ -22,21 +22,6 @@ int main(int argc,char* args[]) {
 	}
 
 	cleanup();
-
-/*
-	if (1){
-		reinitPesees();
-		ecrireDonneePesee(1,"Une pesee à Clément",20);
-		ecrireDonneePesee(200,"Une pesee à Clément",14);
-		ecrireDonneePesee(150,"Une pesee à Clément",3);
-		ecrireDonneePesee(100,"Fruits frais",20);
-		ecrireDonneePesee(500,"Description random",1);
-		ecrireDonneePesee(15,"Une pesee à Clément",2);
-	}
-	else {
-		supprimerDonneePesee(4);
-	}
-*/
-
+	
 	return 0;
 }
