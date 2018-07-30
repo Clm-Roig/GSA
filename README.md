@@ -1,6 +1,7 @@
 # Projet Polytech - Informatique & gestion 3 - GSA (Gestionnaire de Stock Alimentaire)
 Gestionnaire de stock d'aliment connecté à l'aide d'un Raspberry Pi (C)
-[Démo vidéo](https://www.youtube.com/watch?v=LVoPP_nOY8A)
+
+[---> Démo vidéo <---](https://www.youtube.com/watch?v=LVoPP_nOY8A)
 
 - Matthieu DYE
 - Tristan RIVIERE
